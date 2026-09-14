@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "GamePlay",
+    "maps": [
+        {
+            "name": "Building",
+            "id": "662bdd25-6e59-4c29-b0c6-3c6186b867ac",
+            "actions": [
+                {
+                    "name": "ClickGrid",
+                    "type": "Button",
+                    "id": "f9d85a39-eded-4abc-913d-c7a64a72714c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GetValue",
+                    "type": "Button",
+                    "id": "6718636e-c930-432e-93d0-e63416ee459a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8f041672-fe59-4a49-8ced-cda141e2b756",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClickGrid",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9dab4239-07b1-4cab-8865-49cdbfc17a09",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GetValue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
