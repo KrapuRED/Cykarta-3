@@ -164,10 +164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe7fb2bd08302b4c9535348e2332ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
-  widthCell: 4
-  heightCell: 2
+  widthCell: 21
+  heightCell: 10
   cellSize: 1
   origin: {fileID: 1941239908}
+  container: {fileID: 1684419242}
 --- !u!1 &317808283
 GameObject:
   m_ObjectHideFlags: 0
@@ -4998,6 +4999,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f9d85a39-eded-4abc-913d-c7a64a72714c
     m_ActionName: 'Building/ClickGrid[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6718636e-c930-432e-93d0-e63416ee459a
+    m_ActionName: 'Building/GetValue[/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Building
@@ -5432,7 +5437,7 @@ Transform:
   m_GameObject: {fileID: 1941239907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: -3, z: 0}
+  m_LocalPosition: {x: -11, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
