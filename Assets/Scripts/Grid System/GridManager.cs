@@ -1,17 +1,21 @@
-using System;
+
 using UnityEngine;
+
+[System.Serializable]
+public enum GridZone
+{
+    None,
+    Pedestrian,
+    Vehicle,
+    Water,
+    Build
+}
 
 public class GridManager : MonoBehaviour
 {
     public static GridManager Instance { get; private set; }
 
-    [SerializeField] private int widthCell;
-    [SerializeField] private int heightCell;
-    [SerializeField] private int cellSize = 10;
-    [SerializeField] private Transform origin;
-    [SerializeField] private Transform container;
-    
-    private Grid<bool> _grid;
+    [SerializeField] private GridMap buildingGridMap;
 
     private void Awake()
     {
@@ -27,17 +31,17 @@ public class GridManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _grid = new Grid<bool>(widthCell, heightCell, cellSize, origin.position, container);
+        //_grid = new Grid<bool>(widthCell, heightCell, cellSize, origin.position, container);
     }
 
     public void IncreaseValueCell(Vector3 worldPosition)
     {
-        _grid.SetGridObject(worldPosition, true);
+
     }
 
     public void GetValueCell(Vector3 worldPosition)
     {
-       var gridValue = _grid.GetGridObject(worldPosition);
-       Debug.Log(gridValue);
+        var gridMapData = buildingGridMap.GetZoneAt(worldPosition);
+        Debug.Log(gridMapData);
     }
 }

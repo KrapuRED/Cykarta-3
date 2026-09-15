@@ -21,7 +21,7 @@ public class Grid <TGridObject>
     private TGridObject[,] gridArray;
     private TextMeshPro[,] debugTextArray;
     
-    public Grid(int width, int height, float cellSize, Vector3 originPosition, Transform gridContianer)
+    public Grid(int width, int height, float cellSize, Vector3 originPosition, Transform gridContianer, string nameObject)
     {
         this.width = width;
         this.height = height;
@@ -29,12 +29,19 @@ public class Grid <TGridObject>
         this.originPosition = originPosition;
         
         gridArray = new TGridObject[width, height];
+        
+        
         debugTextArray = new TextMeshPro[width, height];
         
         for (int x = 0; x < gridArray.GetLength(0); x++)
             for (int y = 0; y < gridArray.GetLength(1); y++)
             {
-                debugTextArray[x,y] = UtilTools.UtilsClass.CreateWorldText(gridArray[x, y].ToString(), gridContianer, GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * 0.5f, 3 ,Color.white, sortingOrder:2 ,boxSize: new Vector2(cellSize, cellSize));
+                string newNameObject = $"{nameObject}({x},{y})";
+                
+                debugTextArray[x,y] = UtilTools.UtilsClass.CreateWorldText(gridArray[x, y].ToString(), gridContianer, GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * 0.5f, 3 ,
+                    Color.white, sortingOrder:2 ,boxSize: new Vector2(cellSize, cellSize),
+                    customeName:newNameObject);
+                
                 Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white, 100f);
                 Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
             }
