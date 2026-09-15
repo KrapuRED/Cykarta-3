@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6400691932898101370}
   - component: {fileID: 6295948640429509777}
+  - component: {fileID: -1200755834875297617}
   m_Layer: 0
   m_Name: Test_Tower
   m_TagString: Untagged
@@ -91,3 +92,16 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &-1200755834875297617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308594560177739282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d80e4a05712a3d42839f5a4e7684816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EyeSpotterTower
+  towerData: {fileID: 11400000, guid: 0c47a43d57352dd4ba40f45e98d93f7b, type: 2}

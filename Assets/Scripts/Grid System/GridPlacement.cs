@@ -9,6 +9,11 @@ public class GridPlacement : MonoBehaviour
     {
         if (GridManager.Instance.CurrentGridMode != GridMode.Building) return;
         
+        //Check if the grid is already have building
+        var gridZone =  GridManager.Instance.BuildingGridMap.GetZoneAt(gridPosition);
+        if (gridZone == GridZone.Occupied)
+            return;
+        
         // Take Grid Position
         
         // Instantiate prefab
@@ -19,6 +24,7 @@ public class GridPlacement : MonoBehaviour
             return;
         }
  
+        GridManager.Instance.BuildingGridMap.SetZone(gridPosition, GridZone.Occupied);
         Instantiate(prefabTower, gridPosition, Quaternion.identity, towerContainer);
     }
 }

@@ -9,7 +9,8 @@ public enum GridZone
     Pedestrian,
     Vehicle,
     Water,
-    Build
+    Build,
+    Occupied
 }
 
 [System.Serializable]
@@ -30,6 +31,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private GameObject dimBackground;
     
     public GridMode CurrentGridMode => currentGridMode;
+    public GridMap BuildingGridMap => buildingGridMap;
     
     private void Awake()
     {

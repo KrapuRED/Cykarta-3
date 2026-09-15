@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c5470cd6d6bdb4fa0f0d8f34eb4a22, type: 3}
+  m_Name: Interceptor - TowerDataSO
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
+  towerName: Interceptor
+  towerCost: 0
+  baseTowerRanger: 0
