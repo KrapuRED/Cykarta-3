@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class GridPlacement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform towerContainer;
+    [SerializeField] private GameObject prefabTower;
 
-    // Update is called once per frame
-    void Update()
+    public void PlaceTower(Vector3 gridPosition)
     {
+        // Take Grid Position
         
+        // Instantiate prefab
+        
+        if (prefabTower == null)
+        {
+            Debug.LogWarning("GridPlacement: prefabTower is not assigned.");
+            return;
+        }
+ 
+        Instantiate(prefabTower, gridPosition, Quaternion.identity, towerContainer);
     }
 }

@@ -97,7 +97,16 @@ public class GridMap : MonoBehaviour
         int mapIndex =  GetMapIndex(worldPosition);
         
         if (mapIndex < 0 || mapIndex >= _grid.Count) return GridZone.None;
+        
         return _grid[mapIndex].GetGridObject(worldPosition);
+    }
+
+    public Vector3 GetGridPosition(Vector3 worldPosition)
+    {
+        int mapIndex = GetMapIndex(worldPosition);
+        if (mapIndex < 0 || mapIndex >= _grid.Count) return worldPosition;
+        
+        return _grid[mapIndex].GetGridPosition(worldPosition);
     }
 
     private void OnDrawGizmos()

@@ -205,6 +205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 202370639}
+  - component: {fileID: 202370640}
   m_Layer: 0
   m_Name: Grid System - Building Placement
   m_TagString: Untagged
@@ -227,6 +228,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 737201036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &202370640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202370638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bdcf68608e7b348918e851285582b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridPlacement
+  towerContainer: {fileID: 792773746}
+  prefabTower: {fileID: 308594560177739282, guid: ca057f47ba9a48147828556618cf3d04, type: 3}
 --- !u!1 &317808283
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,9 +271,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1406527529}
   - {fileID: 192450203}
   - {fileID: 1266471551}
-  - {fileID: 1406527529}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410921338
@@ -5302,6 +5317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildingInput
   clickGrid: {fileID: -5409502153300325574, guid: 79413c0660163a14fb11848f0719556e, type: 3}
   clickGetValueGrid: {fileID: 8616566587293604167, guid: 79413c0660163a14fb11848f0719556e, type: 3}
+  gridPlacement: {fileID: 202370640}
 --- !u!1 &1684419241
 GameObject:
   m_ObjectHideFlags: 0
