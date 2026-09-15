@@ -7,13 +7,15 @@ public class GridPlacement : MonoBehaviour
 
     public void PlaceTower(Vector3 gridPosition)
     {
+        if (GridManager.Instance.CurrentGridMode != GridMode.Building) return;
+        
         // Take Grid Position
         
         // Instantiate prefab
         
         if (prefabTower == null)
         {
-            Debug.LogWarning("GridPlacement: prefabTower is not assigned.");
+            Debug.LogWarning($"[{name} (PlaceTower)] GridPlacement: prefabTower is not assigned.");
             return;
         }
  

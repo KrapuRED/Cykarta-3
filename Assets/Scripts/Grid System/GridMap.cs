@@ -11,7 +11,7 @@ public class GridMapData
     public float cellSize;
     public Transform origin;
     public Transform container;
-
+    
     [SerializeField] private GridZone[] zoneData;
 
     public GridZone GetZone(int x, int y)
@@ -54,6 +54,12 @@ public class GridMap : MonoBehaviour
     [SerializeField] private List<GridMapData> gridMapData = new();
     [SerializeField] private GridZone gridZone;
     
+    [Header("Highlight sorting")]
+    [SerializeField] private int highlightSortingOrder = 11; // above dim background
+    [SerializeField] private Sprite highlightSprite;
+
+    [SerializeField] private bool showDebugGrid;
+    
     private List<Grid<GridZone>> _grid = new();
     public List<GridMapData> GetGridMapDataList() => gridMapData;
     
@@ -63,7 +69,7 @@ public class GridMap : MonoBehaviour
         
         foreach (var mapData in gridMapData)
         {
-            Grid<GridZone> newGrid = new Grid<GridZone>(mapData.widthCell, mapData.heightCell, mapData.cellSize, mapData.origin.position, mapData.container, mapData.nameGridMap);
+            Grid<GridZone> newGrid = new Grid<GridZone>(mapData.widthCell, mapData.heightCell, mapData.cellSize, mapData.origin.position, mapData.container, mapData.nameGridMap, showDebugGrid);
             
             // Apply the zones painted in the editor onto the freshly created runtime grid.
             mapData.EnsureArraySize();
@@ -109,6 +115,20 @@ public class GridMap : MonoBehaviour
         return _grid[mapIndex].GetGridPosition(worldPosition);
     }
 
+    public void HighlightZone(GridZone zoneToShow, bool active)
+    {
+        for (int i = 0; i < gridMapData.Count; i++)
+        {
+            var mapData = gridMapData[i];
+            for (int x = 0; x < mapData.widthCell; x++)
+            for (int y = 0; y < mapData.heightCell; y++)
+            {
+                if (mapData.GetZone(x, y) == zoneToShow)
+                    _grid[i].SetCellHighlight(x, y, active, highlightSortingOrder, highlightSprite, Color.yellow);
+            }
+        }
+    }
+    
     private void OnDrawGizmos()
     {
         if (gridMapData == null) return;

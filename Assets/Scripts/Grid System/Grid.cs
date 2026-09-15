@@ -21,8 +21,9 @@ public class Grid <TGridObject>
     private Vector3 gridPosition;
     private TGridObject[,] gridArray;
     private TextMeshPro[,] debugTextArray;
+    private SpriteRenderer[,] cellSpriteArray;
     
-    public Grid(int width, int height, float cellSize, Vector3 originPosition, Transform gridContianer, string nameObject)
+    public Grid(int width, int height, float cellSize, Vector3 originPosition, Transform gridContianer, string nameObject, bool showDebugText = false)
     {
         this.width = width;
         this.height = height;
@@ -30,10 +31,26 @@ public class Grid <TGridObject>
         this.originPosition = originPosition;
         
         gridArray = new TGridObject[width, height];
-
-        debugTextArray = new TextMeshPro[width, height];
+        cellSpriteArray = new SpriteRenderer[width, height];
         
         for (int x = 0; x < gridArray.GetLength(0); x++)
+        for (int y = 0; y < gridArray.GetLength(1); y++)
+        {
+            GameObject cellSpriteObject = new GameObject();
+            cellSpriteObject.transform.SetParent(gridContianer);
+            cellSpriteObject.transform.position = GetWorldPosition(x, y) + new Vector3(cellSize, cellSize) * 0.5f;
+            
+            var sr = cellSpriteObject.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 0;
+            sr.enabled = false;
+            cellSpriteArray[x, y] = sr;
+        }
+        
+        if (showDebugText)
+        {
+            debugTextArray = new TextMeshPro[width, height];
+        
+            for (int x = 0; x < gridArray.GetLength(0); x++)
             for (int y = 0; y < gridArray.GetLength(1); y++)
             {
                 string newNameObject = $"{nameObject}({x},{y})";
@@ -48,10 +65,21 @@ public class Grid <TGridObject>
                 Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
             }
         
-        Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
-        Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
+            Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
+            Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
+        }
     }
 
+    public void SetCellHighlight(int x, int y, bool active, int sortingOrder, Sprite sprite = null, Color? color = null)
+    {
+        if (x < 0 || y < 0 || x >= width || y >= height) return;
+        var sr = cellSpriteArray[x, y];
+        sr.enabled = active;
+        sr.sortingOrder = sortingOrder;
+        if (sprite != null) sr.sprite = sprite;
+        if (color.HasValue) sr.color = color.Value;
+    }
+    
     private Vector3 GetWorldPosition(int x, int y)
     {
         return new Vector3(x,  y) * cellSize +  originPosition;
@@ -63,13 +91,15 @@ public class Grid <TGridObject>
         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
     }
     
-    public void SetGridObject(int x, int y, TGridObject value)
+    public void SetGridObject(int x, int y, TGridObject value,  bool showDebugText = false)
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
             gridArray[x, y] = value;
             if (OnGridObjectChange != null) OnGridObjectChange(this, new OnGridObjectChangeEventArgs{x = x, y = y});
-            debugTextArray[x, y].text =  gridArray[x, y].ToString();
+            
+            if (showDebugText)
+                debugTextArray[x, y].text =  gridArray[x, y].ToString();
         }
     }
 

@@ -26,16 +26,15 @@ public class BuildingInput : MonoBehaviour
     private void OnClickGrid(InputAction.CallbackContext _)
     {
         Vector3 mouseWorldPosition = UtilTools.UtilsClass.GetMouseWorldPositionWithZ();
-        
-        GridMap gridMap;
+
         GridZone gridZone;
-        GridManager.Instance.GetGridMapZoneCell(mouseWorldPosition,  out gridMap, out gridZone);
+        
+        GridManager.Instance.GetGridMapZoneCell(mouseWorldPosition, out gridZone);
         
         if (gridZone == GridZone.Build)
         {
             Vector3 gridPosition = GridManager.Instance.GridToWorldPosition(mouseWorldPosition);
             gridPlacement.PlaceTower(gridPosition);
-            Debug.Log("Building Grid");
         }
     }
 }
