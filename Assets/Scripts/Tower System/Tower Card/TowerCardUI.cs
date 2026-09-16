@@ -6,9 +6,22 @@ public class TowerCardUI : MonoBehaviour
     [SerializeField] private TMP_Text towerName;
     [SerializeField] private TMP_Text towerCost;
 
-    public void SetTowerCardUI(string towerName, int  cost)
+    public TowerDataSO TowerData { get; private set; }
+
+    public void SetTowerCardUI(TowerDataSO towerData)
     {
-        this.towerName.text = towerName;
-        this.towerCost.text = $"$ {cost}";
+       TowerData = towerData;
+       
+       towerName.text = towerData.towerName;
+       towerCost.text = $"${towerData.towerCost}";
+    }
+
+    public void SelectTowerCardUI()
+    {
+        Debug.Log($"{name} SelectTowerCardUI");
+        
+        GridManager.Instance.HighlightBuildGridZone();
+        
+        GameEvents.OnShowTowerCardDetail.Invoke(TowerData);
     }
 }

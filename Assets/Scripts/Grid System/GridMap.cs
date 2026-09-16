@@ -49,6 +49,16 @@ public class GridMapData
     }
 }
 
+[System.Serializable]
+public class GridCellData
+{
+    public GridZone zone;
+    public Tower occupant;
+    
+    public bool IsOccupied => occupant != null;
+    public override string ToString() => zone.ToString();
+}
+
 public class GridMap : MonoBehaviour
 {
     [SerializeField] private List<GridMapData> gridMapData = new();
@@ -60,8 +70,9 @@ public class GridMap : MonoBehaviour
 
     [SerializeField] private bool showDebugGrid;
     
-    private List<Grid<GridZone>> _grid = new();
+    private List<Grid<GridCellData>> _grid = new();
     public List<GridMapData> GetGridMapDataList() => gridMapData;
+    
     
     private void Start()
     {
@@ -69,18 +80,17 @@ public class GridMap : MonoBehaviour
         
         foreach (var mapData in gridMapData)
         {
-            Grid<GridZone> newGrid = new Grid<GridZone>(mapData.widthCell, mapData.heightCell, mapData.cellSize, mapData.origin.position, mapData.container, mapData.nameGridMap, showDebugGrid);
-            
-            // Apply the zones painted in the editor onto the freshly created runtime grid.
+            Grid<GridCellData> newGrid = new Grid<GridCellData>(mapData.widthCell, mapData.heightCell, mapData.cellSize, mapData.origin.position, mapData.container, mapData.nameGridMap, showDebugGrid);
+
             mapData.EnsureArraySize();
             for (int x = 0; x < mapData.widthCell; x++)
             for (int y = 0; y < mapData.heightCell; y++)
-                newGrid.SetGridObject(x, y, mapData.GetZone(x, y));
+                newGrid.SetGridObject(x, y, new GridCellData { zone = mapData.GetZone(x, y) });
  
             _grid.Add(newGrid);
         }
     }
-
+    
     private int GetMapIndex(Vector3 worldPosition)
     {
         for (int i = 0; i < gridMapData.Count; i++)
@@ -91,20 +101,29 @@ public class GridMap : MonoBehaviour
         return -1;
     }
 
+    public GridCellData GetOrCreateCell(int mapIndex, Vector3 worldPosition)
+    {
+        var cellData = _grid[mapIndex].GetGridObject(worldPosition);
+        return cellData ?? new GridCellData();
+    }
+    
     public void SetZone(Vector3 worldPosition, GridZone zone)
     {
         int mapIndex = GetMapIndex(worldPosition);
         if (mapIndex < 0 || mapIndex >= _grid.Count) return;
-        _grid[mapIndex].SetGridObject(worldPosition, zone);
+        
+        var cell = GetOrCreateCell(mapIndex, worldPosition);
+        cell.zone = zone;
+        _grid[mapIndex].SetGridObject(worldPosition, cell);
     }
     
     public GridZone GetZoneAt(Vector3 worldPosition)
     {
         int mapIndex =  GetMapIndex(worldPosition);
-        
         if (mapIndex < 0 || mapIndex >= _grid.Count) return GridZone.None;
         
-        return _grid[mapIndex].GetGridObject(worldPosition);
+        var cell = _grid[mapIndex].GetGridObject(worldPosition);
+        return cell != null ? cell.zone : GridZone.None;
     }
 
     public Vector3 GetGridPosition(Vector3 worldPosition)
@@ -128,6 +147,65 @@ public class GridMap : MonoBehaviour
             }
         }
     }
+    
+    public void SetTower(Vector3 worldPosition, Tower tower)
+    {
+        int mapIndex = GetMapIndex(worldPosition);
+        if (mapIndex < 0 || mapIndex >= _grid.Count) return;
+
+        var cell = GetOrCreateCell(mapIndex, worldPosition);
+        cell.occupant = tower;
+        _grid[mapIndex].SetGridObject(worldPosition, cell);
+
+        SetZone(worldPosition, GridZone.Occupied);
+    }
+
+    public Tower GetTowerAt(Vector3 worldPosition)
+    {
+        int mapIndex = GetMapIndex(worldPosition);
+        if (mapIndex < 0 || mapIndex >= _grid.Count) return null;
+
+        var cell = _grid[mapIndex].GetGridObject(worldPosition);
+        return cell?.occupant;
+    }
+
+    public void ClearTower(Vector3 worldPosition, GridZone? resetZone = null)
+    {
+        int mapIndex = GetMapIndex(worldPosition);
+        if (mapIndex < 0 || mapIndex >= _grid.Count) return;
+        
+        var cell = GetOrCreateCell(mapIndex, worldPosition);
+        cell.occupant = null;
+        if (resetZone.HasValue) cell.zone = resetZone.Value;
+        _grid[mapIndex].SetGridObject(worldPosition, cell);
+    }
+
+    /*public void DebugOccupiedGrid()
+    {
+        foreach (var gridCell in _grid)
+        {
+            if (gridCell == null) continue;
+
+            foreach (var mapData in gridMapData)
+            {
+                for (int x = 0; x < mapData.widthCell; x++)
+                for (int y = 0; y < mapData.heightCell; y++)
+                {
+                    var gridCellData = gridCell.GetGridObject(x, y);
+                    if (gridCellData.occupant != null)
+                    {
+                        Debug.Log($"[{name} (DebugOccupiedGrid)] {gridCellData.occupant.towerID}");
+                    }
+                    else
+                    {
+                        if (gridCellData.zone == GridZone.Build)
+                            Debug.LogWarning($"[{name} (DebugOccupiedGrid)] This grid cell is not occupied!");
+                    }
+                }
+            }
+        }
+    }
+    */
     
     private void OnDrawGizmos()
     {

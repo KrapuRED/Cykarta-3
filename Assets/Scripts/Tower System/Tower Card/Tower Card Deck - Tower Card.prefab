@@ -349,6 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1757927172704409631}
   - component: {fileID: 1130886805710819005}
+  - component: {fileID: 6555943554640117750}
   m_Layer: 5
   m_Name: Tower Card Deck - Tower Card
   m_TagString: Untagged
@@ -391,6 +392,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerCardUI
   towerName: {fileID: 6746082907323290614}
   towerCost: {fileID: 4543727069083674310}
+--- !u!114 &6555943554640117750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3271734639185031389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c20e562ca8210242916f55160ac7dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomeButton
+  onHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1130886805710819005}
+        m_TargetAssemblyTypeName: TowerCardUI, Assembly-CSharp
+        m_MethodName: SelectTowerCardUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7785609731916409395
 GameObject:
   m_ObjectHideFlags: 0

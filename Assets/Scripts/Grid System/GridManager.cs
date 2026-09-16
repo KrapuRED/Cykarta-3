@@ -43,15 +43,7 @@ public class GridManager : MonoBehaviour
 
         Instance = this;
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            HighlightBuildGridZone();
-        }
-    }
-
+    
     // Building Position
     public Vector3 GridToWorldPosition(Vector3 worldPosition)
     {
@@ -72,25 +64,20 @@ public class GridManager : MonoBehaviour
         if (currentGridMode != GridMode.Building)
         {
             currentGridMode = GridMode.Building;
-            
-            // Find all grid zone that building
-            // Change Sorting layer to Higher of that grid zone where type of building zone 
             buildingGridMap.HighlightZone(GridZone.Build, true);
-           
-            // Show dimHighlight 
+
             dimBackground.SetActive(true);
         }
-        else
-        {
-            currentGridMode = GridMode.None;
-            
-            // Find all grid zone that building
-            // Change Sorting layer to lower of that grid zone where type of building zone
-            buildingGridMap.HighlightZone(GridZone.Build, false);
-            
-            // Show dimHighlight 
-            dimBackground.SetActive(false);
-        }
+    }
+
+    public void UnhighlightBuildGridZone()
+    {
+        if (currentGridMode != GridMode.Building) return;
+        
+        currentGridMode = GridMode.None;
+        buildingGridMap.HighlightZone(GridZone.Build, false);
+
+        dimBackground.SetActive(false);
     }
     
     // Enemy Path Finding

@@ -13,7 +13,7 @@ public class TowerCardHandler : MonoBehaviour
         {
             var cardUI = Instantiate(prefTowerCardUI, containerTowerCard);
             cardUI.name = $"Tower Card UI - {towerData.towerName}";
-            cardUI.SetTowerCardUI(towerData.towerName, towerData.towerCost);
+            cardUI.SetTowerCardUI(towerData);
         }
     }
 }
