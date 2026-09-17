@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 #region Configuration Custom Events
 
@@ -60,10 +61,13 @@ public static class GameEvents
     // # ================================ GRID SYSTEM ================================ #
     public static readonly CustomEvents<OnGridObjectChangeEventArgs> OnGridObjectChange = new ();
     
-    // # ================================ Panel SYSTEM ================================ #
+    // # ================================ PANEL SYSTEM ================================ #
     public static readonly CustomEvents<PanelType> OnRequestOpenPanel = new();
     public static readonly CustomEvents<PanelType> OnRequestClosePanel = new();
     public static readonly CustomEvents<GridZone> OnShowGridZone = new();
+
+    // # ================================ PANEL SYSTEM ================================ #
+    public static readonly CustomEvents OnShowConfirmationUI = new();
     
     // # ================================ TOWER CARD UI SYSTEM ================================ #
     public static readonly CustomEvents<TowerDataSO> OnShowTowerCardDetail = new ();

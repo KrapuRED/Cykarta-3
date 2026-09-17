@@ -5,7 +5,9 @@ using TMPro;
 public class InfrastructurePlacementPanel : Panel
 {
    [SerializeField] private TMP_Text indicatorPlacementText; 
+   [SerializeField] private TMP_Text instructionPlacementText; 
    [SerializeField] private CanvasGroup hudCanvasGroup;
+   
    
    private bool _isPanelActive;
    
@@ -20,6 +22,9 @@ public class InfrastructurePlacementPanel : Panel
       hudCanvasGroup.alpha = 0;
       hudCanvasGroup.blocksRaycasts = false;
       hudCanvasGroup.interactable = false;
+      
+      indicatorPlacementText.gameObject.SetActive(true);
+      instructionPlacementText.gameObject.SetActive(true);
    }
 
    public override void ClosePanel()
@@ -33,17 +38,18 @@ public class InfrastructurePlacementPanel : Panel
       hudCanvasGroup.alpha = 1;
       hudCanvasGroup.blocksRaycasts = true;
       hudCanvasGroup.interactable = true;
-
    }
 
    private void OnEnable()
    {
       GameEvents.OnShowGridZone.AddListener(UpdateIndicatorPlacement);
+      GameEvents.OnShowConfirmationUI.AddListener(HideText);
    }
 
    private void OnDisable()
    {
       GameEvents.OnShowGridZone.RemoveListener(UpdateIndicatorPlacement);
+      GameEvents.OnShowConfirmationUI.RemoveListener(HideText);
    }
 
    private void UpdateIndicatorPlacement(GridZone gridZone)
@@ -58,5 +64,11 @@ public class InfrastructurePlacementPanel : Panel
       {
          indicatorPlacementText.text = "Invalid Tile";
       }
-   } 
+   }
+
+   private void HideText()
+   {
+      indicatorPlacementText.gameObject.SetActive(false);
+      instructionPlacementText.gameObject.SetActive(false);
+   }
 }

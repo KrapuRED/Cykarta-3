@@ -10,13 +10,13 @@ public class GridPlacement : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.OnShowTowerCardDetail.AddListener(SetTowerPlacement);
-        GameEvents.OnHideTowerCardDetail.AddListener(CancelGridPlacement);
+        GameEvents.OnHideTowerCardDetail.AddListener(ClearTowerPlacement);
     }
 
     private void OnDisable()
     {
         GameEvents.OnShowTowerCardDetail.RemoveListener(SetTowerPlacement);
-        GameEvents.OnHideTowerCardDetail.RemoveListener(CancelGridPlacement);
+        GameEvents.OnHideTowerCardDetail.RemoveListener(ClearTowerPlacement);
     }
 
     private void SetTowerPlacement(TowerDataSO towerData)
@@ -24,7 +24,7 @@ public class GridPlacement : MonoBehaviour
         prefabTower = towerData.prefabObjectTower;
     }
 
-    public void CancelGridPlacement()
+    public void ClearTowerPlacement()
     {
         prefabTower = null;
     }
@@ -45,6 +45,7 @@ public class GridPlacement : MonoBehaviour
         }
  
         Tower newTower = Instantiate(prefabTower, gridPosition, Quaternion.identity, towerContainer);
+        newTower.SetGridPosition(gridPosition);
         
         GridManager.Instance.BuildingGridMap.SetTower(gridPosition, newTower);
     }
@@ -55,7 +56,6 @@ public class GridPlacement : MonoBehaviour
         if (tower == null) return;
         
         GameEvents.OnShowTowerCardUpgrade.Invoke(tower);
-        Debug.Log($"[{name} (PlaceTower)] Selected tower : {tower.name} ID : {tower.towerID}");
     }
     
     public void RemoveTower(Vector3 gridPosition, GridZone resetZone = GridZone.Build)
@@ -63,7 +63,6 @@ public class GridPlacement : MonoBehaviour
         var tower = GridManager.Instance.BuildingGridMap.GetTowerAt(gridPosition);
         if (tower == null) return;
 
-        GridManager.Instance.BuildingGridMap.ClearTower(gridPosition, resetZone);
-        Destroy(tower.gameObject);
+        tower.RemoveTower(resetZone);
     }
 }

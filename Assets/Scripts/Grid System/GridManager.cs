@@ -16,7 +16,8 @@ public enum GridZone
 public enum GridMode
 {
     None,
-    Building
+    Building,
+    Confirmation
 }
 
 public class GridManager : MonoBehaviour
@@ -84,26 +85,33 @@ public class GridManager : MonoBehaviour
 
     public void UnhighlightBuildGridZone()
     {
-        if (currentGridMode != GridMode.Building) return;
-
         if (InstancePreviewTower != null)
         {
             Destroy(InstancePreviewTower.gameObject);
             InstancePreviewTower = null;
         }
         
-        gridPlacement.CancelGridPlacement();
-        
-        currentGridMode = GridMode.None;
-        buildingGridMap.HighlightZone(GridZone.Build, false);
-        GameEvents.OnRequestClosePanel.Invoke(PanelType.Building);
-        
-        dimBackground.SetActive(false);
+        gridPlacement.ClearTowerPlacement();
     }
     
     // Enemy Path Finding
     public void GetGridMapZoneCell()
     {
+        
+    }
+
+    public void ChangeGridMode(GridMode gridMode)
+    {
+        if (currentGridMode != gridMode && gridMode == GridMode.None)
+        {
+            UnhighlightBuildGridZone();
+            buildingGridMap.HighlightZone(GridZone.Build, false);
+
+            dimBackground.SetActive(false);
+            GameEvents.OnRequestClosePanel.Invoke(PanelType.Building);
+        }
+        
+        currentGridMode = gridMode;
         
     }
 }

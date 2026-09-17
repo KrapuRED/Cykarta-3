@@ -158,6 +158,7 @@ public class GridMap : MonoBehaviour
         _grid[mapIndex].SetGridObject(worldPosition, cell);
 
         SetZone(worldPosition, GridZone.Occupied);
+        
     }
 
     public Tower GetTowerAt(Vector3 worldPosition)

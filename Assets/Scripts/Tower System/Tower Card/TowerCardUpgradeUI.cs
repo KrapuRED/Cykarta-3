@@ -8,20 +8,21 @@ public class TowerCardUpgradeUI : MonoBehaviour
 
     [SerializeField] private CanvasGroup canvasGroup;
     
+    private Tower _towerData;
+    
     private void OnEnable()
     {
         GameEvents.OnShowTowerCardUpgrade.AddListener(SetTowerCardUpgradeUI);
-        GameEvents.OnHideTowerCardDetail.AddListener(HideTowerCardUpgradeUI);
     }
 
     private void OnDisable()
     {
         GameEvents.OnShowTowerCardUpgrade.RemoveListener(SetTowerCardUpgradeUI);
-        GameEvents.OnHideTowerCardDetail.RemoveListener(HideTowerCardUpgradeUI);
     }
     
-    public void SetTowerCardUpgradeUI(Tower towerData)
+    private void SetTowerCardUpgradeUI(Tower towerData)
     {
+        _towerData =  towerData;
         var towerRunTimeData = towerData.TowerRunTimeData;
         
         towerName.text = towerRunTimeData.towerName;
@@ -30,6 +31,8 @@ public class TowerCardUpgradeUI : MonoBehaviour
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;
+        
+        Debug.Log($"[{name} (PlaceTower)] Selected tower : {towerRunTimeData.towerName} ID : {towerData.towerID}");
     }
 
     private void HideTowerCardUpgradeUI()
@@ -37,5 +40,14 @@ public class TowerCardUpgradeUI : MonoBehaviour
         canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;
+        
+        _towerData = null;
+    }
+    
+    public void RemoveTowerCardUpgradeUI()
+    {
+        _towerData.RemoveTower();
+        
+        HideTowerCardUpgradeUI();
     }
 }
