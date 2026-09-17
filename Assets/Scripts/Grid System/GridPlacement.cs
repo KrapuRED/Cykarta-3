@@ -5,24 +5,26 @@ public class GridPlacement : MonoBehaviour
     [SerializeField] private Transform towerContainer;
     [SerializeField] private Tower prefabTower;
 
+    public Tower PrefabTower => prefabTower;
+    
     private void OnEnable()
     {
-        GameEvents.OnShowTowerCardDetail.AddListener(SetGridPlacement);
+        GameEvents.OnShowTowerCardDetail.AddListener(SetTowerPlacement);
         GameEvents.OnHideTowerCardDetail.AddListener(CancelGridPlacement);
     }
 
     private void OnDisable()
     {
-        GameEvents.OnShowTowerCardDetail.RemoveListener(SetGridPlacement);
+        GameEvents.OnShowTowerCardDetail.RemoveListener(SetTowerPlacement);
         GameEvents.OnHideTowerCardDetail.RemoveListener(CancelGridPlacement);
     }
 
-    private void SetGridPlacement(TowerDataSO towerData)
+    private void SetTowerPlacement(TowerDataSO towerData)
     {
         prefabTower = towerData.prefabObjectTower;
     }
 
-    private void CancelGridPlacement()
+    public void CancelGridPlacement()
     {
         prefabTower = null;
     }

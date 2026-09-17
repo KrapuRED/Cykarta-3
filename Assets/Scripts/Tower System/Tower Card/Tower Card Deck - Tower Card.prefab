@@ -392,6 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerCardUI
   towerName: {fileID: 6746082907323290614}
   towerCost: {fileID: 4543727069083674310}
+  actionMapName: 
+  holdCardAction: {fileID: 5927448845564051248, guid: 79413c0660163a14fb11848f0719556e, type: 3}
 --- !u!114 &6555943554640117750
 MonoBehaviour:
   m_ObjectHideFlags: 0

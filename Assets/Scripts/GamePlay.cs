@@ -102,6 +102,15 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""HoldTowerCard"",
+                    ""type"": ""Button"",
+                    ""id"": ""d46349d9-05f6-4075-b041-4ef8fd47885a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""GetValue"",
                     ""type"": ""Button"",
                     ""id"": ""6718636e-c930-432e-93d0-e63416ee459a"",
@@ -109,6 +118,15 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CursorPositon"",
+                    ""type"": ""Value"",
+                    ""id"": ""eb27dd4b-98ee-4972-9a92-58fe9ef52287"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -125,12 +143,34 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""f59e6e86-787d-49f5-b93b-97e3bdcfcd95"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HoldTowerCard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""9dab4239-07b1-4cab-8865-49cdbfc17a09"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""GetValue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""300574a3-25c4-474b-a1fe-bc16b3a98917"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CursorPositon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -142,7 +182,9 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         // Building
         m_Building = asset.FindActionMap("Building", throwIfNotFound: true);
         m_Building_ClickGrid = m_Building.FindAction("ClickGrid", throwIfNotFound: true);
+        m_Building_HoldTowerCard = m_Building.FindAction("HoldTowerCard", throwIfNotFound: true);
         m_Building_GetValue = m_Building.FindAction("GetValue", throwIfNotFound: true);
+        m_Building_CursorPositon = m_Building.FindAction("CursorPositon", throwIfNotFound: true);
     }
 
     ~@GamePlay()
@@ -224,7 +266,9 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Building;
     private List<IBuildingActions> m_BuildingActionsCallbackInterfaces = new List<IBuildingActions>();
     private readonly InputAction m_Building_ClickGrid;
+    private readonly InputAction m_Building_HoldTowerCard;
     private readonly InputAction m_Building_GetValue;
+    private readonly InputAction m_Building_CursorPositon;
     /// <summary>
     /// Provides access to input actions defined in input action map "Building".
     /// </summary>
@@ -241,9 +285,17 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @ClickGrid => m_Wrapper.m_Building_ClickGrid;
         /// <summary>
+        /// Provides access to the underlying input action "Building/HoldTowerCard".
+        /// </summary>
+        public InputAction @HoldTowerCard => m_Wrapper.m_Building_HoldTowerCard;
+        /// <summary>
         /// Provides access to the underlying input action "Building/GetValue".
         /// </summary>
         public InputAction @GetValue => m_Wrapper.m_Building_GetValue;
+        /// <summary>
+        /// Provides access to the underlying input action "Building/CursorPositon".
+        /// </summary>
+        public InputAction @CursorPositon => m_Wrapper.m_Building_CursorPositon;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -273,9 +325,15 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
             @ClickGrid.started += instance.OnClickGrid;
             @ClickGrid.performed += instance.OnClickGrid;
             @ClickGrid.canceled += instance.OnClickGrid;
+            @HoldTowerCard.started += instance.OnHoldTowerCard;
+            @HoldTowerCard.performed += instance.OnHoldTowerCard;
+            @HoldTowerCard.canceled += instance.OnHoldTowerCard;
             @GetValue.started += instance.OnGetValue;
             @GetValue.performed += instance.OnGetValue;
             @GetValue.canceled += instance.OnGetValue;
+            @CursorPositon.started += instance.OnCursorPositon;
+            @CursorPositon.performed += instance.OnCursorPositon;
+            @CursorPositon.canceled += instance.OnCursorPositon;
         }
 
         /// <summary>
@@ -290,9 +348,15 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
             @ClickGrid.started -= instance.OnClickGrid;
             @ClickGrid.performed -= instance.OnClickGrid;
             @ClickGrid.canceled -= instance.OnClickGrid;
+            @HoldTowerCard.started -= instance.OnHoldTowerCard;
+            @HoldTowerCard.performed -= instance.OnHoldTowerCard;
+            @HoldTowerCard.canceled -= instance.OnHoldTowerCard;
             @GetValue.started -= instance.OnGetValue;
             @GetValue.performed -= instance.OnGetValue;
             @GetValue.canceled -= instance.OnGetValue;
+            @CursorPositon.started -= instance.OnCursorPositon;
+            @CursorPositon.performed -= instance.OnCursorPositon;
+            @CursorPositon.canceled -= instance.OnCursorPositon;
         }
 
         /// <summary>
@@ -341,11 +405,25 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnClickGrid(InputAction.CallbackContext context);
         /// <summary>
+        /// Method invoked when associated input action "HoldTowerCard" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHoldTowerCard(InputAction.CallbackContext context);
+        /// <summary>
         /// Method invoked when associated input action "GetValue" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnGetValue(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CursorPositon" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCursorPositon(InputAction.CallbackContext context);
     }
 }

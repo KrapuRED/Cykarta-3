@@ -60,6 +60,11 @@ public static class GameEvents
     // # ================================ GRID SYSTEM ================================ #
     public static readonly CustomEvents<OnGridObjectChangeEventArgs> OnGridObjectChange = new ();
     
+    // # ================================ Panel SYSTEM ================================ #
+    public static readonly CustomEvents<PanelType> OnRequestOpenPanel = new();
+    public static readonly CustomEvents<PanelType> OnRequestClosePanel = new();
+    public static readonly CustomEvents<GridZone> OnShowGridZone = new();
+    
     // # ================================ TOWER CARD UI SYSTEM ================================ #
     public static readonly CustomEvents<TowerDataSO> OnShowTowerCardDetail = new ();
     public static readonly CustomEvents OnHideTowerCardDetail = new ();

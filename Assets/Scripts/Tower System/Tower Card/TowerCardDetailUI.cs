@@ -29,8 +29,6 @@ public class TowerCardDetailUI : MonoBehaviour
         towerCostText.text        = $"$ {towerData.towerCost}";
         towerDescriptionText.text = towerData.towerDescription;
         
-        
-        
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;
