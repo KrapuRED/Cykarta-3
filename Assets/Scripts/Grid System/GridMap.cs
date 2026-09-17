@@ -143,7 +143,7 @@ public class GridMap : MonoBehaviour
             for (int y = 0; y < mapData.heightCell; y++)
             {
                 if (mapData.GetZone(x, y) == zoneToShow)
-                    _grid[i].SetCellHighlight(x, y, active, highlightSortingOrder, highlightSprite, Color.yellow);
+                    _grid[i].SetCellHighlight(x, y, active, highlightSortingOrder, highlightSprite, Color.white);
             }
         }
     }

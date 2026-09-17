@@ -7,7 +7,7 @@ public class SpawnerData
     public string spawnerDataName;
     public int maxSpawnCount;
     public int currentSpawnCount;
-    // Character / Vehicle Data
+    public SpawnableDataSO spawnData;
 } 
 
 public class Spawner : MonoBehaviour
@@ -51,8 +51,9 @@ public class Spawner : MonoBehaviour
         }
         
         spawnerData.currentSpawnCount++;
-        
-        Debug.Log($"[{name} - OnSpawning] Spawning {spawnerData.spawnerDataName} {spawnerData.currentSpawnCount} / {spawnerData.maxSpawnCount}");
+
+        if (spawnerData.spawnData != null)
+            Debug.Log($"[{name} - OnSpawning] Spawning {spawnerData.spawnData.displayName} {spawnerData.currentSpawnCount} / {spawnerData.maxSpawnCount}");
 
         currentSpawnRate = Random.Range(minSpawnRate, maxSpawnRate);
         prevSpawnRate = currentSpawnRate;
