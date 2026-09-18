@@ -13,6 +13,7 @@ public class SpawnerData
 public class Spawner : MonoBehaviour
 {
     [Header("Spawner Configuration")]
+    [SerializeField] private string spawnerID;
     [SerializeField] private float maxSpawnRate;
     [SerializeField] private float minSpawnRate;
     [SerializeField] private List<SpawnerData> spawnerDatas = new();
@@ -53,7 +54,10 @@ public class Spawner : MonoBehaviour
         spawnerData.currentSpawnCount++;
 
         if (spawnerData.spawnData != null)
-            Debug.Log($"[{name} - OnSpawning] Spawning {spawnerData.spawnData.displayName} {spawnerData.currentSpawnCount} / {spawnerData.maxSpawnCount}");
+        {
+            var entityData = EntityManager.Instance.GetEntityRunTimeData(spawnerData.spawnData.displayName, spawnerID);
+            Debug.Log($"[{name} - OnSpawning] Spawning {entityData.entityID} {spawnerData.currentSpawnCount} / {spawnerData.maxSpawnCount}");
+        }
 
         currentSpawnRate = Random.Range(minSpawnRate, maxSpawnRate);
         prevSpawnRate = currentSpawnRate;
@@ -79,7 +83,6 @@ public class Spawner : MonoBehaviour
         _isSpawnerActive = false;
         maxSpawnRate = newSpawnerData.maxSpawnRate;
         minSpawnRate = newSpawnerData.minSpawnRate;
-        
         spawnerDatas.Clear();
         
         foreach (var spawnerData in newSpawnerData.waveSpawnerData)

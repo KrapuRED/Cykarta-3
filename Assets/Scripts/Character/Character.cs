@@ -1,6 +1,5 @@
-using UnityEngine;
 
-public class Character : Entity
+public class Character 
 {
     
 }

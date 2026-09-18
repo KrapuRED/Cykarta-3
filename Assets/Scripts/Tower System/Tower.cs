@@ -4,10 +4,10 @@ using UnityEngine;
 public class TowerRunTimeData
 {
    public string towerName;
-   public int towerLevel;
-   public float towerRange;
-   public float towerAttackSpeed;
-   public float towerCapacity;
+   public int    towerLevel;
+   public float  towerRange;
+   public float  towerAttackSpeed;
+   public float  towerCapacity;
 }
 
 [System.Serializable]
@@ -17,7 +17,7 @@ public enum TowerRotation
    Left
 }
 
-public class Tower : MonoBehaviour
+public class Tower : Entity
 {
    [SerializeField] private TowerDataSO towerData;
    [SerializeField] private TowerRunTimeData towerRunTimeData;

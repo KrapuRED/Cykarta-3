@@ -101,6 +101,8 @@ public class GridMap : MonoBehaviour
         return -1;
     }
 
+    #region Main Grid Map System 
+
     public GridCellData GetOrCreateCell(int mapIndex, Vector3 worldPosition)
     {
         var cellData = _grid[mapIndex].GetGridObject(worldPosition);
@@ -134,6 +136,18 @@ public class GridMap : MonoBehaviour
         return _grid[mapIndex].GetGridPosition(worldPosition);
     }
 
+    public float GetCellSizeAt(Vector3 worldPosition)
+    {
+        int mapIndex = GetMapIndex(worldPosition);
+        if (mapIndex < 0 || mapIndex >= _grid.Count) return 0;
+
+        Debug.Log("Cell Size : " + _grid[mapIndex].GetGridCellSize(worldPosition));
+        
+        return _grid[mapIndex].GetGridCellSize(worldPosition);
+    }
+    #endregion
+    
+    
     public void HighlightZone(GridZone zoneToShow, bool active)
     {
         for (int i = 0; i < gridMapData.Count; i++)
@@ -147,6 +161,8 @@ public class GridMap : MonoBehaviour
             }
         }
     }
+
+    #region Grid Map Tower System
     
     public void SetTower(Vector3 worldPosition, Tower tower)
     {
@@ -181,6 +197,8 @@ public class GridMap : MonoBehaviour
         _grid[mapIndex].SetGridObject(worldPosition, cell);
     }
 
+    #endregion
+    
     /*public void DebugOccupiedGrid()
     {
         foreach (var gridCell in _grid)

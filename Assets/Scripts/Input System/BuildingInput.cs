@@ -5,6 +5,7 @@ using UtilTools;
 
 public class BuildingInput : MonoBehaviour
 {
+    [SerializeField] private bool inputActive;
     [SerializeField] private InputActionReference onMousePosition;
     [SerializeField] private InputActionReference clickGrid;
     [SerializeField] private InputActionReference clickSellGrid;
@@ -38,10 +39,10 @@ public class BuildingInput : MonoBehaviour
     
     private void OnPositionMouse(InputAction.CallbackContext ctx)
     {
+        if (!inputActive) return;
+        
         Vector3 mouseWorldPosition = UtilTools.UtilsClass.GetMouseWorldPosition();
-
-        GridZone gridZoneData = GridZone.None;
-        GridManager.Instance.GetGridMapZoneCell(mouseWorldPosition, out gridZoneData);
+        GridManager.Instance.GetGridMapZoneCell(mouseWorldPosition, out var gridZoneData);
 
         var towerPreview = GridManager.Instance.InstancePreviewTower;
         if (towerPreview != null)
@@ -100,7 +101,11 @@ public class BuildingInput : MonoBehaviour
 
     private void OnClickSellTower(InputAction.CallbackContext _)
     {
-        Vector3 mouseWorldPosition = UtilTools.UtilsClass.GetMouseWorldPositionWithZ();
-        gridPlacement.RemoveTower(mouseWorldPosition);
+        Vector3 mouseWorldPosition = UtilTools.UtilsClass.GetMouseWorldPosition();
+        GridManager.Instance.GetGridMapZoneCell(mouseWorldPosition, out var gridZoneData);
+        
+        Debug.Log($"[{name} GetGridMapZoneCell] Position {mouseWorldPosition} GridZone {gridZoneData}");
+        
+        //gridPlacement.RemoveTower(mouseWorldPosition);
     }
 }

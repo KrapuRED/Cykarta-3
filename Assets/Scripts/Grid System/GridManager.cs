@@ -56,6 +56,7 @@ public class GridManager : MonoBehaviour
     public void GetGridMapZoneCell(Vector3 worldPosition, out GridZone gridZone)
     {
         var gridZoneData = buildingGridMap.GetZoneAt(worldPosition);
+        
         gridZone =  gridZoneData;
     }
 
@@ -95,7 +96,7 @@ public class GridManager : MonoBehaviour
     }
     
     // Enemy Path Finding
-    public void GetGridMapZoneCell()
+    public void GetGridMapZoneCell(GridZone gridZone)
     {
         
     }
