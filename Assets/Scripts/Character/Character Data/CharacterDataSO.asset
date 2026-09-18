@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CharacterDataSO
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDataSO
   displayName: Common People
-  prefab: {fileID: 0}
+  entitySpeed: 0
+  entityPrefab: {fileID: 4533883059496805327, guid: 771656107ac11b14da7696f941cda4f0, type: 3}
   characterType: 0
-  characterSpeed: 0

@@ -8,7 +8,15 @@ public class SpawnerData
     public int maxSpawnCount;
     public int currentSpawnCount;
     public SpawnableDataSO spawnData;
-} 
+}
+
+[System.Serializable]
+public class WayPointData
+{
+    public string wayPointDataName;
+    public Transform startPoint;
+    public Transform endPoint;
+}
 
 public class Spawner : MonoBehaviour
 {
@@ -16,7 +24,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] private string spawnerID;
     [SerializeField] private float maxSpawnRate;
     [SerializeField] private float minSpawnRate;
+    [SerializeField] private GridZone spawnZone;
     [SerializeField] private List<SpawnerData> spawnerDatas = new();
+    [SerializeField] private List<WayPointData> wayPointDatas = new();
     // Where the Character / Vehicle should Spawn
     
     [SerializeField] private float currentSpawnRate;
@@ -40,11 +50,19 @@ public class Spawner : MonoBehaviour
         return spawnerData.currentSpawnCount >= spawnerData.maxSpawnCount;
     }
 
+    private WayPointData GetWayPointData()
+    {
+        int index = Random.Range(0, wayPointDatas.Count);
+        return wayPointDatas[index];
+    }
+
     private void OnSpawning()
     {
         int index = Random.Range(0, spawnerDatas.Count);
+        if (index >= spawnerDatas.Count)
+            return;
+        
         var spawnerData = spawnerDatas[index];
-
         if (IsSpawnerDataReachMax(spawnerData.spawnerDataName))
         {
             spawnerDatas.Remove(spawnerData);
@@ -56,6 +74,16 @@ public class Spawner : MonoBehaviour
         if (spawnerData.spawnData != null)
         {
             var entityData = EntityManager.Instance.GetEntityRunTimeData(spawnerData.spawnData.displayName, spawnerID);
+            var waypointData = GetWayPointData();
+            var entity = Instantiate(spawnerData.spawnData.entityPrefab, waypointData.startPoint.position, Quaternion.identity);
+            
+            if (spawnZone == GridZone.Pedestrian)
+            {
+                if (entity.TryGetComponent<Pedestrian>(out var pedestrian))
+                {
+                    pedestrian.GetWaypoints(waypointData.endPoint);
+                }
+            }
             Debug.Log($"[{name} - OnSpawning] Spawning {entityData.entityID} {spawnerData.currentSpawnCount} / {spawnerData.maxSpawnCount}");
         }
 

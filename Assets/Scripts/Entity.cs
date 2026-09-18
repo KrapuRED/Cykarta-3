@@ -8,4 +8,10 @@ public class Entity : MonoBehaviour
    {
       
    }
+
+   public void DestroyEntity()
+   {
+      EntityManager.Instance.UnregisterEntity(this);
+      Destroy(gameObject);
+   }
 }
