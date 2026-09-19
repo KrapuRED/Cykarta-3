@@ -119,6 +119,7 @@ public class Vehicle : Entity, IIrresponsibleThinkable
             IrresponsibleThinkingData.currentIrresponsibleThinkingMeter = 0;
             ThinkingCheckTimer = 0;
             EntityRunTimeData.entityState = EntityState.Moving;
+            SpawnerTrash.Instance.SpawnTrash(transform.position, TrashType.Medium);
             
             irresponsibleThinkingSlider.gameObject.SetActive(false);
         }

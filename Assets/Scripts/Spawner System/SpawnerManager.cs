@@ -6,7 +6,7 @@ using UnityEngine;
 public class WaveSpawnerData
 {
     public string spawnerName;
-    public Spawner spawner;
+    public SpawnerIrresponsible spawnerIrresponsible;
     public float maxSpawnRate;
     public float minSpawnRate;
     public List<SpawnerData> waveSpawnerData = new();
@@ -46,20 +46,20 @@ public class SpawnerManager : MonoBehaviour
         if (!startSpawn) return;
         
         _currentWaveData = waveDataList[_waveIndex];
-        List<Spawner> spawners = new(); 
+        List<SpawnerIrresponsible> spawners = new(); 
         
         foreach (var spawnerSystem in _currentWaveData.waveSpawnerData)
         {
-            if (spawnerSystem.spawner == null) continue;
+            if (spawnerSystem.spawnerIrresponsible == null) continue;
 
-            spawnerSystem.spawner.AddOrChangeSpawnerData(spawnerSystem);
-            spawners.Add(spawnerSystem.spawner);
+            spawnerSystem.spawnerIrresponsible.AddOrChangeSpawnerData(spawnerSystem);
+            spawners.Add(spawnerSystem.spawnerIrresponsible);
         }
         
         StartCoroutine(DelaySpanwenActivation(spawners));
     }
 
-    private IEnumerator DelaySpanwenActivation(List<Spawner>  spawners)
+    private IEnumerator DelaySpanwenActivation(List<SpawnerIrresponsible>  spawners)
     {
         yield return new WaitForSeconds(_currentWaveData.waveDelay);
         foreach (var spawner in spawners)

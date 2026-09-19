@@ -164,6 +164,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToweManager
   activeTowers: []
+--- !u!1 &31082077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31082078}
+  m_Layer: 0
+  m_Name: WayPoint Water - End Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &31082078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31082077}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.5, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1651141796}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &32571874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,9 +1886,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnerID: Pedestrian_Line_2
+  spawnZone: 1
   maxSpawnRate: 5
   minSpawnRate: 1
-  spawnZone: 1
   spawnerDatas: []
   wayPointDatas:
   - wayPointDataName: Pedestrian Line 2 -  Right -> Left
@@ -6863,6 +6894,7 @@ Transform:
   - {fileID: 1398889232}
   - {fileID: 1376950316}
   - {fileID: 630482354}
+  - {fileID: 1791109078}
   m_Father: {fileID: 317808284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1266471552
@@ -6882,7 +6914,7 @@ MonoBehaviour:
     waveDelay: 5
     waveSpawnerData:
     - spawnerName: Spawner Vehicle
-      spawner: {fileID: 1398889233}
+      spawnerIrresponsible: {fileID: 1398889233}
       maxSpawnRate: 5
       minSpawnRate: 3
       waveSpawnerData:
@@ -6897,7 +6929,7 @@ MonoBehaviour:
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 0}
     - spawnerName: Spawner Pedestrian 1
-      spawner: {fileID: 1376950317}
+      spawnerIrresponsible: {fileID: 1376950317}
       maxSpawnRate: 3
       minSpawnRate: 1
       waveSpawnerData:
@@ -6912,7 +6944,7 @@ MonoBehaviour:
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 0}
     - spawnerName: Spawner Pedestrian 2
-      spawner: {fileID: 630482355}
+      spawnerIrresponsible: {fileID: 630482355}
       maxSpawnRate: 2
       minSpawnRate: 1
       waveSpawnerData:
@@ -7590,9 +7622,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnerID: Pedestrian_Line_1
+  spawnZone: 1
   maxSpawnRate: 5
   minSpawnRate: 1
-  spawnZone: 1
   spawnerDatas: []
   wayPointDatas:
   - wayPointDataName: 'Pedestrian Line 1 - Right -> Left '
@@ -7648,9 +7680,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnerID: Vehicle
+  spawnZone: 2
   maxSpawnRate: 6
   minSpawnRate: 2
-  spawnZone: 2
   spawnerDatas: []
   wayPointDatas:
   - wayPointDataName: WayPoint Vehicle - Left -> Right
@@ -8518,6 +8550,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 335547263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1651141795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1651141796}
+  m_Layer: 0
+  m_Name: WayPoint - Water
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1651141796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651141795}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 31082078}
+  m_Father: {fileID: 1888454116}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662028942
 GameObject:
   m_ObjectHideFlags: 0
@@ -9119,6 +9183,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 335547263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1791109077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1791109078}
+  - component: {fileID: 1791109079}
+  m_Layer: 0
+  m_Name: Spawner System - Trash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1791109078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791109077}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1266471551}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1791109079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791109077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52069ee7baaabda4dbd8813f2bfb5c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnerTrash
+  spawnerID: Trash
+  spawnZone: 3
+  endWaterPath: {fileID: 31082078}
+  arcHeight: 1.5
+  trashDatas:
+  - trashName: Medium Trash
+    trashType: 1
+    trowhDuration: 1
+    spawnData: {fileID: 11400000, guid: 377457ecaf148e04996c132c8ebf33fc, type: 2}
 --- !u!1 &1807491741
 GameObject:
   m_ObjectHideFlags: 0
@@ -9344,6 +9461,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1580633315}
+  - {fileID: 1651141796}
   - {fileID: 612334895}
   - {fileID: 1807491742}
   m_Father: {fileID: 1698954774}

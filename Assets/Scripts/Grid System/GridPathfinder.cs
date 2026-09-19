@@ -3,6 +3,8 @@ using UnityEngine;
 
 public static class GridPathfinder
 {
+    #region A* Pathfinder
+    
     private static readonly Vector3[] Directions =
     {
         new Vector3(0, 1, 0),
@@ -63,10 +65,8 @@ public static class GridPathfinder
 
             float cellSize = gridMap.GetCellSizeAt(currentNode.Position);
             if (cellSize <= 0)
-            {
                 continue; 
-            }
-
+            
             foreach (var dir in Directions)
             {
                 Vector3 rawNeighbor = currentNode.Position + dir * cellSize;
@@ -139,4 +139,15 @@ public static class GridPathfinder
         path.Reverse();
         return path;
     }
+    
+    #endregion
+
+    #region Find Closes Path
+    
+    public static bool TryFindNearPath(GridMap gridMap, Vector3 startPosition, GridZone allowedZone, out Vector3 nearest)
+    {
+        return gridMap.TryGetNearestZoneCell(startPosition, allowedZone, out nearest);
+    }
+
+    #endregion
 }

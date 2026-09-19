@@ -199,32 +199,38 @@ public class GridMap : MonoBehaviour
 
     #endregion
     
-    /*public void DebugOccupiedGrid()
+    public bool TryGetNearestZoneCell(Vector3 worldPosition, GridZone allowZone, out Vector3 result)
     {
-        foreach (var gridCell in _grid)
-        {
-            if (gridCell == null) continue;
+        result = worldPosition;
+        float bestSqrDist = float.MaxValue;
+        bool found = false;
 
-            foreach (var mapData in gridMapData)
+        for (int i = 0; i < _grid.Count; i++)
+        {
+            var mapData = gridMapData[i];
+            var grid = _grid[i];
+            
+            for (int x = 0; x < mapData.widthCell; x++)
+            for (int y = 0; y < mapData.heightCell; y++)
             {
-                for (int x = 0; x < mapData.widthCell; x++)
-                for (int y = 0; y < mapData.heightCell; y++)
+                var cell = grid.GetGridObject(x, y);
+                if (cell == null || cell.zone != allowZone) continue;
+
+                Vector3 cellCenter = grid.GetGridPosition(x, y);
+                // 2D distance, ignore Z
+                float sqrDist = ((Vector2)cellCenter - (Vector2)worldPosition).sqrMagnitude;
+
+                if (sqrDist < bestSqrDist)
                 {
-                    var gridCellData = gridCell.GetGridObject(x, y);
-                    if (gridCellData.occupant != null)
-                    {
-                        Debug.Log($"[{name} (DebugOccupiedGrid)] {gridCellData.occupant.towerID}");
-                    }
-                    else
-                    {
-                        if (gridCellData.zone == GridZone.Build)
-                            Debug.LogWarning($"[{name} (DebugOccupiedGrid)] This grid cell is not occupied!");
-                    }
+                    bestSqrDist = sqrDist;
+                    result = cellCenter;
+                    found = true;
                 }
             }
         }
+        
+        return found;
     }
-    */
     
     private void OnDrawGizmos()
     {
