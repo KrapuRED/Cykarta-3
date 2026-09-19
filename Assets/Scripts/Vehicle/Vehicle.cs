@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Pedestrian : Entity, IIrresponsibleThinkable
+public class Vehicle : Entity, IIrresponsibleThinkable
 {
     [SerializeField] private Slider irresponsibleThinkingSlider;
     [SerializeField] private float moveSpeed = 5f;
@@ -67,7 +67,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         indexWaypoint = 0;
     }
     
-    public void InitializePedestrian(Transform endPoint, float speedMovement, EntityRunTimeData runTimeData)
+    public void InitializeVehicle(Transform endPoint, float speedMovement, EntityRunTimeData runTimeData)
     {
         IrresponsibleThinkingData = new IrresponsibleThinkingData
         {

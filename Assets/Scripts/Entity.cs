@@ -5,14 +5,17 @@ public class Entity : MonoBehaviour
 {
    [SerializeField] private Transform entitySystemContainer;
    public StateMachine StateMachine { get; private set; }
-
    public EntityRunTimeData EntityRunTimeData { get; private set; }
    
    public bool IsCanMove { get;  set; }
+
+   private bool isError;
    
    private void Awake()
    {
-      StateMachine = entitySystemContainer.GetComponent<StateMachine>();
+      StateMachine = entitySystemContainer != null
+         ? entitySystemContainer.GetComponentInChildren<StateMachine>()
+         : GetComponentInChildren<StateMachine>();
    }
 
    public void InitializeEntity(EntityRunTimeData runTimeData)
@@ -21,8 +24,18 @@ public class Entity : MonoBehaviour
       EntityManager.Instance.RegisterEntity(this);
    }
 
-   public virtual void OnEntityUpdate(float deltaTime)
+   public void OnEntityUpdate(float deltaTime)
    {
+      if (StateMachine == null)
+      {
+         if (!isError)
+         {
+            isError = true;
+            Debug.LogError($"Entity {name} has no StateMachine!", this);
+         }
+         return;
+      }
+      
       StateMachine.UpdateStateMachine(deltaTime);
    }
 

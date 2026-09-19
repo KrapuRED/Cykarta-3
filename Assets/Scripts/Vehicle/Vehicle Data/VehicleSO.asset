@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d864a26ba7fe7e408089065cd9d6b38, type: 3}
+  m_Name: VehicleSO
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleSO
+  displayName: Motor
+  maxEntitySpeed: 0.7
+  minEntitySpeed: 2
+  entityPrefab: {fileID: 4533883059496805327, guid: a6ab1768aa94c57409c800c903d703ea, type: 3}

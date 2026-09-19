@@ -105,7 +105,10 @@ public class Spawner : MonoBehaviour
                     break;
                 
                 case GridZone.Vehicle:
-                    
+                    if (entity.TryGetComponent<Vehicle>(out var vehicle))
+                    {
+                        vehicle.InitializeVehicle(waypointData.endPoint, entitiySpeed, entityData);
+                    }
                     break;
             }
             Debug.Log($"[{name} - OnSpawning] Spawning {entityData.entityID} {spawnerData.currentSpawnCount} / {spawnerData.maxSpawnCount}");
