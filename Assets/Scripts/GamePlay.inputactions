@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "name": "GamePlay",
+    "maps": [
+        {
+            "name": "Building",
+            "id": "662bdd25-6e59-4c29-b0c6-3c6186b867ac",
+            "actions": [
+                {
+                    "name": "ClickGrid",
+                    "type": "Button",
+                    "id": "f9d85a39-eded-4abc-913d-c7a64a72714c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HoldTowerCard",
+                    "type": "Button",
+                    "id": "d46349d9-05f6-4075-b041-4ef8fd47885a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GetValue",
+                    "type": "Button",
+                    "id": "6718636e-c930-432e-93d0-e63416ee459a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CursorPositon",
+                    "type": "Value",
+                    "id": "eb27dd4b-98ee-4972-9a92-58fe9ef52287",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8f041672-fe59-4a49-8ced-cda141e2b756",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClickGrid",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f59e6e86-787d-49f5-b93b-97e3bdcfcd95",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HoldTowerCard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9dab4239-07b1-4cab-8865-49cdbfc17a09",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GetValue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "300574a3-25c4-474b-a1fe-bc16b3a98917",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CursorPositon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
