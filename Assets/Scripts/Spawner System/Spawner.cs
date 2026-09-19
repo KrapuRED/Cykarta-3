@@ -7,6 +7,7 @@ public class SpawnerData
     public string spawnerDataName;
     public int maxSpawnCount;
     public int currentSpawnCount;
+    public bool isReachMaxSpawnCount;
     public SpawnableDataSO spawnData;
 }
 
@@ -33,7 +34,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float prevSpawnRate;
     private bool _isSpawnerActive;
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (!_isSpawnerActive) return;
         
@@ -47,9 +48,15 @@ public class Spawner : MonoBehaviour
     private bool IsSpawnerDataReachMax(string spawnerDataName)
     {
         var spawnerData = spawnerDatas.Find(x => x.spawnerDataName == spawnerDataName);
-        return spawnerData.currentSpawnCount >= spawnerData.maxSpawnCount;
+
+        if (spawnerData.currentSpawnCount >= spawnerData.maxSpawnCount)
+            spawnerData.isReachMaxSpawnCount = true;
+        
+        return spawnerData.isReachMaxSpawnCount;
     }
 
+    private bool AllReachedMax() => spawnerDatas.TrueForAll(d => d.currentSpawnCount >= d.maxSpawnCount);
+    
     private WayPointData GetWayPointData()
     {
         int index = Random.Range(0, wayPointDatas.Count);
@@ -58,6 +65,8 @@ public class Spawner : MonoBehaviour
 
     private void OnSpawning()
     {
+        if (spawnerDatas.Count == 0 || AllReachedMax()) { _isSpawnerActive = false; return; }
+        
         int index = Random.Range(0, spawnerDatas.Count);
         if (index >= spawnerDatas.Count)
             return;
@@ -65,24 +74,38 @@ public class Spawner : MonoBehaviour
         var spawnerData = spawnerDatas[index];
         if (IsSpawnerDataReachMax(spawnerData.spawnerDataName))
         {
-            spawnerDatas.Remove(spawnerData);
             return;
         }
         
-        spawnerData.currentSpawnCount++;
-
-        if (spawnerData.spawnData != null)
+        if (spawnerData.spawnData != null && !spawnerData.isReachMaxSpawnCount)
         {
-            var entityData = EntityManager.Instance.GetEntityRunTimeData(spawnerData.spawnData.displayName, spawnerID);
-            var waypointData = GetWayPointData();
-            var entity = Instantiate(spawnerData.spawnData.entityPrefab, waypointData.startPoint.position, Quaternion.identity);
+            spawnerData.currentSpawnCount++;
+            var spawnData = spawnerData.spawnData;
             
-            if (spawnZone == GridZone.Pedestrian)
+            var waypointData = GetWayPointData();
+            var entity = Instantiate(spawnData.entityPrefab, waypointData.startPoint.position, Quaternion.identity);
+
+            if (!entity.TryGetComponent<Entity>(out var entityComponent))
             {
-                if (entity.TryGetComponent<Pedestrian>(out var pedestrian))
-                {
-                    pedestrian.GetWaypoints(waypointData.endPoint);
-                }
+                Destroy(entity.gameObject);
+                return;
+            }
+            
+            var entityData = EntityManager.Instance.GetEntityRunTimeData(spawnerData.spawnData.displayName, spawnerID, entityComponent);
+            var entitiySpeed = Random.Range(spawnData.minEntitySpeed, spawnData.maxEntitySpeed);
+            
+            switch (spawnZone)
+            {
+                case GridZone.Pedestrian:
+                    if (entity.TryGetComponent<Pedestrian>(out var pedestrian))
+                    {
+                        pedestrian.InitializePedestrian(waypointData.endPoint, entitiySpeed, entityData);
+                    }
+                    break;
+                
+                case GridZone.Vehicle:
+                    
+                    break;
             }
             Debug.Log($"[{name} - OnSpawning] Spawning {entityData.entityID} {spawnerData.currentSpawnCount} / {spawnerData.maxSpawnCount}");
         }
@@ -121,7 +144,14 @@ public class Spawner : MonoBehaviour
             }
             
             var data = spawnerData;
-            spawnerDatas.Add(data);
+            spawnerDatas.Add(new SpawnerData
+            {
+                spawnerDataName = spawnerData.spawnerDataName,
+                maxSpawnCount = spawnerData.maxSpawnCount,
+                currentSpawnCount = 0,
+                isReachMaxSpawnCount = false,
+                spawnData = spawnerData.spawnData
+            });
             
             Debug.Log($"[{name} (AddOrChangeSpawnerData)] new {data.spawnerDataName} {data.currentSpawnCount} / {data.maxSpawnCount}");
         }

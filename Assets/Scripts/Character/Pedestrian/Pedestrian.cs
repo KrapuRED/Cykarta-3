@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,16 +8,11 @@ public class Pedestrian : Entity
     [SerializeField] private List<Vector3> waypoints = new ();
     
     [SerializeField] private int indexWaypoint;
-    [SerializeField] private bool _hasWaypoints;
-    
-    private void Update()
-    {
-        if (!_hasWaypoints) return;
-        
-        MoveCharacter();
-    }
+    private bool _hasWaypoints;
 
-    private void MoveCharacter()
+    public IrresponsibleThinkingData IrresponsibleThinkingData { get; private set; }
+    
+    public override void OnMoveEntity(float deltaTime)
     {
         if (waypoints.Count <= 0)
         {
@@ -37,12 +31,11 @@ public class Pedestrian : Entity
         }
         
         Vector3 targetPosition = waypoints[indexWaypoint];
-        Vector3 direction = (targetPosition - transform.position).normalized;
         
-        transform.Translate(direction * moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * deltaTime);
     }
     
-    public void GetWaypoints(Transform endPoint)
+    private void GetWaypoints(Transform endPoint)
     {
         var gridMap = GridManager.Instance.BuildingGridMap;
         
@@ -56,8 +49,23 @@ public class Pedestrian : Entity
             waypoints.AddRange(path);
             _hasWaypoints = true;
         }
+        else
+        {
+            DestroyEntity();
+        }
 
+        IsCanMove = _hasWaypoints;
         indexWaypoint = 0;
+    }
+
+    public void InitializePedestrian(Transform endPoint, float speedMovement, EntityRunTimeData runTimeData)
+    {
+        IrresponsibleThinkingData = new IrresponsibleThinkingData();
+        
+        GetWaypoints(endPoint);
+        moveSpeed = speedMovement;
+        
+        InitializeEntity(runTimeData);
     }
     
     private void OnDrawGizmos()

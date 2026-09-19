@@ -74,4 +74,8 @@ public static class GameEvents
     public static readonly CustomEvents OnHideTowerCardDetail = new ();
     public static readonly CustomEvents<Tower> OnShowTowerCardUpgrade = new ();
     
+    // # ================================ DEBUG SYSTEM ================================ #
+    public static readonly CustomEvents<String, string, string> OnShowDebugEntity = new ();
+    
+    
 }

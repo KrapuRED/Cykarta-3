@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
 
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ namespace UtilTools
 {
     public static class UtilsClass
     {
+        #region  CreateWorldText
         public static TextMeshPro CreateWorldText(string text, Transform parent = null,
             Vector3 localPosition = default(Vector3), int fontSize = 24, Color color = default(Color),
             TextAnchor textAnchor = TextAnchor.MiddleCenter, TextAlignmentOptions  textAlignment = TextAlignmentOptions.Midline,
@@ -42,6 +44,25 @@ namespace UtilTools
             
             return textMeshPro;
         }
+        #endregion
+        
+        #region String Manipulation
+
+        public static string AddStringBelow(string originalString, string newString)
+        {
+            if (string.IsNullOrEmpty(originalString))
+            {
+                return newString;
+            }
+            return $"{originalString}\n{newString}";
+        }
+        
+        public static List<string> ConvertStringToList(string str)
+        {
+            return null;
+        }
+        
+        #endregion
         
         //Get Mouse Position in World with Z = 0f
         public static Vector3 GetMouseWorldPosition()

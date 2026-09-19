@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: -7.5, y: 5.5, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 7186574174819356442}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2064869534871781926
@@ -104,6 +105,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbaa265cf254084ba611ec5055607b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pedestrian
-  endPoint: {fileID: 0}
+  entitySystemContainer: {fileID: 3331149976366693060}
+  moveSpeed: 5
   waypoints: []
-  _hasWaypoints: 0
+  indexWaypoint: 0
+--- !u!1 &6042250094924956209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3331149976366693060}
+  - component: {fileID: 6216368075808271014}
+  m_Layer: 0
+  m_Name: Pedestrian System - State Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3331149976366693060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042250094924956209}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7186574174819356442}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6216368075808271014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042250094924956209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b8efb04346b0141b6457e68bd93fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StateNachine
+  entityOwner: {fileID: 1781951345308649785}
+  dataStateMachines:
+  - nameStateCondition: Move Entity
+    state: {fileID: 11400000, guid: 6e3aac7114c8b75449b236f2fff585f3, type: 2}
+    condition: {fileID: 11400000, guid: 9f339a8d1b90a924e8e86a9f83a2fe21, type: 2}
+  activeState: {fileID: 0}
+--- !u!1 &7912271110404012389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7186574174819356442}
+  m_Layer: 0
+  m_Name: === Pedestrian System ===
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7186574174819356442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912271110404012389}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3331149976366693060}
+  m_Father: {fileID: 6693248944976872909}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

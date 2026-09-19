@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,16 +7,30 @@ public class EntityRunTimeData
 {
     public string entityName;
     public string entityID; 
+    public Entity entity;
+    public float stateTimer;
+    public float cooldown;
+}
+
+[System.Serializable]
+public class IrresponsibleThinkingData 
+{
+    public float chanceIrresponsibleThinking;
+    public float chanceTimeIrresponsibleThinking;
     public float currentIrresponsibleThinkingMeter;
     public float irresponsibleThinkingIncreaseRate;
-    public Entity entity;
 }
 
 public class EntityManager : MonoBehaviour
 {
     public static EntityManager Instance {get; private set;}
-
-    private Dictionary<string, EntityRunTimeData> _indexEntityRunTimeData = new();
+    
+    public bool paused = false;
+    
+    private readonly List<Entity> _entities = new();
+    private readonly List<Entity> _pendingRemove = new();
+    
+    private Dictionary<string, EntityRunTimeData> _activeEntityRunTimeData = new();
     private Dictionary<string, int> _indexActiveEntityRunTimeData = new();
     
     private void Awake()
@@ -29,6 +44,24 @@ public class EntityManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Update()
+    {
+        if (paused) return;
+        
+        if (_pendingRemove.Count > 0)
+        {
+            foreach (var e in _pendingRemove) _entities.Remove(e);
+            _pendingRemove.Clear();
+        }
+
+        if (_entities.Count > 0)
+        {
+            float deltaTime = Time.deltaTime;
+            for (int i = 0; i < _entities.Count; i++)
+                _entities[i].OnEntityUpdate(deltaTime);
+        }
+    }
+
     public EntityRunTimeData GetEntityRunTimeData(string entityName, string spawnerID, Entity entity = null)
     {
         string entityID = string.Empty;
@@ -39,36 +72,36 @@ public class EntityManager : MonoBehaviour
             indexEntity++;
         }
 
-        if (string.IsNullOrEmpty(entityID))
-        {
-            entityID =$"{entityName}_{indexEntity}";
-        }
-        else
-        {
-            entityID =$"{spawnerID}_{entityName}_{indexEntity}";
-        }
+        entityID = $"{spawnerID}_{entityName}_{indexEntity}";
         
         EntityRunTimeData entityRunTimeData = new EntityRunTimeData
         {
             entityName = entityName,
             entityID = entityID,
-            currentIrresponsibleThinkingMeter = 0,
-            irresponsibleThinkingIncreaseRate = 0
+            entity =  entity
         };
         
         _indexActiveEntityRunTimeData[entityName] = indexEntity;
-        _indexEntityRunTimeData[entityName] = entityRunTimeData;
+        _activeEntityRunTimeData[entityID] = entityRunTimeData;
+        
+        GameEvents.OnShowDebugEntity.Invoke(entityName, entityID, spawnerID);
         
         return entityRunTimeData;
     }
     
-    public void RegisterEntity(Entity entityData)
+    public void RegisterEntity(Entity e)
     {
-        
+        if (e == null || _entities.Contains(e)) return;
+        _entities.Add(e);
     }
 
-    public void UnregisterEntity(Entity entityData)
+    public void UnregisterEntity(Entity e)
     {
+        if (e == null || _pendingRemove.Contains(e)) return;
         
+       _pendingRemove.Add(e);
+        
+        if (e.RunTimeData != null)
+            _activeEntityRunTimeData.Remove(e.RunTimeData.entityID);
     }
 }
