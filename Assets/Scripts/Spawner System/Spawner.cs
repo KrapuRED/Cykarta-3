@@ -84,7 +84,6 @@ public class Spawner : MonoBehaviour
             
             var waypointData = GetWayPointData();
             var entity = Instantiate(spawnData.entityPrefab, waypointData.startPoint.position, Quaternion.identity);
-
             if (!entity.TryGetComponent<Entity>(out var entityComponent))
             {
                 Destroy(entity.gameObject);
@@ -92,6 +91,8 @@ public class Spawner : MonoBehaviour
             }
             
             var entityData = EntityManager.Instance.GetEntityRunTimeData(spawnerData.spawnData.displayName, spawnerID, entityComponent);
+            entity.name = $"{entityData.entityID}";
+            
             var entitiySpeed = Random.Range(spawnData.minEntitySpeed, spawnData.maxEntitySpeed);
             
             switch (spawnZone)

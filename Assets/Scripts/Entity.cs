@@ -6,7 +6,8 @@ public class Entity : MonoBehaviour
    [SerializeField] private Transform entitySystemContainer;
    public StateMachine StateMachine { get; private set; }
 
-   public EntityRunTimeData RunTimeData { get; private set; }
+   public EntityRunTimeData EntityRunTimeData { get; private set; }
+   
    public bool IsCanMove { get;  set; }
    
    private void Awake()
@@ -16,7 +17,7 @@ public class Entity : MonoBehaviour
 
    public void InitializeEntity(EntityRunTimeData runTimeData)
    {
-      RunTimeData = runTimeData;
+      EntityRunTimeData = runTimeData;
       EntityManager.Instance.RegisterEntity(this);
    }
 
@@ -26,6 +27,16 @@ public class Entity : MonoBehaviour
    }
 
    public virtual void OnMoveEntity(float deltaTime)
+   {
+      
+   }
+
+   public virtual void OnCheckIrresponsibleThinking(float deltaTime)
+   {
+      EntityRunTimeData.stateTimer += deltaTime;
+   }
+   
+   public virtual void OnIncreaseIrresponsibleThinking(float deltaTime)
    {
       
    }

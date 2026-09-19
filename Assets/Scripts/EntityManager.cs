@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +7,16 @@ public class EntityRunTimeData
     public string entityName;
     public string entityID; 
     public Entity entity;
+    public EntityState entityState;
     public float stateTimer;
     public float cooldown;
+}
+
+[System.Serializable]
+public enum EntityState
+{
+    Moving,
+    IrresponsibleThinking
 }
 
 [System.Serializable]
@@ -17,6 +24,7 @@ public class IrresponsibleThinkingData
 {
     public float chanceIrresponsibleThinking;
     public float chanceTimeIrresponsibleThinking;
+    public float maxIrresponsibleThinkingMeter;
     public float currentIrresponsibleThinkingMeter;
     public float irresponsibleThinkingIncreaseRate;
 }
@@ -101,7 +109,7 @@ public class EntityManager : MonoBehaviour
         
        _pendingRemove.Add(e);
         
-        if (e.RunTimeData != null)
-            _activeEntityRunTimeData.Remove(e.RunTimeData.entityID);
+        if (e.EntityRunTimeData != null)
+            _activeEntityRunTimeData.Remove(e.EntityRunTimeData.entityID);
     }
 }

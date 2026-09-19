@@ -1,19 +1,29 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pedestrian : Entity
 {
+    [SerializeField] private Slider irresponsibleThinkingSlider;
+    
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private List<Vector3> waypoints = new ();
     
     [SerializeField] private int indexWaypoint;
     private bool _hasWaypoints;
-
-    public IrresponsibleThinkingData IrresponsibleThinkingData { get; private set; }
     
+   public IrresponsibleThinkingData IrresponsibleThinkingData { get; private set; }
+   private float _thinkingCheckTimer;
+   
     public override void OnMoveEntity(float deltaTime)
     {
+        base.OnMoveEntity(deltaTime);
+        
+        if (EntityRunTimeData.entityState == EntityState.IrresponsibleThinking)
+        {
+            return;
+        }
+        
         if (waypoints.Count <= 0)
         {
             DestroyEntity();
@@ -60,14 +70,61 @@ public class Pedestrian : Entity
 
     public void InitializePedestrian(Transform endPoint, float speedMovement, EntityRunTimeData runTimeData)
     {
-        IrresponsibleThinkingData = new IrresponsibleThinkingData();
+        IrresponsibleThinkingData = new IrresponsibleThinkingData
+        {
+            chanceIrresponsibleThinking = 30,
+            chanceTimeIrresponsibleThinking = 5,
+            maxIrresponsibleThinkingMeter = 100f,
+            currentIrresponsibleThinkingMeter = 0,
+            irresponsibleThinkingIncreaseRate = 25
+        };
         
         GetWaypoints(endPoint);
         moveSpeed = speedMovement;
         
         InitializeEntity(runTimeData);
     }
-    
+
+    public override void OnCheckIrresponsibleThinking(float deltaTime)
+    {
+        if (EntityRunTimeData.entityState == EntityState.IrresponsibleThinking) return;
+
+        _thinkingCheckTimer += deltaTime;
+        float interval = IrresponsibleThinkingData.chanceTimeIrresponsibleThinking;
+        if (_thinkingCheckTimer < interval) return;
+
+        _thinkingCheckTimer -= interval;
+        
+        float roll = Random.Range(0f, 100f);
+        if (roll <= IrresponsibleThinkingData.chanceIrresponsibleThinking)
+        {
+            EntityRunTimeData.entityState = EntityState.IrresponsibleThinking;
+            irresponsibleThinkingSlider.gameObject.SetActive(true);
+            Debug.Log($"[{name}] Change State to Irresponsible thinking");
+        }
+    }
+
+    public override void OnIncreaseIrresponsibleThinking(float deltaTime)
+    {
+        if (EntityRunTimeData.entityState == EntityState.Moving) return;
+        
+        float increase = IrresponsibleThinkingData.irresponsibleThinkingIncreaseRate * deltaTime;
+        IrresponsibleThinkingData.currentIrresponsibleThinkingMeter += increase;
+
+        Debug.Log($"[{name}] Increasing Irresponsible thinking Meter {IrresponsibleThinkingData.currentIrresponsibleThinkingMeter}");
+        irresponsibleThinkingSlider.value = IrresponsibleThinkingData.currentIrresponsibleThinkingMeter;
+        
+        if (IrresponsibleThinkingData.currentIrresponsibleThinkingMeter >=
+            IrresponsibleThinkingData.maxIrresponsibleThinkingMeter)
+        {
+            IrresponsibleThinkingData.currentIrresponsibleThinkingMeter = 0;
+            _thinkingCheckTimer = 0;
+            EntityRunTimeData.entityState = EntityState.Moving;
+            
+            irresponsibleThinkingSlider.gameObject.SetActive(false);
+        }
+    }
+
     private void OnDrawGizmos()
     {
         if (waypoints == null || waypoints.Count < 2) return;
