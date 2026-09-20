@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: 5a81c3bafa7ec0b47bfa74177d95eeda
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2907093224104688397
+    second: NarrowTile_ThreeWay_Bottom_0
+  - first:
+      213: 8804315345923791434
+    second: NarrowTile_ThreeWay_Bottom_1
+  - first:
+      213: -6950125572042115333
+    second: NarrowTile_ThreeWay_Bottom_2
+  - first:
+      213: -7723589064626920414
+    second: NarrowTile_ThreeWay_Bottom_3
+  - first:
+      213: -2755938562915176180
+    second: NarrowTile_ThreeWay_Bottom_4
+  - first:
+      213: -6033457080440232718
+    second: NarrowTile_ThreeWay_Bottom_5
+  - first:
+      213: -739415264503722184
+    second: NarrowTile_ThreeWay_Bottom_6
+  - first:
+      213: 8652400160620816000
+    second: NarrowTile_ThreeWay_Bottom_7
+  - first:
+      213: 395710188166004815
+    second: NarrowTile_ThreeWay_Bottom_8
+  - first:
+      213: 7106939889644016036
+    second: NarrowTile_ThreeWay_Bottom_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NarrowTile_ThreeWay_Bottom_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 284
+        width: 500
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0b74b782e1185820800000000000000
+      internalID: 2907093224104688397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarrowTile_ThreeWay_Bottom_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 274
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ade4ce8263f2a70800000000000000
+      internalID: 8804315345923791434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarrowTile_ThreeWay_Bottom_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 241
+        width: 12
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf632169d913c8f90800000000000000
+      internalID: -6950125572042115333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarrowTile_ThreeWay_Bottom_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 196
+        width: 12
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22422d3caac40d490800000000000000
+      internalID: -7723589064626920414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarrowTile_ThreeWay_Bottom_4
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 228
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c01f3a68a70f0c9d0800000000000000
+      internalID: -2755938562915176180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarrowTile_ThreeWay_Bottom_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 202
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f46bc080cad44ca0800000000000000
+      internalID: -6033457080440232718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarrowTile_ThreeWay_Bottom_6
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 115
+        width: 58
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f01c90cb11db5f0800000000000000
+      internalID: -739415264503722184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarrowTile_ThreeWay_Bottom_7
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 115
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086265c8a10831870800000000000000
+      internalID: 8652400160620816000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarrowTile_ThreeWay_Bottom_8
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 116
+        width: 30
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4043afc158dd7500800000000000000
+      internalID: 395710188166004815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NarrowTile_ThreeWay_Bottom_9
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 0
+        width: 193
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1194aec2ce0a260800000000000000
+      internalID: 7106939889644016036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NarrowTile_ThreeWay_Bottom_0: 2907093224104688397
+      NarrowTile_ThreeWay_Bottom_1: 8804315345923791434
+      NarrowTile_ThreeWay_Bottom_2: -6950125572042115333
+      NarrowTile_ThreeWay_Bottom_3: -7723589064626920414
+      NarrowTile_ThreeWay_Bottom_4: -2755938562915176180
+      NarrowTile_ThreeWay_Bottom_5: -6033457080440232718
+      NarrowTile_ThreeWay_Bottom_6: -739415264503722184
+      NarrowTile_ThreeWay_Bottom_7: 8652400160620816000
+      NarrowTile_ThreeWay_Bottom_8: 395710188166004815
+      NarrowTile_ThreeWay_Bottom_9: 7106939889644016036
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

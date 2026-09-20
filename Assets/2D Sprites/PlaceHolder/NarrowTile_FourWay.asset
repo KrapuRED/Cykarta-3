@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: NarrowTile_FourWay
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 21300000, guid: d734d9c62fbbd1b49b5d566d7b6bd682, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac38271bcc0c5c048b62f053d275acf4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

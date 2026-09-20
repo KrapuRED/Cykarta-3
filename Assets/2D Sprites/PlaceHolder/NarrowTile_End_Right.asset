@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: NarrowTile_End_Right
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 21300000, guid: 1b52c27f7bc51c145b5e5d9a6e94feda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88fadddcba0c64348bcd7466d09fa904, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
