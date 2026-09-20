@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: RiverTile_CornerBend_TopLeft
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 21300000, guid: 12e82aec3688adc4db7200da0a1e3260, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77ea409b79d1a214db257b194fbc103b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
