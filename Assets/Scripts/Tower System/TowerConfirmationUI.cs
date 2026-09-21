@@ -44,7 +44,7 @@ public class TowerConfirmationUI : MonoBehaviour
         
         HideTowerConfirmationUI();
         
-        GameEvents.OnHideOrShowTowerDetectRange.Invoke(string.Empty);
+        GameEvents.OnHideTowerDetectRange.Invoke();
     }
     
     public void RotateTowerToRight() => ownerTower.RotateTower(TowerRotation.Right);

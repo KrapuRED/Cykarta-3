@@ -32,7 +32,7 @@ public class TowerCardUpgradeUI : MonoBehaviour
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;
         
-        GameEvents.OnHideOrShowTowerDetectRange.Invoke(towerData.TowerID);
+        GameEvents.OnShowTowerDetectRange.Invoke(towerData.TowerID);
         Debug.Log($"[{name} (PlaceTower)] Selected tower : {towerRunTimeData.towerName} ID : {towerData.TowerID}");
     }
 
@@ -43,7 +43,7 @@ public class TowerCardUpgradeUI : MonoBehaviour
         canvasGroup.interactable = false;
         
         _towerData = null;
-        GameEvents.OnHideOrShowTowerDetectRange.Invoke(string.Empty);
+        GameEvents.OnHideTowerDetectRange.Invoke();
     }
     
     public void RemoveTowerCardUpgradeUI()

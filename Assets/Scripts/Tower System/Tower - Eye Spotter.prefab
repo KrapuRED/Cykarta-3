@@ -192,6 +192,10 @@ MonoBehaviour:
     isTowerUnLockToTarget: 0
   towerBody: {fileID: 1213742673288050046}
   visualRange: {fileID: 1390557744563150010}
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  limitFrame: 0
 --- !u!1 &1641121686656096914
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,6 +982,53 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &6772776337053292236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5302591276925569827}
+  - component: {fileID: 1895272538287869880}
+  m_Layer: 0
+  m_Name: Tower System - Scan Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5302591276925569827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6772776337053292236}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5057040756528092109}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1895272538287869880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6772776337053292236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7479d99272668e046af7c8d35fb6d0d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerScanArea
+  towerOwner: {fileID: -1200755834875297617}
+  detectionInterval: 0.1
+  maxDetected: 16
 --- !u!1 &7914482911339897956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,6 +1150,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 713043865914135139}
+  - {fileID: 5302591276925569827}
   m_Father: {fileID: 6400691932898101370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9116202727882675925

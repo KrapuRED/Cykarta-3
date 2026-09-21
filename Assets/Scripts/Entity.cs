@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-   [SerializeField] private Transform entitySystemContainer;
+   [SerializeField] protected Transform entitySystemContainer;
    public StateMachine StateMachine { get; private set; }
    public EntityRunTimeData EntityRunTimeData { get; private set; }
    

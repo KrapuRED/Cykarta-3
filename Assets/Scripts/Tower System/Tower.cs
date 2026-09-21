@@ -26,13 +26,17 @@ public class Tower : Entity
    [SerializeField] private TowerRunTimeData towerRunTimeData;
    [SerializeField] private Transform towerBody;
    [SerializeField] private Transform visualRange;
-   
+   [SerializeField] protected LayerMask enemyLayerMask;
+
+   public TowerScanArea TowerScanArea { get; set; }
+
    public TowerDataSO TowerData => towerData;
    public string TowerID { get; private set; }
    public Vector3 GridPosition { get; private set; }
    public TowerRunTimeData TowerRunTimeData => towerRunTimeData;
    public bool IsBeenPlace { get; private set; }
-   
+   public LayerMask EnemyLayerMask => enemyLayerMask;
+
    private float _currentRotation;
 
    private void Awake()
@@ -47,30 +51,42 @@ public class Tower : Entity
          towerAttackSpeed = towerData.baseTowerAttackSpeed,
          isTowerUnLockToTarget = true
       };
+      
+      TowerScanArea = entitySystemContainer != null
+         ? entitySystemContainer.GetComponentInChildren<TowerScanArea>()
+         : GetComponentInChildren<TowerScanArea>();
    }
 
    private void OnEnable()
    {
-      GameEvents.OnHideOrShowTowerDetectRange.AddListener(HideOrShowTowerRangeDetection);
+      GameEvents.OnShowTowerDetectRange.AddListener(HandleShowTowerRangeDetection);
+      GameEvents.OnHideTowerDetectRange.AddListener(HandleHideTowerRangeDetection);
    }
 
    private void OnDisable()
    {
-      GameEvents.OnHideOrShowTowerDetectRange.RemoveListener(HideOrShowTowerRangeDetection);
+      GameEvents.OnShowTowerDetectRange.RemoveListener(HandleShowTowerRangeDetection);
+      GameEvents.OnHideTowerDetectRange.RemoveListener(HandleHideTowerRangeDetection);
    }
 
-   private void HideOrShowTowerRangeDetection(string towerID)
+   private void HandleShowTowerRangeDetection(string towerID)
    {
       if (string.IsNullOrEmpty(towerID))
       {
-         visualRange.gameObject.SetActive(false);
-      }
+         visualRange.gameObject.SetActive(false); }
       
       if (!string.IsNullOrEmpty(towerID) && towerID == TowerID)
       {
          visualRange.gameObject.SetActive(true);
-         InitializeTower();
       }
+   }
+   
+   private void HandleHideTowerRangeDetection()
+   {
+      if (IsBeenPlace) return;
+         InitializeTower();
+      
+      visualRange.gameObject.SetActive(false);
    }
 
    private void Start()
