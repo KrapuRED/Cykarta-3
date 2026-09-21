@@ -26,6 +26,7 @@ public class SpawnerIrresponsible : Spawner
     [SerializeField] private float minSpawnRate;
     [SerializeField] private List<SpawnerData> spawnerDatas = new();
     [SerializeField] private List<WayPointData> wayPointDatas = new();
+    [SerializeField] private Transform containerSpawner;
     // Where the Character / Vehicle should Spawn
     
     [SerializeField] private float currentSpawnRate;
@@ -81,7 +82,7 @@ public class SpawnerIrresponsible : Spawner
             var spawnData = spawnerData.spawnData;
             
             var waypointData = GetWayPointData();
-            var entity = Instantiate(spawnData.entityPrefab, waypointData.startPoint.position, Quaternion.identity);
+            var entity = Instantiate(spawnData.entityPrefab, waypointData.startPoint.position, Quaternion.identity, parent:containerSpawner);
             if (!entity.TryGetComponent<Entity>(out var entityComponent))
             {
                 Destroy(entity.gameObject);
@@ -109,7 +110,7 @@ public class SpawnerIrresponsible : Spawner
                     }
                     break;
             }
-            Debug.Log($"[{name} - OnSpawning] Spawning {entityData.entityID} {spawnerData.currentSpawnCount} / {spawnerData.maxSpawnCount}");
+            //Debug.Log($"[{name} - OnSpawning] Spawning {entityData.entityID} {spawnerData.currentSpawnCount} / {spawnerData.maxSpawnCount}");
         }
 
         currentSpawnRate = Random.Range(minSpawnRate, maxSpawnRate);
@@ -155,7 +156,6 @@ public class SpawnerIrresponsible : Spawner
                 spawnData = spawnerData.spawnData
             });
             
-            Debug.Log($"[{name} (AddOrChangeSpawnerData)] new {data.spawnerDataName} {data.currentSpawnCount} / {data.maxSpawnCount}");
         }
     }
 }

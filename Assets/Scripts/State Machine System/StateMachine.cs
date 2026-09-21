@@ -17,6 +17,8 @@ public class StateMachine : MonoBehaviour
 
     public void UpdateStateMachine(float deltaTime)
     {
+        if (dataStateMachines.Count < 0) return;
+        
         foreach (var data in dataStateMachines)
         {
             if (data.condition.CheckCondition(entityOwner))

@@ -8,8 +8,7 @@ public class Entity : MonoBehaviour
    public EntityRunTimeData EntityRunTimeData { get; private set; }
    
    public bool IsCanMove { get;  set; }
-
-   private bool isError;
+   private bool _isError;
    
    private void Awake()
    {
@@ -28,12 +27,16 @@ public class Entity : MonoBehaviour
    {
       if (StateMachine == null)
       {
-         if (!isError)
+         StateMachine = entitySystemContainer != null
+            ? entitySystemContainer.GetComponentInChildren<StateMachine>()
+            : GetComponentInChildren<StateMachine>();
+
+         if (!_isError && StateMachine == null)
          {
-            isError = true;
-            Debug.LogError($"Entity {name} has no StateMachine!", this);
+            _isError = true;
+            Debug.LogError($"Entity [{name}] has no StateMachine!", this);
+            return;
          }
-         return;
       }
       
       StateMachine.UpdateStateMachine(deltaTime);

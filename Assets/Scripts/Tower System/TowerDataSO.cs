@@ -10,4 +10,7 @@ public class TowerDataSO : ScriptableObject
     
     [Header("Tower Base Status")]
     public int baseTowerRanger;
+    public int baseTowerMaxCapacity;
+    public float baseTowerProcessingSpeed;
+    public float baseTowerAttackSpeed;
 }

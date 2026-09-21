@@ -141,8 +141,7 @@ public class GridMap : MonoBehaviour
         int mapIndex = GetMapIndex(worldPosition);
         if (mapIndex < 0 || mapIndex >= _grid.Count) return 0;
 
-        Debug.Log("Cell Size : " + _grid[mapIndex].GetGridCellSize(worldPosition));
-        
+        //Debug.Log("Cell Size : " + _grid[mapIndex].GetGridCellSize(worldPosition));
         return _grid[mapIndex].GetGridCellSize(worldPosition);
     }
     #endregion

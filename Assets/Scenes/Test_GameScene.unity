@@ -665,7 +665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &192332540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,9 +833,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 186208950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 32.5, y: -13.75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 55.6611, y: 20.8242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196382656
@@ -1741,6 +1741,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1991229494}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &582024880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 582024881}
+  m_Layer: 0
+  m_Name: WayPoint Pedestrian Line 2 - Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &582024881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582024880}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1064092988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &599869540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,6 +1928,7 @@ MonoBehaviour:
   - wayPointDataName: 'Pedestrian Line 2 -  Left -> Right '
     startPoint: {fileID: 1651013202}
     endPoint: {fileID: 1752899424}
+  containerSpawner: {fileID: 582024881}
   currentSpawnRate: 0
   prevSpawnRate: 0
 --- !u!1 &631251648
@@ -1931,9 +1963,9 @@ RectTransform:
   - {fileID: 186208950}
   m_Father: {fileID: 172392630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 92.5, y: -47.898617}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 154.19, y: 65.8247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &639315750
@@ -2036,9 +2068,9 @@ RectTransform:
   - {fileID: 749043997}
   m_Father: {fileID: 172392630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 92.5, y: -140.6326}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150.8005, y: 99.6982}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &737201035
@@ -2266,9 +2298,9 @@ RectTransform:
   - {fileID: 2053866588}
   m_Father: {fileID: 797448836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 91.5, y: -48.066635}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 154.19, y: 65.8247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &792635268
@@ -2710,6 +2742,72 @@ Transform:
   m_Children:
   - {fileID: 1110007377}
   m_Father: {fileID: 2132647842}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1061382379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1061382380}
+  m_Layer: 0
+  m_Name: WayPoint Vehicle - Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1061382380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061382379}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1064092988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1064092987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064092988}
+  m_Layer: 0
+  m_Name: === Waypoint Spawner Entity Pool ===
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1064092988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064092987}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1061382380}
+  - {fileID: 1904112790}
+  - {fileID: 1213021695}
+  - {fileID: 582024881}
+  m_Father: {fileID: 1888454116}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1077173907
 GameObject:
@@ -6861,6 +6959,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1408966398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1213021694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1213021695}
+  m_Layer: 0
+  m_Name: WayPoint Pedestrian Line 1 - Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1213021695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213021694}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1064092988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1266471550
 GameObject:
   m_ObjectHideFlags: 0
@@ -7472,9 +7601,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 186208950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 32.5, y: -41.25}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 55.6611, y: 20.8242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1374670994
@@ -7633,6 +7762,7 @@ MonoBehaviour:
   - wayPointDataName: Pedestrian Line 1 - Left -> Right
     startPoint: {fileID: 1692747465}
     endPoint: {fileID: 1168014037}
+  containerSpawner: {fileID: 1213021695}
   currentSpawnRate: 0
   prevSpawnRate: 0
 --- !u!1 &1398889231
@@ -7691,6 +7821,7 @@ MonoBehaviour:
   - wayPointDataName: 'WayPoint Vehicle - Right -> Left '
     startPoint: {fileID: 1321411403}
     endPoint: {fileID: 1881336062}
+  containerSpawner: {fileID: 1061382380}
   currentSpawnRate: 0
   prevSpawnRate: 0
 --- !u!1 &1406527528
@@ -8158,9 +8289,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2053866588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 32.5, y: -13.75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 55.6611, y: 20.8242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1568382054
@@ -8327,9 +8458,9 @@ RectTransform:
   - {fileID: 856851637}
   m_Father: {fileID: 797448836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 91.5, y: -119.2363}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150.8005, y: 65.8975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1609558103
@@ -8919,9 +9050,9 @@ RectTransform:
   - {fileID: 234960074}
   m_Father: {fileID: 172392630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 92.5, y: -218.23398}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 151.33, y: 35.5595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1713628679
@@ -8956,9 +9087,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2053866588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 32.5, y: -41.25}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 55.6611, y: 20.8242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1713628681
@@ -9395,9 +9526,9 @@ RectTransform:
   - {fileID: 2070436747}
   m_Father: {fileID: 797448836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 91.5, y: -198.66968}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 151.33, y: 82.3521}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1881336061
@@ -9464,7 +9595,39 @@ Transform:
   - {fileID: 1651141796}
   - {fileID: 612334895}
   - {fileID: 1807491742}
+  - {fileID: 1064092988}
   m_Father: {fileID: 1698954774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1904112789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1904112790}
+  m_Layer: 0
+  m_Name: WayPoint Water - Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1904112790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904112789}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1064092988}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1913438414
 GameObject:
@@ -10020,7 +10183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2132647842}
   m_Layer: 0
-  m_Name: ========= ENVIRONMENT =========
+  m_Name: ========= BUILDING ENVIRONMENT =========
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

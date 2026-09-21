@@ -70,7 +70,7 @@ public class EntityManager : MonoBehaviour
         }
     }
 
-    public EntityRunTimeData GetEntityRunTimeData(string entityName, string spawnerID, Entity entity = null)
+    public EntityRunTimeData GetEntityRunTimeData(string entityName, string spawnerID , Entity entity = null)
     {
         string entityID = string.Empty;
         int indexEntity = 0;
@@ -80,7 +80,14 @@ public class EntityManager : MonoBehaviour
             indexEntity++;
         }
 
-        entityID = $"{spawnerID}_{entityName}_{indexEntity}";
+        if (string.IsNullOrEmpty(spawnerID))
+        {
+            entityID = $"{entityName}_{indexEntity}";
+        }
+        else
+        {
+            entityID = $"{spawnerID}_{entityName}_{indexEntity}";
+        }
         
         EntityRunTimeData entityRunTimeData = new EntityRunTimeData
         {
@@ -100,6 +107,7 @@ public class EntityManager : MonoBehaviour
     public void RegisterEntity(Entity e)
     {
         if (e == null || _entities.Contains(e)) return;
+        Debug.LogWarning($"[{name} (RegisterEntity)] Success registering entity {e.name}");
         _entities.Add(e);
     }
 
