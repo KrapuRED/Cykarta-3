@@ -5,6 +5,10 @@ public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager Instance { get; private set; }
 
+    [SerializeField] private int startCurrency;
+    
+    public int CurrentCurrency { get; private set; }
+    
     private void Awake()
     {
         if (Instance != null)
@@ -16,13 +20,25 @@ public class CurrencyManager : MonoBehaviour
         Instance = this;
     }
 
-    public void ReceiveCurrency(int currency)
+    private void Start()
     {
-        
+        ReceiveCurrency(startCurrency);
     }
 
-    public bool UseCurrency(int currency)
+    public void ReceiveCurrency(int currency)
     {
-        return false;
+        CurrentCurrency += currency;
+        GameEvents.OnUpdateVisualCurrency.Invoke(CurrentCurrency);
+    }
+
+    public void UseCurrency(int costObject)
+    {
+        CurrentCurrency -= costObject;
+        GameEvents.OnUpdateVisualCurrency.Invoke(CurrentCurrency);
+    }
+
+    public bool IsCurrentCurrencyEnough(int cost)
+    {
+        return CurrentCurrency >= cost;
     }
 }

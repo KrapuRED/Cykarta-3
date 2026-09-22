@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Interceptor - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
   towerName: Interceptor
-  towerCost: 0
+  towerCost: 150
   towerDescription: 
   prefabObjectTower: {fileID: -1200755834875297617, guid: 4b2d20ad1e8475247b2ea7ad3a58de7f, type: 3}
   baseTowerRanger: 0
+  baseTowerMaxCapacity: 0
+  baseTowerProcessingSpeed: 0
+  baseTowerAttackSpeed: 0

@@ -39,9 +39,9 @@ public class TowerConfirmationUI : MonoBehaviour
     public void ConfirmTower()
     {
         GridManager.Instance.ChangeGridMode(GridMode.None);
-        
+
+        CurrencyManager.Instance.UseCurrency(ownerTower.TowerData.towerCost);
         _isBeenConfirmed = true;
-        
         HideTowerConfirmationUI();
         
         GameEvents.OnHideTowerDetectRange.Invoke();

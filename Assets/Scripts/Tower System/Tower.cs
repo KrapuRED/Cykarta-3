@@ -43,10 +43,10 @@ public class Tower : Entity
    public LayerMask EnemyLayerMask => enemyLayerMask;
    protected Transform CurrentTarget;
    public Transform Target => CurrentTarget;
+   public TowerDataSO TowerData => towerData;
    
    
    protected bool IsBeenPlace { get; private set; }
-   protected TowerDataSO TowerData => towerData;
    private Vector3 GridPosition { get;  set; }
 
    private float _currentRotation;

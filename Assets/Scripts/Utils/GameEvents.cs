@@ -68,6 +68,9 @@ public static class GameEvents
 
     // # ================================ PANEL SYSTEM ================================ #
     public static readonly CustomEvents OnShowConfirmationUI = new();
+
+    // # ================================ Currency SYSTEM ================================ #
+    public static readonly CustomEvents<int> OnUpdateVisualCurrency = new();
     
     // # ================================ TOWER CARD UI SYSTEM ================================ #
     public static readonly CustomEvents<TowerDataSO> OnShowTowerCardDetail = new ();
@@ -75,6 +78,7 @@ public static class GameEvents
     public static readonly CustomEvents<Tower> OnShowTowerCardUpgrade = new ();
     public static readonly CustomEvents<string> OnShowTowerDetectRange = new ();
     public static readonly CustomEvents OnHideTowerDetectRange = new ();
+    public static readonly CustomEvents OnDeselectTowerCard = new();
     
     // # ================================ DEBUG SYSTEM ================================ #
     public static readonly CustomEvents<String, string, string> OnShowDebugEntity = new ();

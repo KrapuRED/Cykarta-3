@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Eye Spotter - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
   towerName: Eye Spotter
-  towerCost: 0
+  towerCost: 100
   towerDescription: 
   prefabObjectTower: {fileID: -1200755834875297617, guid: ca057f47ba9a48147828556618cf3d04, type: 3}
   baseTowerRanger: 3
