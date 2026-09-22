@@ -18,10 +18,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
     {
         base.OnMoveEntity(deltaTime);
         
-        if (EntityRunTimeData.entityState == EntityState.IrresponsibleThinking)
-        {
-            return;
-        }
+        if (EntityRunTimeData.entityState == EntityState.IrresponsibleThinking) return;
         
         if (waypoints.Count <= 0)
         {
@@ -40,18 +37,15 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         }
         
         Vector3 targetPosition = waypoints[indexWaypoint];
-        
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * deltaTime);
     }
     
     private void GetWaypoints(Transform endPoint)
     {
         var gridMap = GridManager.Instance.BuildingGridMap;
-        
         GridManager.Instance.GetGridMapZoneCell(transform.position, out var myZone);
         
         var path = GridPathfinder.FindPath(gridMap, transform.position, endPoint.position, myZone);
-
         if (path != null)
         {
             waypoints.Clear();
@@ -59,9 +53,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
             _hasWaypoints = true;
         }
         else
-        {
             DestroyEntity();
-        }
 
         IsCanMove = _hasWaypoints;
         indexWaypoint = 0;
@@ -84,6 +76,8 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         InitializeEntity(runTimeData);
     }
 
+    #region === CheckIrresponsibleThinking ===
+
     public override void OnCheckIrresponsibleThinking(float deltaTime) => CheckIrresponsibleThinking(deltaTime);
     public void CheckIrresponsibleThinking(float deltaTime)
     {
@@ -102,6 +96,10 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
             irresponsibleThinkingSlider.gameObject.SetActive(true);
         }
     }
+
+    #endregion
+    
+    #region === CheckIrresponsibleThinking ===
 
     public override void OnIncreaseIrresponsibleThinking(float deltaTime) =>  IncreaseIrresponsibleThinking(deltaTime);
     public void IncreaseIrresponsibleThinking(float deltaTime)
@@ -124,6 +122,34 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
             irresponsibleThinkingSlider.gameObject.SetActive(false);
         }
     }
+
+    #endregion
+   
+    
+    #region === CheckIrresponsibleThinking ===
+
+   
+    private void DecreaseIrresponsibleThinking(float deltaTime)
+    {
+        float decrease = IrresponsibleThinkingData.irresponsibleThinkingIncreaseRate * deltaTime;
+        Debug.Log($"[{name} (DecreaseIrresponsibleThinking)] Decrease Irresponsible Thinking {decrease} / {IrresponsibleThinkingData.currentIrresponsibleThinkingMeter} / {IrresponsibleThinkingData.maxIrresponsibleThinkingMeter}");
+        
+        IrresponsibleThinkingData.currentIrresponsibleThinkingMeter -= decrease;
+        irresponsibleThinkingSlider.value = IrresponsibleThinkingData.currentIrresponsibleThinkingMeter;
+        
+        if (IrresponsibleThinkingData.currentIrresponsibleThinkingMeter <= 0)
+        {
+            IrresponsibleThinkingData.currentIrresponsibleThinkingMeter = 0;
+            EntityRunTimeData.entityState = EntityState.Moving;
+            
+            irresponsibleThinkingSlider.gameObject.SetActive(false);
+            
+            Debug.LogWarning($"[{name} (DecreaseIrresponsibleThinking)] Is not do the Irresponsible Think!");
+        }
+    }
+    public override void OnDecreaseIrresponsibleThinking(float deltaTime) => DecreaseIrresponsibleThinking(deltaTime);
+
+    #endregion
 
     private void OnDrawGizmos()
     {

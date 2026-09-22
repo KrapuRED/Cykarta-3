@@ -7,13 +7,13 @@ public class TowerScanArea : MonoBehaviour
     [SerializeField] private int maxDetected;
 
     private float _detectionTimer;
-    private Collider2D[] _hits;
+    protected Collider2D[] Hits;
     private Transform _currentTarget;
     private ContactFilter2D _filter;
     
     private void Awake()
     {
-        _hits = new Collider2D[maxDetected];
+        Hits = new Collider2D[maxDetected];
         _detectionTimer = Random.Range(0, detectionInterval);
         
         _filter = new ContactFilter2D();
@@ -34,7 +34,7 @@ public class TowerScanArea : MonoBehaviour
         targetToLock = _currentTarget;
     }
 
-    private Transform PickNearestTarget(int count)
+    public virtual Transform PickTarget(int count)
     {
         Transform best = null;
         float bestSqr = float.MaxValue;
@@ -42,23 +42,22 @@ public class TowerScanArea : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            float sqr = ((Vector2)_hits[i].transform.position - origin).sqrMagnitude;
+            float sqr = ((Vector2)Hits[i].transform.position - origin).sqrMagnitude;
             if (sqr < bestSqr)
             {
                 bestSqr = sqr;
-                best = _hits[i].transform;
+                best = Hits[i].transform;
             }
         }
         
-        Debug.Log($"[{name} (PickTarget)] The Nearest Target from {towerOwner.TowerRunTimeData.towerName} is {best.name}");
         return best;
     }
 
     private void ScanArea()
     {
         float radius = towerOwner.TowerRunTimeData.towerRange; // multiply by cell size if range is in grid cells
-        int count = Physics2D.OverlapCircle(transform.position, radius, _filter, _hits);
+        int count = Physics2D.OverlapCircle(transform.position, radius, _filter, Hits);
 
-        _currentTarget = count > 0 ? PickNearestTarget(count) : null;
+        _currentTarget = count > 0 ? PickTarget(count) : null;
     }
 }

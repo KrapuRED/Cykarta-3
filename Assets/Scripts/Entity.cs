@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -53,6 +52,11 @@ public class Entity : MonoBehaviour
    }
    
    public virtual void OnIncreaseIrresponsibleThinking(float deltaTime)
+   {
+      
+   }
+
+   public virtual void OnDecreaseIrresponsibleThinking(float deltaTime)
    {
       
    }

@@ -10,6 +10,12 @@ public class IrresponsibleThinkingState : StateSO
 
     public override void ExecuteState(Entity entity, float deltaTime)
     {
+        if (entity is IIrresponsibleThinkable thinkable &&
+            thinkable.IrresponsibleThinkingData.isIrresponsibleThinking)
+        {
+            return;
+        }
+        
         entity.OnIncreaseIrresponsibleThinking(deltaTime);
     }
 

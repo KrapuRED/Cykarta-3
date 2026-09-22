@@ -10,7 +10,6 @@ public class DetectingAreaState : StateSO
 
     public override void ExecuteState(Entity entity, float deltaTime)
     {
-        Debug.Log($"{name} is ExecuteState");
         var tower = entity.GetComponent<Tower>();
         
         tower.OnDetectingArea(deltaTime);

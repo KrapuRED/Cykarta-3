@@ -27,6 +27,7 @@ public class IrresponsibleThinkingData
     public float maxIrresponsibleThinkingMeter;
     public float currentIrresponsibleThinkingMeter;
     public float irresponsibleThinkingIncreaseRate;
+    public bool isIrresponsibleThinking;
 }
 
 public class EntityManager : MonoBehaviour

@@ -11,7 +11,6 @@ public class Trash : Entity
     
     public override void OnMoveEntity(float deltaTime)
     {
-        Debug.Log($"[{name}] OnMoveEntity");
         base.OnMoveEntity(deltaTime);
         
         if (waypoints.Count <= 0)

@@ -195,7 +195,6 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  limitFrame: 0
 --- !u!1 &1641121686656096914
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +501,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StateMachine
   entityOwner: {fileID: -1200755834875297617}
   dataStateMachines:
+  - nameStateCondition: Decreasing Irresponsible Thinking
+    state: {fileID: 11400000, guid: 0c543dfdd2ba44741b42f0675ce89331, type: 2}
+    condition: {fileID: 11400000, guid: 61658f67c8acf854fae5b6807af4e036, type: 2}
   - nameStateCondition: Detecting Area
     state: {fileID: 11400000, guid: e3f23546d98149a4c9a5ebdae003b294, type: 2}
     condition: {fileID: 11400000, guid: 77ece24a10f9d034188478d97ed9ca1b, type: 2}
@@ -991,7 +993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5302591276925569827}
-  - component: {fileID: 1895272538287869880}
+  - component: {fileID: 4401078644871157263}
   m_Layer: 0
   m_Name: Tower System - Scan Area
   m_TagString: Untagged
@@ -1014,7 +1016,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5057040756528092109}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1895272538287869880
+--- !u!114 &4401078644871157263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1023,9 +1025,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6772776337053292236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7479d99272668e046af7c8d35fb6d0d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 474fcc77d185e2148ad2feb9f0985813, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerScanArea
+  m_EditorClassIdentifier: Assembly-CSharp::IrresponsibleThinkScan
   towerOwner: {fileID: -1200755834875297617}
   detectionInterval: 0.1
   maxDetected: 16

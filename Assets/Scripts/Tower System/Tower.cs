@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [System.Serializable]
@@ -20,6 +19,14 @@ public enum TowerRotation
    Left
 }
 
+[System.Serializable]
+public enum TowerState
+{
+   Scan,
+   LockToTarget,
+   ProcessingTrash
+}
+
 public class Tower : Entity
 {
    [SerializeField] private TowerDataSO towerData;
@@ -28,14 +35,19 @@ public class Tower : Entity
    [SerializeField] private Transform visualRange;
    [SerializeField] protected LayerMask enemyLayerMask;
 
-   public TowerScanArea TowerScanArea { get; set; }
+   protected TowerScanArea TowerScanArea { get; private set; }
 
-   public TowerDataSO TowerData => towerData;
    public string TowerID { get; private set; }
-   public Vector3 GridPosition { get; private set; }
    public TowerRunTimeData TowerRunTimeData => towerRunTimeData;
-   public bool IsBeenPlace { get; private set; }
+   public bool IsLocked { get;  set; }
    public LayerMask EnemyLayerMask => enemyLayerMask;
+   protected Transform CurrentTarget;
+   public Transform Target => CurrentTarget;
+   
+   
+   protected bool IsBeenPlace { get; private set; }
+   protected TowerDataSO TowerData => towerData;
+   private Vector3 GridPosition { get;  set; }
 
    private float _currentRotation;
 
@@ -113,7 +125,12 @@ public class Tower : Entity
       
    }
 
-   public void SetVisualDetectRange()
+   public virtual void OnUpdateTower(float deltaTime)
+   {
+      
+   }
+
+   private void SetVisualDetectRange()
    {
       if (visualRange == null)
       {
@@ -139,7 +156,7 @@ public class Tower : Entity
 
    #region ======= BUILD TOWER ======
    
-   public virtual void InitializeTower()
+   protected virtual void InitializeTower()
    {
       IsBeenPlace = true;
       
