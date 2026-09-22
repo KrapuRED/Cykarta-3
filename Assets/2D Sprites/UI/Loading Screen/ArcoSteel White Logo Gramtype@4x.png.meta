@@ -1,0 +1,1105 @@
+fileFormatVersion: 2
+guid: 711843054651686488c964e0bb164d61
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8132890971840674570
+    second: ArcoSteel White Logo Gramtype@4x_0
+  - first:
+      213: -2716059268706591260
+    second: ArcoSteel White Logo Gramtype@4x_1
+  - first:
+      213: 7197738986479815811
+    second: ArcoSteel White Logo Gramtype@4x_2
+  - first:
+      213: 29923492762202804
+    second: ArcoSteel White Logo Gramtype@4x_3
+  - first:
+      213: -6063024830632444868
+    second: ArcoSteel White Logo Gramtype@4x_4
+  - first:
+      213: 2023534195823196514
+    second: ArcoSteel White Logo Gramtype@4x_5
+  - first:
+      213: 6184221826499643524
+    second: ArcoSteel White Logo Gramtype@4x_6
+  - first:
+      213: 4211359289832781909
+    second: ArcoSteel White Logo Gramtype@4x_7
+  - first:
+      213: -2294553144870329884
+    second: ArcoSteel White Logo Gramtype@4x_8
+  - first:
+      213: 5315924265339023750
+    second: ArcoSteel White Logo Gramtype@4x_9
+  - first:
+      213: -5739018681442835716
+    second: ArcoSteel White Logo Gramtype@4x_10
+  - first:
+      213: 3300705598080992536
+    second: ArcoSteel White Logo Gramtype@4x_11
+  - first:
+      213: -1923426808746718947
+    second: ArcoSteel White Logo Gramtype@4x_12
+  - first:
+      213: -3625277051988416607
+    second: ArcoSteel White Logo Gramtype@4x_13
+  - first:
+      213: 7061624245099308474
+    second: ArcoSteel White Logo Gramtype@4x_14
+  - first:
+      213: -2859354303216865165
+    second: ArcoSteel White Logo Gramtype@4x_15
+  - first:
+      213: 2920353975848450614
+    second: ArcoSteel White Logo Gramtype@4x_16
+  - first:
+      213: -8445136184363082717
+    second: ArcoSteel White Logo Gramtype@4x_17
+  - first:
+      213: 4490880860314022666
+    second: ArcoSteel White Logo Gramtype@4x_18
+  - first:
+      213: 6511542620213704310
+    second: ArcoSteel White Logo Gramtype@4x_19
+  - first:
+      213: -3820804377615468929
+    second: ArcoSteel White Logo Gramtype@4x_20
+  - first:
+      213: -8003083861131872277
+    second: ArcoSteel White Logo Gramtype@4x_21
+  - first:
+      213: 7166672842880823632
+    second: ArcoSteel White Logo Gramtype@4x_22
+  - first:
+      213: -888546345621006186
+    second: ArcoSteel White Logo Gramtype@4x_23
+  - first:
+      213: 3444426815733991785
+    second: ArcoSteel White Logo Gramtype@4x_24
+  - first:
+      213: -1220969507512451447
+    second: ArcoSteel White Logo Gramtype@4x_25
+  - first:
+      213: -8506287345659400961
+    second: ArcoSteel White Logo Gramtype@4x_26
+  - first:
+      213: 4943758664884284984
+    second: ArcoSteel White Logo Gramtype@4x_27
+  - first:
+      213: 270383392048041922
+    second: ArcoSteel White Logo Gramtype@4x_28
+  - first:
+      213: -8471629573651776707
+    second: ArcoSteel White Logo Gramtype@4x_29
+  - first:
+      213: 7770574409965851048
+    second: ArcoSteel White Logo Gramtype@4x_30
+  - first:
+      213: 8947419387585725256
+    second: ArcoSteel White Logo Gramtype@4x_31
+  - first:
+      213: -8679060403230777620
+    second: ArcoSteel White Logo Gramtype@4x_32
+  - first:
+      213: 3768705566113881202
+    second: ArcoSteel White Logo Gramtype@4x_33
+  - first:
+      213: -3520898174285760523
+    second: ArcoSteel White Logo Gramtype@4x_34
+  - first:
+      213: 6081845395181128316
+    second: ArcoSteel White Logo Gramtype@4x_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_0
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 950
+        width: 790
+        height: 581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f4847240ca222f80800000000000000
+      internalID: -8132890971840674570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_1
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 1377
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed16d34c7e9e4ad0800000000000000
+      internalID: -2716059268706591260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_2
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1142
+        width: 88
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c0c13197183e360800000000000000
+      internalID: 7197738986479815811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_3
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 1157
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b2b784124f4a6000800000000000000
+      internalID: 29923492762202804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_4
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1004
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3cb7c13a0fcbdba0800000000000000
+      internalID: -6063024830632444868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_5
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 989
+        width: 176
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 269b5e441a9051c10800000000000000
+      internalID: 2023534195823196514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_6
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 1049
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4888abc5cf4c2d550800000000000000
+      internalID: 6184221826499643524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_7
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 846
+        width: 701
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558360c16f0c17a30800000000000000
+      internalID: 4211359289832781909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_8
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 891
+        width: 170
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e1afb1621c1820e0800000000000000
+      internalID: -2294553144870329884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_9
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 846
+        width: 703
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 681796054f4f5c940800000000000000
+      internalID: 5315924265339023750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_10
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 478
+        width: 232
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf2e4457ae8ea50b0800000000000000
+      internalID: -5739018681442835716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_11
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 478
+        width: 366
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815c2c9e0467ecd20800000000000000
+      internalID: 3300705598080992536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_12
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 477
+        width: 190
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d194039128d9e45e0800000000000000
+      internalID: -1923426808746718947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_13
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 601
+        width: 73
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7eadf8abd60bdc0800000000000000
+      internalID: -3625277051988416607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_14
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 703
+        width: 113
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab52e6a36ddeff160800000000000000
+      internalID: 7061624245099308474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_15
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 724
+        width: 63
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37036c529688158d0800000000000000
+      internalID: -2859354303216865165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_16
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 473
+        width: 152
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63ab8d4e77e278820800000000000000
+      internalID: 2920353975848450614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_17
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 721
+        width: 147
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c9d337269dcca80800000000000000
+      internalID: -8445136184363082717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_18
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 721
+        width: 146
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a033e974950d25e30800000000000000
+      internalID: 4490880860314022666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_19
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 466
+        width: 72
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67677a17385ad5a50800000000000000
+      internalID: 6511542620213704310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_20
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 468
+        width: 193
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f76f8fb79a6c9fac0800000000000000
+      internalID: -3820804377615468929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_21
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 466
+        width: 147
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7b29561a55fe090800000000000000
+      internalID: -8003083861131872277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_22
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 466
+        width: 146
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 051b95ddaf2257360800000000000000
+      internalID: 7166672842880823632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_23
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 466
+        width: 65
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 698d9ce6ecf3ba3f0800000000000000
+      internalID: -888546345621006186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_24
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 362
+        width: 20
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96987a680ff0dcf20800000000000000
+      internalID: 3444426815733991785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_25
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 362
+        width: 41
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ef22fa3be3e0fe0800000000000000
+      internalID: -1220969507512451447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_26
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 362
+        width: 43
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc22943ab893f980800000000000000
+      internalID: -8506287345659400961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_27
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 361
+        width: 42
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83eefa30052cb9440800000000000000
+      internalID: 4943758664884284984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_28
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 361
+        width: 42
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf4034334890c300800000000000000
+      internalID: 270383392048041922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_29
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 362
+        width: 41
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3bbac199c9be6a80800000000000000
+      internalID: -8471629573651776707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_30
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 362
+        width: 41
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a151ce6140a6db60800000000000000
+      internalID: 7770574409965851048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_31
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 362
+        width: 20
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8438d7d078e9b2c70800000000000000
+      internalID: 8947419387585725256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_32
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 362
+        width: 33
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee55410c88cd8780800000000000000
+      internalID: -8679060403230777620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_33
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 361
+        width: 42
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c5143beb12d4430800000000000000
+      internalID: 3768705566113881202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_34
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 0
+        width: 261
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f73067d3c1432fc0800000000000000
+      internalID: -3520898174285760523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcoSteel White Logo Gramtype@4x_35
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 0
+        width: 263
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7acd96f92e076450800000000000000
+      internalID: 6081845395181128316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ArcoSteel White Logo Gramtype@4x_0: -8132890971840674570
+      ArcoSteel White Logo Gramtype@4x_1: -2716059268706591260
+      ArcoSteel White Logo Gramtype@4x_10: -5739018681442835716
+      ArcoSteel White Logo Gramtype@4x_11: 3300705598080992536
+      ArcoSteel White Logo Gramtype@4x_12: -1923426808746718947
+      ArcoSteel White Logo Gramtype@4x_13: -3625277051988416607
+      ArcoSteel White Logo Gramtype@4x_14: 7061624245099308474
+      ArcoSteel White Logo Gramtype@4x_15: -2859354303216865165
+      ArcoSteel White Logo Gramtype@4x_16: 2920353975848450614
+      ArcoSteel White Logo Gramtype@4x_17: -8445136184363082717
+      ArcoSteel White Logo Gramtype@4x_18: 4490880860314022666
+      ArcoSteel White Logo Gramtype@4x_19: 6511542620213704310
+      ArcoSteel White Logo Gramtype@4x_2: 7197738986479815811
+      ArcoSteel White Logo Gramtype@4x_20: -3820804377615468929
+      ArcoSteel White Logo Gramtype@4x_21: -8003083861131872277
+      ArcoSteel White Logo Gramtype@4x_22: 7166672842880823632
+      ArcoSteel White Logo Gramtype@4x_23: -888546345621006186
+      ArcoSteel White Logo Gramtype@4x_24: 3444426815733991785
+      ArcoSteel White Logo Gramtype@4x_25: -1220969507512451447
+      ArcoSteel White Logo Gramtype@4x_26: -8506287345659400961
+      ArcoSteel White Logo Gramtype@4x_27: 4943758664884284984
+      ArcoSteel White Logo Gramtype@4x_28: 270383392048041922
+      ArcoSteel White Logo Gramtype@4x_29: -8471629573651776707
+      ArcoSteel White Logo Gramtype@4x_3: 29923492762202804
+      ArcoSteel White Logo Gramtype@4x_30: 7770574409965851048
+      ArcoSteel White Logo Gramtype@4x_31: 8947419387585725256
+      ArcoSteel White Logo Gramtype@4x_32: -8679060403230777620
+      ArcoSteel White Logo Gramtype@4x_33: 3768705566113881202
+      ArcoSteel White Logo Gramtype@4x_34: -3520898174285760523
+      ArcoSteel White Logo Gramtype@4x_35: 6081845395181128316
+      ArcoSteel White Logo Gramtype@4x_4: -6063024830632444868
+      ArcoSteel White Logo Gramtype@4x_5: 2023534195823196514
+      ArcoSteel White Logo Gramtype@4x_6: 6184221826499643524
+      ArcoSteel White Logo Gramtype@4x_7: 4211359289832781909
+      ArcoSteel White Logo Gramtype@4x_8: -2294553144870329884
+      ArcoSteel White Logo Gramtype@4x_9: 5315924265339023750
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
