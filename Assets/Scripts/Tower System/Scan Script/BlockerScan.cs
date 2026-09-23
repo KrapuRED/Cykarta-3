@@ -6,7 +6,8 @@ public class BlockerScan : TowerScanArea
     [SerializeField] private float widthScanArea;
     [SerializeField] private float heightScanArea;
     [SerializeField] private Transform scannerPositon;
-    
+
+    private Quaternion _rotation;
     private Vector2 _sizeBox;
 
     private void Start()
@@ -44,7 +45,9 @@ public class BlockerScan : TowerScanArea
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Matrix4x4 rotationMatrix = Matrix4x4.TRS(scannerPositon.position, transform.rotation, Vector3.one);
+        _rotation = Quaternion.Euler(0, 0, towerOwner.CurrentRotation);
+        
+        Matrix4x4 rotationMatrix = Matrix4x4.TRS(scannerPositon.position, _rotation, Vector3.one);
         Gizmos.matrix = rotationMatrix;
         Gizmos.DrawWireCube(Vector3.zero, new Vector3(widthScanArea, heightScanArea, 0f)); // hardcoded test size
     }

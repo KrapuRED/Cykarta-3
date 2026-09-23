@@ -44,12 +44,12 @@ public class Tower : Entity
    protected Transform CurrentTarget;
    public Transform Target => CurrentTarget;
    public TowerDataSO TowerData => towerData;
+   public float CurrentRotation { get; private set; }
    
    
    protected bool IsBeenPlace { get; private set; }
    private Vector3 GridPosition { get;  set; }
 
-   private float _currentRotation;
 
    private void Awake()
    {
@@ -83,6 +83,9 @@ public class Tower : Entity
 
    private void HandleShowTowerRangeDetection(string towerID)
    {
+      if (visualRange == null)
+         return;
+      
       if (string.IsNullOrEmpty(towerID))
       {
          visualRange.gameObject.SetActive(false); }
@@ -95,6 +98,9 @@ public class Tower : Entity
    
    private void HandleHideTowerRangeDetection()
    {
+      if (visualRange == null)
+         return;
+      
       if (IsBeenPlace) return;
          InitializeTower();
       
@@ -106,7 +112,9 @@ public class Tower : Entity
       TowerID = TowerManager.Instance.GetTowerID(towerData.towerName);
       gameObject.name = TowerID;
 
-      SetVisualDetectRange();
+      if (visualRange != null)
+         SetVisualDetectRange();
+      
       TowerManager.Instance.RegisterTower(this);
    }
 
@@ -154,16 +162,16 @@ public class Tower : Entity
    {
       if (towerRotation == TowerRotation.Right)
       {
-         _currentRotation -= 90f;
+         CurrentRotation -= 90f;
       }
       else
       {
-         _currentRotation += 90f;
+         CurrentRotation += 90f;
       }
       
-      _currentRotation %= 360f; 
+      CurrentRotation %= 360f; 
 
-      towerBody.rotation = Quaternion.Euler(0, 0, _currentRotation);
+      towerBody.rotation = Quaternion.Euler(0, 0, CurrentRotation);
    }
 
    public void UpgradeTower(TowerDataSO upgradeTowerData)
