@@ -3,11 +3,25 @@ using UnityEngine;
 
 public class Trash : Entity
 {
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private TrashDataSO trashData;
+    [SerializeField] private float moveSpeed;
     [SerializeField] private List<Vector3> waypoints = new ();
     
     [SerializeField] private int indexWaypoint;
     private bool _hasWaypoints;
+    
+    public TrashData TrashData { get; private set; }
+
+    private void Awake()
+    {
+        TrashData = new TrashData
+        {
+            trashName = trashData.displayName,
+            trashType = trashData.trashType,
+            trashWeight = trashData.trashWeight,
+            trashState = TrashState.Grounded
+        };
+    }
     
     public override void OnMoveEntity(float deltaTime)
     {
@@ -57,12 +71,13 @@ public class Trash : Entity
         indexWaypoint = 0;
     }
     
-    public void InitializeTrash(Transform endPoint, float speedMovement)
+    public void InitializeTrash(Transform endPoint, float speedMovement, EntityRunTimeData entityData)
     {
         GetWaypoints(endPoint);
         moveSpeed = speedMovement;
         
-        EntityManager.Instance.RegisterEntity(this);
+        TrashData.trashState = TrashState.Grounded;
+        InitializeEntity(entityData);
     }
     
     private void OnDrawGizmos()
@@ -83,4 +98,7 @@ public class Trash : Entity
             Gizmos.DrawSphere(waypoint, 0.2f);
         }
     }
+    
+    public void HoldMovement() => IsCanMove = false;
+    public void UnholdMovement() => IsCanMove = true;
 }

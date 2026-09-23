@@ -9,14 +9,29 @@ public enum TrashType
    Medium,
    Heavy
 }
+[System.Serializable]
+public enum TrashState
+{
+   Grounded,
+   Airborne
+}
+
+[System.Serializable]
+public class TrashSpawnData
+{
+   public string trashName;
+   public TrashType trashType;
+   public float throwDuration;
+   public SpawnableDataSO spawnData;
+}
 
 [System.Serializable]
 public class TrashData
 {
    public string trashName;
+   public TrashState trashState;
    public TrashType trashType;
-   public float trowhDuration;
-   public SpawnableDataSO spawnData;
+   public int trashWeight;
 }
 
 public class SpawnerTrash : Spawner
@@ -25,7 +40,7 @@ public class SpawnerTrash : Spawner
 
    [SerializeField] private Transform endWaterPath;
    [SerializeField] private float arcHeight = 1.5f;
-   [SerializeField] private List<TrashData> trashDatas = new();
+   [SerializeField] private List<TrashSpawnData> trashDatas = new();
    
    private void Awake()
    {
@@ -51,20 +66,23 @@ public class SpawnerTrash : Spawner
       // Spawn Trash
       var trashData = trashDatas.Find(x => x.trashType == trashType);
       
-      var newTrash = Instantiate(trashData.spawnData.entityPrefab, spawnPosition, Quaternion.identity, gridMap.transform).GetComponent<Trash>();
+      var newTrash = Instantiate(trashData.spawnData.entityPrefab, spawnPosition, Quaternion.identity, gridMap.transform);
       if (!newTrash.TryGetComponent<Entity>(out var entityComponent))
       {
          Destroy(newTrash.gameObject);
          return;
       }
-      
+     
       var entityData = EntityManager.Instance.GetEntityRunTimeData(trashData.spawnData.displayName, spawnerID, entityComponent);
       
-      StartCoroutine(ThrowRoutine(newTrash, trashData.trowhDuration, spawnPosition, landingPosition));
+      if (newTrash.TryGetComponent<Trash>(out var trash))
+         StartCoroutine(ThrowRoutine(trash, entityData, trashData.throwDuration, spawnPosition, landingPosition));
    }
 
-   private IEnumerator ThrowRoutine(Trash trash, float duration, Vector3 from, Vector3 to)
+   private IEnumerator ThrowRoutine(Trash trash, EntityRunTimeData entityRunTimeData ,float duration, Vector3 from, Vector3 to)
    {
+      trash.TrashData.trashState = TrashState.Airborne;
+      
       float t = 0;
       while (t < 1f)
       {
@@ -81,6 +99,6 @@ public class SpawnerTrash : Spawner
       }
       
       trash.transform.position = to;
-      trash.InitializeTrash(endWaterPath, 2f);
+      trash.InitializeTrash(endWaterPath, 2f,entityRunTimeData );
    }
 }

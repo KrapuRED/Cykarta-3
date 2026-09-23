@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c5470cd6d6bdb4fa0f0d8f34eb4a22, type: 3}
+  m_Name: Blocker - TowerDataSO
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
+  towerName: Blocker
+  towerCost: 125
+  towerDescription: 
+  prefabObjectTower: {fileID: 1951802521689120775, guid: ac31c73bc75380448844d898e2b2f10f, type: 3}
+  baseTowerRanger: 3
+  baseTowerMaxCapacity: 4
+  baseTowerProcessingSpeed: 0
+  baseTowerAttackSpeed: 0

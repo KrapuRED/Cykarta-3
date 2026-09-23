@@ -2,16 +2,6 @@ using UnityEngine;
 
 public class EyeSpotterTower : Tower, IRotateHeadTowerable
 {
-    protected override void InitializeTower()
-    {
-        Debug.Log($"[{name}] Initializing Tower System {TowerRunTimeData.towerName} level tower : {TowerRunTimeData.towerLevel}");
-        
-        base.InitializeTower();
-        
-        var entityData = EntityManager.Instance.GetEntityRunTimeData(TowerData.towerName, string.Empty, this);
-        InitializeEntity(entityData);
-    }
-
     public override void OnDetectingArea(float deltaTime)
     {
         if (!IsBeenPlace)
@@ -70,7 +60,31 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
     public override void OnUpdateTower(float deltaTime) => DecreaseIrresponsibleThinking(deltaTime);
 
     #endregion
-    
+
+    protected override void SetVisualDetectRange()
+    {
+        if (visualRange == null)
+        {
+            Debug.LogError($"[{name} SetVisualDetectRange] cannot visual range for this tower!");
+            return;
+        }
+      
+        float currentRange = towerRunTimeData != null 
+            ? TowerRunTimeData.towerRange 
+            : TowerData.baseTowerRanger;
+      
+        // Set Diameter of the range
+        float diameter = currentRange * 2f;
+
+        // Compensate for parent scale
+        Vector3 parentScale = visualRange.parent != null
+            ? visualRange.parent.lossyScale
+            : Vector3.one;
+      
+        //Show visual by currentRange 
+        visualRange.localScale = new Vector3(diameter/ parentScale.x, diameter/parentScale.y, 1f);
+    }
+
     #region ==== Interface Implement ====
     
     public void RotateHead()

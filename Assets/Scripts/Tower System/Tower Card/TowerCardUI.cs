@@ -36,8 +36,8 @@ public class TowerCardUI : MonoBehaviour
     {
         if (!_isSelected || !CurrencyManager.Instance.IsCurrentCurrencyEnough(TowerData.towerCost)) 
             return;
-     
-        Debug.Log($"{name} OnHoldButton Is Current Currency Enough {CurrencyManager.Instance.IsCurrentCurrencyEnough(TowerData.towerCost)} and selected : {_isSelected}!");
+        
+        _isSelected = false;
         GridManager.Instance.HighlightBuildGridZone();
     }
 
@@ -57,7 +57,11 @@ public class TowerCardUI : MonoBehaviour
 
     public void SelectTowerCardUI()
     {
-        if (_isSelected) return;
+        if (_isSelected)
+        {
+            DeselectTowerCardUI();
+            return;
+        }
         
         Debug.Log($"{name} SelectTowerCardUI");
         GameEvents.OnDeselectTowerCard.Invoke();

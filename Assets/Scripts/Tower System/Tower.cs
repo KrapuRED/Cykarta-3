@@ -29,10 +29,10 @@ public enum TowerState
 
 public class Tower : Entity
 {
-   [SerializeField] private TowerDataSO towerData;
-   [SerializeField] private TowerRunTimeData towerRunTimeData;
+   [SerializeField] protected TowerDataSO towerData;
+   [SerializeField] protected TowerRunTimeData towerRunTimeData;
    [SerializeField] private Transform towerBody;
-   [SerializeField] private Transform visualRange;
+   [SerializeField] protected Transform visualRange;
    [SerializeField] protected LayerMask enemyLayerMask;
 
    protected TowerScanArea TowerScanArea { get; private set; }
@@ -130,28 +130,14 @@ public class Tower : Entity
       
    }
 
-   private void SetVisualDetectRange()
+   protected virtual void SetVisualDetectRange()
    {
-      if (visualRange == null)
-      {
-         Debug.LogError($"[{name} SetVisualDetectRange] cannot visual range for this tower!");
-         return;
-      }
       
-      float currentRange = towerRunTimeData != null 
-         ? towerRunTimeData.towerRange 
-         : towerData.baseTowerRanger;
-      
-      // Set Diameter of the range
-      float diameter = currentRange * 2f;
+   }
 
-      // Compensate for parent scale
-      Vector3 parentScale = visualRange.parent != null
-         ? visualRange.parent.lossyScale
-         : Vector3.one;
+   protected virtual void ReleaseObject()
+   {
       
-      //Show visual by currentRange 
-      visualRange.localScale = new Vector3(diameter/ parentScale.x, diameter/parentScale.y, 1f);
    }
 
    #region ======= BUILD TOWER ======
@@ -160,6 +146,8 @@ public class Tower : Entity
    {
       IsBeenPlace = true;
       
+      var entityData = EntityManager.Instance.GetEntityRunTimeData(TowerData.towerName, string.Empty, this);
+      InitializeEntity(entityData);
    }
    
    public void RotateTower(TowerRotation towerRotation)
@@ -187,17 +175,9 @@ public class Tower : Entity
    {
       GridManager.Instance.ChangeGridMode(GridMode.None);
       GridManager.Instance.BuildingGridMap.ClearTower(GridPosition, resetZone);
+      ReleaseObject();
+         
       DestroyEntity();
    }
    #endregion
-
-   private void OnDrawGizmos()
-   {
-      Gizmos.color = Color.red;
-      float currentRange = towerRunTimeData != null 
-         ? towerRunTimeData.towerRange 
-         : towerData.baseTowerRanger;
-
-      Gizmos.DrawWireSphere(transform.position, currentRange);
-   }
 }

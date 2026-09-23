@@ -10,6 +10,8 @@ public class MovingEntityState : StateSO
 
     public override void ExecuteState(Entity entity, float deltaTime)
     {
+        if (!entity.IsCanMove) return;
+        
         entity.OnMoveEntity(deltaTime);
     }
 

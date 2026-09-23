@@ -8090,7 +8090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe97aecead3adf4f879adcdd80ddd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
-  startCurrency: 100
+  startCurrency: 500
 --- !u!1 &1467739327
 GameObject:
   m_ObjectHideFlags: 0
@@ -9639,7 +9639,7 @@ MonoBehaviour:
   trashDatas:
   - trashName: Medium Trash
     trashType: 1
-    trowhDuration: 1
+    throwDuration: 1
     spawnData: {fileID: 11400000, guid: 377457ecaf148e04996c132c8ebf33fc, type: 2}
 --- !u!1 &1807491741
 GameObject:
@@ -9720,7 +9720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerCardHandler
   towers:
   - {fileID: 11400000, guid: 0c47a43d57352dd4ba40f45e98d93f7b, type: 2}
-  - {fileID: 11400000, guid: 88862cb96fdecd14eab84bd022f91313, type: 2}
+  - {fileID: 11400000, guid: f4a56f8b33917e647a2c8bb0872883f5, type: 2}
   prefTowerCardUI: {fileID: 1130886805710819005, guid: cc3cf274917a1c64fbcb42c0fcfe0239, type: 3}
   containerTowerCard: {fileID: 333536270}
 --- !u!1 &1846782802

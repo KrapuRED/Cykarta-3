@@ -16,3 +16,5 @@ MonoBehaviour:
   maxEntitySpeed: 0
   minEntitySpeed: 0
   entityPrefab: {fileID: 5248585466635676192, guid: a64093ff2028d6a4cba2cbbcc2d7c6f5, type: 3}
+  trashType: 1
+  trashWeight: 2
