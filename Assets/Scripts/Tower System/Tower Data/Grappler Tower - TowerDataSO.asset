@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2c5470cd6d6bdb4fa0f0d8f34eb4a22, type: 3}
-  m_Name: Trash Catcher- TowerDataSO
+  m_Name: Grappler Tower - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
-  towerName: Trash Catcher
-  towerCost: 100
+  towerName: Grappler Tower
+  towerCost: 0
   towerDescription: 
-  prefabObjectTower: {fileID: 3821810546088435452, guid: f23033bc80d02254ebc6d8717292e5ab, type: 3}
-  baseTowerRanger: 3
-  baseTowerMaxCapacity: 4
-  baseTowerProcessingSpeed: 3
+  prefabObjectTower: {fileID: 5857374941782670224, guid: 48b3b01b20463b546a753b6deb874cda, type: 3}
+  baseTowerRanger: 5
+  baseTowerMaxCapacity: 6
+  baseTowerProcessingSpeed: 5
   baseTowerAttackSpeed: 0

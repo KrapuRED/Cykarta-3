@@ -36,7 +36,7 @@ public class TowerCardUpgradeUI : MonoBehaviour
         Debug.Log($"[{name} (PlaceTower)] Selected tower : {towerRunTimeData.towerName} ID : {towerData.TowerID}");
     }
 
-    private void HideTowerCardUpgradeUI()
+    public void HideTowerCardUpgradeUI()
     {
         canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = false;

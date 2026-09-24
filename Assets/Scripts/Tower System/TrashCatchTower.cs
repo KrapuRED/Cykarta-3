@@ -5,7 +5,7 @@ using UnityEngine;
 public class TrashCatchTower : Tower, IRecycleTrash
 {
     [SerializeField] private TrashState catchTrashState;
-    [SerializeField] private float durationRecycle = 3f;
+    [SerializeField] private float durationRecycle;
     
     public int MaxCapacity { get; set; }
     public int CurrentCapacity { get; set; }
@@ -16,6 +16,7 @@ public class TrashCatchTower : Tower, IRecycleTrash
     private void Start()
     {
         MaxCapacity = TowerRunTimeData.towerCapacity;
+        durationRecycle = TowerData.baseTowerProcessingSpeed;
         AccumulatedTrashes = new List<Trash>();
     }
     

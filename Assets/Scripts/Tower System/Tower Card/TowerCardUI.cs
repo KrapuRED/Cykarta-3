@@ -63,7 +63,6 @@ public class TowerCardUI : MonoBehaviour
             return;
         }
         
-        Debug.Log($"{name} SelectTowerCardUI");
         GameEvents.OnDeselectTowerCard.Invoke();
         _isSelected = true;
         GameEvents.OnShowTowerCardDetail.Invoke(TowerData);

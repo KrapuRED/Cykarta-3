@@ -67,6 +67,14 @@ public class Tower : Entity
       TowerScanArea = entitySystemContainer != null
          ? entitySystemContainer.GetComponentInChildren<TowerScanArea>()
          : GetComponentInChildren<TowerScanArea>();
+      
+      TowerID = TowerManager.Instance.GetTowerID(towerData.towerName);
+      gameObject.name = TowerID;
+
+      if (visualRange != null)
+         SetVisualDetectRange();
+      
+      TowerManager.Instance.RegisterTower(this);
    }
 
    private void OnEnable()
@@ -105,17 +113,6 @@ public class Tower : Entity
          InitializeTower();
       
       visualRange.gameObject.SetActive(false);
-   }
-
-   private void Start()
-   {
-      TowerID = TowerManager.Instance.GetTowerID(towerData.towerName);
-      gameObject.name = TowerID;
-
-      if (visualRange != null)
-         SetVisualDetectRange();
-      
-      TowerManager.Instance.RegisterTower(this);
    }
 
    public void SetGridPosition(Vector3 gridPosition)

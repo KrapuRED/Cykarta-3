@@ -13,7 +13,8 @@ public enum TrashType
 public enum TrashState
 {
    Grounded,
-   Airborne
+   Airborne,
+   Grabbed
 }
 
 [System.Serializable]
@@ -84,29 +85,6 @@ public class SpawnerTrash : Spawner
       var entityData = EntityManager.Instance.GetEntityRunTimeData(trashData.spawnData.displayName, spawnerID, null,entityComponent);
       
       if (newTrash.TryGetComponent<Trash>(out var trash))
-         StartCoroutine(ThrowRoutine(trash, entityData, trashData.throwDuration, spawnPosition, landingPosition));
-   }
-
-   private IEnumerator ThrowRoutine(Trash trash, EntityRunTimeData entityRunTimeData ,float duration, Vector3 from, Vector3 to)
-   {
-      trash.TrashData.trashState = TrashState.Airborne;
-      
-      float t = 0;
-      while (t < 1f)
-      {
-         if (trash == null) yield break;
-         
-         t+= Time.deltaTime / duration;
-         float clamped = Mathf.Clamp01(t);
-         
-         Vector3 pos = Vector3.Lerp(from, to, clamped);
-         pos.y += arcHeight * 4f * clamped * (1f - clamped); // parabola, peaks at t = 0.5
-         trash.transform.position = pos;
-         
-         yield return null;
-      }
-      
-      trash.transform.position = to;
-      trash.InitializeTrash(endWaterPath, 2f,entityRunTimeData );
+         trash.ThrowTrash(entityData, endWaterPath, arcHeight , trashData.throwDuration, spawnPosition, landingPosition);
    }
 }
