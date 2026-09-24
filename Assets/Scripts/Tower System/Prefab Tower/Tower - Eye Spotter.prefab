@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EyeSpotterTower
   entitySystemContainer: {fileID: 5057040756528092109}
-  towerData: {fileID: 11400000, guid: 0c47a43d57352dd4ba40f45e98d93f7b, type: 2}
+  towerData: {fileID: 11400000, guid: 22d6a5ff17874654e8dad81b79541bc4, type: 2}
   towerRunTimeData:
     towerName: 
     towerLevel: 0

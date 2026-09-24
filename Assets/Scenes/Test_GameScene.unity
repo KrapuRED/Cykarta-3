@@ -7163,7 +7163,7 @@ MonoBehaviour:
         maxSpawnCount: 2
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
-        spawnData: {fileID: 0}
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
     - spawnerName: Spawner Pedestrian 2
       spawnerIrresponsible: {fileID: 630482355}
       maxSpawnRate: 2
@@ -7178,7 +7178,7 @@ MonoBehaviour:
         maxSpawnCount: 2
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
-        spawnData: {fileID: 0}
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
   startSpawn: 1
 --- !u!1 &1267460018
 GameObject:
@@ -9637,10 +9637,18 @@ MonoBehaviour:
   endWaterPath: {fileID: 31082078}
   arcHeight: 1.5
   trashDatas:
+  - trashName: Light Trash
+    trashType: 0
+    throwDuration: 1
+    spawnData: {fileID: 11400000, guid: 377457ecaf148e04996c132c8ebf33fc, type: 2}
   - trashName: Medium Trash
     trashType: 1
     throwDuration: 1
-    spawnData: {fileID: 11400000, guid: 377457ecaf148e04996c132c8ebf33fc, type: 2}
+    spawnData: {fileID: 11400000, guid: b2e7d3901f632aa4389d1d3eb42adab4, type: 2}
+  - trashName: Heavy Trash
+    trashType: 2
+    throwDuration: 1
+    spawnData: {fileID: 11400000, guid: 07f81244a0645b749872fd98ec6b086d, type: 2}
 --- !u!1 &1807491741
 GameObject:
   m_ObjectHideFlags: 0
@@ -9721,6 +9729,7 @@ MonoBehaviour:
   towers:
   - {fileID: 11400000, guid: 0c47a43d57352dd4ba40f45e98d93f7b, type: 2}
   - {fileID: 11400000, guid: f4a56f8b33917e647a2c8bb0872883f5, type: 2}
+  - {fileID: 11400000, guid: 22d6a5ff17874654e8dad81b79541bc4, type: 2}
   prefTowerCardUI: {fileID: 1130886805710819005, guid: cc3cf274917a1c64fbcb42c0fcfe0239, type: 3}
   containerTowerCard: {fileID: 333536270}
 --- !u!1 &1846782802

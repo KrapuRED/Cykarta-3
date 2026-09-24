@@ -89,7 +89,7 @@ public class SpawnerIrresponsible : Spawner
                 return;
             }
             
-            var entityData = EntityManager.Instance.GetEntityRunTimeData(spawnerData.spawnData.displayName, spawnerID, entityComponent);
+            var entityData = EntityManager.Instance.GetEntityRunTimeData(spawnerData.spawnData.displayName, spawnerID, spawnData.irresponsibleThinkingBaseData,entityComponent);
             entity.name = $"{entityData.entityID}";
             
             var entitiySpeed = Random.Range(spawnData.minEntitySpeed, spawnData.maxEntitySpeed);

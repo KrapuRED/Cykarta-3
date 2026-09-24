@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 1781951345308649785}
   - component: {fileID: 7863028321669397922}
   m_Layer: 6
-  m_Name: Pedestrian
+  m_Name: Pedestrian_Common
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,6 +273,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pedestrian
   entitySystemContainer: {fileID: 3331149976366693060}
   irresponsibleThinkingSlider: {fileID: 202570913734627121}
+  trashData:
+  - trashName: Light Trash
+    trashType: 0
+    trashChance: 80
+  - trashName: Medium Trash
+    trashType: 1
+    trashChance: 20
   moveSpeed: 5
   waypoints: []
   indexWaypoint: 0

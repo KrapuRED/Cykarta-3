@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public interface IIrresponsibleThinkable
@@ -13,5 +14,10 @@ public interface IIrresponsibleThinkable
     public void IncreaseIrresponsibleThinking(float deltaTime)
     {
         
+    }
+    
+    public TrashType GetRandomTrashType()
+    {
+        return TrashType.Light;
     }
 }

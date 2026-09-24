@@ -154,7 +154,7 @@ public class Tower : Entity
    {
       IsBeenPlace = true;
       
-      var entityData = EntityManager.Instance.GetEntityRunTimeData(TowerData.towerName, string.Empty, this);
+      var entityData = EntityManager.Instance.GetEntityRunTimeData(TowerData.towerName, string.Empty, null,this);
       InitializeEntity(entityData);
    }
    

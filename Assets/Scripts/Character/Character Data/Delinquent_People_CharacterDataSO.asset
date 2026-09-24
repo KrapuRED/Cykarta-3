@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f0963c14b333f54893723a074ccedaa, type: 3}
-  m_Name: CharacterDataSO
+  m_Name: Delinquent_People_CharacterDataSO
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDataSO
-  displayName: Common People
+  displayName: Delinquent People
   maxEntitySpeed: 0.5
   minEntitySpeed: 1.7
-  entityPrefab: {fileID: 4533883059496805327, guid: 771656107ac11b14da7696f941cda4f0, type: 3}
-  characterType: 0
+  irresponsibleThinkingBaseData:
+    chanceIrresponsibleThinking: 50
+    chanceTimeIrresponsibleThinking: 5
+    maxIrresponsibleThinkingMeter: 100
+    irresponsibleThinkingIncreaseRate: 25
+  entityPrefab: {fileID: 4533883059496805327, guid: 147da5922584ef344a3b555a38cd1124, type: 3}
+  characterType: 2

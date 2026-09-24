@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0963c14b333f54893723a074ccedaa, type: 3}
+  m_Name: Common_People_CharacterDataSO
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDataSO
+  displayName: Common People
+  maxEntitySpeed: 0.5
+  minEntitySpeed: 1.7
+  irresponsibleThinkingBaseData:
+    chanceIrresponsibleThinking: 30
+    chanceTimeIrresponsibleThinking: 8
+    maxIrresponsibleThinkingMeter: 100
+    irresponsibleThinkingIncreaseRate: 15
+  entityPrefab: {fileID: 4533883059496805327, guid: 771656107ac11b14da7696f941cda4f0, type: 3}
+  characterType: 1

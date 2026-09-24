@@ -34,6 +34,14 @@ public class TrashData
    public int trashWeight;
 }
 
+[System.Serializable]
+public class TrashChangeData
+{
+   public string trashName;
+   public TrashType trashType;
+   public float trashChance;
+}
+
 public class SpawnerTrash : Spawner
 {
    public static SpawnerTrash Instance { get; private set; }
@@ -73,7 +81,7 @@ public class SpawnerTrash : Spawner
          return;
       }
      
-      var entityData = EntityManager.Instance.GetEntityRunTimeData(trashData.spawnData.displayName, spawnerID, entityComponent);
+      var entityData = EntityManager.Instance.GetEntityRunTimeData(trashData.spawnData.displayName, spawnerID, null,entityComponent);
       
       if (newTrash.TryGetComponent<Trash>(out var trash))
          StartCoroutine(ThrowRoutine(trash, entityData, trashData.throwDuration, spawnPosition, landingPosition));

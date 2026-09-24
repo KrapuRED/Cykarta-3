@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockerScan : TowerScanArea
+public class TrashCatchScan : TowerScanArea
 {
     [SerializeField] private float widthScanArea;
     [SerializeField] private float heightScanArea;
@@ -17,17 +16,23 @@ public class BlockerScan : TowerScanArea
 
     protected override Transform PickTarget(int count)
     {
-        var blockerOwner = towerOwner as BlockerTower;
+        var trashCatchTower = towerOwner as TrashCatchTower;
         
         for (int i = 0; i < count; i++)
         {
             if (Hits[i].TryGetComponent<Entity>(out var entityData))
             {
-               if (Hits[i].TryGetComponent<Trash>(out var trash) &&
-                   blockerOwner != null && blockerOwner.IsAlreadyColleted(trash))
-                   continue;
+                if (Hits[i].TryGetComponent<Trash>(out var trash) &&
+                    trashCatchTower != null && trashCatchTower.IsAlreadyColleted(trash))
+                    continue;
                
-               return Hits[i].transform;
+                if (!trashCatchTower.IsEnoughSpace(trash.TrashData.trashWeight))
+                {
+                    Debug.Log($"{trash.TrashData.trashName} is not enough");
+                    continue;
+                }
+                
+                return Hits[i].transform;
             }
         }
         
@@ -38,7 +43,7 @@ public class BlockerScan : TowerScanArea
     {
         float angle = transform.eulerAngles.z;
         int count = Physics2D.OverlapBox(scannerPositon.position, _sizeBox, angle, Filter, Hits);
-        Debug.Log($"[{name}] ScanArea count={count}");
+
         CurrentTarget = count > 0 ? PickTarget(count) : null;
     }
     
@@ -49,6 +54,6 @@ public class BlockerScan : TowerScanArea
         
         Matrix4x4 rotationMatrix = Matrix4x4.TRS(scannerPositon.position, _rotation, Vector3.one);
         Gizmos.matrix = rotationMatrix;
-        Gizmos.DrawWireCube(Vector3.zero, new Vector3(widthScanArea, heightScanArea, 0f)); // hardcoded test size
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(widthScanArea, heightScanArea, 0f));
     }
 }

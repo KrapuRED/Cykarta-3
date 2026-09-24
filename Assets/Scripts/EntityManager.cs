@@ -7,9 +7,19 @@ public class EntityRunTimeData
     public string entityName;
     public string entityID; 
     public Entity entity;
+    public IrresponsibleThinkingBaseData irresponsibleThinkingBaseData;
     public EntityState entityState;
     public float stateTimer;
     public float cooldown;
+}
+
+[System.Serializable]
+public class IrresponsibleThinkingBaseData
+{
+    public float chanceIrresponsibleThinking;
+    public float chanceTimeIrresponsibleThinking;
+    public float maxIrresponsibleThinkingMeter; 
+    public float irresponsibleThinkingIncreaseRate;
 }
 
 [System.Serializable]
@@ -71,7 +81,7 @@ public class EntityManager : MonoBehaviour
         }
     }
 
-    public EntityRunTimeData GetEntityRunTimeData(string entityName, string spawnerID , Entity entity = null)
+    public EntityRunTimeData GetEntityRunTimeData(string entityName, string spawnerID , IrresponsibleThinkingBaseData baseData = null ,Entity entity = null)
     {
         string entityID = string.Empty;
         int indexEntity = 0;
@@ -94,6 +104,7 @@ public class EntityManager : MonoBehaviour
         {
             entityName = entityName,
             entityID = entityID,
+            irresponsibleThinkingBaseData = baseData,
             entity =  entity
         };
         

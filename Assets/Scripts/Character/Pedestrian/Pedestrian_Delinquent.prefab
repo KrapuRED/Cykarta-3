@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4660733563689402205}
   - component: {fileID: 202570913734627121}
   m_Layer: 0
-  m_Name: Vehicle Canvas - Irresponsible Thinking Slider
+  m_Name: Pedestrian Canvas - Irresponsible Thinking Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.591}
+  m_AnchoredPosition: {x: -0.000000061467, y: 0.591}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202570913734627121
@@ -174,10 +174,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6693248944976872909}
   - component: {fileID: 2064869534871781926}
-  - component: {fileID: 6983805722356272714}
-  - component: {fileID: 8456174101945280499}
+  - component: {fileID: 1781951345308649785}
+  - component: {fileID: 7863028321669397922}
   m_Layer: 6
-  m_Name: Vehicle
+  m_Name: Pedestrian_Delinquent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.5, y: 5.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1374531566062388261}
@@ -249,8 +249,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 12
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Color: {r: 1, g: 0.34635195, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -259,7 +259,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &6983805722356272714
+--- !u!114 &1781951345308649785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,26 +268,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 4533883059496805327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14c860f1a253a044a011572c051c192, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cbaa265cf254084ba611ec5055607b9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Vehicle
-  entitySystemContainer: {fileID: 7186574174819356442}
+  m_EditorClassIdentifier: Assembly-CSharp::Pedestrian
+  entitySystemContainer: {fileID: 3331149976366693060}
   irresponsibleThinkingSlider: {fileID: 202570913734627121}
-  moveSpeed: 5
-  waypoints: []
   trashData:
-  - trashName: Light
+  - trashName: Light Trash
     trashType: 0
-    trashChance: 40
-  - trashName: Medium
-    trashType: 1
     trashChance: 55
-  - trashName: Heavy
+  - trashName: Medium Trash
+    trashType: 1
+    trashChance: 20
+  - trashName: Heavy Trash
     trashType: 2
     trashChance: 5
+  moveSpeed: 5
+  waypoints: []
   indexWaypoint: 0
---- !u!61 &8456174101945280499
-BoxCollider2D:
+--- !u!70 &7863028321669397922
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -321,17 +321,8 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!1 &5782637269368183323
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +370,7 @@ GameObject:
   - component: {fileID: 3331149976366693060}
   - component: {fileID: 6216368075808271014}
   m_Layer: 0
-  m_Name: Vehicle System - State Machine
+  m_Name: Pedestrian System - State Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b8efb04346b0141b6457e68bd93fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StateNachine
-  entityOwner: {fileID: 6983805722356272714}
+  entityOwner: {fileID: 1781951345308649785}
   dataStateMachines:
   - nameStateCondition: Irresponsible Thinking State
     state: {fileID: 11400000, guid: bd0f01bb9d551da4889ffa8898a1e463, type: 2}
@@ -434,7 +425,7 @@ GameObject:
   - component: {fileID: 1505875816089684038}
   - component: {fileID: 6882803018501739171}
   m_Layer: 0
-  m_Name: === Vehicle Canvas ===
+  m_Name: === Pedestrian Canvas ===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,7 +524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7186574174819356442}
   m_Layer: 0
-  m_Name: === Vehicle System ===
+  m_Name: === Pedestrian System ===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class Pedestrian : Entity, IIrresponsibleThinkable
 {
     [SerializeField] private Slider irresponsibleThinkingSlider;
+    [SerializeField] private List<TrashChangeData> trashData = new();
+    
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private List<Vector3> waypoints = new ();
     
@@ -63,11 +65,11 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
     {
         IrresponsibleThinkingData = new IrresponsibleThinkingData
         {
-            chanceIrresponsibleThinking = 30,
-            chanceTimeIrresponsibleThinking = 5,
-            maxIrresponsibleThinkingMeter = 100f,
+            chanceIrresponsibleThinking = runTimeData.irresponsibleThinkingBaseData.chanceIrresponsibleThinking,
+            chanceTimeIrresponsibleThinking = runTimeData.irresponsibleThinkingBaseData.chanceTimeIrresponsibleThinking,
+            maxIrresponsibleThinkingMeter = runTimeData.irresponsibleThinkingBaseData.maxIrresponsibleThinkingMeter,
             currentIrresponsibleThinkingMeter = 0,
-            irresponsibleThinkingIncreaseRate = 25
+            irresponsibleThinkingIncreaseRate = runTimeData.irresponsibleThinkingBaseData.irresponsibleThinkingIncreaseRate
         };
         
         GetWaypoints(endPoint);
@@ -101,6 +103,38 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
     
     #region === CheckIrresponsibleThinking ===
 
+    public TrashType GetTrashType()
+    {
+        float total  = 0;
+        foreach (var trash in trashData)
+        {
+            if (trash == null) continue;
+            total += trash.trashChance;
+        }
+        
+        var trashType = TrashType.Light;
+        
+        if (!Mathf.Approximately(total, 100f))
+        {
+            Debug.LogWarning($"Trash chances sum to {total}, expected 100. Returning Light.");
+            return trashType;
+        }
+        
+        float roll = Random.Range(0f, total);
+        float cumulativeRoll = 0;
+        
+        foreach (var trash in trashData)
+        {
+            if (trash == null) continue;
+
+            cumulativeRoll += trash.trashChance;
+            if (roll <= cumulativeRoll)
+                trashType =  trash.trashType;
+        }
+        
+        return trashType;
+    }
+    
     public override void OnIncreaseIrresponsibleThinking(float deltaTime) =>  IncreaseIrresponsibleThinking(deltaTime);
     public void IncreaseIrresponsibleThinking(float deltaTime)
     {
@@ -117,7 +151,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
             IrresponsibleThinkingData.currentIrresponsibleThinkingMeter = 0;
             ThinkingCheckTimer = 0;
             EntityRunTimeData.entityState = EntityState.Moving;
-            SpawnerTrash.Instance.SpawnTrash(transform.position, TrashType.Medium);
+            SpawnerTrash.Instance.SpawnTrash(transform.position, GetTrashType());
             
             irresponsibleThinkingSlider.gameObject.SetActive(false);
         }
@@ -127,12 +161,10 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
    
     
     #region === CheckIrresponsibleThinking ===
-
    
     private void DecreaseIrresponsibleThinking(float deltaTime)
     {
         float decrease = IrresponsibleThinkingData.irresponsibleThinkingIncreaseRate * deltaTime;
-        Debug.Log($"[{name} (DecreaseIrresponsibleThinking)] Decrease Irresponsible Thinking {decrease} / {IrresponsibleThinkingData.currentIrresponsibleThinkingMeter} / {IrresponsibleThinkingData.maxIrresponsibleThinkingMeter}");
         
         IrresponsibleThinkingData.currentIrresponsibleThinkingMeter -= decrease;
         irresponsibleThinkingSlider.value = IrresponsibleThinkingData.currentIrresponsibleThinkingMeter;

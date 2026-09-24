@@ -73,6 +73,7 @@ public class TowerCardUI : MonoBehaviour
     {
         if (!_isSelected) return;
         
+        GameEvents.OnHideTowerCardDetail.Invoke();
         _isSelected = false;
     }
 }
