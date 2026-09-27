@@ -12,7 +12,7 @@ public class BlockerTower : Tower
 
     private void Start()
     {
-        maxCapacity =  TowerRunTimeData.towerCapacity;
+        maxCapacity =  (int)TowerRunTimeData.GetCurrentStatusValue(TowerStatus.MaxCapacity);
     }
     
     public override void OnDetectingArea(float deltaTime)

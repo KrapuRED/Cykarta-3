@@ -35,8 +35,8 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     {
         if (grappleLine != null) grappleLine.enabled = false;
         
-        MaxCapacity = TowerRunTimeData.towerCapacity;
-        durationRecycle = TowerData.baseTowerProcessingSpeed;
+        MaxCapacity = (int)TowerRunTimeData.GetCurrentStatusValue(TowerStatus.MaxCapacity);
+        durationRecycle = towerData.GetBaseStatusValue(TowerStatus.ProcessingSpeed);
         AccumulatedTrashes = new List<Trash>();
     }
     
@@ -81,8 +81,8 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
         }
       
         float currentRange = towerRunTimeData != null 
-            ? TowerRunTimeData.towerRange 
-            : TowerData.baseTowerRanger;
+            ? (int)TowerRunTimeData.GetCurrentStatusValue(TowerStatus.Range)
+            :(int)towerData.GetBaseStatusValue(TowerStatus.Range);
       
         // Set Diameter of the range
         float diameter = currentRange * 2f;
@@ -156,7 +156,10 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
         if (_targetTrash == null) return false;
         if (_targetTrash.TrashData.trashState != TrashState.Airborne) return false;
         
-        float range = towerRunTimeData != null ? TowerRunTimeData.towerRange : TowerData.baseTowerRanger;
+        float range = towerRunTimeData != null ? 
+            (int)TowerRunTimeData.GetCurrentStatusValue(TowerStatus.Range) : 
+            (int)towerData.GetBaseStatusValue(TowerStatus.Range);
+        
         return Vector3.Distance(transform.position, _targetTrash.transform.position) <= range;
     }
     

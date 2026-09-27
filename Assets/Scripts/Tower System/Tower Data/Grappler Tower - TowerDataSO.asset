@@ -16,7 +16,9 @@ MonoBehaviour:
   towerCost: 0
   towerDescription: 
   prefabObjectTower: {fileID: 5857374941782670224, guid: 48b3b01b20463b546a753b6deb874cda, type: 3}
-  baseTowerRanger: 5
-  baseTowerMaxCapacity: 6
-  baseTowerProcessingSpeed: 5
-  baseTowerAttackSpeed: 0
+  baseStatuses:
+  - towerStatus: Tower Range
+    status: 0
+    valueStatus: 5
+    isLowerValueBetter: 0
+  upgrades: []

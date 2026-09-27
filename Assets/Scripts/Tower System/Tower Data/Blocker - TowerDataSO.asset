@@ -16,7 +16,5 @@ MonoBehaviour:
   towerCost: 125
   towerDescription: 
   prefabObjectTower: {fileID: 1951802521689120775, guid: ac31c73bc75380448844d898e2b2f10f, type: 3}
-  baseTowerRanger: 3
-  baseTowerMaxCapacity: 4
-  baseTowerProcessingSpeed: 0
-  baseTowerAttackSpeed: 0
+  baseStatuses: []
+  upgrades: []

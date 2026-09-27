@@ -17,7 +17,7 @@ public class CircelScanArea : TowerScanArea
 
     protected override void ScanArea()
     {
-        float radius = towerOwner.TowerRunTimeData.towerRange; 
+        float radius = (int)towerOwner.TowerRunTimeData.GetCurrentStatusValue(TowerStatus.Range); 
         int count = Physics2D.OverlapCircle(transform.position, radius, Filter, Hits);
 
         CurrentTarget = count > 0 ? PickTarget(count) : null;
@@ -38,7 +38,7 @@ public class CircelScanArea : TowerScanArea
         if (towerOwner == null) return 0f;
 
         return towerOwner.TowerRunTimeData != null
-            ? towerOwner.TowerRunTimeData.towerRange
-            : towerOwner.TowerData.baseTowerRanger;
+            ? (int)towerOwner.TowerRunTimeData.GetCurrentStatusValue(TowerStatus.Range)
+            : (int)towerOwner.TowerData.GetBaseStatusValue(TowerStatus.Range);
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -5,11 +6,18 @@ public class TowerRunTimeData
 {
    public string towerName;
    public int  towerLevel;
-   public int  towerRange;
-   public int  towerCapacity;
-   public float  towerProcessingSpeed;
-   public float  towerAttackSpeed;
+   public List<TowerStatusData> currentTowerStatusData = new ();
    public bool isTowerUnLockToTarget;
+   
+   public float GetCurrentStatusValue(TowerStatus status, float fallback = 0f)
+   {
+      foreach (var s in currentTowerStatusData)
+      {
+         if (s.status == status)
+            return s.valueStatus;
+      }
+      return fallback;
+   }
 }
 
 [System.Serializable]
@@ -53,16 +61,7 @@ public class Tower : Entity
 
    private void Awake()
    {
-      towerRunTimeData = new TowerRunTimeData
-      {
-         towerName = towerData.towerName,
-         towerLevel = 1,
-         towerRange =  towerData.baseTowerRanger,
-         towerCapacity = towerData.baseTowerMaxCapacity,
-         towerProcessingSpeed = towerData.baseTowerProcessingSpeed,
-         towerAttackSpeed = towerData.baseTowerAttackSpeed,
-         isTowerUnLockToTarget = true
-      };
+      InitializerTowerData();
       
       TowerScanArea = entitySystemContainer != null
          ? entitySystemContainer.GetComponentInChildren<TowerScanArea>()
@@ -89,6 +88,23 @@ public class Tower : Entity
       GameEvents.OnHideTowerDetectRange.RemoveListener(HandleHideTowerRangeDetection);
    }
 
+   private void InitializerTowerData()
+   {
+      var clonedStatuses = new List<TowerStatusData>();
+      foreach (var s in towerData.baseStatuses)
+      {
+         clonedStatuses.Add(s.Clone());
+      }
+
+      towerRunTimeData = new TowerRunTimeData 
+      {
+         towerName = towerData.towerName,
+         towerLevel = 1,
+         currentTowerStatusData = clonedStatuses,
+         isTowerUnLockToTarget = true
+      };
+   }
+
    private void HandleShowTowerRangeDetection(string towerID)
    {
       if (visualRange == null)
@@ -96,22 +112,23 @@ public class Tower : Entity
       
       if (string.IsNullOrEmpty(towerID))
       {
-         visualRange.gameObject.SetActive(false); }
+         visualRange.gameObject.SetActive(false); 
+      }
       
       if (!string.IsNullOrEmpty(towerID) && towerID == TowerID)
       {
+         SetVisualDetectRange();
          visualRange.gameObject.SetActive(true);
       }
    }
    
    private void HandleHideTowerRangeDetection()
    {
+      Debug.Log($"[{nameof(Tower)}] {TowerID} is being hidden!");
+      
       if (visualRange == null)
          return;
-      
-      if (IsBeenPlace) return;
-         InitializeTower();
-      
+
       visualRange.gameObject.SetActive(false);
    }
 
@@ -171,10 +188,36 @@ public class Tower : Entity
       towerBody.rotation = Quaternion.Euler(0, 0, CurrentRotation);
    }
 
-   public void UpgradeTower(TowerDataSO upgradeTowerData)
+   public void UpgradeTower(UpgradeTowerData upgradeTowerData)
    {
-      
+      TowerRunTimeData.towerLevel++;
+      foreach (var upgrade in upgradeTowerData.upgradeStatuses)
+      {
+         if (upgrade == null) continue;
+
+         foreach (var runtimeData in TowerRunTimeData.currentTowerStatusData)
+         {
+            if (runtimeData.status == upgrade.status)
+            {
+               runtimeData.valueStatus += upgrade.valueStatus;
+            }
+         }
+      }
    }
+   
+   public UpgradeTowerData GetNextUpgrade()
+   {
+      if (towerData == null)
+         return null;
+
+      int nextUpgradeIndex = towerRunTimeData.towerLevel - 1;
+      if (nextUpgradeIndex < 0 || nextUpgradeIndex >= towerData.upgrades.Count)
+         return null;
+
+      return towerData.upgrades[nextUpgradeIndex];
+   }
+
+   public bool HasNextUpgrade => GetNextUpgrade() != null;
 
    public void RemoveTower(GridZone resetZone = GridZone.Build)
    {

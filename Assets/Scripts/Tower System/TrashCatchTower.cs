@@ -15,8 +15,8 @@ public class TrashCatchTower : Tower, IRecycleTrash
 
     private void Start()
     {
-        MaxCapacity = TowerRunTimeData.towerCapacity;
-        durationRecycle = TowerData.baseTowerProcessingSpeed;
+        MaxCapacity = (int)TowerRunTimeData.GetCurrentStatusValue(TowerStatus.MaxCapacity);
+        durationRecycle = TowerData.GetBaseStatusValue(TowerStatus.ProcessingSpeed);
         AccumulatedTrashes = new List<Trash>();
     }
     

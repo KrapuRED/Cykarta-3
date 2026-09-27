@@ -70,8 +70,8 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
         }
       
         float currentRange = towerRunTimeData != null 
-            ? TowerRunTimeData.towerRange 
-            : TowerData.baseTowerRanger;
+            ? TowerRunTimeData.GetCurrentStatusValue(TowerStatus.Range)
+            : (int)towerData.GetBaseStatusValue(TowerStatus.Range);
       
         // Set Diameter of the range
         float diameter = currentRange * 2f;
