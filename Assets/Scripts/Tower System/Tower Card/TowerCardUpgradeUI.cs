@@ -47,7 +47,9 @@ public class TowerCardUpgradeUI : MonoBehaviour
         towerName.text = towerRunTimeData.towerName;
         towerLevel.text = $"level {towerRunTimeData.towerLevel}";
         towerStatus.text = BuildCurrentStatusText(towerRunTimeData);
-        HandleCostText(_upgradeTowerData.upgradeCost);
+        
+        if (_upgradeTowerData != null)
+                    HandleCostText(_upgradeTowerData.upgradeCost);
         
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;

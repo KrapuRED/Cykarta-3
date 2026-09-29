@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c5470cd6d6bdb4fa0f0d8f34eb4a22, type: 3}
+  m_Name: TWSmart-block - TowerDataSO
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
+  towerName: TWSmart-block
+  towerCost: 125
+  towerDescription: 
+  prefabObjectTower: {fileID: 1951802521689120775, guid: ac31c73bc75380448844d898e2b2f10f, type: 3}
+  baseStatuses:
+  - towerStatus: Range
+    status: 0
+    valueStatus: 3
+    isLowerValueBetter: 0
+  - towerStatus: Max Capacity
+    status: 1
+    valueStatus: 3
+    isLowerValueBetter: 0
+  upgrades:
+  - upgradeName: Upgrade level 1 -> 2
+    upgradeRequirement: 1
+    upgradeCost: 100
+    upgradeStatuses:
+    - towerStatus: Range
+      status: 0
+      valueStatus: 3
+      isLowerValueBetter: 0
+    - towerStatus: Max Capacity
+      status: 1
+      valueStatus: 6
+      isLowerValueBetter: 0

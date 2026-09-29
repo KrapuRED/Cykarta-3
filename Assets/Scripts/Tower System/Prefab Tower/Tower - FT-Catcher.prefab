@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e931102de8bd324eb4dc6dd8f6eedfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerConfirmationUI
-  ownerTower: {fileID: 1951802521689120775}
+  ownerTower: {fileID: 3821810546088435452}
   canvasGroup: {fileID: 7973104694357074748}
 --- !u!1 &1715107445311851286
 GameObject:
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 7375954210988365239}
   - component: {fileID: 8970001660079805470}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: FT-Catcher - Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,12 +194,12 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 12
+  m_SortingLayerID: 1014021433
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: dc92a01875bd0ec4c89695da9c25bb33, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -482,7 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5523029050712363491}
   m_Layer: 0
-  m_Name: Tower Blocker - Body
+  m_Name: FT-Catcher - Sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,8 +498,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1521332957191280522}
   - {fileID: 7375954210988365239}
@@ -531,9 +531,9 @@ Transform:
   m_GameObject: {fileID: 4141413941632910151}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 3.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5523029050712363491}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b8efb04346b0141b6457e68bd93fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StateMachine
-  entityOwner: {fileID: 1951802521689120775}
+  entityOwner: {fileID: 3821810546088435452}
   dataStateMachines:
   - nameStateCondition: Detecting Area
     state: {fileID: 11400000, guid: e3f23546d98149a4c9a5ebdae003b294, type: 2}
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 1521332957191280522}
   - component: {fileID: 4293626134014230317}
   m_Layer: 0
-  m_Name: Eye Spotter
+  m_Name: FT-Catcher - Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -899,11 +899,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingLayerID: 1014021433
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cca6f145d7ae74c4f977e9886247b4e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -959,7 +959,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6676489526707978640}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -1063,9 +1063,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3143192950549492149}
-  - component: {fileID: 1951802521689120775}
+  - component: {fileID: 3821810546088435452}
   m_Layer: 0
-  m_Name: Tower - Blocker
+  m_Name: Tower - FT-Catcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1081,7 +1081,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5523029050712363491}
@@ -1090,7 +1090,7 @@ Transform:
   - {fileID: 512286175016308357}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1951802521689120775
+--- !u!114 &3821810546088435452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1099,27 +1099,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 6886366819302588705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 893e62c497433a140bab77aa57b50972, type: 3}
+  m_Script: {fileID: 11500000, guid: b132d6c597876cc4eb3e94abafcb928f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlockerTower
+  m_EditorClassIdentifier: Assembly-CSharp::TrashCatchTower
   entitySystemContainer: {fileID: 512286175016308357}
-  towerData: {fileID: 11400000, guid: f4a56f8b33917e647a2c8bb0872883f5, type: 2}
+  towerData: {fileID: 11400000, guid: 22d6a5ff17874654e8dad81b79541bc4, type: 2}
   towerRunTimeData:
     towerName: 
     towerLevel: 0
-    towerRange: 0
-    towerCapacity: 0
-    towerProcessingSpeed: 0
-    towerAttackSpeed: 0
+    currentTowerStatusData: []
     isTowerUnLockToTarget: 0
   towerBody: {fileID: 5523029050712363491}
   visualRange: {fileID: 5565849245312027776}
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  maxCapacity: 5
-  accumulatedTrashes: []
   catchTrashState: 0
+  durationRecycle: 0
 --- !u!1 &8085225384237199312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 97662370951320856}
-  - component: {fileID: 3026936304381561193}
+  - component: {fileID: 4917499071006043224}
   m_Layer: 0
   m_Name: Tower System - Block Area
   m_TagString: Untagged
@@ -1285,7 +1281,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 512286175016308357}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3026936304381561193
+--- !u!114 &4917499071006043224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1294,14 +1290,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8348890756886544425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea2e338db68a2c4db966a51f4ffc862, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f31a55e988c1b74a84d09f01559bda5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlockerScan
-  towerOwner: {fileID: 1951802521689120775}
+  m_EditorClassIdentifier: Assembly-CSharp::TrashCatchScan
+  towerOwner: {fileID: 3821810546088435452}
   detectionInterval: 0
   maxDetected: 16
-  widthScanArea: 0.5
-  heightScanArea: 1.2
+  widthScanArea: 1
+  heightScanArea: 1
   scannerPositon: {fileID: 6602691128675481914}
 --- !u!1 &9079885730614092110
 GameObject:
