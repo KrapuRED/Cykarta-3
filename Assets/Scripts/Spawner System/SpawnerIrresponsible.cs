@@ -2,16 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SpawnerData
-{
-    public string spawnerDataName;
-    public int maxSpawnCount;
-    public int currentSpawnCount;
-    public bool isReachMaxSpawnCount;
-    public SpawnableDataSO spawnData;
-}
-
-[System.Serializable]
 public class WayPointData
 {
     public string wayPointDataName;
@@ -146,7 +136,6 @@ public class SpawnerIrresponsible : Spawner
                 continue;
             }
             
-            var data = spawnerData;
             spawnerDatas.Add(new SpawnerData
             {
                 spawnerDataName = spawnerData.spawnerDataName,

@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+public class SpawnerData
+{
+    public string spawnerDataName;
+    public int maxSpawnCount;
+    public int currentSpawnCount;
+    public bool isReachMaxSpawnCount;
+    public SpawnableDataSO spawnData;
+}
+
+[System.Serializable]
 public class WaveSpawnerData
 {
     public string spawnerName;
@@ -23,7 +33,6 @@ public class WaveData
 public class SpawnerManager : MonoBehaviour
 {
     public static SpawnerManager Instance  { get; private set; }
-    [SerializeField] private List<WaveData> waveDataList = new();
 
     public bool startSpawn = false;
     
@@ -41,22 +50,20 @@ public class SpawnerManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
+
+    public void StartSpawn(WaveData currentWaveData)
     {
-        if (!startSpawn) return;
-        
-        _currentWaveData = waveDataList[_waveIndex];
         List<SpawnerIrresponsible> spawners = new(); 
         
-        foreach (var spawnerSystem in _currentWaveData.waveSpawnerData)
+        foreach (var spawnerSystem in currentWaveData.waveSpawnerData)
         {
             if (spawnerSystem.spawnerIrresponsible == null) continue;
 
             spawnerSystem.spawnerIrresponsible.AddOrChangeSpawnerData(spawnerSystem);
             spawners.Add(spawnerSystem.spawnerIrresponsible);
+            
+            StartCoroutine(DelaySpanwenActivation(spawners));
         }
-        
-        StartCoroutine(DelaySpanwenActivation(spawners));
     }
 
     private IEnumerator DelaySpanwenActivation(List<SpawnerIrresponsible>  spawners)
