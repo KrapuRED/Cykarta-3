@@ -164,7 +164,7 @@ public class Tower : Entity
 
    #region ======= BUILD TOWER ======
    
-   protected virtual void InitializeTower()
+   public void InitializeTower()
    {
       IsBeenPlace = true;
       

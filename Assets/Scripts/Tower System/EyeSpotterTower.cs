@@ -2,6 +2,23 @@ using UnityEngine;
 
 public class EyeSpotterTower : Tower, IRotateHeadTowerable
 {
+    [Header("Rotate Head Tower Config")]
+    [SerializeField] private Transform towerHead;
+    [SerializeField] private float spriteAngleOffset = -90f; // -90 if head sprite faces up, 0 if it faces right
+    [SerializeField] private float lockRotationSpeed = 720f;
+    [SerializeField] private float speedRotation;
+   
+    private float _currentTargetAngle;
+    private bool _isDecreasing;
+    private const float DecreaseStartPercent = 0.25f;
+    
+    private bool CanLock(Transform t)
+    {
+        return t.TryGetComponent<Entity>(out var entity) &&
+               t.TryGetComponent<IIrresponsibleThinkable>(out var thinkable) &&
+               entity.EntityRunTimeData.entityState == EntityState.IrresponsibleThinking;
+    }
+    
     public override void OnDetectingArea(float deltaTime)
     {
         if (!IsBeenPlace)
@@ -10,20 +27,17 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
             return;
         }
         
-        TowerScanArea.OnDetecting(deltaTime, out Transform targetToLock);
-        if (targetToLock != null)
+        if (IsLocked && CurrentTarget != null)
         {
-            if (targetToLock.TryGetComponent<IIrresponsibleThinkable>(out var thinkable) &&
-               thinkable.IrresponsibleThinkingData.currentIrresponsibleThinkingMeter >= 25f &&
-               !thinkable.IrresponsibleThinkingData.isIrresponsibleThinking)
-            {
-                CurrentTarget = targetToLock;
-                LockToTarget(targetToLock);
-            }
-            else
-            {
-                RotateHead();
-            }
+            LockRotationToTarget(CurrentTarget);
+            return;
+        }
+        
+        TowerScanArea.OnDetecting(deltaTime, out Transform targetToLock);
+        if (targetToLock != null && CanLock(targetToLock))
+        {
+            CurrentTarget = targetToLock;
+            LockToTarget(targetToLock);
         }
         else RotateHead();
     }
@@ -32,33 +46,56 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
     {
         IsLocked = true;
         LockRotationToTarget(targetToLock);
-        
-        if (targetToLock.TryGetComponent<IIrresponsibleThinkable>(out var thinkable))
-            thinkable.IrresponsibleThinkingData.isIrresponsibleThinking = true;
     }
 
     #region === Main Method ===
 
-    private void DecreaseIrresponsibleThinking(float deltaTime)
+    public override void OnUpdateTower(float deltaTime)
     {
-        if (CurrentTarget == null)
-            return;
+        if (!IsLocked) return;
         
-        CurrentTarget.TryGetComponent<Entity>(out var entityData);
-        entityData.OnDecreaseIrresponsibleThinking(deltaTime);
-
-        if (entityData.EntityRunTimeData.entityState == EntityState.Moving)
+        if (CurrentTarget == null ||
+            !CurrentTarget.TryGetComponent<Entity>(out var entity) ||
+            !CurrentTarget.TryGetComponent<IIrresponsibleThinkable>(out var thinkable))
         {
-            if (CurrentTarget.TryGetComponent<IIrresponsibleThinkable>(out var thinkable)) 
-                thinkable.IrresponsibleThinkingData.isIrresponsibleThinking = false;
-            
-            CurrentTarget = null;
-            IsLocked = false;
+            ReleaseTarget();
+            return;
         }
+        
+        if (entity.EntityRunTimeData.entityState != EntityState.IrresponsibleThinking)
+        {
+            ReleaseTarget();
+            return;
+        }
+        
+        var data = thinkable.IrresponsibleThinkingData;
+        LockRotationToTarget(CurrentTarget);
+        
+        if (!_isDecreasing)
+        {
+            if (data.currentIrresponsibleThinkingMeter / data.maxIrresponsibleThinkingMeter <=
+                DecreaseStartPercent) return;
+            
+            _isDecreasing = true;
+            data.isBeingDecreased = true;
+        }
+        
+        entity.OnDecreaseIrresponsibleThinking(deltaTime);
     }
 
-    public override void OnUpdateTower(float deltaTime) => DecreaseIrresponsibleThinking(deltaTime);
+    private void ReleaseTarget()
+    {
+        if (CurrentTarget != null &&
+            CurrentTarget.TryGetComponent<IIrresponsibleThinkable>(out var t))
+        {
+            t.IrresponsibleThinkingData.entityState = EntityState.Moving;
+            t.IrresponsibleThinkingData.isBeingDecreased = false;
+        }
 
+        CurrentTarget = null;
+        IsLocked = false;
+        _isDecreasing = false;
+    }
     #endregion
 
     protected override void SetVisualDetectRange()
@@ -89,12 +126,22 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
     
     public void RotateHead()
     {
-        Debug.Log($"[{name}] Rotating Head");
+        Debug.Log($"[{name} RotateHead] Rotating Head!");
+        _currentTargetAngle -= Time.deltaTime * speedRotation;
+        _currentTargetAngle %= 360;
+        
+        towerHead.rotation = Quaternion.Euler(0, 0, _currentTargetAngle);
     }
 
     public void LockRotationToTarget(Transform target)
     {
-        
+        Vector2 dir = target.position - towerHead.position;
+        if (dir.sqrMagnitude < 0.0001f) return;
+
+        float targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + spriteAngleOffset;
+
+        _currentTargetAngle = Mathf.MoveTowardsAngle(_currentTargetAngle, targetAngle, lockRotationSpeed * Time.deltaTime);
+        towerHead.rotation  = Quaternion.Euler(0f, 0f, _currentTargetAngle);
     }
     
     #endregion

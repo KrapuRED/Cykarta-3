@@ -11,7 +11,7 @@ public class IrresponsibleThinkingState : StateSO
     public override void ExecuteState(Entity entity, float deltaTime)
     {
         if (entity is IIrresponsibleThinkable thinkable &&
-            thinkable.IrresponsibleThinkingData.isIrresponsibleThinking)
+            thinkable.IrresponsibleThinkingData.entityState == EntityState.IrresponsibleThinking)
         {
             return;
         }

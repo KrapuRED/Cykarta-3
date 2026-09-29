@@ -42,6 +42,7 @@ public class TowerConfirmationUI : MonoBehaviour
 
         CurrencyManager.Instance.UseCurrency(ownerTower.TowerData.towerCost);
         _isBeenConfirmed = true;
+        ownerTower.InitializeTower();
         HideTowerConfirmationUI();
         
         GameEvents.OnHideTowerDetectRange.Invoke();

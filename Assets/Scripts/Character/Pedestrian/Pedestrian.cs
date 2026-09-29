@@ -139,6 +139,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
     public void IncreaseIrresponsibleThinking(float deltaTime)
     {
         if (EntityRunTimeData.entityState == EntityState.Moving) return;
+        if (IrresponsibleThinkingData.isBeingDecreased) return;
         
         float increase = IrresponsibleThinkingData.irresponsibleThinkingIncreaseRate * deltaTime;
         IrresponsibleThinkingData.currentIrresponsibleThinkingMeter += increase;
@@ -172,10 +173,10 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         if (IrresponsibleThinkingData.currentIrresponsibleThinkingMeter <= 0)
         {
             IrresponsibleThinkingData.currentIrresponsibleThinkingMeter = 0;
+            ThinkingCheckTimer = 0;
             EntityRunTimeData.entityState = EntityState.Moving;
             
             irresponsibleThinkingSlider.gameObject.SetActive(false);
-            
             Debug.LogWarning($"[{name} (DecreaseIrresponsibleThinking)] Is not do the Irresponsible Think!");
         }
     }
