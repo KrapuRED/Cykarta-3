@@ -39,10 +39,11 @@ public class SpawnerManager : MonoBehaviour
 {
     public static SpawnerManager Instance  { get; private set; }
 
+    [SerializeField] private DelayTimerObjectiveUI delayTimerObjectiveUI;
+    
     public bool startSpawn = false;
     
     private List<SpawnerIrresponsible> _activeSpawners = new ();
-    private int _waveIndex;
     
     private void Awake()
     {
@@ -61,28 +62,46 @@ public class SpawnerManager : MonoBehaviour
         
         if (isDoneAll)
         {
-            ObjectiveManager.Instance.NextWave();
             _activeSpawners.Clear();
+            ObjectiveManager.Instance.NextWave();
         }
     }
 
-    public void StartSpawn(WaveData currentWaveData)
+    public void StartSpawn(WaveData currentWaveData, int waveIndex)
     {
-        
         foreach (var spawnerSystem in currentWaveData.waveSpawnerData)
         {
-            if (spawnerSystem.spawnerIrresponsible == null) continue;
+            if (spawnerSystem.spawnerIrresponsible == null)
+            {
+                Debug.LogWarning($"Spawner System in {spawnerSystem.spawnerName} doesn't exist!");
+                continue;
+            }
 
             spawnerSystem.spawnerIrresponsible.AddOrChangeSpawnerData(spawnerSystem);
             _activeSpawners.Add(spawnerSystem.spawnerIrresponsible);
             
-            StartCoroutine(DelaySpanwenActivation(_activeSpawners, currentWaveData.waveDelay));
+            StartCoroutine(DelaySpanwerActivation(_activeSpawners, currentWaveData.waveDelay, waveIndex));
         }
     }
 
-    private IEnumerator DelaySpanwenActivation(List<SpawnerIrresponsible> spawners, float delay)
+    private IEnumerator DelaySpanwerActivation(List<SpawnerIrresponsible> spawners, float delay, int waveIndex)
     {
-        yield return new WaitForSeconds(delay);
+        Debug.Log($"Delay spawner activation: {waveIndex + 1}");
+        
+        delayTimerObjectiveUI.ShowDelayTimerObjectiveUI();
+        float remainingTime = delay;
+        
+        while (remainingTime > 0)
+        {
+            remainingTime -= Time.deltaTime;
+            
+            delayTimerObjectiveUI.UpdateTimerText(waveIndex + 1, remainingTime);
+            
+            yield return null;
+        }
+        
+        delayTimerObjectiveUI.HideDelayTimerObjectiveUI();
+        
         foreach (var spawner in spawners)
             spawner.StartSpawner();
     }

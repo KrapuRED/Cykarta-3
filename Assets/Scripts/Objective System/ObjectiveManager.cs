@@ -44,26 +44,30 @@ public class ObjectiveManager : MonoBehaviour
     public void NextWave()
     {
         _waveIndex++;
+        if (_waveIndex >= waveDataList.Count)
+        {
+            Debug.LogWarning("No wave data found");
+            return;
+        }
+        
         var currentWaveData = waveDataList[_waveIndex];
         var spawnData = currentWaveData.waveSpawnerData;
         List<SpawnerData> data =  new List<SpawnerData>();
-
+        
         foreach (var ws in spawnData)
         {
             data.AddRange(ws.spawnerData);
         }
 
-        _maxEnemyCounter = CountTotalEnemy(data);
+        SpawnerManager.Instance.StartSpawn(currentWaveData, _waveIndex);
         
+        _maxEnemyCounter = CountTotalEnemy(data);
         enemyCounter.UpdateObjectiveUI(new EnemyCounterObjectiveDataUI
         {
             currentEnemyCounter = 0,
             maxEnemyCounter = _maxEnemyCounter
         });
-        
-        
-        SpawnerManager.Instance.StartSpawn(currentWaveData);
-        Debug.Log($"Total Wave Count: {waveDataList.Count}");
+
         Debug.Log($"Wave Index: {_waveIndex} {currentWaveData.waveDataName} total Enemy : {_maxEnemyCounter}");
     }
 
@@ -99,5 +103,22 @@ public class ObjectiveManager : MonoBehaviour
         
         if (_currentEnemyCounter >= _maxEnemyCounter)
             SpawnerManager.Instance.CheckAllIrresponsibleSpawnerIsDone();
+    }
+
+    public void UpdateObjectiveProctectionLevel(int weight)
+    {
+        CurrentObjectiveHealthPoints -= weight;
+        
+        proctectionLevel.UpdateObjectiveUI(new ProtectionObjectiveDataUI
+        {
+            currentProtectionLevel = CurrentObjectiveHealthPoints
+        });
+        
+        if (CurrentObjectiveHealthPoints <= 0)
+        {
+            Debug.LogError($"{name} Objective Proctection Level is Reach 0! Player FAILED!");
+            return;
+        }
+        
     }
 }

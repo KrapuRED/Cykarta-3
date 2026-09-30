@@ -40,6 +40,7 @@ public class Trash : Entity
             indexWaypoint++;
             if (indexWaypoint >= waypoints.Count)
             {
+                ObjectiveManager.Instance.UpdateObjectiveProctectionLevel(trashData.trashWeight);
                 DestroyEntity();
                 return;
             }
