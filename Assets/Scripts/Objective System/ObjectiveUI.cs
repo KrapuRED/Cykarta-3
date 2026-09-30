@@ -14,6 +14,12 @@ public class EnemyCounterObjectiveDataUI : ObjectiveDataUI
     public int maxEnemyCounter;
 }
 
+public class WaveCounterObjectiveDataUI : ObjectiveDataUI
+{
+    public int maxWaveCounter;
+    public int currentWaveCounter;
+}
+
 public abstract class ObjectiveUI : MonoBehaviour
 {
     public abstract void UpdateObjectiveUI(ObjectiveDataUI data);

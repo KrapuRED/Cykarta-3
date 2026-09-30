@@ -12,6 +12,7 @@ public class ObjectiveManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private ObjectiveUI enemyCounter;
     [SerializeField] private ObjectiveUI proctectionLevel;
+    [SerializeField] private ObjectiveUI waveCounter;
     
     public int CurrentObjectiveHealthPoints { get; private set; }
     private int _waveIndex = -1;
@@ -66,6 +67,12 @@ public class ObjectiveManager : MonoBehaviour
         {
             currentEnemyCounter = 0,
             maxEnemyCounter = _maxEnemyCounter
+        });
+        
+        waveCounter.UpdateObjectiveUI(new WaveCounterObjectiveDataUI
+        {
+            currentWaveCounter = _waveIndex + 1,
+            maxWaveCounter = waveDataList.Count
         });
 
         Debug.Log($"Wave Index: {_waveIndex} {currentWaveData.waveDataName} total Enemy : {_maxEnemyCounter}");
