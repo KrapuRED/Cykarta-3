@@ -26,6 +26,7 @@ public class Vehicle : Entity, IIrresponsibleThinkable
         
         if (waypoints.Count <= 0)
         {
+            ObjectiveManager.Instance.UpdateObjectiveEnemyCounter();
             DestroyEntity();
             return;
         }

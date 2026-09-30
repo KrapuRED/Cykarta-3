@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 
 #region Configuration Custom Events
-
 public class CustomEvents
 {
     private event Action Action = delegate { };

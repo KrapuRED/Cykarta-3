@@ -24,6 +24,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         
         if (waypoints.Count <= 0)
         {
+            Debug.Log($"[{name}] Pedestrian reach Destination!");
             DestroyEntity();
             return;
         }
@@ -33,6 +34,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
             indexWaypoint++;
             if (indexWaypoint >= waypoints.Count)
             {
+                ObjectiveManager.Instance.UpdateObjectiveEnemyCounter();
                 DestroyEntity();
                 return;
             }

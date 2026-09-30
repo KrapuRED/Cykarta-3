@@ -21,11 +21,12 @@ public class SpawnerIrresponsible : Spawner
     
     [SerializeField] private float currentSpawnRate;
     [SerializeField] private float prevSpawnRate;
-    private bool _isSpawnerActive;
+    
+    public bool IsSpawnerActive { get; private set; }
 
     private void Update()
     {
-        if (!_isSpawnerActive) return;
+        if (!IsSpawnerActive) return;
         
         currentSpawnRate -= Time.deltaTime;
         if (currentSpawnRate <= 0)
@@ -54,7 +55,11 @@ public class SpawnerIrresponsible : Spawner
 
     public override void OnSpawning()
     {
-        if (spawnerDatas.Count == 0 || AllReachedMax()) { _isSpawnerActive = false; return; }
+        if (spawnerDatas.Count == 0 || AllReachedMax()) 
+        { 
+            IsSpawnerActive = false; 
+            return;
+        }
         
         int index = Random.Range(0, spawnerDatas.Count);
         if (index >= spawnerDatas.Count)
@@ -109,11 +114,11 @@ public class SpawnerIrresponsible : Spawner
 
     public override void StartSpawner()
     {
-        if (_isSpawnerActive) return;
+        if (IsSpawnerActive) return;
         
         currentSpawnRate = Random.Range(minSpawnRate, maxSpawnRate);
         prevSpawnRate = currentSpawnRate;
-        _isSpawnerActive = true;
+        IsSpawnerActive = true;
     }
     
     public void AddOrChangeSpawnerData(WaveSpawnerData newSpawnerData)
@@ -124,12 +129,12 @@ public class SpawnerIrresponsible : Spawner
             return;
         }
         
-        _isSpawnerActive = false;
+        IsSpawnerActive = false;
         maxSpawnRate = newSpawnerData.maxSpawnRate;
         minSpawnRate = newSpawnerData.minSpawnRate;
         spawnerDatas.Clear();
         
-        foreach (var spawnerData in newSpawnerData.waveSpawnerData)
+        foreach (var spawnerData in newSpawnerData.spawnerData)
         {
             if (spawnerData == null)
             {
