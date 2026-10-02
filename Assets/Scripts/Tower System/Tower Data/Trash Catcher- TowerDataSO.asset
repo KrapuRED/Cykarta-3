@@ -16,7 +16,41 @@ MonoBehaviour:
   towerCost: 100
   towerDescription: 
   prefabObjectTower: {fileID: 3821810546088435452, guid: f23033bc80d02254ebc6d8717292e5ab, type: 3}
-  baseTowerRanger: 3
-  baseTowerMaxCapacity: 4
-  baseTowerProcessingSpeed: 3
-  baseTowerAttackSpeed: 0
+  baseStatuses:
+  - towerStatus: Max Capacity
+    status: 1
+    valueStatus: 4
+    isLowerValueBetter: 0
+  - towerStatus: Processing Speed
+    status: 2
+    valueStatus: 12
+    isLowerValueBetter: 1
+  - towerStatus: Attack Speed
+    status: 3
+    valueStatus: 5
+    isLowerValueBetter: 1
+  - towerStatus: Range
+    status: 0
+    valueStatus: 5
+    isLowerValueBetter: 0
+  upgrades:
+  - upgradeName: Upgrade level 1 -> 2
+    upgradeRequirement: 0
+    upgradeCost: 0
+    upgradeStatuses:
+    - towerStatus: Max Capacity
+      status: 1
+      valueStatus: 0
+      isLowerValueBetter: 0
+    - towerStatus: Processing Speed
+      status: 2
+      valueStatus: 0
+      isLowerValueBetter: 1
+    - towerStatus: Attack Speed
+      status: 3
+      valueStatus: -2
+      isLowerValueBetter: 1
+    - towerStatus: Range
+      status: 0
+      valueStatus: 0
+      isLowerValueBetter: 0
