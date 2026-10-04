@@ -12,13 +12,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c5470cd6d6bdb4fa0f0d8f34eb4a22, type: 3}
   m_Name: Grappler Tower - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
-  towerName: Grappler Tower
+  towerName: AT-Interceptor
   towerCost: 0
   towerDescription: 
   prefabObjectTower: {fileID: 5857374941782670224, guid: 48b3b01b20463b546a753b6deb874cda, type: 3}
   baseStatuses:
+  - towerStatus: Max Capacity
+    status: 1
+    valueStatus: 3
+    isLowerValueBetter: 0
+  - towerStatus: Processing Speed
+    status: 2
+    valueStatus: 7
+    isLowerValueBetter: 0
+  - towerStatus: Attack Speed
+    status: 3
+    valueStatus: 3
+    isLowerValueBetter: 0
   - towerStatus: Tower Range
     status: 0
-    valueStatus: 5
+    valueStatus: 3
     isLowerValueBetter: 0
-  upgrades: []
+  upgrades:
+  - upgradeName: Upgrade level 1 -> 2
+    upgradeRequirement: 1
+    upgradeCost: 150
+    upgradeStatuses:
+    - towerStatus: Max Capacity
+      status: 1
+      valueStatus: 2
+      isLowerValueBetter: 0
+    - towerStatus: Processing Speed
+      status: 2
+      valueStatus: -2
+      isLowerValueBetter: 1
+    - towerStatus: Attack Speed
+      status: 3
+      valueStatus: -1
+      isLowerValueBetter: 1
+    - towerStatus: Tower Range
+      status: 0
+      valueStatus: 1
+      isLowerValueBetter: 0

@@ -42,9 +42,11 @@ public class Tower : Entity
    [SerializeField] private Transform towerBody;
    [SerializeField] protected Transform visualRange;
    [SerializeField] protected LayerMask enemyLayerMask;
-
+   
+   
    protected TowerScanArea TowerScanArea { get; private set; }
-
+   protected TowerRecycleProcessingUI RecycleProcessingUI { get; private set; }
+   
    public string TowerID { get; private set; }
    public TowerRunTimeData TowerRunTimeData => towerRunTimeData;
    public bool IsLocked { get;  set; }
@@ -66,6 +68,10 @@ public class Tower : Entity
       TowerScanArea = entitySystemContainer != null
          ? entitySystemContainer.GetComponentInChildren<TowerScanArea>()
          : GetComponentInChildren<TowerScanArea>();
+      
+      RecycleProcessingUI = entitySystemContainer != null
+         ? entitySystemContainer.GetComponentInChildren<TowerRecycleProcessingUI>()
+         : GetComponentInChildren<TowerRecycleProcessingUI>();
       
       TowerID = TowerManager.Instance.GetTowerID(towerData.towerName);
       gameObject.name = TowerID;
@@ -228,4 +234,17 @@ public class Tower : Entity
       DestroyEntity();
    }
    #endregion
+
+   public float GetTowerStatusData(TowerStatus towerStatus)
+   {
+      var data = TowerRunTimeData.currentTowerStatusData.Find(x => x.status == towerStatus);
+
+      if (data == null)
+      {
+         Debug.LogError($"[{name}] There are no tower status for {towerStatus}!");
+         return 0;
+      }
+      
+      return data.valueStatus;
+   }
 }

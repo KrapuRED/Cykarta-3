@@ -11,8 +11,9 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     [SerializeField] private float durationTrackingTarget = 1.5f;
     [SerializeField] private float cooldownAfterCatch = 0.5f;
     [SerializeField] private float durationRecycle;
-    
-    [Header("Grappler")]
+
+    [Header("Grappler")] 
+    [SerializeField] private TrashState pickUpTrashState;
     [SerializeField] private Transform headTransform;   // the part that rotates
     [SerializeField] private Transform grappleOrigin;   // where the line starts (muzzle)
     [SerializeField] private LineRenderer grappleLine;  // 2 points: origin -> hook
@@ -20,6 +21,8 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     [SerializeField] private float dragSpeed = 8f;
     [SerializeField] private float catchDistance = 0.3f;
     [SerializeField] private float rotateSpeed = 720f;  // deg/sec
+    [SerializeField] private float lockRotationSpeed = 720f;
+    [SerializeField] private float spriteAngleOffset = -90f;
     
     public int MaxCapacity { get; set; }
     public int CurrentCapacity { get; set; }
@@ -30,13 +33,14 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     [SerializeField] private GrapplerState _state = GrapplerState.Idle;
     private Trash _targetTrash;
     private Coroutine _grappleRoutine;
+    private float _currentTargetAngle;
 
     private void Start()
     {
         if (grappleLine != null) grappleLine.enabled = false;
         
-        MaxCapacity = (int)TowerRunTimeData.GetCurrentStatusValue(TowerStatus.MaxCapacity);
-        durationRecycle = towerData.GetBaseStatusValue(TowerStatus.ProcessingSpeed);
+        MaxCapacity = (int)GetTowerStatusData(TowerStatus.MaxCapacity);
+        durationRecycle = GetTowerStatusData(TowerStatus.ProcessingSpeed);
         AccumulatedTrashes = new List<Trash>();
     }
     
@@ -50,8 +54,14 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
      public override void OnDetectingArea(float deltaTime)
     {
         if (!IsBeenPlace) return;
+
+        if (IsRecycleTrash)
+        {
+            RecycleProcessingUI.UpdateProgress(deltaTime);
+            return;
+        }
         
-        if (_state != GrapplerState.Idle ||  IsRecycleTrash) return;
+        if (_state != GrapplerState.Idle) return;
         
         TowerScanArea.OnDetecting(deltaTime, out Transform targetToLock);
         if (targetToLock == null) return;
@@ -82,7 +92,7 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
       
         float currentRange = towerRunTimeData != null 
             ? (int)TowerRunTimeData.GetCurrentStatusValue(TowerStatus.Range)
-            :(int)towerData.GetBaseStatusValue(TowerStatus.Range);
+            : (int)GetTowerStatusData(TowerStatus.Range);
       
         // Set Diameter of the range
         float diameter = currentRange * 2f;
@@ -108,16 +118,19 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
         if (headTransform == null || target == null) return;
  
         Vector2 dir = target.position - headTransform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Quaternion targetRot = Quaternion.Euler(0f, 0f, angle);
- 
-        headTransform.rotation = Quaternion.RotateTowards(
-            headTransform.rotation, targetRot, rotateSpeed * Time.deltaTime);
+        if (dir.sqrMagnitude < 0.0001f) return;
+
+        float targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + spriteAngleOffset;
+
+        _currentTargetAngle = Mathf.MoveTowardsAngle(_currentTargetAngle, targetAngle, lockRotationSpeed * Time.deltaTime);
+        headTransform.rotation  = Quaternion.Euler(0f, 0f, _currentTargetAngle);
     }
     
     public IEnumerator RecycleTrash()
     {
         Debug.Log($"[{name}] Start Recycle Trash");
+        RecycleProcessingUI.ShowProcessingUI(GetTowerStatusData(TowerStatus.ProcessingSpeed));
+        
         var trashes = new List<Trash>(AccumulatedTrashes);
         AccumulatedTrashes.Clear();
         
@@ -151,10 +164,11 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
         }
     }
     
-    private bool IsTargetValid()
+    private bool IsTargetValid(TrashState trashState)
     {
         if (_targetTrash == null) return false;
-        if (_targetTrash.TrashData.trashState != TrashState.Airborne) return false;
+        if (_targetTrash.TrashData.trashState != trashState) 
+            return false;
         
         float range = towerRunTimeData != null ? 
             (int)TowerRunTimeData.GetCurrentStatusValue(TowerStatus.Range) : 
@@ -179,6 +193,7 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     private void ResetGrappler()
     {
         if (grappleLine != null) grappleLine.enabled = false;
+        
         _targetTrash = null;
         _grappleRoutine = null;
         _state = GrapplerState.Idle;
@@ -192,7 +207,7 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
         float timer = 0f;
         while (timer < durationTrackingTarget)
         {
-            if (!IsTargetValid()) { ResetGrappler(); yield break; }
+            if (!IsTargetValid(pickUpTrashState)) { ResetGrappler(); yield break; }
             
             LockToTarget(_targetTrash.transform);
             timer += Time.deltaTime;
@@ -206,7 +221,7 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
 
         while (true)
         {
-            if (!IsTargetValid()) { ResetGrappler(); yield break; }
+            if (!IsTargetValid(pickUpTrashState)) { ResetGrappler(); yield break; }
  
             // Aim at the trash's CURRENT position so the hook still lands if it moved
             Vector3 targetPos = _targetTrash.transform.position;
@@ -219,13 +234,13 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
         
         // ---------- 3. DRAG ----------
         _state = GrapplerState.Dragging;
-        _targetTrash.TrashData.trashState = TrashState.Grabbed;
+        TrashState newTrashState = _targetTrash.TrashData.trashState = TrashState.Grabbed;
         DisableTrashPhysics(_targetTrash);
  
         Transform trashTf = _targetTrash.transform;
         while (Vector3.Distance(trashTf.position, grappleOrigin.position) > catchDistance)
         {
-            if (_targetTrash == null) { ResetGrappler(); yield break; } // destroyed by something else
+            if (!IsTargetValid(newTrashState)) { ResetGrappler(); yield break; } // destroyed by something else
  
             trashTf.position = Vector3.MoveTowards(
                 trashTf.position, grappleOrigin.position, dragSpeed * Time.deltaTime);

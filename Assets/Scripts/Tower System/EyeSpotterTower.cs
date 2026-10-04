@@ -126,7 +126,6 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
     
     public void RotateHead()
     {
-        Debug.Log($"[{name} RotateHead] Rotating Head!");
         _currentTargetAngle -= Time.deltaTime * speedRotation;
         _currentTargetAngle %= 360;
         

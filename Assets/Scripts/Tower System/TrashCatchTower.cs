@@ -8,7 +8,6 @@ public class TrashCatchTower : Tower, IRecycleTrash
     [SerializeField] private float durationRecycle;
     
     [SerializeField] private SpriteRenderer netSpriteRenderer;
-    [SerializeField] private Transform headTransform;   // the part that rotates
     [SerializeField] private Transform endTransform;   // the part that rotates
     [SerializeField] private Transform grappleOrigin;   // where the line starts (muzzle)
     [SerializeField] private LineRenderer grappleLine;  // 2 points: origin -> hook
@@ -71,7 +70,12 @@ public class TrashCatchTower : Tower, IRecycleTrash
     private void ResetGrappler()
     {
         if (netSpriteRenderer != null) netSpriteRenderer.enabled = false;
-        if (grappleLine != null) grappleLine.enabled = false;
+        if (grappleLine != null)
+        {
+            grappleLine.SetPosition(0, grappleOrigin.position);
+            grappleLine.SetPosition(1, grappleOrigin.position);
+            grappleLine.enabled = false;
+        }
         _netRoutine = null;
     }
     
@@ -86,26 +90,19 @@ public class TrashCatchTower : Tower, IRecycleTrash
         // ---------- 1. Shoot net ----------
         Vector3 hookPos = grappleOrigin.position;
         grappleLine.enabled = true;
+        //UpdateLine(hookPos);
 
-        while (true)
+        while (Vector3.Distance(hookPos, endTransform.position) > catchDistance)
         {
-            Vector3 targetPos = endTransform.position;
-            hookPos = grappleOrigin.position;
+            hookPos = Vector3.MoveTowards(hookPos, endTransform.position, shootSpeed * Time.deltaTime);
             UpdateLine(hookPos);
-            
-            if (Vector3.Distance(hookPos, targetPos) <= catchDistance)
-            {
-                netSpriteRenderer.enabled = true;
-                break;
-            }
             yield return null;
         }
-        
-        if (trash == null) { ResetGrappler(); yield break; }
+
+        netSpriteRenderer.enabled = true;
         
         trash.HoldMovement();
         yield return new WaitForSeconds(netShowDelay);
-        if (trash == null) { ResetGrappler(); yield break; }
         
         // ---------- 3. DRAG ----------
         Transform trashTf = trash.transform;
@@ -114,12 +111,11 @@ public class TrashCatchTower : Tower, IRecycleTrash
         {
             trashTf.position = Vector3.MoveTowards(
                 trashTf.position, grappleOrigin.position, dragSpeed * Time.deltaTime);
+            hookPos = Vector3.MoveTowards(trashTf.position, grappleOrigin.position, dragSpeed * Time.deltaTime);
 
-            UpdateLine(trashTf.position);
+            UpdateLine(hookPos);
             yield return null;
         }
- 
-        if (trash == null) { ResetGrappler(); yield break; }
         
         // ---------- 4. ARRIVED ----------
         if (!AccumulatedTrashes.Contains(trash))
@@ -128,8 +124,8 @@ public class TrashCatchTower : Tower, IRecycleTrash
             CurrentCapacity += trash.TrashData.trashWeight;
         }
         
-        yield return new WaitForSeconds(netLingerTime);
         ResetGrappler();
+        
     }
     
     public IEnumerator RecycleTrash()

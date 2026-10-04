@@ -609,7 +609,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4088248099679245761}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1234,7 +1234,7 @@ Transform:
   m_GameObject: {fileID: 6886366819302588705}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1271,7 +1271,6 @@ MonoBehaviour:
   catchTrashState: 0
   durationRecycle: 0
   netSpriteRenderer: {fileID: 1343575791323324293}
-  headTransform: {fileID: 1943827130199748397}
   endTransform: {fileID: 1943827130199748397}
   grappleOrigin: {fileID: 1943827130199748397}
   grappleLine: {fileID: 2507512248322977037}
@@ -1507,7 +1506,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8677123162658177634}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1525,7 +1524,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3804923657789837990, guid: 98ad67e4ae4dbb54eb05b761fb2a2c02, type: 3}
+  - {fileID: 2100000, guid: c0d9af3227900cb419c718baff4d368f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1550,7 +1549,7 @@ LineRenderer:
   m_MaskInteraction: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 5, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

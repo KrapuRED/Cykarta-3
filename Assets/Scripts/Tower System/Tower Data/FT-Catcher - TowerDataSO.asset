@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2c5470cd6d6bdb4fa0f0d8f34eb4a22, type: 3}
-  m_Name: Trash Catcher- TowerDataSO
+  m_Name: FT-Catcher - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
-  towerName: Trash Catcher
+  towerName: FT-Catcher
   towerCost: 100
   towerDescription: 
   prefabObjectTower: {fileID: 3821810546088435452, guid: f23033bc80d02254ebc6d8717292e5ab, type: 3}

@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2c5470cd6d6bdb4fa0f0d8f34eb4a22, type: 3}
-  m_Name: ICS Eye - TowerDataSO
+  m_Name: TW-Smart Block - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
-  towerName: ICS-Eye
-  towerCost: 100
+  towerName: 'TW-Smart Block '
+  towerCost: 125
   towerDescription: 
-  prefabObjectTower: {fileID: -1200755834875297617, guid: ca057f47ba9a48147828556618cf3d04, type: 3}
+  prefabObjectTower: {fileID: 1951802521689120775, guid: ac31c73bc75380448844d898e2b2f10f, type: 3}
   baseStatuses:
-  - towerStatus: Tower Range
+  - towerStatus: Range
     status: 0
-    valueStatus: 4
+    valueStatus: 3
+    isLowerValueBetter: 0
+  - towerStatus: Max Capacity
+    status: 1
+    valueStatus: 3
     isLowerValueBetter: 0
   upgrades:
   - upgradeName: Upgrade level 1 -> 2
     upgradeRequirement: 1
-    upgradeCost: 150
+    upgradeCost: 100
     upgradeStatuses:
-    - towerStatus: Upgrade Tower Range
+    - towerStatus: Range
       status: 0
-      valueStatus: 2
+      valueStatus: 3
       isLowerValueBetter: 0
-  - upgradeName: Upgrade level 2 -> 3
-    upgradeRequirement: 2
-    upgradeCost: 500
-    upgradeStatuses:
-    - towerStatus: Upgrade Tower Range
-      status: 0
-      valueStatus: 2
+    - towerStatus: Max Capacity
+      status: 1
+      valueStatus: 6
       isLowerValueBetter: 0

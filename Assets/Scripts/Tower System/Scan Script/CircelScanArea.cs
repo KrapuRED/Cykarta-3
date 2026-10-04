@@ -3,15 +3,22 @@ using UnityEngine;
 
 public class CircelScanArea : TowerScanArea
 {
+    public System.Func<Transform, bool> TargetFilter;
+    
     protected override Transform PickTarget(int count)
     {
         Transform best = null;
+        float bestSqr = float.MaxValue;
+        Vector2 origin = transform.position;
 
         for (int i = 0; i < count; i++)
         {
-            best = Hits[i].transform;
+            Transform t = Hits[i].transform;
+            if (TargetFilter != null && !TargetFilter(t)) continue;
+
+            float sqr = ((Vector2)t.position - origin).sqrMagnitude;
+            if (sqr < bestSqr) { bestSqr = sqr; best = t; }
         }
-        
         return best;
     }
 
