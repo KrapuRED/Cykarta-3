@@ -1,0 +1,1030 @@
+fileFormatVersion: 2
+guid: 061bcbddc83213242b440b75777f712f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 7bcabfe387f4fe748b737d4756f2d449
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  multiSpriteImportData: []
+  layeredSpriteImportData:
+  - name: LN Front Side Bang
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1679
+      y: 449
+      width: 301
+      height: 305
+    spriteID: 37f52c00f36441a45b44e6b478dc55cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1679, y: 449}
+    spritePosition: {x: 884, y: 1394}
+  - name: LN Front Mid Bang
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1345
+      y: 1207
+      width: 129
+      height: 317
+    spriteID: cedc39ba97b83484db9dd28fa9430286
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1345, y: 1207}
+    spritePosition: {x: 821, y: 1385}
+  - name: LN Front Back Bang
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1035
+      y: 1207
+      width: 302
+      height: 367
+    spriteID: 42169a32555eba440910e6c96ac992cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1035, y: 1207}
+    spritePosition: {x: 643, y: 1347}
+  - name: LN Hair clip
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1333
+      y: 1735
+      width: 184
+      height: 73
+    spriteID: 2e561508bed27dc4886e07afcab6b475
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1333, y: 1735}
+    spritePosition: {x: 1068, y: 1475}
+  - name: LN Front Half Earing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 478
+      y: 3556
+      width: 87
+      height: 141
+    spriteID: 3bfde05bc5c02124091e593e7684c6d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 478, y: 3556}
+    spritePosition: {x: 1060, y: 1129}
+  - name: LN Ear
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 478
+      y: 3427
+      width: 107
+      height: 121
+    spriteID: 4d77b87dfe44e2c4cb700c598da94d9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 478, y: 3427}
+    spritePosition: {x: 1082, y: 1247}
+  - name: LN Back Half Earing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1451
+      y: 1582
+      width: 69
+      height: 127
+    spriteID: 8ad173bcc33746244a58023be6449588
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1451, y: 1582}
+    spritePosition: {x: 1092, y: 1141}
+  - name: LN Eye Half Open
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1035
+      y: 2102
+      width: 302
+      height: 205
+    spriteID: 11191c42e1d48934b8d6a1800acaf6d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1035, y: 2102}
+    spritePosition: {x: 766, y: 1245}
+  - name: LN Eye Closed
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1558
+      y: 352
+      width: 302
+      height: 88
+    spriteID: 66212db1ca7d3fa4bbf05d9df8f9de11
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1558, y: 352}
+    spritePosition: {x: 766, y: 1362}
+  - name: LN Base Hair
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1035
+      y: 784
+      width: 491
+      height: 415
+    spriteID: 12fa37ff90dbd4149ad47c96cdcfd81d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1035, y: 784}
+    spritePosition: {x: 743, y: 1340}
+  - name: LN Hair Tie
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1345
+      y: 2102
+      width: 153
+      height: 121
+    spriteID: 98274bb4cee2ee54d858c6924aa53e6e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1345, y: 2102}
+    spritePosition: {x: 1074, y: 1638}
+  - name: LN Eyebrows
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3927
+      width: 265
+      height: 30
+    spriteID: 8c68132f60bb2184da394595a2afb078
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3927}
+    spritePosition: {x: 767, y: 1462}
+  - name: LN Face
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 573
+      y: 3556
+      width: 93
+      height: 117
+    spriteID: e848e7cc8cdac4146b9ec7bf49c03b91
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 573, y: 3556}
+    spritePosition: {x: 843, y: 1216}
+  - name: LN Head
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3427
+      width: 466
+      height: 492
+    spriteID: ad2f7353bfbb9324488b41dceb3c8236
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3427}
+    spritePosition: {x: 755, y: 1154}
+  - name: LN Back Earing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1333
+      y: 1582
+      width: 110
+      height: 145
+    spriteID: 337bcc5d8fc461748a985b08a59cd4b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1333, y: 1582}
+    spritePosition: {x: 767, y: 1142}
+  - name: LN Shirt Collar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1035
+      y: 1899
+      width: 410
+      height: 195
+    spriteID: 10bc8ce999b8121419b5b6d23ddfcbb4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1035, y: 1899}
+    spritePosition: {x: 805, y: 931}
+  - name: LN Necklace
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1035
+      y: 2315
+      width: 251
+      height: 179
+    spriteID: dde89785c0ff65849a7bb946cd74722c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1035, y: 2315}
+    spritePosition: {x: 784, y: 883}
+  - name: LN Front Suit Arm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2830
+      width: 616
+      height: 589
+    spriteID: 0378ae1e653ff4c41a8867f2f745a0a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2830}
+    spritePosition: {x: 694, y: 371}
+  - name: LN Front Hand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 435
+      y: 1850
+      width: 213
+      height: 192
+    spriteID: 83d4535d9157f1848bab938b109526b5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 435, y: 1850}
+    spritePosition: {x: 558, y: 401}
+  - name: LN Front Suit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1850
+      width: 423
+      height: 972
+    spriteID: 93a10a7ebd13ab2468ba5a7114f29e29
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1850}
+    spritePosition: {x: 889, y: 59}
+  - name: LN Neck
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1035
+      y: 1582
+      width: 290
+      height: 309
+    spriteID: f7a494415a2eb19439f8f289ee32c4d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1035, y: 1582}
+    spritePosition: {x: 861, y: 982}
+  - name: LN Shirt
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 662
+      height: 888
+    spriteID: 8053f378fe310a248ae0d3652ffea473
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 546, y: 242}
+  - name: LN Pant
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1035
+      y: 449
+      width: 636
+      height: 327
+    spriteID: dc3d35fb9084bfb4281c8cd68918ede4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1035, y: 449}
+    spritePosition: {x: 536, y: 0}
+  - name: LN Back Suit Arm
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1035
+      y: 4
+      width: 515
+      height: 437
+    spriteID: 7be1cc5d8ed98f24ba37ad1483e42e64
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1035, y: 4}
+    spritePosition: {x: 298, y: 458}
+  - name: LN Back Hand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1558
+      y: 4
+      width: 392
+      height: 340
+    spriteID: 4f43525fa66190d4080848bb25297575
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1558, y: 4}
+    spritePosition: {x: 56, y: 724}
+  - name: LN Back Suit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 900
+      width: 476
+      height: 942
+    spriteID: 9abef709289b30946b214a18aa5fe34f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 900}
+    spritePosition: {x: 451, y: 127}
+  - name: LN Back Hair
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 674
+      y: 4
+      width: 353
+      height: 956
+    spriteID: 74c4278320373264da504a95989371c5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 674, y: 4}
+    spritePosition: {x: 1107, y: 863}
+  spriteImportData: []
+  rigSpriteImportData: []
+  sharedRigSpriteImportData: []
+  mosaicSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  generateTileAssets: 0
+  tilePaletteCellLayout: 0
+  tilePaletteHexagonLayout: 0
+  tilePaletteCellSize: {x: 1, y: 1, z: 0}
+  tilePaletteCellSizing: 0
+  transparencySortMode: 0
+  transparencySortAxis: {x: 0, y: 0, z: 1}
+  tileTemplate: {instanceID: 0}
+  padding: 4
+  spriteSizeExpand: 0
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  pSDLayerImportSetting: []
+  psdLayers:
+  - name: Veronica
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 50c719d95fd506446a7a6f4ebc00afab
+    layerID: 945
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: LN Front Side Bang
+    spriteName: LN Front Side Bang
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 37f52c00f36441a45b44e6b478dc55cb
+    layerID: 944
+    mosaicPosition: {x: 1679, y: 449}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Front Mid Bang
+    spriteName: LN Front Mid Bang
+    isGroup: 0
+    parentIndex: 0
+    spriteID: cedc39ba97b83484db9dd28fa9430286
+    layerID: 938
+    mosaicPosition: {x: 1345, y: 1207}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Front Back Bang
+    spriteName: LN Front Back Bang
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 42169a32555eba440910e6c96ac992cc
+    layerID: 932
+    mosaicPosition: {x: 1035, y: 1207}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Hair clip
+    spriteName: LN Hair clip
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 2e561508bed27dc4886e07afcab6b475
+    layerID: 926
+    mosaicPosition: {x: 1333, y: 1735}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Front Half Earing
+    spriteName: LN Front Half Earing
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 3bfde05bc5c02124091e593e7684c6d5
+    layerID: 920
+    mosaicPosition: {x: 478, y: 3556}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Ear
+    spriteName: LN Ear
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 4d77b87dfe44e2c4cb700c598da94d9a
+    layerID: 914
+    mosaicPosition: {x: 478, y: 3427}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Back Half Earing
+    spriteName: LN Back Half Earing
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8ad173bcc33746244a58023be6449588
+    layerID: 908
+    mosaicPosition: {x: 1451, y: 1582}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Eye Half Open
+    spriteName: LN Eye Half Open
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 11191c42e1d48934b8d6a1800acaf6d4
+    layerID: 902
+    mosaicPosition: {x: 1035, y: 2102}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Eye Closed
+    spriteName: LN Eye Closed
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 66212db1ca7d3fa4bbf05d9df8f9de11
+    layerID: 895
+    mosaicPosition: {x: 1558, y: 352}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Base Hair
+    spriteName: LN Base Hair
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 12fa37ff90dbd4149ad47c96cdcfd81d
+    layerID: 894
+    mosaicPosition: {x: 1035, y: 784}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Hair Tie
+    spriteName: LN Hair Tie
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 98274bb4cee2ee54d858c6924aa53e6e
+    layerID: 888
+    mosaicPosition: {x: 1345, y: 2102}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Eyebrows
+    spriteName: LN Eyebrows
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8c68132f60bb2184da394595a2afb078
+    layerID: 882
+    mosaicPosition: {x: 4, y: 3927}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Face
+    spriteName: LN Face
+    isGroup: 0
+    parentIndex: 0
+    spriteID: e848e7cc8cdac4146b9ec7bf49c03b91
+    layerID: 881
+    mosaicPosition: {x: 573, y: 3556}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Head
+    spriteName: LN Head
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ad2f7353bfbb9324488b41dceb3c8236
+    layerID: 880
+    mosaicPosition: {x: 4, y: 3427}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Back Earing
+    spriteName: LN Back Earing
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 337bcc5d8fc461748a985b08a59cd4b6
+    layerID: 874
+    mosaicPosition: {x: 1333, y: 1582}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Shirt Collar
+    spriteName: LN Shirt Collar
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 10bc8ce999b8121419b5b6d23ddfcbb4
+    layerID: 868
+    mosaicPosition: {x: 1035, y: 1899}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Necklace
+    spriteName: LN Necklace
+    isGroup: 0
+    parentIndex: 0
+    spriteID: dde89785c0ff65849a7bb946cd74722c
+    layerID: 862
+    mosaicPosition: {x: 1035, y: 2315}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Front Suit Arm
+    spriteName: LN Front Suit Arm
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 0378ae1e653ff4c41a8867f2f745a0a6
+    layerID: 856
+    mosaicPosition: {x: 4, y: 2830}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Front Hand
+    spriteName: LN Front Hand
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 83d4535d9157f1848bab938b109526b5
+    layerID: 850
+    mosaicPosition: {x: 435, y: 1850}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Front Suit
+    spriteName: LN Front Suit
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 93a10a7ebd13ab2468ba5a7114f29e29
+    layerID: 844
+    mosaicPosition: {x: 4, y: 1850}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Neck
+    spriteName: LN Neck
+    isGroup: 0
+    parentIndex: 0
+    spriteID: f7a494415a2eb19439f8f289ee32c4d4
+    layerID: 838
+    mosaicPosition: {x: 1035, y: 1582}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Shirt
+    spriteName: LN Shirt
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 8053f378fe310a248ae0d3652ffea473
+    layerID: 832
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Pant
+    spriteName: LN Pant
+    isGroup: 0
+    parentIndex: 0
+    spriteID: dc3d35fb9084bfb4281c8cd68918ede4
+    layerID: 826
+    mosaicPosition: {x: 1035, y: 449}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Back Suit Arm
+    spriteName: LN Back Suit Arm
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7be1cc5d8ed98f24ba37ad1483e42e64
+    layerID: 820
+    mosaicPosition: {x: 1035, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Back Hand
+    spriteName: LN Back Hand
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 4f43525fa66190d4080848bb25297575
+    layerID: 814
+    mosaicPosition: {x: 1558, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Back Suit
+    spriteName: LN Back Suit
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9abef709289b30946b214a18aa5fe34f
+    layerID: 808
+    mosaicPosition: {x: 4, y: 900}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: LN Back Hair
+    spriteName: LN Back Hair
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 74c4278320373264da504a95989371c5
+    layerID: 804
+    mosaicPosition: {x: 674, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  mosaicPSDLayers: []
+  rigPSDLayers: []
+  sharedRigPSDLayers: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
