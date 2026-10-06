@@ -6,7 +6,9 @@ public enum PanelType
 {
     None,
     Building,
-    Pause
+    Pause,
+    Victory,
+    Defeat
 }
 
 public class PanelManager : MonoBehaviour

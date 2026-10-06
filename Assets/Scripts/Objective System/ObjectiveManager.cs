@@ -123,8 +123,7 @@ public class ObjectiveManager : MonoBehaviour
         
         if (CurrentObjectiveHealthPoints <= 0)
         {
-            Debug.LogError($"{name} Objective Proctection Level is Reach 0! Player FAILED!");
-            return;
+            GameEvents.OnRequestOpenPanel.Invoke(PanelType.Defeat);
         }
         
     }
