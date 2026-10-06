@@ -1,11 +1,5 @@
 using UnityEngine;
 
-public enum PanelType
-{
-    None,
-    Building
-}
-
 public abstract class Panel : MonoBehaviour
 {
     [Header("Panel Configuration")]

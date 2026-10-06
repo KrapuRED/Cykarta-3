@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 #region Spawner Data & System
@@ -43,7 +45,12 @@ public class SpawnerManager : MonoBehaviour
     
     public bool startSpawn = false;
     
-    private List<SpawnerIrresponsible> _activeSpawners = new ();
+    [SerializeField] private List<SpawnerIrresponsible> _activeSpawners = new ();
+    private bool _isPaused;
+    private bool _isDelayRunning;
+    private bool _isSpawnerActive;
+    private Coroutine _delaySpanwerActivationCoroutine ;
+
     
     private void Awake()
     {
@@ -54,6 +61,18 @@ public class SpawnerManager : MonoBehaviour
         }
 
         Instance = this;
+    }
+
+    private void Update()
+    {
+        if (!_isSpawnerActive) return;
+        
+        foreach (var spawner in _activeSpawners)
+        {
+            if (spawner == null) continue;
+            
+            spawner.UpdateSpawner();
+        }
     }
 
     public void CheckAllIrresponsibleSpawnerIsDone()
@@ -80,7 +99,7 @@ public class SpawnerManager : MonoBehaviour
             spawnerSystem.spawnerIrresponsible.AddOrChangeSpawnerData(spawnerSystem);
             _activeSpawners.Add(spawnerSystem.spawnerIrresponsible);
             
-            StartCoroutine(DelaySpanwerActivation(_activeSpawners, currentWaveData.waveDelay, waveIndex));
+            _delaySpanwerActivationCoroutine = StartCoroutine(DelaySpanwerActivation(_activeSpawners, currentWaveData.waveDelay, waveIndex));
         }
     }
 
@@ -93,9 +112,11 @@ public class SpawnerManager : MonoBehaviour
         
         while (remainingTime > 0)
         {
-            remainingTime -= Time.deltaTime;
-            
-            delayTimerObjectiveUI.UpdateTimerText(waveIndex + 1, remainingTime);
+            if (!_isPaused)
+            {
+                remainingTime -= Time.deltaTime;
+                delayTimerObjectiveUI.UpdateTimerText(waveIndex + 1, remainingTime);   
+            }
             
             yield return null;
         }
@@ -104,5 +125,22 @@ public class SpawnerManager : MonoBehaviour
         
         foreach (var spawner in spawners)
             spawner.StartSpawner();
+
+        _isDelayRunning = false;
+        _isSpawnerActive = true;
+        _delaySpanwerActivationCoroutine = null;
+    }
+
+    public void Pause()
+    {
+        _isPaused = true;
+    }
+
+    public void Resume()
+    {
+        _isPaused = false;
+        
+        if (!_isDelayRunning && _delaySpanwerActivationCoroutine == null)
+            _isSpawnerActive = true;
     }
 }

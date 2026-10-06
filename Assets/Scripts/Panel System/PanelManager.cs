@@ -2,9 +2,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum PanelType
+{
+    None,
+    Building,
+    Pause
+}
+
 public class PanelManager : MonoBehaviour
 {
-    private static PanelManager _instance;
+    public static PanelManager Instance { get; private set; }
 
     [SerializeField] private Transform panelContainer;
     [SerializeField] private List<Panel> panels = new();
@@ -14,13 +21,13 @@ public class PanelManager : MonoBehaviour
     
     private void Awake()
     {
-        if (_instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
         }
 
-        _instance = this;
+        Instance = this;
     }
 
     private void Start()
@@ -55,16 +62,19 @@ public class PanelManager : MonoBehaviour
         GameEvents.OnRequestClosePanel.RemoveListener(HandelClosePanel);
     }
 
-    private void HandelOpenPanel(PanelType panelType)
+    public void HandelOpenPanel(PanelType panelType)
     {
         if (_activePanel != null) _activePanel.ClosePanel();
+        
         _panelLookup[panelType].OpenPanel();
         _activePanel = _panelLookup[panelType];
     }
 
     private void HandelClosePanel(PanelType panelType)
     {
+        Debug.Log("HandelClosePanel");
         _panelLookup[panelType].ClosePanel();
+        
         if (_activePanel == _panelLookup[panelType]) _activePanel = null;
     }
 }

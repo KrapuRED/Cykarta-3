@@ -44,8 +44,8 @@ public class IrresponsibleThinkingData
 public class EntityManager : MonoBehaviour
 {
     public static EntityManager Instance {get; private set;}
-    
-    public bool paused = false;
+
+    [SerializeField] private bool paused = false;
     
     private readonly List<Entity> _entities = new();
     private readonly List<Entity> _pendingRemove = new();
@@ -133,4 +133,7 @@ public class EntityManager : MonoBehaviour
         if (e.EntityRunTimeData != null)
             _activeEntityRunTimeData.Remove(e.EntityRunTimeData.entityID);
     }
+
+    public void Pause() => paused = true;
+    public void Resume() => paused = false;
 }

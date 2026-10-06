@@ -24,11 +24,13 @@ public class SpawnerIrresponsible : Spawner
     
     public bool IsSpawnerActive { get; private set; }
 
-    private void Update()
+    public override void UpdateSpawner()
     {
         if (!IsSpawnerActive) return;
         
         currentSpawnRate -= Time.deltaTime;
+        Debug.Log($"[{name} - UpdateSpawner] Current SpawnRate: {currentSpawnRate}");
+        
         if (currentSpawnRate <= 0)
         {
             OnSpawning();

@@ -9,6 +9,11 @@ public class Spawner : MonoBehaviour
    {
       
    }
+
+   public virtual void UpdateSpawner()
+   {
+      
+   }
    
    public virtual void OnSpawning()
    {
