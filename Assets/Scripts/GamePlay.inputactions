@@ -117,6 +117,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Level-Scene",
+            "id": "3ee0db03-26d7-49b1-92f7-41768078ed68",
+            "actions": [
+                {
+                    "name": "levelSelect",
+                    "type": "Button",
+                    "id": "186bb9ed-72e9-4ae5-838c-ec292afa58f5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8dfa2227-1df0-452b-b44c-c62476105387",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "levelSelect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

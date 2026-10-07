@@ -203,6 +203,34 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Level-Scene"",
+            ""id"": ""3ee0db03-26d7-49b1-92f7-41768078ed68"",
+            ""actions"": [
+                {
+                    ""name"": ""levelSelect"",
+                    ""type"": ""Button"",
+                    ""id"": ""186bb9ed-72e9-4ae5-838c-ec292afa58f5"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""8dfa2227-1df0-452b-b44c-c62476105387"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""levelSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -216,12 +244,16 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         // Pause
         m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
         m_Pause_Pause = m_Pause.FindAction("Pause", throwIfNotFound: true);
+        // Level-Scene
+        m_LevelScene = asset.FindActionMap("Level-Scene", throwIfNotFound: true);
+        m_LevelScene_levelSelect = m_LevelScene.FindAction("levelSelect", throwIfNotFound: true);
     }
 
     ~@GamePlay()
     {
         UnityEngine.Debug.Assert(!m_Building.enabled, "This will cause a leak and performance issues, GamePlay.Building.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Pause.enabled, "This will cause a leak and performance issues, GamePlay.Pause.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_LevelScene.enabled, "This will cause a leak and performance issues, GamePlay.LevelScene.Disable() has not been called.");
     }
 
     /// <summary>
@@ -518,6 +550,102 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="PauseActions" /> instance referencing this action map.
     /// </summary>
     public PauseActions @Pause => new PauseActions(this);
+
+    // Level-Scene
+    private readonly InputActionMap m_LevelScene;
+    private List<ILevelSceneActions> m_LevelSceneActionsCallbackInterfaces = new List<ILevelSceneActions>();
+    private readonly InputAction m_LevelScene_levelSelect;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Level-Scene".
+    /// </summary>
+    public struct LevelSceneActions
+    {
+        private @GamePlay m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public LevelSceneActions(@GamePlay wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "LevelScene/levelSelect".
+        /// </summary>
+        public InputAction @levelSelect => m_Wrapper.m_LevelScene_levelSelect;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_LevelScene; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="LevelSceneActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(LevelSceneActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="LevelSceneActions" />
+        public void AddCallbacks(ILevelSceneActions instance)
+        {
+            if (instance == null || m_Wrapper.m_LevelSceneActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_LevelSceneActionsCallbackInterfaces.Add(instance);
+            @levelSelect.started += instance.OnLevelSelect;
+            @levelSelect.performed += instance.OnLevelSelect;
+            @levelSelect.canceled += instance.OnLevelSelect;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="LevelSceneActions" />
+        private void UnregisterCallbacks(ILevelSceneActions instance)
+        {
+            @levelSelect.started -= instance.OnLevelSelect;
+            @levelSelect.performed -= instance.OnLevelSelect;
+            @levelSelect.canceled -= instance.OnLevelSelect;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="LevelSceneActions.UnregisterCallbacks(ILevelSceneActions)" />.
+        /// </summary>
+        /// <seealso cref="LevelSceneActions.UnregisterCallbacks(ILevelSceneActions)" />
+        public void RemoveCallbacks(ILevelSceneActions instance)
+        {
+            if (m_Wrapper.m_LevelSceneActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="LevelSceneActions.AddCallbacks(ILevelSceneActions)" />
+        /// <seealso cref="LevelSceneActions.RemoveCallbacks(ILevelSceneActions)" />
+        /// <seealso cref="LevelSceneActions.UnregisterCallbacks(ILevelSceneActions)" />
+        public void SetCallbacks(ILevelSceneActions instance)
+        {
+            foreach (var item in m_Wrapper.m_LevelSceneActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_LevelSceneActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="LevelSceneActions" /> instance referencing this action map.
+    /// </summary>
+    public LevelSceneActions @LevelScene => new LevelSceneActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Building" which allows adding and removing callbacks.
     /// </summary>
@@ -568,5 +696,20 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Level-Scene" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="LevelSceneActions.AddCallbacks(ILevelSceneActions)" />
+    /// <seealso cref="LevelSceneActions.RemoveCallbacks(ILevelSceneActions)" />
+    public interface ILevelSceneActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "levelSelect" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLevelSelect(InputAction.CallbackContext context);
     }
 }
