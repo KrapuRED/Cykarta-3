@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class Panel : MonoBehaviour
@@ -6,6 +7,8 @@ public abstract class Panel : MonoBehaviour
     [SerializeField] protected CanvasGroup canvasGroup;
     [SerializeField] protected PanelType panelType;
     
+    protected TransitionHelper TransitionHelper;
+
     public PanelType PanelType => panelType;
 
     public abstract void OpenPanel();

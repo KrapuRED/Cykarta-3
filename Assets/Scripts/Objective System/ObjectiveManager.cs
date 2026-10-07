@@ -6,6 +6,8 @@ public class ObjectiveManager : MonoBehaviour
 {
     public static ObjectiveManager Instance { get; private set;}
 
+    [SerializeField] private int levelIndex;
+    
     [SerializeField] private int objectiveHealthPoints;
     [SerializeField] private List<WaveData> waveDataList = new();
     
@@ -30,7 +32,23 @@ public class ObjectiveManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
+    #region  Event System
+
+    private void OnEnable()
+    {
+        GameEvents.OnGameStart.AddListener(StartLevel);
+    }
+    
+    private void OnDisable()
+    {
+        GameEvents.OnGameStart.RemoveListener(StartLevel);
+    }
+
+    #endregion
+
+    #region Objective Sterter and Next Wave
+    
+    private void StartLevel()
     {
         CurrentObjectiveHealthPoints = objectiveHealthPoints;
         
@@ -77,6 +95,10 @@ public class ObjectiveManager : MonoBehaviour
 
         Debug.Log($"Wave Index: {_waveIndex} {currentWaveData.waveDataName} total Enemy : {_maxEnemyCounter}");
     }
+    
+    #endregion
+
+    #region Objective UI
 
     private int CountTotalEnemy(List<SpawnerData> spawnerData)
     {
@@ -127,4 +149,21 @@ public class ObjectiveManager : MonoBehaviour
         }
         
     }
+    
+    #endregion
+
+    private LevelStatus GetLevelStatus()
+    {
+        if (objectiveHealthPoints <= 0)
+            return LevelStatus.Failed;
+        else if (objectiveHealthPoints >= 0 && _waveIndex <= waveDataList.Count)
+            return LevelStatus.Failed;
+        else
+            return LevelStatus.Success;
+        
+        return LevelStatus.NotPlayed;
+    }
+    
+    public void SaveData() => LevelProgress.Set(levelIndex, GetLevelStatus());
+    
 }

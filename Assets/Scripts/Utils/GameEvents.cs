@@ -57,6 +57,11 @@ public class CustomEvents<T1, T2, T3>
 
 public static class GameEvents
 {
+    #region Main Game Level
+
+    // # ================================ Main Game SYSTEM ================================ #
+    public static readonly CustomEvents OnGameStart = new ();
+    
     // # ================================ GRID SYSTEM ================================ #
     public static readonly CustomEvents<OnGridObjectChangeEventArgs> OnGridObjectChange = new ();
     
@@ -82,5 +87,8 @@ public static class GameEvents
     // # ================================ DEBUG SYSTEM ================================ #
     public static readonly CustomEvents<String, string, string> OnShowDebugEntity = new ();
     
+    #endregion
     
+    // # ================================ Level SYSTEM ================================ #
+    public static readonly CustomEvents<string, string, LevelStatus> OnSelectingLevel = new ();
 }

@@ -25,6 +25,8 @@ public class TransitionManager : MonoBehaviour
         
         transitions.Clear();
         transitions = sceneTransitionContainer.GetComponentsInChildren<Transition>(true).ToList();
+     
+        LevelProgress.ResetAll(3);
         
         DontDestroyOnLoad(gameObject);
     }
@@ -61,6 +63,10 @@ public class TransitionManager : MonoBehaviour
         yield return new WaitUntil(() => scene.isDone);
         
         yield return transition.TransitionOut();
+        isTrasitioning = false;
+        
+        GameEvents.OnGameStart?.Invoke();
+        
     }
 
 }

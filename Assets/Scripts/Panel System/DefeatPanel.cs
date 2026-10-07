@@ -26,4 +26,13 @@ public class DefeatPanel : Panel
         SpawnerManager.Instance.Resume();
         EntityManager.Instance.Resume();
     }
+    
+    public void ExitLevel()
+    {
+        if (TransitionHelper == null)
+            TransitionHelper = GetComponent<TransitionHelper>();
+        
+        ObjectiveManager.Instance.SaveData();
+        TransitionHelper.DoTransition();
+    }
 }

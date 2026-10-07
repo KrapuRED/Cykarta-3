@@ -25,6 +25,7 @@ public class LevelSelectManager : MonoBehaviour
         for (int i = 0; i < levelObjects.Count; i++)
         {
             lineRenderer.SetPosition(i, levelObjects[i].position);
+            levelObjects[i].GetComponent<LevelSelect>().InitializeLevelSelect();
         }
     }
 

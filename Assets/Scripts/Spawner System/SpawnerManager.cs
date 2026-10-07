@@ -65,7 +65,7 @@ public class SpawnerManager : MonoBehaviour
 
     private void Update()
     {
-        if (!_isSpawnerActive) return;
+        if (_isPaused) return;
         
         foreach (var spawner in _activeSpawners)
         {
