@@ -41,6 +41,8 @@ public class LevelSelectManager : MonoBehaviour
     
     private void OnClickLevel()
     {
+        if (TransitionManager.Instance.isTrasitioning) return;
+        
         Vector2 mousePos = UtilTools.UtilsClass.GetMouseWorldPosition();
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
         
