@@ -3932,7 +3932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   levelIndex: 1
-  objectiveHealthPoints: 1
+  objectiveHealthPoints: 10
   waveDataList:
   - waveDataName: Wave 1
     waveDelay: 5
@@ -3978,6 +3978,7 @@ MonoBehaviour:
   enemyCounter: {fileID: 964464419}
   proctectionLevel: {fileID: 1354523559}
   waveCounter: {fileID: 1516502957}
+  startLevel: 1
 --- !u!1 &927188369
 GameObject:
   m_ObjectHideFlags: 0

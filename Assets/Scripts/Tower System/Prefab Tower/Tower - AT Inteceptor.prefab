@@ -357,12 +357,14 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  durationTrackingTarget: 0.5
+  minDurationTrackingTarget: 0.5
+  maxDurationTrackingTarget: 1
   cooldownAfterCatch: 0.25
   durationRecycle: 0
   pickUpTrashState: 1
   headTransform: {fileID: 8611270675540148132}
   grappleOrigin: {fileID: 4813807930577578866}
+  hookPosition: {fileID: 5053085058737687664}
   grappleLine: {fileID: 658267482387582288}
   shootSpeed: 25
   dragSpeed: 8
@@ -370,7 +372,9 @@ MonoBehaviour:
   rotateSpeed: 720
   lockRotationSpeed: 720
   spriteAngleOffset: -90
+  currentCapacity: 0
   _state: 0
+  _targetTrash: {fileID: 0}
 --- !u!120 &658267482387582288
 LineRenderer:
   serializedVersion: 3
@@ -416,9 +420,9 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1014021433
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -431,7 +435,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.48969078
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -760,7 +764,7 @@ Transform:
   m_GameObject: {fileID: 2261426802399489214}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1036,7 +1040,7 @@ Transform:
   m_GameObject: {fileID: 3085745293911412773}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1466,7 +1470,7 @@ Transform:
   m_GameObject: {fileID: 5201580772306173411}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.2, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1646,6 +1650,8 @@ MonoBehaviour:
   towerOwner: {fileID: 5857374941782670224}
   detectionInterval: 0.1
   maxDetected: 16
+  detectionWithoutInterval: 1
+  currentDetected: 0
 --- !u!1 &7914482911339897956
 GameObject:
   m_ObjectHideFlags: 0

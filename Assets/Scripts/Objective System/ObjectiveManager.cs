@@ -20,6 +20,8 @@ public class ObjectiveManager : MonoBehaviour
     private int _waveIndex = -1;
     private int _maxEnemyCounter;
     private int _currentEnemyCounter;
+
+    [SerializeField] private bool startLevel;
     
     private void Awake()
     {
@@ -30,6 +32,7 @@ public class ObjectiveManager : MonoBehaviour
         }
 
         Instance = this;
+        
     }
 
     #region  Event System
@@ -45,6 +48,12 @@ public class ObjectiveManager : MonoBehaviour
     }
 
     #endregion
+
+    private void Start()
+    {
+        if (startLevel)
+            StartLevel();
+    }
 
     #region Objective Sterter and Next Wave
     

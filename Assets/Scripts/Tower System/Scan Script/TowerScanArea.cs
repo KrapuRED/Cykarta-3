@@ -5,7 +5,8 @@ public class TowerScanArea : MonoBehaviour
     [SerializeField] protected Tower towerOwner;
     [SerializeField] private float detectionInterval;
     [SerializeField] private int maxDetected;
-
+    [SerializeField] private bool detectionWithoutInterval;
+    
     protected Collider2D[] Hits;
     protected Transform CurrentTarget;
     protected ContactFilter2D Filter;
@@ -24,12 +25,17 @@ public class TowerScanArea : MonoBehaviour
 
     public void OnDetecting(float deltaTime, out Transform targetToLock)
     {
-        _detectionTimer += deltaTime;
-
-        if (_detectionTimer >= detectionInterval)
-        {
-            _detectionTimer -= detectionInterval;
+        if (detectionWithoutInterval)
             ScanArea();
+        else
+        {
+            _detectionTimer += deltaTime;
+
+            if (_detectionTimer >= detectionInterval)
+            {
+                _detectionTimer -= detectionInterval;
+                ScanArea();
+            }   
         }
         
         targetToLock = CurrentTarget;

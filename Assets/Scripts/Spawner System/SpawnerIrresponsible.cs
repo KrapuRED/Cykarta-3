@@ -29,8 +29,7 @@ public class SpawnerIrresponsible : Spawner
         if (!IsSpawnerActive) return;
         
         currentSpawnRate -= Time.deltaTime;
-        Debug.Log($"[{name} - UpdateSpawner] Current SpawnRate: {currentSpawnRate}");
-        
+       
         if (currentSpawnRate <= 0)
         {
             OnSpawning();
