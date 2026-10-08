@@ -112,17 +112,17 @@ ScriptedImporter:
     - name: Base Hair Bang
       guid: 3b21a78a8a7c75c4aada4654b4b369f8
       position: {x: 220.62646, y: 293.79773, z: 0}
-      rotation: {x: 0, y: 0, z: 0.9071774, w: -0.42074856}
-      length: 102.73588
+      rotation: {x: 0, y: 0, z: 0.9071772, w: -0.42074883}
+      length: 102.735825
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: Hair Bang
       guid: b203275eda685d24e9dc3fe6fc4e86e0
-      position: {x: 102.73586, y: 0.000015224854, z: 0}
-      rotation: {x: 0, y: 0, z: 0.25631994, w: 0.9665921}
-      length: 152.63847
+      position: {x: 102.73598, y: -0.000068922316, z: 0}
+      rotation: {x: 0, y: 0, z: 0.25631964, w: 0.96659213}
+      length: 152.63844
       parentId: 0
       color:
         serializedVersion: 2
@@ -818,18 +818,18 @@ ScriptedImporter:
     spriteBone:
     - name: Side Hair 2
       guid: ea8a085e74bfcab4cb0494d800afbeb3
-      position: {x: 206.812, y: 0.00007239231, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15929283, w: 0.9872314}
-      length: 248.32986
+      position: {x: 206.812, y: 0.000034990662, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15929273, w: 0.98723143}
+      length: 248.3299
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: Side Hair 1
       guid: 31b4d77b4b7f4df42b25d5d0f0437322
-      position: {x: 142.69614, y: -0.00018488902, z: 0}
-      rotation: {x: 0, y: 0, z: -0.14633444, w: 0.9892352}
-      length: 206.81206
+      position: {x: 142.69672, y: 0.000098872595, z: 0}
+      rotation: {x: 0, y: 0, z: -0.14633438, w: 0.9892352}
+      length: 206.81207
       parentId: 2
       color:
         serializedVersion: 2
@@ -837,8 +837,8 @@ ScriptedImporter:
     - name: Base Side Hair
       guid: 79b75fbb549d6f943906f96f55b64e57
       position: {x: 77.36487, y: 580.79785, z: 0}
-      rotation: {x: 0, y: 0, z: -0.55521184, w: 0.831709}
-      length: 142.6963
+      rotation: {x: 0, y: 0, z: -0.555212, w: 0.8317089}
+      length: 142.69633
       parentId: -1
       color:
         serializedVersion: 2
@@ -2801,18 +2801,18 @@ ScriptedImporter:
     spriteBone:
     - name: Twin Tail 2
       guid: c7b7a34b74637434fbedcd3d002b356e
-      position: {x: 172.92638, y: 0.00003730829, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09016102, w: 0.9959273}
-      length: 218.21895
+      position: {x: 172.92621, y: 0.00006769212, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09016128, w: 0.9959272}
+      length: 218.21896
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: Twin Tail 1
       guid: ec52d3c474feffa48b70d88152736708
-      position: {x: 220.23131, y: -0.000025858164, z: 0}
-      rotation: {x: 0, y: 0, z: -0.11763706, w: 0.9930567}
-      length: 172.9269
+      position: {x: 220.23132, y: 0.000032660155, z: 0}
+      rotation: {x: 0, y: 0, z: -0.11763689, w: 0.9930567}
+      length: 172.92679
       parentId: 2
       color:
         serializedVersion: 2
@@ -2821,7 +2821,7 @@ ScriptedImporter:
       guid: 855948fe3bcb21b4f96c11f4d51cf88a
       position: {x: 40.382446, y: 616.6333, z: 0}
       rotation: {x: 0, y: 0, z: -0.59824616, w: 0.8013124}
-      length: 220.23083
+      length: 220.2308
       parentId: -1
       color:
         serializedVersion: 2
@@ -12036,18 +12036,18 @@ ScriptedImporter:
     spriteBone:
     - name: Back Side Hair 2
       guid: d9f7d9daaa0adab4d84b527b8c89160a
-      position: {x: 243.61417, y: -0.00005893963, z: 0}
-      rotation: {x: 0, y: 0, z: 0.080303475, w: 0.9967705}
-      length: 162.53851
+      position: {x: 243.61403, y: -0.00016092641, z: 0}
+      rotation: {x: 0, y: 0, z: 0.080303356, w: 0.99677044}
+      length: 162.53857
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4286578943
     - name: Back Side Hair 1
       guid: cf6e1cab8d22b1b4d8adaf0f06549ea7
-      position: {x: 171.29385, y: 0.00011851279, z: 0}
-      rotation: {x: 0, y: 0, z: 0.14523545, w: 0.98939717}
-      length: 243.61412
+      position: {x: 171.29387, y: 0.00011003529, z: 0}
+      rotation: {x: 0, y: 0, z: 0.14523539, w: 0.98939717}
+      length: 243.61424
       parentId: 2
       color:
         serializedVersion: 2
@@ -12055,8 +12055,8 @@ ScriptedImporter:
     - name: Base Back Side Hair
       guid: 10a23fad1d8375c45861294e054c3055
       position: {x: 81.92047, y: 597.0918, z: 0}
-      rotation: {x: 0, y: 0, z: 0.7887338, w: -0.61473495}
-      length: 171.29381
+      rotation: {x: 0, y: 0, z: 0.7887337, w: -0.61473507}
+      length: 171.29393
       parentId: -1
       color:
         serializedVersion: 2
@@ -13312,15 +13312,15 @@ ScriptedImporter:
       height: 496
     spriteID: c5c71f8aaa1bba8468849f4b6d85bc15
     spriteBone:
-    - name: Twin Tail 2
-      guid: c7b7a34b74637434fbedcd3d002b356e
-      position: {x: 202.02222, y: 566.79395, z: 0}
-      rotation: {x: 0, y: 0, z: -0.7509532, w: 0.6603555}
-      length: 218.2189
+    - name: Front Jacket 1
+      guid: ecf1f97da097ce643b1ca8e3b80f10a6
+      position: {x: 102.8512, y: 153.56567, z: 0}
+      rotation: {x: 0, y: 0, z: -0.69283205, w: 0.721099}
+      length: 254.53673
       parentId: -1
       color:
         serializedVersion: 2
-        rgba: 4294967040
+        rgba: 4278255360
     spriteOutline: []
     vertices:
     - position: {x: 11.304001, y: 0.44299316}
@@ -14104,7 +14104,7 @@ ScriptedImporter:
         boneIndex2: 0
         boneIndex3: 0
     spritePhysicsOutline: []
-    indices: 000000003300000001000000270000003a0000003b000000270000004d0000003a000000270000003b00000028000000260000004d00000027000000250000003c0000004d000000250000004d00000026000000240000004c0000003c000000240000003c00000025000000230000004b0000004c000000230000004c00000024000000220000004b00000023000000210000004a0000004b000000210000004b0000002200000020000000480000004a000000200000004a000000210000001f00000049000000480000001f00000048000000200000001e00000045000000490000001e000000490000001f0000001d00000047000000450000001d000000450000001e000000280000003b000000290000001c000000470000001d00000029000000380000002a0000002a000000390000002b000000430000004900000046000000420000004b0000004a00000041000000420000004a00000040000000410000004a000000400000004a000000480000004000000043000000440000004000000048000000430000004000000044000000410000003e0000003f0000004c0000003e0000004c0000004b0000003e0000004b000000420000003c0000003d0000004d0000003c0000004c0000003f0000003c0000003f0000003d0000003a0000004d0000003d0000002d000000370000002e0000002c00000036000000370000002c000000370000002d0000002b00000039000000360000002b000000360000002c0000002a0000003800000039000000290000003b000000380000001a000000470000001c0000001a0000001c0000001b00000019000000470000001a0000000a00000039000000380000000a000000380000000b00000009000000360000003900000009000000390000000a000000080000003700000036000000080000003600000009000000070000003700000008000000060000002e00000037000000060000002f0000002e00000006000000370000000700000005000000300000002f000000050000002f000000060000000400000031000000300000000400000030000000050000000300000032000000310000000300000031000000040000000200000033000000320000000200000032000000030000000100000033000000020000000000000035000000340000000000000034000000330000000b0000003b0000000c0000000b000000380000003b0000000c0000003a0000000d0000000c0000003b0000003a000000180000004500000047000000180000004700000019000000170000004600000045000000170000004500000018000000160000004300000046000000160000004600000017000000150000004400000043000000150000004300000016000000140000004400000015000000130000004100000044000000430000004800000049000000130000004400000014000000120000004100000013000000110000003e00000042000000110000004200000012000000100000003f0000003e000000100000003e000000110000000f0000003f000000100000000e0000003d0000003f0000000e0000003f0000000f0000000d0000003a0000003d0000000d0000003d0000000e000000120000004200000041000000450000004600000049000000
+    indices: 0000000033000000010000000b0000003b0000000c000000000000003400000033000000000000003500000034000000010000003300000002000000020000003200000003000000020000003300000032000000030000003100000004000000030000003200000031000000040000003000000005000000040000003100000030000000050000002f0000000600000005000000300000002f000000060000003700000007000000060000002f0000002e000000060000002e0000003700000007000000370000000800000008000000360000000900000008000000370000003600000009000000390000000a0000000900000036000000390000000a000000380000000b0000000b000000380000003b0000000a00000039000000380000000c0000003a0000000d0000001800000045000000470000000d0000003d0000000e0000000d0000003a0000003d0000000e0000003f0000000f0000000e0000003d0000003f0000000f0000003f00000010000000100000003e00000011000000100000003f0000003e000000110000004200000012000000110000003e000000420000001200000041000000130000001300000044000000140000004300000048000000490000001300000041000000440000001400000044000000150000001500000043000000160000001500000044000000430000001600000046000000170000001600000043000000460000001700000045000000180000001700000046000000450000001800000047000000190000000c0000003b0000003a00000019000000470000001a0000001a0000001c0000001b0000001a000000470000001c0000001d000000450000001e0000001d00000047000000450000001e000000490000001f0000001e00000045000000490000001f00000048000000200000001f0000004900000048000000200000004a0000002100000020000000480000004a000000210000004b00000022000000210000004a0000004b000000220000004b00000023000000230000004c00000024000000230000004b0000004c000000240000003c00000025000000240000004c0000003c000000250000004d00000026000000250000003c0000004d000000260000004d00000027000000270000003b00000028000000270000004d0000003a000000270000003a0000003b000000280000003b000000290000001c000000470000001d00000029000000380000002a0000002a000000390000002b000000290000003b000000380000002a00000038000000390000002b000000360000002c0000002b00000039000000360000002c000000370000002d0000002c00000036000000370000002d000000370000002e0000003a0000004d0000003d0000003c0000003f0000003d0000003c0000004c0000003f0000001200000042000000410000003c0000003d0000004d0000003e0000004c0000004b0000003e0000003f0000004c000000400000004400000041000000400000004800000043000000400000004300000044000000400000004a0000004800000040000000410000004a00000041000000420000004a000000420000004b0000004a0000004300000049000000460000003e0000004b00000042000000450000004600000049000000
     edges:
     - {x: 0, y: 1}
     - {x: 0, y: 53}
@@ -14179,8 +14179,8 @@ ScriptedImporter:
     spriteBone:
     - name: R Arm 2
       guid: 820aba46d4392e446b32a7a2054686d6
-      position: {x: 298.0059, y: -0.00012094488, z: 0}
-      rotation: {x: 0, y: 0, z: 0.058618657, w: 0.9982805}
+      position: {x: 298.00555, y: -0.00002487062, z: 0}
+      rotation: {x: 0, y: 0, z: 0.05861864, w: 0.9982805}
       length: 294.58923
       parentId: 1
       color:
@@ -14189,16 +14189,16 @@ ScriptedImporter:
     - name: R Arm 1
       guid: efefd26de1aaee143bd5a45b836a67cc
       position: {x: 114.010925, y: 552.6221, z: 0}
-      rotation: {x: 0, y: 0, z: -0.5614895, w: 0.8274839}
-      length: 298.00598
+      rotation: {x: 0, y: 0, z: -0.56148946, w: 0.8274839}
+      length: 298.006
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4278255488
     - name: Twin Tail 2
       guid: c7b7a34b74637434fbedcd3d002b356e
-      position: {x: 103.02222, y: 820.79395, z: 0}
-      rotation: {x: 0, y: 0, z: -0.7509532, w: 0.6603555}
+      position: {x: 103.02228, y: 820.7942, z: 0}
+      rotation: {x: 0, y: 0, z: -0.75095326, w: 0.66035545}
       length: 218.2189
       parentId: -1
       color:
@@ -15066,18 +15066,18 @@ ScriptedImporter:
     spriteBone:
     - name: R Hand
       guid: 9e06767a9084400478333265c0f91f68
-      position: {x: 294.5893, y: -0.000010345517, z: 0}
-      rotation: {x: 0, y: 0, z: 0.1538084, w: 0.9881007}
-      length: 287.08743
+      position: {x: 294.58932, y: 0.000047241752, z: 0}
+      rotation: {x: 0, y: 0, z: 0.15380834, w: 0.9881007}
+      length: 287.08737
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4294934528
     - name: R Arm 2
       guid: 820aba46d4392e446b32a7a2054686d6
-      position: {x: -82.88806, y: 522.7009, z: 0}
-      rotation: {x: 0, y: 0, z: -0.512018, w: 0.8589747}
-      length: 294.5893
+      position: {x: -82.88818, y: 522.7009, z: 0}
+      rotation: {x: 0, y: 0, z: -0.51201797, w: 0.8589747}
+      length: 294.58923
       parentId: -1
       color:
         serializedVersion: 2
@@ -15983,9 +15983,9 @@ ScriptedImporter:
     spriteBone:
     - name: Front Jacket 2
       guid: b41a34b8055f8b74baa31053be1c2de0
-      position: {x: 254.53702, y: 0.0000877765, z: 0}
-      rotation: {x: 0, y: 0, z: 0.18919548, w: 0.98193944}
-      length: 282.33917
+      position: {x: 254.53624, y: 0.000011772046, z: 0}
+      rotation: {x: 0, y: 0, z: 0.1891954, w: 0.9819395}
+      length: 282.33926
       parentId: 1
       color:
         serializedVersion: 2
@@ -15993,8 +15993,8 @@ ScriptedImporter:
     - name: Front Jacket 1
       guid: ecf1f97da097ce643b1ca8e3b80f10a6
       position: {x: 113.8512, y: 576.5657, z: 0}
-      rotation: {x: 0, y: 0, z: -0.6928322, w: 0.72109896}
-      length: 254.5367
+      rotation: {x: 0, y: 0, z: -0.69283205, w: 0.721099}
+      length: 254.53673
       parentId: -1
       color:
         serializedVersion: 2
@@ -21371,7 +21371,7 @@ ScriptedImporter:
     - name: Back Jacket 2
       guid: 58fe659ec7c2492438d9e7919f1c5d29
       position: {x: 424.46033, y: -0.00005182265, z: 0}
-      rotation: {x: 0, y: 0, z: -0.027180282, w: 0.99963063}
+      rotation: {x: 0, y: -0, z: 0.027180247, w: -0.99963063}
       length: 404.42627
       parentId: 1
       color:
@@ -21380,7 +21380,7 @@ ScriptedImporter:
     - name: Back Jacket 1
       guid: 0dbbc977e2526c742ae91c8dfed36e2b
       position: {x: 335.09412, y: 811.8795, z: 0}
-      rotation: {x: 0, y: 0, z: -0.81794816, w: 0.57529193}
+      rotation: {x: 0, y: 0, z: 0.81794816, w: -0.57529193}
       length: 424.46027
       parentId: -1
       color:
@@ -22232,8 +22232,8 @@ ScriptedImporter:
     spriteBone:
     - name: Back Twin Tail 2
       guid: 2fd2024b0e66e664ca14b433695a0290
-      position: {x: 190.63191, y: 0.000026219644, z: 0}
-      rotation: {x: 0, y: 0, z: -0.0005725107, w: 0.9999999}
+      position: {x: 190.63179, y: 0.00007740565, z: 0}
+      rotation: {x: 0, y: 0, z: -0.00057255215, w: 0.9999999}
       length: 178.54445
       parentId: 1
       color:
@@ -22243,7 +22243,7 @@ ScriptedImporter:
       guid: 8a44d5e3c8f81fc47b2a4ef5095c2244
       position: {x: 190.99057, y: -0.0000055322707, z: 0}
       rotation: {x: 0, y: 0, z: 0.0718141, w: 0.99741805}
-      length: 190.63182
+      length: 190.63168
       parentId: 2
       color:
         serializedVersion: 2
@@ -23363,9 +23363,9 @@ ScriptedImporter:
     spriteBone:
     - name: L Arm 2
       guid: 3f7d832b4e3e07144a2bc15b6e58c797
-      position: {x: 317.4741, y: -0.00017614888, z: 0}
-      rotation: {x: 0, y: 0, z: 0.06813603, w: 0.9976761}
-      length: 359.34106
+      position: {x: 317.47495, y: -0.000024335794, z: 0}
+      rotation: {x: 0, y: 0, z: 0.06813597, w: 0.997676}
+      length: 359.34097
       parentId: 1
       color:
         serializedVersion: 2
@@ -23373,8 +23373,8 @@ ScriptedImporter:
     - name: L Arm 1
       guid: 816658aecda7cb74e964de1d1f929c35
       position: {x: 262.52197, y: 611.0137, z: 0}
-      rotation: {x: 0, y: 0, z: -0.83331865, w: 0.5527929}
-      length: 317.47458
+      rotation: {x: 0, y: 0, z: 0.83331865, w: -0.552793}
+      length: 317.47452
       parentId: -1
       color:
         serializedVersion: 2
@@ -24322,9 +24322,9 @@ ScriptedImporter:
     spriteBone:
     - name: L Hand
       guid: 6ec8f40c5c094324ba12b78025fc544a
-      position: {x: 359.3413, y: -0.000079687394, z: 0}
-      rotation: {x: 0, y: 0, z: -0.16062625, w: 0.98701537}
-      length: 261.56635
+      position: {x: 359.34103, y: -0.00011081838, z: 0}
+      rotation: {x: 0, y: -0, z: 0.16062628, w: -0.98701537}
+      length: 261.5663
       parentId: 1
       color:
         serializedVersion: 2
@@ -24332,8 +24332,8 @@ ScriptedImporter:
     - name: L Arm 2
       guid: 3f7d832b4e3e07144a2bc15b6e58c797
       position: {x: 359.0752, y: 629.5227, z: 0}
-      rotation: {x: 0, y: 0, z: -0.79371697, w: 0.6082873}
-      length: 359.34106
+      rotation: {x: 0, y: 0, z: 0.79371697, w: -0.60828733}
+      length: 359.34097
       parentId: -1
       color:
         serializedVersion: 2
@@ -25466,16 +25466,16 @@ ScriptedImporter:
     - name: Base Hair Bang
       guid: 3b21a78a8a7c75c4aada4654b4b369f8
       position: {x: 504.95007, y: 3.9104168, z: 0}
-      rotation: {x: 0, y: -0, z: 0.9146778, w: 0.40418398}
-      length: 102.73588
+      rotation: {x: 0, y: -0, z: 0.91467786, w: 0.40418366}
+      length: 102.73583
       parentId: 3
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: Hair Bang
       guid: b203275eda685d24e9dc3fe6fc4e86e0
-      position: {x: 102.73579, y: 0.0000059979757, z: 0}
-      rotation: {x: 0, y: 0, z: 0.25631994, w: 0.9665921}
+      position: {x: 102.73589, y: 0.000005158421, z: 0}
+      rotation: {x: 0, y: 0, z: 0.2563196, w: 0.96659213}
       length: 152.63847
       parentId: 4
       color:
@@ -25484,25 +25484,25 @@ ScriptedImporter:
     - name: Base Side Hair
       guid: 79b75fbb549d6f943906f96f55b64e57
       position: {x: 493.32428, y: -85.071724, z: 0}
-      rotation: {x: 0, y: -0, z: -0.99132407, w: 0.1314405}
-      length: 142.69633
+      rotation: {x: 0, y: -0, z: -0.9913241, w: 0.13144028}
+      length: 142.69632
       parentId: 3
       color:
         serializedVersion: 2
         rgba: 4278223103
     - name: Side Hair 1
       guid: 31b4d77b4b7f4df42b25d5d0f0437322
-      position: {x: 142.69629, y: -0.000023623954, z: 0}
-      rotation: {x: 0, y: 0, z: -0.14633445, w: 0.98923516}
-      length: 206.81207
+      position: {x: 142.69649, y: 0.00004551237, z: 0}
+      rotation: {x: 0, y: 0, z: -0.14633438, w: 0.9892352}
+      length: 206.81206
       parentId: 6
       color:
         serializedVersion: 2
         rgba: 4278255488
     - name: Side Hair 2
       guid: ea8a085e74bfcab4cb0494d800afbeb3
-      position: {x: 206.81209, y: -0.000016526354, z: 0}
-      rotation: {x: 0, y: 0, z: -0.15929288, w: 0.98723143}
+      position: {x: 206.81206, y: 0.00004994673, z: 0}
+      rotation: {x: 0, y: 0, z: -0.15929271, w: 0.98723143}
       length: 248.3299
       parentId: 7
       color:
@@ -25511,25 +25511,25 @@ ScriptedImporter:
     - name: Base Back Side Hair
       guid: 10a23fad1d8375c45861294e054c3055
       position: {x: 393.1409, y: 149.327, z: 0}
-      rotation: {x: 0, y: -0, z: 0.9823226, w: 0.18719597}
-      length: 171.29382
+      rotation: {x: 0, y: -0, z: 0.98232263, w: 0.18719587}
+      length: 171.29391
       parentId: 3
       color:
         serializedVersion: 2
         rgba: 4294934528
     - name: Back Side Hair 1
       guid: cf6e1cab8d22b1b4d8adaf0f06549ea7
-      position: {x: 171.29393, y: 0.0000140185, z: 0}
+      position: {x: 171.2938, y: -0.0000032153184, z: 0}
       rotation: {x: 0, y: 0, z: 0.14523537, w: 0.98939717}
-      length: 243.61412
+      length: 243.61423
       parentId: 9
       color:
         serializedVersion: 2
         rgba: 4294901888
     - name: Back Side Hair 2
       guid: d9f7d9daaa0adab4d84b527b8c89160a
-      position: {x: 243.61421, y: 0.000014367539, z: 0}
-      rotation: {x: 0, y: 0, z: 0.08030345, w: 0.9967705}
+      position: {x: 243.61424, y: -0.00003991266, z: 0}
+      rotation: {x: 0, y: 0, z: 0.08030337, w: 0.9967705}
       length: 162.53856
       parentId: 10
       color:
@@ -25538,25 +25538,25 @@ ScriptedImporter:
     - name: Base Twin Tail
       guid: 855948fe3bcb21b4f96c11f4d51cf88a
       position: {x: 399.5325, y: -215.03363, z: 0}
-      rotation: {x: 0, y: -0, z: -0.99687093, w: 0.07904638}
-      length: 220.23085
+      rotation: {x: 0, y: -0, z: -0.99687093, w: 0.07904639}
+      length: 220.23082
       parentId: 3
       color:
         serializedVersion: 2
         rgba: 4278255615
     - name: Twin Tail 1
       guid: ec52d3c474feffa48b70d88152736708
-      position: {x: 220.2308, y: -0.0000064716623, z: 0}
-      rotation: {x: 0, y: 0, z: -0.11763702, w: 0.99305665}
-      length: 172.9269
+      position: {x: 220.23079, y: 0.00006197116, z: 0}
+      rotation: {x: 0, y: 0, z: -0.11763691, w: 0.9930567}
+      length: 172.92679
       parentId: 12
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: Twin Tail 2
       guid: c7b7a34b74637434fbedcd3d002b356e
-      position: {x: 172.92682, y: 0.00007958311, z: 0}
-      rotation: {x: 0, y: 0, z: -0.09016108, w: 0.9959272}
+      position: {x: 172.92671, y: 0.00005023183, z: 0}
+      rotation: {x: 0, y: 0, z: -0.09016125, w: 0.9959272}
       length: 218.21896
       parentId: 13
       color:
@@ -25575,15 +25575,15 @@ ScriptedImporter:
       guid: 8a44d5e3c8f81fc47b2a4ef5095c2244
       position: {x: 190.9911, y: -0.00003548948, z: 0}
       rotation: {x: 0, y: 0, z: 0.07181409, w: 0.99741805}
-      length: 190.63185
+      length: 190.63171
       parentId: 15
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: Back Twin Tail 2
       guid: 2fd2024b0e66e664ca14b433695a0290
-      position: {x: 190.63171, y: 0.000030990454, z: 0}
-      rotation: {x: 0, y: 0, z: -0.00057252136, w: 0.9999999}
+      position: {x: 190.63159, y: 0.000082176484, z: 0}
+      rotation: {x: 0, y: 0, z: -0.00057256274, w: 0.9999999}
       length: 178.54446
       parentId: 16
       color:
@@ -25592,25 +25592,25 @@ ScriptedImporter:
     - name: R Arm 1
       guid: efefd26de1aaee143bd5a45b836a67cc
       position: {x: 203.14597, y: -318.36304, z: 0}
-      rotation: {x: 0, y: 0, z: -0.9717474, w: 0.23602356}
-      length: 298.0059
+      rotation: {x: 0, y: -0, z: -0.97174734, w: 0.23602359}
+      length: 298.006
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4278255488
     - name: R Arm 2
       guid: 820aba46d4392e446b32a7a2054686d6
-      position: {x: 298.00595, y: 0.000018328084, z: 0}
-      rotation: {x: 0, y: 0, z: 0.05861867, w: 0.99828047}
-      length: 294.5892
+      position: {x: 298.00595, y: -0.00010272604, z: 0}
+      rotation: {x: 0, y: 0, z: 0.058618665, w: 0.99828047}
+      length: 294.58923
       parentId: 18
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: R Hand
       guid: 9e06767a9084400478333265c0f91f68
-      position: {x: 294.58926, y: 0.00014667999, z: 0}
-      rotation: {x: 0, y: 0, z: 0.15380831, w: 0.98810077}
+      position: {x: 294.5892, y: 0.00013298258, z: 0}
+      rotation: {x: 0, y: 0, z: 0.1538083, w: 0.9881007}
       length: 287.08737
       parentId: 19
       color:
@@ -25619,15 +25619,15 @@ ScriptedImporter:
     - name: L Arm 1
       guid: 816658aecda7cb74e964de1d1f929c35
       position: {x: 225.9235, y: 97.35665, z: 0}
-      rotation: {x: 0, y: 0, z: -0.9886771, w: -0.1500588}
-      length: 317.47455
+      rotation: {x: 0, y: -0, z: 0.9886771, w: 0.15005875}
+      length: 317.4746
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4294901888
     - name: L Arm 2
       guid: 3f7d832b4e3e07144a2bc15b6e58c797
-      position: {x: 317.47458, y: 0.000005916507, z: 0}
+      position: {x: 317.47455, y: -0.00001999407, z: 0}
       rotation: {x: 0, y: 0, z: 0.06813602, w: 0.9976761}
       length: 359.34106
       parentId: 21
@@ -25636,8 +25636,8 @@ ScriptedImporter:
         rgba: 4286578943
     - name: L Hand
       guid: 6ec8f40c5c094324ba12b78025fc544a
-      position: {x: 359.34106, y: -0.00004430415, z: 0}
-      rotation: {x: 0, y: 0, z: -0.16062619, w: 0.9870153}
+      position: {x: 359.34106, y: -0.00009017873, z: 0}
+      rotation: {x: 0, y: 0, z: 0.16062628, w: -0.98701537}
       length: 261.56635
       parentId: 22
       color:
@@ -25646,7 +25646,7 @@ ScriptedImporter:
     - name: Front Jacket 1
       guid: ecf1f97da097ce643b1ca8e3b80f10a6
       position: {x: 47.996056, y: -222.94276, z: 0}
-      rotation: {x: 0, y: 0, z: -0.9976172, w: 0.068992436}
+      rotation: {x: 0, y: -0, z: -0.9976172, w: 0.068992555}
       length: 254.53671
       parentId: 2
       color:
@@ -25654,8 +25654,8 @@ ScriptedImporter:
         rgba: 4278255360
     - name: Front Jacket 2
       guid: b41a34b8055f8b74baa31053be1c2de0
-      position: {x: 254.5367, y: 0.000072804505, z: 0}
-      rotation: {x: 0, y: 0, z: 0.18919553, w: 0.9819395}
+      position: {x: 254.53668, y: 0.000015852576, z: 0}
+      rotation: {x: 0, y: 0, z: 0.18919541, w: 0.9819395}
       length: 282.33926
       parentId: 24
       color:
@@ -25664,7 +25664,7 @@ ScriptedImporter:
     - name: Back Jacket 1
       guid: 0dbbc977e2526c742ae91c8dfed36e2b
       position: {x: 293.98633, y: -44.22908, z: 0}
-      rotation: {x: 0, y: 0, z: -0.9923985, w: -0.12306606}
+      rotation: {x: 0, y: -0, z: 0.9923985, w: 0.12306605}
       length: 424.4603
       parentId: 2
       color:
@@ -25672,8 +25672,8 @@ ScriptedImporter:
         rgba: 4294901760
     - name: Back Jacket 2
       guid: 58fe659ec7c2492438d9e7919f1c5d29
-      position: {x: 424.46033, y: -0.0000020107618, z: 0}
-      rotation: {x: 0, y: 0, z: -0.02718028, w: 0.99963063}
+      position: {x: 424.46036, y: -0.0000137002535, z: 0}
+      rotation: {x: 0, y: 0, z: 0.02718028, w: -0.9996306}
       length: 404.42627
       parentId: 26
       color:
@@ -25785,7 +25785,7 @@ ScriptedImporter:
         width: 254
         height: 496
       spriteId: c5c71f8aaa1bba8468849f4b6d85bc15
-      bones: 0e000000
+      bones: 18000000
       parentGroup: 0
       order: 0
     - spritePosition:
