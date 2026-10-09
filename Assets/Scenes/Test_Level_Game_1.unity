@@ -3947,11 +3947,21 @@ MonoBehaviour:
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
-      - spawnerDataName: 'Deliquent Pederstrian '
-        maxSpawnCount: 5
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 1
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Test - Vehicle
+      spawnerIrresponsible: {fileID: 1398889233}
+      maxSpawnRate: 5
+      minSpawnRate: 2
+      spawnerData:
+      - spawnerDataName: Motor
+        maxSpawnCount: 1
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
   - waveDataName: Wave 2
     waveDelay: 10
     waveSpawnerData:

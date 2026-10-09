@@ -9,9 +9,10 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
     
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private List<Vector3> waypoints = new ();
-    
     [SerializeField] private int indexWaypoint;
     private bool _hasWaypoints;
+    
+    [SerializeField] private EntityAnimation entityAnimation;
     
     public IrresponsibleThinkingData IrresponsibleThinkingData { get;  set; }
     public float ThinkingCheckTimer { get; set; }
@@ -41,6 +42,10 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         }
         
         Vector3 targetPosition = waypoints[indexWaypoint];
+        
+        entityAnimation.PlayWalkAnimation();
+        entityAnimation.RotateAnimation(transform.position, targetPosition, deltaTime);
+        
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * deltaTime);
     }
     
@@ -80,7 +85,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         InitializeEntity(runTimeData);
     }
 
-    #region === CheckIrresponsibleThinking ===
+    #region === OnCheck - IrresponsibleThinking ===
 
     public override void OnCheckIrresponsibleThinking(float deltaTime) => CheckIrresponsibleThinking(deltaTime);
     public void CheckIrresponsibleThinking(float deltaTime)
@@ -97,13 +102,15 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         if (roll <= IrresponsibleThinkingData.chanceIrresponsibleThinking)
         {
             EntityRunTimeData.entityState = EntityState.IrresponsibleThinking;
+            entityAnimation.StopWalkAnimation();
+            
             irresponsibleThinkingSlider.gameObject.SetActive(true);
         }
     }
 
     #endregion
     
-    #region === CheckIrresponsibleThinking ===
+    #region === OnIncrease - IrresponsibleThinking ===
 
     public TrashType GetTrashType()
     {
@@ -154,6 +161,8 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
             IrresponsibleThinkingData.currentIrresponsibleThinkingMeter = 0;
             ThinkingCheckTimer = 0;
             EntityRunTimeData.entityState = EntityState.Moving;
+            
+            entityAnimation.PlayThrowAnimation();
             SpawnerTrash.Instance.SpawnTrash(transform.position, GetTrashType());
             
             irresponsibleThinkingSlider.gameObject.SetActive(false);
@@ -161,9 +170,8 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
     }
 
     #endregion
-   
     
-    #region === CheckIrresponsibleThinking ===
+    #region === Decrease - IrresponsibleThinking ===
    
     private void DecreaseIrresponsibleThinking(float deltaTime)
     {

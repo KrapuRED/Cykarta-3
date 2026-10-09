@@ -8,9 +8,10 @@ public class Vehicle : Entity, IIrresponsibleThinkable
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private List<Vector3> waypoints = new ();
     [SerializeField] private List<TrashChangeData> trashData = new();
-    
     [SerializeField] private int indexWaypoint;
     private bool _hasWaypoints;
+    
+    [SerializeField] private EntityAnimation entityAnimation;
     
     public IrresponsibleThinkingData IrresponsibleThinkingData { get;  set; }
     public float ThinkingCheckTimer { get; set; }
@@ -42,6 +43,7 @@ public class Vehicle : Entity, IIrresponsibleThinkable
         }
         
         Vector3 targetPosition = waypoints[indexWaypoint];
+        entityAnimation.RotateAnimation(transform.position, targetPosition, deltaTime);
         
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * deltaTime);
     }
