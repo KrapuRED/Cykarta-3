@@ -50,8 +50,6 @@ public class EntityAnimation : MonoBehaviour
         else if (dir == Vector2Int.up) angle = 0f;
         else if (dir == Vector2Int.down) angle = 180f;
         
-        Debug.Log($"[{transform.parent.parent.name}] angle = {angle}");
-        
         _targetRotation = Quaternion.Euler(0, 0, angle);
         
         pivotTransform.rotation = _targetRotation;

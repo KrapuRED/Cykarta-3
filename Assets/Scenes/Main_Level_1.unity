@@ -325,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &192332540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1004,9 +1004,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 246814089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355, y: -64.9353}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 519.4824, y: 129.8706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467867755
@@ -1459,8 +1459,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnerID: Pedestrian_Line_2
   spawnZone: 1
-  maxSpawnRate: 5
-  minSpawnRate: 1
   spawnerDatas: []
   wayPointDatas:
   - wayPointDataName: Pedestrian Line 2 -  Right -> Left
@@ -1472,6 +1470,7 @@ MonoBehaviour:
   containerSpawner: {fileID: 582024881}
   currentSpawnRate: 0
   prevSpawnRate: 0
+  isSpawnerActive: 0
 --- !u!224 &639315751 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1422481866116219771, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
@@ -1706,9 +1705,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1048660126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 420, y: -100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 620, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &825075171
@@ -1882,9 +1881,9 @@ RectTransform:
   - {fileID: 295944210}
   m_Father: {fileID: 927188370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 600, y: -185}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 240, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884371999
@@ -2026,63 +2025,149 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   levelIndex: 1
-  objectiveHealthPoints: 10
+  objectiveHealthPoints: 1000
   waveDataList:
   - waveDataName: Wave 1
     waveDelay: 5
+    waveReward: 100
     waveSpawnerData:
-    - spawnerName: Test
+    - spawnerName: Pedestrian 1
       spawnerIrresponsible: {fileID: 1376950317}
       maxSpawnRate: 5
-      minSpawnRate: 2
+      minSpawnRate: 1
       spawnerData:
       - spawnerDataName: 'Common Pederstrian '
-        maxSpawnCount: 1
+        maxSpawnCount: 5
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 2
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Pedestrian 2
+      spawnerIrresponsible: {fileID: 630482355}
+      maxSpawnRate: 5
+      minSpawnRate: 1
+      spawnerData:
       - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 6
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
         maxSpawnCount: 1
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
-    - spawnerName: Test - Vehicle
+    - spawnerName: Vehicle
       spawnerIrresponsible: {fileID: 1398889233}
       maxSpawnRate: 5
       minSpawnRate: 2
       spawnerData:
-      - spawnerDataName: Motor
+      - spawnerDataName: Motor rider
         maxSpawnCount: 1
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
   - waveDataName: Wave 2
     waveDelay: 10
+    waveReward: 150
     waveSpawnerData:
-    - spawnerName: Test
-      spawnerIrresponsible: {fileID: 630482355}
+    - spawnerName: Pedestrian 1
+      spawnerIrresponsible: {fileID: 1376950317}
       maxSpawnRate: 5
-      minSpawnRate: 0
+      minSpawnRate: 1
       spawnerData:
-      - spawnerDataName: 'Pederstrian '
-        maxSpawnCount: 5
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 7
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
-    - spawnerName: Test 1
-      spawnerIrresponsible: {fileID: 1398889233}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 2
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Pedestrian 2
+      spawnerIrresponsible: {fileID: 630482355}
       maxSpawnRate: 5
-      minSpawnRate: 0
+      minSpawnRate: 2
       spawnerData:
-      - spawnerDataName: Vehicle
-        maxSpawnCount: 10
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 9
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 1
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Vehicle
+      spawnerIrresponsible: {fileID: 1398889233}
+      maxSpawnRate: 7
+      minSpawnRate: 3
+      spawnerData:
+      - spawnerDataName: Motor rider
+        maxSpawnCount: 2
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
+  - waveDataName: Wave 3
+    waveDelay: 10
+    waveReward: 150
+    waveSpawnerData:
+    - spawnerName: Pedestrian 1
+      spawnerIrresponsible: {fileID: 1376950317}
+      maxSpawnRate: 5
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 7
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 2
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Pedestrian 2
+      spawnerIrresponsible: {fileID: 630482355}
+      maxSpawnRate: 5
+      minSpawnRate: 2
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 9
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 1
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Vehicle
+      spawnerIrresponsible: {fileID: 1398889233}
+      maxSpawnRate: 7
+      minSpawnRate: 3
+      spawnerData:
+      - spawnerDataName: Motor rider
+        maxSpawnCount: 2
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
+      - spawnerDataName: Pick Up
+        maxSpawnCount: 1
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 2d2c7d6bb80ade44690177038cc1c03b, type: 2}
   enemyCounter: {fileID: 1036461780}
   proctectionLevel: {fileID: 84161055}
   waveCounter: {fileID: 1516502957}
-  startLevel: 0
+  startLevel: 1
 --- !u!1 &927188369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,9 +2201,9 @@ RectTransform:
   - {fileID: 884371998}
   m_Father: {fileID: 1048660126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 420, y: -435}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 370}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927188371
@@ -2589,9 +2674,9 @@ RectTransform:
   - {fileID: 1644969806}
   m_Father: {fileID: 927188370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -185}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 240, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1134079496
@@ -2713,7 +2798,7 @@ Transform:
   m_GameObject: {fileID: 1168014036}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 8.56, z: 0}
+  m_LocalPosition: {x: 2.72, y: 8.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2775,7 +2860,7 @@ Transform:
   m_GameObject: {fileID: 1186792786}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 7.5, z: 0}
+  m_LocalPosition: {x: -8.29, y: 8.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3245,8 +3330,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnerID: Pedestrian_Line_1
   spawnZone: 1
-  maxSpawnRate: 5
-  minSpawnRate: 1
   spawnerDatas: []
   wayPointDatas:
   - wayPointDataName: 'Pedestrian Line 1 - Right -> Left '
@@ -3258,6 +3341,7 @@ MonoBehaviour:
   containerSpawner: {fileID: 1213021695}
   currentSpawnRate: 0
   prevSpawnRate: 0
+  isSpawnerActive: 0
 --- !u!1 &1398889231
 GameObject:
   m_ObjectHideFlags: 0
@@ -3304,8 +3388,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnerID: Vehicle
   spawnZone: 2
-  maxSpawnRate: 6
-  minSpawnRate: 2
   spawnerDatas: []
   wayPointDatas:
   - wayPointDataName: WayPoint Vehicle - Left -> Right
@@ -3317,6 +3399,7 @@ MonoBehaviour:
   containerSpawner: {fileID: 1061382380}
   currentSpawnRate: 0
   prevSpawnRate: 0
+  isSpawnerActive: 0
 --- !u!1 &1406063982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,9 +3865,9 @@ RectTransform:
   - {fileID: 1522192398}
   m_Father: {fileID: 1610107941}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355, y: -339.9353}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1503247205
@@ -4272,9 +4355,9 @@ RectTransform:
   - {fileID: 1310074565}
   m_Father: {fileID: 246814089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355, y: -339.9353}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633240122
@@ -4538,7 +4621,7 @@ Transform:
   m_GameObject: {fileID: 1651013201}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.5, y: 7.5, z: 0}
+  m_LocalPosition: {x: -8.38, y: 8.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4840,7 +4923,7 @@ Transform:
   m_GameObject: {fileID: 1692747464}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.33, y: 8.74, z: 0}
+  m_LocalPosition: {x: -10.35, y: 8.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4913,9 +4996,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1610107941}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355, y: -64.9353}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 519.4824, y: 129.8706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1740500879
@@ -5043,7 +5126,7 @@ Transform:
   m_GameObject: {fileID: 1752899423}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 7.5, z: 0}
+  m_LocalPosition: {x: 0.62, y: 8.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5670,7 +5753,7 @@ Transform:
   m_GameObject: {fileID: 1996845587}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 7.5, z: 0}
+  m_LocalPosition: {x: 0.64, y: 8.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5983,35 +6066,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6931686907758418490, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6931686907758418490, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6931686907758418490, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 69.72
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6931686907758418490, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -86.197495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8082102890054902031, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8082102890054902031, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8082102890054902031, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 69.72
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8082102890054902031, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -28.7325
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6125,35 +6208,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 100.71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2958869710109817549, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_Name
@@ -6161,51 +6244,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 100.71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 184.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -32.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 34.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -32.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7977879711324300520, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_Pivot.x
@@ -6289,19 +6372,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
