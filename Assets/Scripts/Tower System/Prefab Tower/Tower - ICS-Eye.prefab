@@ -662,9 +662,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3268619156045126867}
     m_Modifications:
+    - target: {fileID: 498763679148780768, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3441928527123468916}
+    - target: {fileID: 498763679148780768, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConfirmTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 2331360937740945000, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3441928527123468916}
+    - target: {fileID: 2331360937740945000, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542870108921143218, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3441928527123468916}
+    - target: {fileID: 2542870108921143218, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateTowerToRight
+      objectReference: {fileID: 0}
     - target: {fileID: 4060088651466747416, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_Name
       value: == Building - Building Placement ==
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387299224640538099, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3441928527123468916}
+    - target: {fileID: 6387299224640538099, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateTowerToLeft
       objectReference: {fileID: 0}
     - target: {fileID: 8675958261086396837, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_Pivot.x
