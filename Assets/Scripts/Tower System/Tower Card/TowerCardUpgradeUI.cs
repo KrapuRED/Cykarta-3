@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class TowerCardUpgradeUI : MonoBehaviour
@@ -7,6 +8,7 @@ public class TowerCardUpgradeUI : MonoBehaviour
     [SerializeField] private TMP_Text towerLevel;
     [SerializeField] private TMP_Text towerStatus;
     [SerializeField] private TMP_Text towerCost;
+    [SerializeField] private Image towerIcon;
     [SerializeField] private TowerPreviewUpgradeUI towerPreviewUpgradeUI;
     
     [SerializeField] private CanvasGroup canvasGroup;
@@ -47,6 +49,7 @@ public class TowerCardUpgradeUI : MonoBehaviour
         towerName.text = towerRunTimeData.towerName;
         towerLevel.text = $"level {towerRunTimeData.towerLevel}";
         towerStatus.text = BuildCurrentStatusText(towerRunTimeData);
+        towerIcon.sprite = towerData.TowerData.towerIcon;
         
         if (_upgradeTowerData != null)
                     HandleCostText(_upgradeTowerData.upgradeCost);
@@ -64,7 +67,7 @@ public class TowerCardUpgradeUI : MonoBehaviour
         
         if (_upgradeTowerData  == null) return;
         
-        towerPreviewUpgradeUI.ShowPreview(_towerData.TowerRunTimeData, _upgradeTowerData);
+        towerPreviewUpgradeUI.ShowPreview(_towerData.TowerRunTimeData, _upgradeTowerData,  _towerData.TowerData.towerIcon);
     }
 
     public void BuyTowerUpgrade()

@@ -49,6 +49,7 @@ public class TowerDataSO : ScriptableObject
     public int towerCost;
     public string towerDescription;
     public Tower prefabObjectTower;
+    public Sprite towerIcon;
     
     [Header("Tower Base Status")]
     public List<TowerStatusData> baseStatuses = new ();

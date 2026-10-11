@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 public class TowerCardUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text towerName;
     [SerializeField] private TMP_Text towerCost;
+    [SerializeField] private Image towerIcon;
 
     [Header("Input Action Settings")]
     [SerializeField] private string actionMapName;
@@ -52,6 +54,8 @@ public class TowerCardUI : MonoBehaviour
        TowerData = towerData;
        
        towerName.text = towerData.towerName;
+       towerIcon.sprite = towerData.towerIcon;
+       
        HandleCostText(towerData.towerCost);
     }
 

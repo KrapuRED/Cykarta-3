@@ -16,6 +16,7 @@ MonoBehaviour:
   towerCost: 125
   towerDescription: 
   prefabObjectTower: {fileID: 1951802521689120775, guid: ac31c73bc75380448844d898e2b2f10f, type: 3}
+  towerIcon: {fileID: 4958043508142665749, guid: a3c0a137ac7359048804361141cb9c61, type: 3}
   baseStatuses:
   - towerStatus: Range
     status: 0

@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerCardDetailUI : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class TowerCardDetailUI : MonoBehaviour
     [SerializeField] private TMP_Text towerCostText;
     [SerializeField] private TMP_Text towerDescriptionText;
     [SerializeField] private TMP_Text towerStatusDescriptionText;
+    [SerializeField] private Image towerIcon;
 
     [SerializeField] private CanvasGroup canvasGroup;
 
@@ -28,6 +30,7 @@ public class TowerCardDetailUI : MonoBehaviour
         towerNameText.text        = towerData.towerName;
         towerCostText.text        = $"$ {towerData.towerCost}";
         towerDescriptionText.text = towerData.towerDescription;
+        towerIcon.sprite = towerData.towerIcon;
         
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;

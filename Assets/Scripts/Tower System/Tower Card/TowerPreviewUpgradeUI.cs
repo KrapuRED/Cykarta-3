@@ -1,21 +1,28 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerPreviewUpgradeUI : MonoBehaviour
 {
     private enum UpgradeValueState { Improved, Same, Worse }
 
     [SerializeField] private CanvasGroup  canvasGroup;
+    [SerializeField] private TMP_Text  towerNameText;
+    [SerializeField] private TMP_Text  towerLevelText;
     [SerializeField] private TMP_Text  previewUpgradeText;
+    [SerializeField] private Image towerIcon;
     
     [Header("Change Colors")]
     [SerializeField] private Color improvedColor = Color.green;
     [SerializeField] private Color sameColor = Color.black;
     [SerializeField] private Color worseColor = Color.red;
     
-    public void ShowPreview(TowerRunTimeData currentData, UpgradeTowerData nextUpgrade)
+    public void ShowPreview(TowerRunTimeData currentData, UpgradeTowerData nextUpgrade, Sprite iconTower)
     {
         Debug.Log($"[{name}] ShowPreview");
+        towerNameText.text = currentData.towerName;
+        towerLevelText.text = $"level {currentData.towerLevel + 1}";
+        towerIcon.sprite = iconTower;
         
         string bs = string.Empty;
         

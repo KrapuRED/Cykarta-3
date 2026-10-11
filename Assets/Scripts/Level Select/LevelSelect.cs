@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using TMPro;
 
 public class LevelSelect : MonoBehaviour
 {
@@ -8,14 +8,10 @@ public class LevelSelect : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] private bool starterLevel = false;
     
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private TMP_Text levelText;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private LevelStatus _levelStatus;
-
-    private void Start()
-    {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-    }
 
     private bool IsUnlocked()
     {
@@ -27,6 +23,8 @@ public class LevelSelect : MonoBehaviour
     
     public void InitializeLevelSelect()
     {
+        levelText.text = $"Level {level}";
+        
         _levelStatus = IsUnlocked() ? LevelProgress.Get(level) : LevelStatus.Lock;
 
         Color c = _levelStatus switch
@@ -38,11 +36,11 @@ public class LevelSelect : MonoBehaviour
             _                       => Color.white
         };
         
-        if (_spriteRenderer == null)
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
         
         Debug.Log($"LevelSelect {name} Level Status {_levelStatus}");
-        _spriteRenderer.color = c;
+        spriteRenderer.color = c;
     }
     
     public void OnLevelSelected()

@@ -16,6 +16,7 @@ MonoBehaviour:
   towerCost: 100
   towerDescription: 
   prefabObjectTower: {fileID: 3821810546088435452, guid: f23033bc80d02254ebc6d8717292e5ab, type: 3}
+  towerIcon: {fileID: -4536756093323555886, guid: fc53131da076557498b09cdf420df331, type: 3}
   baseStatuses:
   - towerStatus: Max Capacity
     status: 1

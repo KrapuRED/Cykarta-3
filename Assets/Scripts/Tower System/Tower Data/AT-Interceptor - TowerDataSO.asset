@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2c5470cd6d6bdb4fa0f0d8f34eb4a22, type: 3}
-  m_Name: Grappler Tower - TowerDataSO
+  m_Name: AT-Interceptor - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
   towerName: AT-Interceptor
   towerCost: 0
   towerDescription: 
   prefabObjectTower: {fileID: 5857374941782670224, guid: 48b3b01b20463b546a753b6deb874cda, type: 3}
+  towerIcon: {fileID: -7690627026698973308, guid: dc0eb2ce05088ce4d9da792c20a80eb6, type: 3}
   baseStatuses:
   - towerStatus: Max Capacity
     status: 1
