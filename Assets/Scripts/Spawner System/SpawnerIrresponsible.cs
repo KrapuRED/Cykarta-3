@@ -12,8 +12,6 @@ public class WayPointData
 public class SpawnerIrresponsible : Spawner
 {
     [Header("Spawner Configuration")]
-    [SerializeField] private float maxSpawnRate;
-    [SerializeField] private float minSpawnRate;
     [SerializeField] private List<SpawnerData> spawnerDatas = new();
     [SerializeField] private List<WayPointData> wayPointDatas = new();
     [SerializeField] private Transform containerSpawner;
@@ -21,7 +19,11 @@ public class SpawnerIrresponsible : Spawner
     
     [SerializeField] private float currentSpawnRate;
     [SerializeField] private float prevSpawnRate;
+    [SerializeField] public bool isSpawnerActive;
+
     
+    private float _maxSpawnRate;
+    private float _minSpawnRate;
     public bool IsSpawnerActive { get; private set; }
 
     public override void UpdateSpawner()
@@ -34,6 +36,8 @@ public class SpawnerIrresponsible : Spawner
         {
             OnSpawning();
         }
+        
+        isSpawnerActive = IsSpawnerActive;
     }
 
     private bool IsSpawnerDataReachMax(string spawnerDataName)
@@ -93,31 +97,28 @@ public class SpawnerIrresponsible : Spawner
             switch (spawnZone)
             {
                 case GridZone.Pedestrian:
-                    if (entity.TryGetComponent<Pedestrian>(out var pedestrian))
-                    {
-                        pedestrian.InitializePedestrian(waypointData.endPoint, entitiySpeed, entityData);
-                    }
+                    entity.TryGetComponent<Pedestrian>(out var pedestrian);
+                    pedestrian.InitializePedestrian(waypointData.endPoint, entitiySpeed, entityData);
                     break;
                 
                 case GridZone.Vehicle:
-                    if (entity.TryGetComponent<Vehicle>(out var vehicle))
-                    {
-                        vehicle.InitializeVehicle(waypointData.endPoint, entitiySpeed, entityData);
-                    }
+                    entity.TryGetComponent<Vehicle>(out var vehicle);
+                    vehicle.InitializeVehicle(waypointData.endPoint, entitiySpeed, entityData);
                     break;
             }
             //Debug.Log($"[{name} - OnSpawning] Spawning {entityData.entityID} {spawnerData.currentSpawnCount} / {spawnerData.maxSpawnCount}");
         }
 
-        currentSpawnRate = Random.Range(minSpawnRate, maxSpawnRate);
+        currentSpawnRate = Random.Range(_minSpawnRate, _maxSpawnRate);
         prevSpawnRate = currentSpawnRate;
+        CheckCount();
     }
 
     public override void StartSpawner()
     {
         if (IsSpawnerActive) return;
         
-        currentSpawnRate = Random.Range(minSpawnRate, maxSpawnRate);
+        currentSpawnRate = Random.Range(_minSpawnRate, _maxSpawnRate);
         prevSpawnRate = currentSpawnRate;
         IsSpawnerActive = true;
     }
@@ -131,8 +132,8 @@ public class SpawnerIrresponsible : Spawner
         }
         
         IsSpawnerActive = false;
-        maxSpawnRate = newSpawnerData.maxSpawnRate;
-        minSpawnRate = newSpawnerData.minSpawnRate;
+        _maxSpawnRate = newSpawnerData.maxSpawnRate;
+        _minSpawnRate = newSpawnerData.minSpawnRate;
         spawnerDatas.Clear();
         
         foreach (var spawnerData in newSpawnerData.spawnerData)
@@ -150,7 +151,17 @@ public class SpawnerIrresponsible : Spawner
                 isReachMaxSpawnCount = false,
                 spawnData = spawnerData.spawnData
             });
-            
         }
+    }
+
+    private void CheckCount()
+    {
+        int totalCount = 0;
+        foreach (var spawnerData in spawnerDatas)
+        {
+            totalCount += spawnerData.currentSpawnCount;
+        }
+        
+        Debug.Log($"[{name} - CheckCount] TotalCount: {totalCount}");
     }
 }

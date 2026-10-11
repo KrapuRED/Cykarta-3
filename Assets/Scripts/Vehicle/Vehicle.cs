@@ -28,6 +28,7 @@ public class Vehicle : Entity, IIrresponsibleThinkable
         if (waypoints.Count <= 0)
         {
             ObjectiveManager.Instance.UpdateObjectiveEnemyCounter();
+            Debug.LogWarning($"[{name}] is success UpdateObjectiveEnemyCounter");
             DestroyEntity();
             return;
         }
@@ -37,6 +38,7 @@ public class Vehicle : Entity, IIrresponsibleThinkable
             indexWaypoint++;
             if (indexWaypoint >= waypoints.Count)
             {
+                ObjectiveManager.Instance.UpdateObjectiveEnemyCounter();
                 DestroyEntity();
                 return;
             }

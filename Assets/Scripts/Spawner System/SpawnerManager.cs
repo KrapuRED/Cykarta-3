@@ -32,6 +32,7 @@ using UnityEngine;
     {
         public string waveDataName;
         public int waveDelay;
+        public int waveReward;
         public List<WaveSpawnerData> waveSpawnerData = new();
     }
 
@@ -84,6 +85,8 @@ public class SpawnerManager : MonoBehaviour
             _activeSpawners.Clear();
             ObjectiveManager.Instance.NextWave();
         }
+        
+        Debug.Log($"[{name}] CheckAllIrresponsibleSpawnerIsDone : {isDoneAll}");
     }
 
     public void StartSpawn(WaveData currentWaveData, int waveIndex)

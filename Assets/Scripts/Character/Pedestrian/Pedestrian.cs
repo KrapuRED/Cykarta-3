@@ -26,6 +26,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         if (waypoints.Count <= 0)
         {
             Debug.Log($"[{name}] Pedestrian reach Destination!");
+            ObjectiveManager.Instance.UpdateObjectiveEnemyCounter();
             DestroyEntity();
             return;
         }

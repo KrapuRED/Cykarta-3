@@ -32,7 +32,6 @@ public class ObjectiveManager : MonoBehaviour
         }
 
         Instance = this;
-        
     }
 
     #region  Event System
@@ -75,11 +74,14 @@ public class ObjectiveManager : MonoBehaviour
         if (_waveIndex >= waveDataList.Count)
         {
             Debug.LogWarning("No wave data found");
+            GameEvents.OnRequestOpenPanel.Invoke(PanelType.Victory);
             return;
         }
         
         var currentWaveData = waveDataList[_waveIndex];
         var spawnData = currentWaveData.waveSpawnerData;
+        _currentEnemyCounter = 0;
+        
         List<SpawnerData> data =  new List<SpawnerData>();
         
         foreach (var ws in spawnData)
@@ -138,9 +140,12 @@ public class ObjectiveManager : MonoBehaviour
             currentEnemyCounter = _currentEnemyCounter,
             maxEnemyCounter = _maxEnemyCounter
         });
-        
+
         if (_currentEnemyCounter >= _maxEnemyCounter)
+        {
+            CurrencyManager.Instance.ReceiveCurrency(waveDataList[_waveIndex].waveReward);
             SpawnerManager.Instance.CheckAllIrresponsibleSpawnerIsDone();
+        }
     }
 
     public void UpdateObjectiveProctectionLevel(int weight)

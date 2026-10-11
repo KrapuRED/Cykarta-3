@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 6983805722356272714}
   - component: {fileID: 8456174101945280499}
   m_Layer: 6
-  m_Name: Vehicle
+  m_Name: Motor Rider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
