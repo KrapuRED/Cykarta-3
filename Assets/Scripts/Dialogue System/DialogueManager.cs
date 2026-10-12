@@ -24,8 +24,8 @@ public class DialogueManager : MonoBehaviour
     
     private DialogueDataRunTime _selectedDialogueDataRunTime;
     private DialogueSO _currentDialogueData;
-    private int _dialogueDataIndex;
-    private int _dialogueIndex;
+    [SerializeField] private int _dialogueDataIndex;
+    [SerializeField] private int _dialogueIndex;
     private bool _isOpeningTutorial;
     private Coroutine _dialogueCoroutine;
     
@@ -89,7 +89,7 @@ public class DialogueManager : MonoBehaviour
     {
         var line = _currentDialogueData.dialogueLines[_dialogueIndex];
         
-        if (!string.IsNullOrEmpty(line.characterName))
+        if (!string.IsNullOrEmpty(line.characterName) && dialogueCharacterController != null)
             dialogueCharacterController.ShowCharacter(line.characterName);
         
         GameEvents.OnDisplayDialogue.Invoke(line.characterName, line.dialogueLine);
@@ -104,18 +104,19 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueDataRunTimes.Count > 0)
             _dialogueDataIndex++;
+
+        if (dialogueCharacterController != null)
+        {
+            dialogueCharacterController.HideAllCharacters();
+            dialogueCharacterController.ClearCharacters();
+        }
         
-        dialogueCharacterController.HideAllCharacters();
-        dialogueCharacterController.ClearCharacters();
         IsSkipDialogue = false;
         
         _currentDialogueData  = _selectedDialogueDataRunTime.dialogueData[_dialogueDataIndex];
-
-        if (TransitionManager.Instance == null)
-        {
-            Debug.LogWarning($"[{name} (StartDialogue)] Transition Manager is MISING or NULL!");
-            return;
-        }
+        _dialogueIndex++;
+            
+        DisplayDialogue();
     }
 
     private void StartDialogue()
@@ -133,7 +134,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueDialogue()
     {
-        if (!IsDialogueRunning || TransitionManager.Instance.isTrasitioning) return;
+        //if (!IsDialogueRunning || TransitionManager.Instance.isTrasitioning) return;
         
         _dialogueIndex++;
         IsSkipDialogueLine = false;

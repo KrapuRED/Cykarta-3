@@ -675,13 +675,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f830e7471523049837286d44d73d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  dialogueStart: 0
+  dialogueStart: 1
   dialogueCharacterController: {fileID: 0}
   dialogueDataRunTimes:
   - dialogueName: Before Riverside Residential District (Opening / Contract)
-    level: 0
+    level: 1
     dialogueAfterLevel: 0
-    dialogueData: []
+    dialogueData:
+    - {fileID: 11400000, guid: eac6d48f8807fea4b9e032b34a7969d5, type: 2}
     isComplete: 0
   - dialogueName: After Riverside Residential District (Success / Expansion)
     level: 0
@@ -713,7 +714,9 @@ MonoBehaviour:
     dialogueAfterLevel: 0
     dialogueData: []
     isComplete: 0
-  currentLevel: 0
+  currentLevel: 1
+  _dialogueDataIndex: 0
+  _dialogueIndex: 0
 --- !u!1 &1543189735
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +728,8 @@ GameObject:
   - component: {fileID: 1543189736}
   - component: {fileID: 1543189739}
   - component: {fileID: 1543189738}
-  - component: {fileID: 1543189737}
+  - component: {fileID: 1543189741}
+  - component: {fileID: 1543189742}
   m_Layer: 5
   m_Name: Dialogue content - Dialogue Text (TMP)
   m_TagString: Untagged
@@ -752,37 +756,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.0000015497, y: -0.000001125}
   m_SizeDelta: {x: 1842.0417, y: 311.5333}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1543189737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543189735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Febucci.TextAnimator.TMP.Runtime::Febucci.UI.TextAnimator_TMP
-  typewriterStartsAutomatically: 0
-  animationLoop: 0
-  timeScale: 0
-  _text: 
-  useDynamicScaling: 1
-  referenceFontSize: 10
-  isResettingTimeOnNewText: 1
-  useDefaultDatabases: 1
-  databaseBehaviors: {fileID: 0}
-  databaseAppearances: {fileID: 0}
-  useDefaultStyleSheet: 1
-  styleSheet: {fileID: 0}
-  databaseActions: {fileID: 0}
-  defaultAppearancesTags:
-  - size
-  defaultDisappearancesTags:
-  - fade
-  defaultBehaviorsTags: []
-  defaultTagsMode: 0
 --- !u!114 &1543189738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,6 +856,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543189735}
   m_CullTransparentMesh: 1
+--- !u!114 &1543189741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543189735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Febucci.TextAnimator.TMP.Runtime::Febucci.UI.TextAnimator_TMP
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: 
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 0}
+  databaseAppearances: {fileID: 0}
+  useDefaultStyleSheet: 1
+  styleSheet: {fileID: 0}
+  databaseActions: {fileID: 0}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags: []
+  defaultTagsMode: 0
+--- !u!114 &1543189742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543189735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a6945b90dcd0c4b81619c0d8b5c283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Febucci.TextAnimator.Runtime::Febucci.UI.TypewriterByCharacter
+  useTypeWriter: 1
+  startTypewriterMode: 3
+  hideAppearancesOnSkip: 0
+  hideDisappearancesOnSkip: 0
+  triggerEventsOnSkip: 0
+  resetTypingSpeedAtStartup: 1
+  disappearanceOrientation: 0
+  triggerShowedAfterEffectsEnd: 0
+  triggerDisappearedAfterEffectsEnd: 0
+  onTextShowed:
+    m_PersistentCalls:
+      m_Calls: []
+  onTypewriterStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onTextDisappeared:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacterVisible:
+    m_PersistentCalls:
+      m_Calls: []
+  onMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  waitForNormalChars: 0.03
+  waitLong: 0.6
+  waitMiddle: 0.2
+  avoidMultiplePunctuationWait: 0
+  waitForNewLines: 1
+  waitForLastCharacter: 1
+  useTypewriterWaitForDisappearances: 1
+  disappearanceWaitTime: 0.015
+  disappearanceSpeedMultiplier: 1
 --- !u!1 &1555465694
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +985,7 @@ MonoBehaviour:
   detailCharacterText: {fileID: 62416380}
   dialogueBoxText: {fileID: 1543189738}
   dialogueBlip: {fileID: 0}
-  typewriter: {fileID: 0}
+  typewriter: {fileID: 1543189742}
 --- !u!1 &1732762483
 GameObject:
   m_ObjectHideFlags: 0

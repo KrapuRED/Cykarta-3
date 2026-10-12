@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d9b1d2725f744893b380e958420b5, type: 3}
+  m_Name: Scene 1 - DIalogueSO
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  locationDialogue: 
+  dialogueLines:
+  - characterName: Veronica
+    dialogueLine: Mr. CEO. Thank you for meeting on short notice. Cykarta-3 has a
+      problem your company might be the only one equipped to solve.
+  - characterName: Mr. CEO
+    dialogueLine: The drainage situation. I've seen the reports.
+  - characterName: Veronica
+    dialogueLine: Then you know it's worse than the reports suggest. We clean the
+      rivers, and within weeks, they're clogged again. Flood risk keeps climbing
+      every season.
+  - characterName: Clovis
+    dialogueLine: "If I may \u2014 the issue isn't cleanup. Cleanup is reactive.
+      What the city needs is prevention. Systems that catch waste before it ever
+      reaches the water."
+  - characterName: Veronica
+    dialogueLine: That's exactly what I'm proposing. A contract. ArcoSteel designs
+      and deploys Smart Waste Infrastructure, starting with Riverside Residential.
+      Prove it works there, and we expand.
+  - characterName: Mr. CEO
+    dialogueLine: Low density, manageable traffic. A reasonable place to start.
+  - characterName: Veronica
+    dialogueLine: I need results, Mr. CEO. Not promises.
+  - characterName: Clovis
+    dialogueLine: grinning) Then let's give her something better than promises.

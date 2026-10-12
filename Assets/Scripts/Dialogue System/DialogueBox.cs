@@ -43,7 +43,8 @@ public class DialogueBox : MonoBehaviour
         if (Char.IsWhiteSpace(character))
             return;
 
-        MMSoundManagerSoundPlayEvent.Trigger(dialogueBlip, MMSoundManager.MMSoundManagerTracks.Sfx, transform.position);
+        if (dialogueBlip != null)
+            MMSoundManagerSoundPlayEvent.Trigger(dialogueBlip, MMSoundManager.MMSoundManagerTracks.Sfx, transform.position);
     }
     
     private void UpdateDialogueUI(string charName, string line)
