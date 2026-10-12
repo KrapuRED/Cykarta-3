@@ -8,7 +8,7 @@ public class DialogueDataRunTime
 {
     public string dialogueName;
     public int level;
-    public bool dialogueAfterLevel; 
+    public DialogueType dialogueType; 
     public List<DialogueSO> dialogueData = new();
     public bool isComplete;
 }
@@ -26,8 +26,10 @@ public class DialogueManager : MonoBehaviour
     private DialogueSO _currentDialogueData;
     [SerializeField] private int _dialogueDataIndex;
     [SerializeField] private int _dialogueIndex;
+    [SerializeField] private int _levelIndex;
     private bool _isOpeningTutorial;
     private Coroutine _dialogueCoroutine;
+    [SerializeField] private DialogueType _currentType;
     
     public bool IsDialogueRunning { get; private set; }
     public bool IsSkipDialogue { get; private set; }
@@ -60,7 +62,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         if (dialogueStart)
-            StartDialogue();
+            StartDialogue(currentLevel, _currentType);
     }
 
     private void Update()
@@ -119,16 +121,12 @@ public class DialogueManager : MonoBehaviour
         DisplayDialogue();
     }
 
-    private void StartDialogue()
+    public void StartDialogue(int level, DialogueType type)
     {
         if (IsDialogueRunning) return;
+        _currentType = type;
 
-        if (_dialogueCoroutine != null)
-        {
-            StopCoroutine(_dialogueCoroutine);
-            _dialogueCoroutine = null;
-        }
-
+        if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine);
         _dialogueCoroutine = StartCoroutine(WaitAndStarDialogue());
     }
 
@@ -202,40 +200,28 @@ public class DialogueManager : MonoBehaviour
         IsSkipDialogue = false;
 
         LevelStatus status = LevelProgress.Get(currentLevel);
-        if (status == LevelStatus.NotPlayed ||  status == LevelStatus.Failed || status == LevelStatus.Success)
-        {
-            TransitionManager.Instance.TransitionToScene($"Main_Level_{currentLevel}", "Transition - FadeOut");
-        }
-        else
-        {
-            TransitionManager.Instance.TransitionToScene("Main_SelectLevel", "Transition - FadeOut");
-        }
-        
-        if (IsOpeningDialogueDone() && !_isOpeningTutorial)
-        {
-            _isOpeningTutorial = true;
-            StartCoroutine(WaitAndShowTutorial());
-        }
+       OnDialogueFinished();
     }
-
-    private IEnumerator WaitAndShowTutorial()
+    
+    private void OnDialogueFinished()
     {
-        if (TransitionManager.Instance != null && TransitionManager.Instance.isTrasitioning)
-        {
-            yield return new WaitUntil(() => !TransitionManager.Instance.isTrasitioning);
-        }
-        
+        if (_currentType == DialogueType.Before)
+            TransitionManager.Instance.TransitionToScene($"Main_Level_{currentLevel}", "FadeOut");
+        else
+            TransitionManager.Instance.TransitionToScene("Main_SelectLevel", "FadeOut");
     }
 
     private IEnumerator WaitAndStarDialogue()
     {
         if (TransitionManager.Instance != null && TransitionManager.Instance.isTrasitioning)
         {
-            yield return new WaitWhile(() => !TransitionManager.Instance.isTrasitioning);
+            yield return new WaitWhile(() => TransitionManager.Instance.isTrasitioning);
         }
         if (IsDialogueRunning) yield break;
         
-        var dialogueData = dialogueDataRunTimes.Find(x => x.level == currentLevel);
+        bool isAfter = _currentType == DialogueType.After;
+        var dialogueData = dialogueDataRunTimes.Find(x => 
+            x.level == currentLevel && x.dialogueType == _currentType);
         
         if (dialogueData == null)
         {
@@ -246,6 +232,7 @@ public class DialogueManager : MonoBehaviour
         if (dialogueData.isComplete)
         {
             Debug.LogWarning($"[{name} (StartDialogue)] This dialogueData is complete! {dialogueData.dialogueName}");
+            OnDialogueFinished();
             yield break;
         }
 

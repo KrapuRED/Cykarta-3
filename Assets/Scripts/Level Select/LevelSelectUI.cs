@@ -12,6 +12,7 @@ public class LevelSelectUI : MonoBehaviour
     private TransitionHelper _transitionHelper;
     private CanvasGroup _canvasGroup;
     private string _sceneName;
+    private int _level;
     
     private void OnEnable()
     {
@@ -24,8 +25,9 @@ public class LevelSelectUI : MonoBehaviour
         
     }
 
-    private void SetLevelSelectedUI(string levelName, string sceneName,  LevelStatus levelStatus)
+    private void SetLevelSelectedUI(int level, string levelName, string sceneName,  LevelStatus levelStatus)
     {
+        _level =  level;
         _levelStatus = levelStatus;
         levelText.text = levelName;
         _sceneName = sceneName;
@@ -55,5 +57,12 @@ public class LevelSelectUI : MonoBehaviour
         if (_levelStatus == LevelStatus.Lock) return;
         
         _transitionHelper.DoTransitionDirect(_sceneName);
+    }
+    
+    public void EnterStory()
+    {
+        if (_levelStatus == LevelStatus.Lock) return;
+        
+        _transitionHelper.DoTransitionDirectToStory(1, DialogueType.Before);
     }
 }

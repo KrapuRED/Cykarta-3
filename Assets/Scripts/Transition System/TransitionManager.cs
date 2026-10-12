@@ -69,4 +69,43 @@ public class TransitionManager : MonoBehaviour
         
     }
 
+    public void TransitionToStoryScene(int level, DialogueType dialogueType, string transitionName)
+    {
+        if (isTrasitioning) return;
+        isTrasitioning = true;
+        
+        string transition = $"Transition - {transitionName}";
+        
+        StartCoroutine(LoadStorySceneAsync("Test_Story", level, dialogueType, transition));
+    }
+    
+    private IEnumerator LoadStorySceneAsync(string sceneName, int level, DialogueType dialogueType, string transitionName)
+    {
+        Transition transition = transitions.First(t => t.name == transitionName);
+
+        AsyncOperation scene = SceneManager.LoadSceneAsync(sceneName);
+        scene.allowSceneActivation = false;
+
+        yield return transition.TransitionIn();
+        
+        do
+        {
+            //progressBar.value = scene.progress;
+            yield return null;
+        } while (scene.progress < 0.9f);
+
+        yield return new WaitForSeconds(1f);
+
+        scene.allowSceneActivation = true;
+        
+        yield return new WaitUntil(() => scene.isDone);
+        
+        yield return transition.TransitionOut();
+        isTrasitioning = false;
+        
+        yield return new WaitUntil(() => DialogueManager.Instance != null);
+
+        GameEvents.OnStartDialogue.Invoke(level, dialogueType);
+        
+    }
 }

@@ -675,48 +675,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f830e7471523049837286d44d73d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  dialogueStart: 1
+  dialogueStart: 0
   dialogueCharacterController: {fileID: 0}
   dialogueDataRunTimes:
   - dialogueName: Before Riverside Residential District (Opening / Contract)
     level: 1
-    dialogueAfterLevel: 0
+    dialogueType: 0
     dialogueData:
     - {fileID: 11400000, guid: eac6d48f8807fea4b9e032b34a7969d5, type: 2}
     isComplete: 0
   - dialogueName: After Riverside Residential District (Success / Expansion)
-    level: 0
-    dialogueAfterLevel: 0
-    dialogueData: []
+    level: 1
+    dialogueType: 1
+    dialogueData:
+    - {fileID: 11400000, guid: 960492650d10e49418113d89e647b734, type: 2}
     isComplete: 0
   - dialogueName: ' Before Central Commercial District (Escalation)'
-    level: 0
-    dialogueAfterLevel: 0
+    level: 2
+    dialogueType: 0
     dialogueData: []
     isComplete: 0
   - dialogueName: After Central Commercial District (Strain Begins)
-    level: 0
-    dialogueAfterLevel: 0
+    level: 2
+    dialogueType: 1
     dialogueData: []
     isComplete: 0
   - dialogueName: Before Metropolitan Downtown District (Final Test)
-    level: 0
-    dialogueAfterLevel: 0
+    level: 3
+    dialogueType: 0
     dialogueData: []
     isComplete: 0
   - dialogueName: After Metropolitan Downtown District (Failure)
-    level: 0
-    dialogueAfterLevel: 0
+    level: 3
+    dialogueType: 0
     dialogueData: []
     isComplete: 0
   - dialogueName: Resolution (The Argument)
-    level: 0
-    dialogueAfterLevel: 0
+    level: 4
+    dialogueType: 0
     dialogueData: []
     isComplete: 0
   currentLevel: 1
   _dialogueDataIndex: 0
   _dialogueIndex: 0
+  _currentType: 0
 --- !u!1 &1543189735
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1555465695}
   - component: {fileID: 1555465696}
+  - component: {fileID: 1555465697}
   m_Layer: 5
   m_Name: === Dialogue Box ===
   m_TagString: Untagged
@@ -984,8 +987,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueBox
   detailCharacterText: {fileID: 62416380}
   dialogueBoxText: {fileID: 1543189738}
+  canvasGroup: {fileID: 1555465697}
   dialogueBlip: {fileID: 0}
   typewriter: {fileID: 1543189742}
+--- !u!225 &1555465697
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555465694}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1732762483
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,4 +8,6 @@ public class TransitionHelper : MonoBehaviour
     public void DoTransition() => TransitionManager.Instance.TransitionToScene(sceneName, transitionName);
     
     public void DoTransitionDirect(string _sceneName) =>  TransitionManager.Instance.TransitionToScene(_sceneName, transitionName);
+
+    public void DoTransitionDirectToStory(int level, DialogueType dialogueType) => TransitionManager.Instance.TransitionToStoryScene(level, dialogueType, transitionName);
 }

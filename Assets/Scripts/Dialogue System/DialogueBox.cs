@@ -9,7 +9,7 @@ public class DialogueBox : MonoBehaviour
 {
     [SerializeField] private TMP_Text detailCharacterText;
     [SerializeField] private TMP_Text dialogueBoxText;
-    
+    [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private AudioClip dialogueBlip;
     
     [SerializeField] private TypewriterCore typewriter;
@@ -49,6 +49,13 @@ public class DialogueBox : MonoBehaviour
     
     private void UpdateDialogueUI(string charName, string line)
     {
+        if (canvasGroup.alpha == 0)
+        {
+            canvasGroup.alpha = 1;
+            canvasGroup.blocksRaycasts = true;
+            canvasGroup.interactable = true;
+        }
+        
         if (detailCharacterText != null)
             detailCharacterText.text = charName;
         

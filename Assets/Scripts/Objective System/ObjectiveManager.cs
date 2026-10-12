@@ -17,6 +17,7 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private ObjectiveUI waveCounter;
     
     public int CurrentObjectiveHealthPoints { get; private set; }
+    public int LevelIndex => levelIndex;
     private int _waveIndex = -1;
     private int _maxEnemyCounter;
     private int _currentEnemyCounter;

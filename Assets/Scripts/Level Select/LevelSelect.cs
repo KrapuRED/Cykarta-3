@@ -52,6 +52,6 @@ public class LevelSelect : MonoBehaviour
         string scene = $"{sceneName}_{level}";
         
         //TransitionManager.Instance.TransitionToScene(scene, "FadeOut");
-        GameEvents.OnSelectingLevel.Invoke(levelName,scene, _levelStatus);
+        GameEvents.OnSelectingLevel.Invoke(level, levelName,scene, _levelStatus);
     }
 }

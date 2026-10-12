@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d9b1d2725f744893b380e958420b5, type: 3}
+  m_Name: "Scene 2 \u2014 After Riverside Residential District (Success  Expansion)
+    DIalogueSO"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  locationDialogue: 
+  dialogueLines:
+  - characterName: Veronica
+    dialogueLine: The numbers came in. Drainage blockage is down significantly. No
+      flooding incidents this cycle.
+  - characterName: Mr. CEO
+    dialogueLine: As promised.
+  - characterName: Veronica
+    dialogueLine: "Don't get comfortable. Riverside was the easy part \u2014 quiet
+      streets, predictable habits. I'm authorizing expansion into Central Commercial."
+  - characterName: Clovis
+    dialogueLine: Heavier foot traffic, more vehicles, more trash volume. We'll need
+      to scale up the interception network, not just copy what worked here.
+  - characterName: Mr. CEO
+    dialogueLine: We anticipated that. Clovis's team has already been prototyping
+      upgrades.
+  - characterName: Veronica
+    dialogueLine: Good. Because Central Commercial won't forgive half-measures the
+      way Riverside did.

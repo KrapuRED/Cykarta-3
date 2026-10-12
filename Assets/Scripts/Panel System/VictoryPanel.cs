@@ -34,6 +34,6 @@ public class VictoryPanel : Panel
       
         ObjectiveManager.Instance.SaveData();
         
-        TransitionHelper.DoTransition();
+        TransitionHelper.DoTransitionDirectToStory(ObjectiveManager.Instance.LevelIndex, DialogueType.After);
     }
 }

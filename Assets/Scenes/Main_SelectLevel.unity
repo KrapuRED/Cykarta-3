@@ -435,7 +435,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1023147854}
         m_TargetAssemblyTypeName: LevelSelectUI, Assembly-CSharp
-        m_MethodName: EnterLevel
+        m_MethodName: EnterStory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

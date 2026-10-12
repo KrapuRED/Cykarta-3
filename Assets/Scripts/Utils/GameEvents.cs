@@ -53,6 +53,19 @@ public class CustomEvents<T1, T2, T3>
     public void AddListener(Action<T1, T2, T3> listener) => Action += listener;
     public void RemoveListener(Action<T1, T2, T3> listener) => Action -= listener;
 }
+
+public class CustomEvents<T1, T2, T3, T4>
+{
+    private event Action<T1, T2, T3, T4> Action = delegate { };
+
+    public void Invoke(T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+    {
+        Action?.Invoke(arg1, arg2, arg3, arg4);
+    }
+    
+    public void AddListener(Action<T1, T2, T3, T4> listener) => Action += listener;
+    public void RemoveListener(Action<T1, T2, T3, T4> listener) => Action -= listener;
+}
 #endregion
 
 public static class GameEvents
@@ -90,12 +103,12 @@ public static class GameEvents
     #endregion
     
     // # ================================ Dialogue UI ================================ #
-    public static readonly CustomEvents OnStartDialogue = new();
+    public static readonly CustomEvents<int, DialogueType> OnStartDialogue = new();
     public static readonly CustomEvents OnStopDialogue = new();
     public static readonly CustomEvents OnSkipDialogueLine = new();
     public static readonly CustomEvents<string> OnChangeEnvironment = new();
     public static readonly CustomEvents<string, string> OnDisplayDialogue = new();
     
     // # ================================ Level SYSTEM ================================ #
-    public static readonly CustomEvents<string, string, LevelStatus> OnSelectingLevel = new ();
+    public static readonly CustomEvents<int, string, string, LevelStatus> OnSelectingLevel = new ();
 }
