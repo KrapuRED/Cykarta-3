@@ -89,6 +89,13 @@ public static class GameEvents
     
     #endregion
     
+    // # ================================ Dialogue UI ================================ #
+    public static readonly CustomEvents OnStartDialogue = new();
+    public static readonly CustomEvents OnStopDialogue = new();
+    public static readonly CustomEvents OnSkipDialogueLine = new();
+    public static readonly CustomEvents<string> OnChangeEnvironment = new();
+    public static readonly CustomEvents<string, string> OnDisplayDialogue = new();
+    
     // # ================================ Level SYSTEM ================================ #
     public static readonly CustomEvents<string, string, LevelStatus> OnSelectingLevel = new ();
 }
