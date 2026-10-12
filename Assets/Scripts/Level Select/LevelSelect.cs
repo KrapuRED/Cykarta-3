@@ -11,14 +11,14 @@ public class LevelSelect : MonoBehaviour
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
-    private LevelStatus _levelStatus;
+    [SerializeField] private LevelStatus _levelStatus;
 
     private bool IsUnlocked()
     {
         if (starterLevel) return true;
 
         LevelStatus prev = LevelProgress.Get(prevLevel);
-        return prev == LevelStatus.Success || prev == LevelStatus.Failed;
+        return prev == LevelStatus.Success;
     }
     
     public void InitializeLevelSelect()

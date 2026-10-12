@@ -2224,8 +2224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16448fd2ea0f3444d9aa5016d8f03d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
-  levelIndex: 1
-  objectiveHealthPoints: 10
+  levelIndex: 2
+  objectiveHealthPoints: 1000
   waveDataList:
   - waveDataName: Wave 1
     waveDelay: 5
@@ -2241,7 +2241,7 @@ MonoBehaviour:
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
-      - spawnerDataName: 'Common Pederstrian '
+      - spawnerDataName: 'Delinqunet Pederstrian '
         maxSpawnCount: 1
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
@@ -2283,7 +2283,7 @@ MonoBehaviour:
   enemyCounter: {fileID: 729934633}
   proctectionLevel: {fileID: 2025850196}
   waveCounter: {fileID: 1536382199}
-  startLevel: 1
+  startLevel: 0
 --- !u!1 &927188369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,7 +2562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95465142ad3504197866ba9f367ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionHelper
-  sceneName: Test_SelectLevel
+  sceneName: Main_SelectLevel
   transitionName: FadeOut
 --- !u!1 &1047580159
 GameObject:
@@ -4059,7 +4059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95465142ad3504197866ba9f367ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionHelper
-  sceneName: Test_SelectLevel
+  sceneName: Main_SelectLevel
   transitionName: FadeOut
 --- !u!1 &1406527528
 GameObject:
@@ -6094,7 +6094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95465142ad3504197866ba9f367ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionHelper
-  sceneName: Test_SelectLevel
+  sceneName: Main_SelectLevel
   transitionName: FadeOut
 --- !u!1 &1904112789
 GameObject:

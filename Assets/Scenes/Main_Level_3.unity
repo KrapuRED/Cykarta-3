@@ -290,7 +290,7 @@ Transform:
   m_GameObject: {fileID: 168523788}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.99, y: -4.75, z: 0}
+  m_LocalPosition: {x: -5.02, y: -6.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1473,8 +1473,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnerID: Pedestrian_Line_2
   spawnZone: 1
-  maxSpawnRate: 5
-  minSpawnRate: 1
   spawnerDatas: []
   wayPointDatas:
   - wayPointDataName: Pedestrian Line 2 -  Right -> Left
@@ -1486,6 +1484,7 @@ MonoBehaviour:
   containerSpawner: {fileID: 582024881}
   currentSpawnRate: 0
   prevSpawnRate: 0
+  isSpawnerActive: 0
 --- !u!1 &688743430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,9 +2029,89 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2958869710109817549, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_Name
       value: == Tower Card Upgrade ==
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7977879711324300520, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_Pivot.x
@@ -2114,6 +2193,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2168,11 +2263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16448fd2ea0f3444d9aa5016d8f03d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
-  levelIndex: 1
-  objectiveHealthPoints: 10
+  levelIndex: 3
+  objectiveHealthPoints: 1000
   waveDataList:
   - waveDataName: Wave 1
     waveDelay: 5
+    waveReward: 0
     waveSpawnerData:
     - spawnerName: Test
       spawnerIrresponsible: {fileID: 1376950317}
@@ -2184,7 +2280,7 @@ MonoBehaviour:
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
-      - spawnerDataName: 'Common Pederstrian '
+      - spawnerDataName: 'Delinqunet Pederstrian '
         maxSpawnCount: 1
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
@@ -2201,6 +2297,7 @@ MonoBehaviour:
         spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
   - waveDataName: Wave 2
     waveDelay: 10
+    waveReward: 0
     waveSpawnerData:
     - spawnerName: Test
       spawnerIrresponsible: {fileID: 630482355}
@@ -2225,7 +2322,7 @@ MonoBehaviour:
   enemyCounter: {fileID: 981133146}
   proctectionLevel: {fileID: 981133145}
   waveCounter: {fileID: 981133144}
-  startLevel: 1
+  startLevel: 0
 --- !u!1 &927188369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,7 +2504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95465142ad3504197866ba9f367ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionHelper
-  sceneName: Test_SelectLevel
+  sceneName: Main_SelectLevel
   transitionName: FadeOut
 --- !u!1001 &981133141
 PrefabInstance:
@@ -3129,7 +3226,7 @@ Transform:
   m_GameObject: {fileID: 1168014036}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.13, y: 12.21, z: 0}
+  m_LocalPosition: {x: 1.97, y: 10.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3160,7 +3257,7 @@ Transform:
   m_GameObject: {fileID: 1183974990}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9, y: -6.82, z: 0}
+  m_LocalPosition: {x: -3.03, y: -8.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3222,7 +3319,7 @@ Transform:
   m_GameObject: {fileID: 1186792786}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 7.5, z: 0}
+  m_LocalPosition: {x: 22.65, y: 9.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3645,7 +3742,7 @@ Transform:
   m_GameObject: {fileID: 1369943966}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 10.88, z: 0}
+  m_LocalPosition: {x: 1.97, y: 10.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3697,8 +3794,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnerID: Pedestrian_Line_1
   spawnZone: 1
-  maxSpawnRate: 5
-  minSpawnRate: 1
   spawnerDatas: []
   wayPointDatas:
   - wayPointDataName: 'Pedestrian Line 1 - Right -> Left '
@@ -3710,6 +3805,7 @@ MonoBehaviour:
   containerSpawner: {fileID: 1213021695}
   currentSpawnRate: 0
   prevSpawnRate: 0
+  isSpawnerActive: 0
 --- !u!1 &1398889231
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,8 +3852,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnerID: Vehicle
   spawnZone: 2
-  maxSpawnRate: 6
-  minSpawnRate: 2
   spawnerDatas: []
   wayPointDatas:
   - wayPointDataName: WayPoint Vehicle - Left -> Right
@@ -3769,6 +3863,7 @@ MonoBehaviour:
   containerSpawner: {fileID: 1061382380}
   currentSpawnRate: 0
   prevSpawnRate: 0
+  isSpawnerActive: 0
 --- !u!1 &1406063982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,7 +3981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95465142ad3504197866ba9f367ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionHelper
-  sceneName: Test_SelectLevel
+  sceneName: Main_SelectLevel
   transitionName: FadeOut
 --- !u!1 &1406527528
 GameObject:
@@ -4158,6 +4253,38 @@ PrefabInstance:
     - target: {fileID: 6185441811121964680, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_Name
       value: == Tower Card Detail ==
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931686907758418490, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931686907758418490, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931686907758418490, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931686907758418490, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082102890054902031, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082102890054902031, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082102890054902031, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082102890054902031, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5146,7 +5273,7 @@ Transform:
   m_GameObject: {fileID: 1651013201}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.5, y: 7.5, z: 0}
+  m_LocalPosition: {x: 14.47, y: -8.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5415,7 +5542,7 @@ Transform:
   m_GameObject: {fileID: 1690152893}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.609, y: 15.718, z: 0}
+  m_LocalPosition: {x: 22.42, y: 14.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5448,7 +5575,7 @@ Transform:
   m_GameObject: {fileID: 1692747464}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.93, y: -4.71, z: 0}
+  m_LocalPosition: {x: -4.99, y: -6.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5682,7 +5809,7 @@ Transform:
   m_GameObject: {fileID: 1752899423}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 7.5, z: 0}
+  m_LocalPosition: {x: 22.45, y: 9.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5820,7 +5947,7 @@ Transform:
   m_GameObject: {fileID: 1802563164}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.14, y: 8.2, z: 0}
+  m_LocalPosition: {x: 3.04, y: 7.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6198,7 +6325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95465142ad3504197866ba9f367ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionHelper
-  sceneName: Test_SelectLevel
+  sceneName: Main_SelectLevel
   transitionName: FadeOut
 --- !u!1 &1904112789
 GameObject:
@@ -6365,7 +6492,7 @@ Transform:
   m_GameObject: {fileID: 1991229493}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.38, y: 19.76, z: 0}
+  m_LocalPosition: {x: -11.54, y: 18.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6398,7 +6525,7 @@ Transform:
   m_GameObject: {fileID: 1996845587}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 7.5, z: 0}
+  m_LocalPosition: {x: 14.57, y: -8.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

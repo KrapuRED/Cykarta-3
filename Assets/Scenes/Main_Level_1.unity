@@ -2167,7 +2167,7 @@ MonoBehaviour:
   enemyCounter: {fileID: 1036461780}
   proctectionLevel: {fileID: 84161055}
   waveCounter: {fileID: 1516502957}
-  startLevel: 1
+  startLevel: 0
 --- !u!1 &927188369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,7 +2349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95465142ad3504197866ba9f367ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionHelper
-  sceneName: Test_SelectLevel
+  sceneName: Main_SelectLevel
   transitionName: FadeOut
 --- !u!114 &1036461780 stripped
 MonoBehaviour:
@@ -3517,7 +3517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95465142ad3504197866ba9f367ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionHelper
-  sceneName: Test_SelectLevel
+  sceneName: Main_SelectLevel
   transitionName: FadeOut
 --- !u!1 &1406527528
 GameObject:
@@ -5553,7 +5553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95465142ad3504197866ba9f367ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionHelper
-  sceneName: Test_SelectLevel
+  sceneName: Main_SelectLevel
   transitionName: FadeOut
 --- !u!1 &1904112789
 GameObject:

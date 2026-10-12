@@ -170,7 +170,7 @@ public class ObjectiveManager : MonoBehaviour
     {
         if (objectiveHealthPoints <= 0)
             return LevelStatus.Failed;
-        else if (objectiveHealthPoints >= 0 && _waveIndex <= waveDataList.Count)
+        else if (objectiveHealthPoints <= 0 && _waveIndex <= waveDataList.Count)
             return LevelStatus.Failed;
         else
             return LevelStatus.Success;
