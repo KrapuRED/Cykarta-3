@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using MoreMountains.Tools;
+
 
 [System.Serializable]
 public class TowerRunTimeData
@@ -43,6 +45,9 @@ public class Tower : Entity
    [SerializeField] protected Transform visualRange;
    [SerializeField] protected LayerMask enemyLayerMask;
    
+   [Header("Sound Effect and ambient")]
+   [SerializeField] private AudioClip towerPlaceSound;
+   [SerializeField] private float volumeTowerPlaceSound;
    
    protected TowerScanArea TowerScanArea { get; private set; }
    protected TowerRecycleProcessingUI RecycleProcessingUI { get; private set; }
@@ -173,6 +178,8 @@ public class Tower : Entity
    public void InitializeTower()
    {
       IsBeenPlace = true;
+      
+      MMSoundManagerSoundPlayEvent.Trigger(towerPlaceSound, MMSoundManager.MMSoundManagerTracks.Sfx, transform.position, volume:volumeTowerPlaceSound);
       
       var entityData = EntityManager.Instance.GetEntityRunTimeData(TowerData.towerName, string.Empty, null,this);
       InitializeEntity(entityData);

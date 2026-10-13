@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class Trash : Entity
 {
@@ -10,6 +11,11 @@ public class Trash : Entity
     
     [SerializeField] private int indexWaypoint;
     private bool _hasWaypoints;
+    
+    
+    [Header("Sound Effect and ambient")]
+    [SerializeField] private AudioClip waterSplash;  
+    [SerializeField] private float volumeWaterSplash;  
     
     public TrashData TrashData { get; private set; }
     public Coroutine ThrowCoroutine { get; private set; }
@@ -120,6 +126,7 @@ public class Trash : Entity
         }
       
         transform.position = to;
+        MMSoundManagerSoundPlayEvent.Trigger(waterSplash, MMSoundManager.MMSoundManagerTracks.Music, transform.position, volume:volumeWaterSplash);
         InitializeTrash(endWaterPath, 2f,entityRunTimeData );
     }
 

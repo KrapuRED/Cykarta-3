@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UtilTools;
+using MoreMountains.Tools;
 
 public class LevelSelectManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class LevelSelectManager : MonoBehaviour
     [SerializeField] private Transform containerPos;
     [SerializeField] private List<Transform> levelObjects =  new ();
 
+    [Header("Sound Effect and ambient")]
+    [SerializeField] private AudioClip ambientSound;    
+    
     private void Start()
     {
         if (containerPos == null) return;
@@ -27,6 +31,8 @@ public class LevelSelectManager : MonoBehaviour
             lineRenderer.SetPosition(i, levelObjects[i].position);
             levelObjects[i].GetComponent<LevelSelect>().InitializeLevelSelect();
         }
+        
+        MMSoundManagerSoundPlayEvent.Trigger(ambientSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position);
     }
 
     private void OnEnable()

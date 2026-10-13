@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 805394797382153918}
   - component: {fileID: 6757278135348031742}
   - component: {fileID: 8687517005425989594}
-  - component: {fileID: 5215050195269121136}
   m_Layer: 0
   m_Name: == Building / Infrastructure Placement - Canvas ==
   m_TagString: Untagged
@@ -103,20 +102,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5215050195269121136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503471343065360313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e931102de8bd324eb4dc6dd8f6eedfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerConfirmationUI
-  ownerTower: {fileID: 3821810546088435452}
-  canvasGroup: {fileID: 3750235066215404465}
 --- !u!1 &1715107445311851286
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5523029050712363491}
   m_Layer: 0
-  m_Name: FT-Catcher - Sprites
+  m_Name: === FT-Catcher - Sprites & Visualizer ===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,6 +257,7 @@ Transform:
   - {fileID: 7375954210988365239}
   - {fileID: 6602691128675481914}
   - {fileID: 205790958478716145}
+  - {fileID: 3976242899823567885}
   m_Father: {fileID: 3143192950549492149}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4048698591940386541
@@ -484,13 +470,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4861023252886302943}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5565849245312027776}
-  m_Father: {fileID: 3143192950549492149}
+  m_Father: {fileID: 5523029050712363491}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5593673040284965741
 GameObject:
@@ -756,7 +742,6 @@ Transform:
   m_Children:
   - {fileID: 5523029050712363491}
   - {fileID: 2881586680022047572}
-  - {fileID: 3976242899823567885}
   - {fileID: 512286175016308357}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -784,6 +769,8 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  towerPlaceSound: {fileID: 8300000, guid: 70f8ab345b7874d4a89cf8e0eb73f76b, type: 3}
+  volumeTowerPlaceSound: 1
   catchTrashState: 0
   durationRecycle: 0
   netSpriteRenderer: {fileID: 1343575791323324293}
@@ -1000,41 +987,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2881586680022047572}
     m_Modifications:
-    - target: {fileID: 498763679148780768, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 119000695549413553, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: ownerTower
       value: 
-      objectReference: {fileID: 5215050195269121136}
-    - target: {fileID: 498763679148780768, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ConfirmTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 2331360937740945000, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5215050195269121136}
-    - target: {fileID: 2331360937740945000, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RemoveTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 2542870108921143218, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5215050195269121136}
-    - target: {fileID: 2542870108921143218, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RotateTowerToRight
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3821810546088435452}
     - target: {fileID: 4060088651466747416, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_Name
       value: == Building - Building Placement ==
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387299224640538099, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5215050195269121136}
-    - target: {fileID: 6387299224640538099, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RotateTowerToLeft
       objectReference: {fileID: 0}
     - target: {fileID: 8675958261086396837, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_Pivot.x
@@ -1124,10 +1083,5 @@ PrefabInstance:
 --- !u!224 &1023386644954765809 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8675958261086396837, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-  m_PrefabInstance: {fileID: 8526719998440503380}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &3750235066215404465 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 4782677965885959141, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
   m_PrefabInstance: {fileID: 8526719998440503380}
   m_PrefabAsset: {fileID: 0}

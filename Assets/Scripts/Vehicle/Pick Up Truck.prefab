@@ -319,6 +319,8 @@ MonoBehaviour:
     trashChance: 5
   indexWaypoint: 0
   entityAnimation: {fileID: 5512366438832432851}
+  engineSound: {fileID: 8300000, guid: a4bab5fe3b44a6348823e5a08aa89434, type: 3}
+  volumeEngineSound: 0.1
 --- !u!61 &8456174101945280499
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -479,6 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EntityAnimation
   pivotTransform: {fileID: 484317775467426034}
   animator: {fileID: 0}
+  throwSound: {fileID: 0}
 --- !u!1 &6042250094924956209
 GameObject:
   m_ObjectHideFlags: 0

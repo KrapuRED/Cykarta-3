@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5440686466184020325}
   - component: {fileID: 6452406924125816707}
   - component: {fileID: 498763679148780768}
+  - component: {fileID: 4882907568060809629}
   m_Layer: 0
   m_Name: Building / Infrastructure Placement - Confirmation Button
   m_TagString: Untagged
@@ -119,8 +120,26 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6452406924125816707}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4882907568060809629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652872844754891242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c20e562ca8210242916f55160ac7dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomButton
+  onHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onClick:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 119000695549413553}
         m_TargetAssemblyTypeName: TowerConfirmationUI, Assembly-CSharp
         m_MethodName: ConfirmTower
         m_Mode: 1
@@ -132,6 +151,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  hoverInSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 2add485b7ca828b46872dd718f551724, type: 3}
+  hoverOutSound: {fileID: 0}
 --- !u!1 &3260774408518355770
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +169,7 @@ GameObject:
   - component: {fileID: 1144792805717041725}
   - component: {fileID: 5331967001019107939}
   - component: {fileID: 6387299224640538099}
+  - component: {fileID: 2704576370884503262}
   m_Layer: 0
   m_Name: Building / Infrastructure Placement - Rotate Left Button
   m_TagString: Untagged
@@ -251,8 +277,26 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5331967001019107939}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2704576370884503262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3260774408518355770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c20e562ca8210242916f55160ac7dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomButton
+  onHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onClick:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 119000695549413553}
         m_TargetAssemblyTypeName: TowerConfirmationUI, Assembly-CSharp
         m_MethodName: RotateTowerToLeft
         m_Mode: 1
@@ -264,6 +308,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  hoverInSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 2add485b7ca828b46872dd718f551724, type: 3}
+  hoverOutSound: {fileID: 0}
 --- !u!1 &4060088651466747416
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8675958261086396837}
   - component: {fileID: 4782677965885959141}
+  - component: {fileID: 119000695549413553}
   m_Layer: 0
   m_Name: == Building - Building Placement ==
   m_TagString: Untagged
@@ -314,6 +365,20 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &119000695549413553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4060088651466747416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e931102de8bd324eb4dc6dd8f6eedfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerConfirmationUI
+  ownerTower: {fileID: 0}
+  canvasGroup: {fileID: 4782677965885959141}
 --- !u!1 &5727609537996200525
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +391,7 @@ GameObject:
   - component: {fileID: 103249255716602793}
   - component: {fileID: 2807083668481808489}
   - component: {fileID: 2542870108921143218}
+  - component: {fileID: 1734559630698589057}
   m_Layer: 0
   m_Name: Building / Infrastructure Placement - Rotate Right Button
   m_TagString: Untagged
@@ -433,8 +499,26 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2807083668481808489}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1734559630698589057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5727609537996200525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c20e562ca8210242916f55160ac7dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomButton
+  onHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onClick:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 119000695549413553}
         m_TargetAssemblyTypeName: TowerConfirmationUI, Assembly-CSharp
         m_MethodName: RotateTowerToRight
         m_Mode: 1
@@ -446,6 +530,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  hoverInSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 2add485b7ca828b46872dd718f551724, type: 3}
+  hoverOutSound: {fileID: 0}
 --- !u!1 &6304980904178805345
 GameObject:
   m_ObjectHideFlags: 0

@@ -288,3 +288,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TransitionManager
   sceneTransitionContainer: {fileID: 7012032185385923807}
   transitions: []
+  loweredMusicVolume: 0
+  musicFadeDuration: 0.5

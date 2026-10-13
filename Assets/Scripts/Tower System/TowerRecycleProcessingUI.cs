@@ -17,9 +17,8 @@ public class TowerRecycleProcessingUI : MonoBehaviour
         canvasGroup.alpha = 1;
     }
 
-    public void UpdateProgress(float deltaTime)
+    public void UpdateProgress(float progress)
     {
-        float progress = _currentProgress - deltaTime;
         progressBar.value = progress;
     }
     

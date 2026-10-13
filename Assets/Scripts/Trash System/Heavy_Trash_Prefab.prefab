@@ -225,6 +225,8 @@ MonoBehaviour:
   moveSpeed: 0
   waypoints: []
   indexWaypoint: 0
+  waterSplash: {fileID: 8300000, guid: eca8a6f880488da468bed23d0198bcad, type: 3}
+  volumeWaterSplash: 0.125
 --- !u!61 &49254188233135069
 BoxCollider2D:
   m_ObjectHideFlags: 0

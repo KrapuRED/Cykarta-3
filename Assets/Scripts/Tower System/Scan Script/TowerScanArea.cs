@@ -7,6 +7,12 @@ public class TowerScanArea : MonoBehaviour
     [SerializeField] private int maxDetected;
     [SerializeField] private bool detectionWithoutInterval;
     
+    [Header("Sound Effect and ambient")]
+    [SerializeField] protected AudioClip scanSound;
+    [SerializeField] protected float scanPerSecondSound;
+    [SerializeField] protected float volumeScanSound;
+    protected float ScanSoundInterval;
+    
     protected Collider2D[] Hits;
     protected Transform CurrentTarget;
     protected ContactFilter2D Filter;

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 805394797382153918}
   - component: {fileID: 6757278135348031742}
   - component: {fileID: 8687517005425989594}
-  - component: {fileID: 5215050195269121136}
   m_Layer: 0
   m_Name: == Building / Infrastructure Placement - Canvas ==
   m_TagString: Untagged
@@ -103,20 +102,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5215050195269121136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503471343065360313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e931102de8bd324eb4dc6dd8f6eedfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerConfirmationUI
-  ownerTower: {fileID: 1951802521689120775}
-  canvasGroup: {fileID: 3200616477848571088}
 --- !u!1 &1715107445311851286
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +675,8 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  towerPlaceSound: {fileID: 8300000, guid: 70f8ab345b7874d4a89cf8e0eb73f76b, type: 3}
+  volumeTowerPlaceSound: 1
   maxCapacity: 5
   accumulatedTrashes: []
   catchTrashState: 0
@@ -752,26 +739,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2881586680022047572}
     m_Modifications:
-    - target: {fileID: 498763679148780768, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 119000695549413553, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: ownerTower
       value: 
-      objectReference: {fileID: 5215050195269121136}
+      objectReference: {fileID: 1951802521689120775}
     - target: {fileID: 498763679148780768, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ConfirmTower
       objectReference: {fileID: 0}
     - target: {fileID: 2331360937740945000, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5215050195269121136}
-    - target: {fileID: 2331360937740945000, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RemoveTower
       objectReference: {fileID: 0}
-    - target: {fileID: 2542870108921143218, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5215050195269121136}
     - target: {fileID: 2542870108921143218, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RotateTowerToRight
@@ -780,10 +759,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: == Building - Building Placement ==
       objectReference: {fileID: 0}
-    - target: {fileID: 6387299224640538099, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5215050195269121136}
     - target: {fileID: 6387299224640538099, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RotateTowerToLeft
@@ -876,10 +851,5 @@ PrefabInstance:
 --- !u!224 &1608508467004229264 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8675958261086396837, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-  m_PrefabInstance: {fileID: 7941433835962853173}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &3200616477848571088 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 4782677965885959141, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
   m_PrefabInstance: {fileID: 7941433835962853173}
   m_PrefabAsset: {fileID: 0}

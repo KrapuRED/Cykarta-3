@@ -103,7 +103,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         if (roll <= IrresponsibleThinkingData.chanceIrresponsibleThinking)
         {
             EntityRunTimeData.entityState = EntityState.IrresponsibleThinking;
-            entityAnimation.StopWalkAnimation();
+            entityAnimation.PlayIdleAnimation();
             
             irresponsibleThinkingSlider.gameObject.SetActive(true);
         }

@@ -862,6 +862,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 1046032274}
   containerPos: {fileID: 2036294239}
   levelObjects: []
+  ambientSound: {fileID: 8300000, guid: 9402a721be048f74592af9bc2c8e3899, type: 3}
 --- !u!120 &1046032274
 LineRenderer:
   serializedVersion: 3
@@ -1667,6 +1668,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 477028759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1936244337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1936244339}
+  - component: {fileID: 1936244338}
+  m_Layer: 0
+  m_Name: Audio System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1936244338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936244337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614edb33c38bcf949846d5675f29f9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MoreMountains.Tools::MoreMountains.Tools.MMSoundManager
+  AutomaticallyUnparentOnAwake: 1
+  settingsSo: {fileID: 11400000, guid: 07ea3ff88e1ecb84d91f58aa804badc6, type: 2}
+  AudioSourcePoolSize: 10
+  PoolCanExpand: 1
+--- !u!4 &1936244339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936244337}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.5, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2036294238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1798,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8562566561666044935, guid: d9157fc47ca2d4f41876c11bc9e4d98d, type: 3}
+      propertyPath: musicFadeDuration
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9166541946976597897, guid: d9157fc47ca2d4f41876c11bc9e4d98d, type: 3}
       propertyPath: m_Name
       value: DDOL - Transition System
@@ -1828,3 +1881,4 @@ SceneRoots:
   - {fileID: 916593858}
   - {fileID: 240019267848965722}
   - {fileID: 1096982500}
+  - {fileID: 1936244339}

@@ -60,6 +60,8 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  towerPlaceSound: {fileID: 8300000, guid: 70f8ab345b7874d4a89cf8e0eb73f76b, type: 3}
+  volumeTowerPlaceSound: 1
   towerHead: {fileID: 5053085058737687664}
   spriteAngleOffset: -90
   lockRotationSpeed: 720
@@ -412,6 +414,9 @@ MonoBehaviour:
   detectionInterval: 0.1
   maxDetected: 16
   detectionWithoutInterval: 0
+  scanSound: {fileID: 8300000, guid: eaa6e50f0632bc34792976e6b92d5d65, type: 3}
+  scanPerSecondSound: 0.25
+  volumeScanSound: 0
   currentDetected: 0
 --- !u!1 &7914482911339897956
 GameObject:
@@ -549,7 +554,6 @@ GameObject:
   - component: {fileID: 2494990739231962454}
   - component: {fileID: 8638924145854425174}
   - component: {fileID: 438818182026845854}
-  - component: {fileID: 3441928527123468916}
   m_Layer: 0
   m_Name: == Building / Infrastructure Placement - Canvas ==
   m_TagString: Untagged
@@ -640,20 +644,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3441928527123468916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9143792296284362248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e931102de8bd324eb4dc6dd8f6eedfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerConfirmationUI
-  ownerTower: {fileID: -1200755834875297617}
-  canvasGroup: {fileID: 5725374579757402365}
 --- !u!1001 &949100214135137048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -662,26 +652,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3268619156045126867}
     m_Modifications:
-    - target: {fileID: 498763679148780768, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 119000695549413553, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: ownerTower
       value: 
-      objectReference: {fileID: 3441928527123468916}
+      objectReference: {fileID: -1200755834875297617}
     - target: {fileID: 498763679148780768, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ConfirmTower
       objectReference: {fileID: 0}
     - target: {fileID: 2331360937740945000, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3441928527123468916}
-    - target: {fileID: 2331360937740945000, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RemoveTower
       objectReference: {fileID: 0}
-    - target: {fileID: 2542870108921143218, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3441928527123468916}
     - target: {fileID: 2542870108921143218, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RotateTowerToRight
@@ -690,10 +672,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: == Building - Building Placement ==
       objectReference: {fileID: 0}
-    - target: {fileID: 6387299224640538099, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3441928527123468916}
     - target: {fileID: 6387299224640538099, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RotateTowerToLeft
@@ -783,11 +761,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
---- !u!225 &5725374579757402365 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 4782677965885959141, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-  m_PrefabInstance: {fileID: 949100214135137048}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8452363213981221565 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8675958261086396837, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}

@@ -225,8 +225,10 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  minDurationTrackingTarget: 0.5
-  maxDurationTrackingTarget: 1
+  towerPlaceSound: {fileID: 8300000, guid: 70f8ab345b7874d4a89cf8e0eb73f76b, type: 3}
+  volumeTowerPlaceSound: 1
+  minDurationTrackingTarget: 0.25
+  maxDurationTrackingTarget: 0.5
   cooldownAfterCatch: 0.25
   durationRecycle: 0
   pickUpTrashState: 1
@@ -240,6 +242,9 @@ MonoBehaviour:
   rotateSpeed: 720
   lockRotationSpeed: 720
   spriteAngleOffset: -90
+  hookHitSound: {fileID: 8300000, guid: 9d2b5525260e31943bbe36184af958e2, type: 3}
+  shootSound: {fileID: 8300000, guid: c690f4a389c17a1478bc22b4ed356de3, type: 3}
+  volumeSoundEffect: 1
   currentCapacity: 0
   _state: 0
   _targetTrash: {fileID: 0}
@@ -353,41 +358,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!1 &664117477009190795
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6653695597646557248}
-  m_Layer: 0
-  m_Name: ==
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &6653695597646557248
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664117477009190795}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3268619156045126867}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1641121686656096914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1000,9 @@ MonoBehaviour:
   detectionInterval: 0.1
   maxDetected: 16
   detectionWithoutInterval: 1
+  scanSound: {fileID: 8300000, guid: eaa6e50f0632bc34792976e6b92d5d65, type: 3}
+  scanPerSecondSound: 0.25
+  volumeScanSound: 0
   currentDetected: 0
 --- !u!1 &7914482911339897956
 GameObject:
@@ -1204,7 +1177,6 @@ GameObject:
   - component: {fileID: 2494990739231962454}
   - component: {fileID: 8638924145854425174}
   - component: {fileID: 438818182026845854}
-  - component: {fileID: 3441928527123468916}
   m_Layer: 0
   m_Name: '# ====== Building - Canvas ====== #'
   m_TagString: Untagged
@@ -1226,7 +1198,6 @@ RectTransform:
   m_Children:
   - {fileID: 1158655589334533786}
   - {fileID: 7591215309708936278}
-  - {fileID: 6653695597646557248}
   m_Father: {fileID: 6400691932898101370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1297,20 +1268,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3441928527123468916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9143792296284362248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e931102de8bd324eb4dc6dd8f6eedfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerConfirmationUI
-  ownerTower: {fileID: 5857374941782670224}
-  canvasGroup: {fileID: 3038822856799390938}
 --- !u!1001 &7526479303213967167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1319,26 +1276,98 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3268619156045126867}
     m_Modifications:
-    - target: {fileID: 498763679148780768, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 119000695549413553, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: ownerTower
       value: 
-      objectReference: {fileID: 3441928527123468916}
-    - target: {fileID: 2331360937740945000, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      objectReference: {fileID: 5857374941782670224}
+    - target: {fileID: 1734559630698589057, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734559630698589057, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734559630698589057, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3441928527123468916}
-    - target: {fileID: 2542870108921143218, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      objectReference: {fileID: 7626190162197393294}
+    - target: {fileID: 1734559630698589057, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734559630698589057, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateTowerToRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734559630698589057, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerConfirmationUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734559630698589057, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704576370884503262, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704576370884503262, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704576370884503262, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3441928527123468916}
+      objectReference: {fileID: 7626190162197393294}
+    - target: {fileID: 2704576370884503262, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704576370884503262, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateTowerToLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704576370884503262, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerConfirmationUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704576370884503262, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4060088651466747416, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_Name
       value: == Building - Building Placement ==
       objectReference: {fileID: 0}
-    - target: {fileID: 6387299224640538099, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 4882907568060809629, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882907568060809629, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882907568060809629, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3441928527123468916}
+      objectReference: {fileID: 7626190162197393294}
+    - target: {fileID: 4882907568060809629, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882907568060809629, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConfirmTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882907568060809629, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerConfirmationUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882907568060809629, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8675958261086396837, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1429,8 +1458,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8675958261086396837, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
   m_PrefabInstance: {fileID: 7526479303213967167}
   m_PrefabAsset: {fileID: 0}
---- !u!225 &3038822856799390938 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 4782677965885959141, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
+--- !u!114 &7626190162197393294 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 119000695549413553, guid: 072331d4414ed714788b0e17c0b3d22f, type: 3}
   m_PrefabInstance: {fileID: 7526479303213967167}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e931102de8bd324eb4dc6dd8f6eedfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerConfirmationUI

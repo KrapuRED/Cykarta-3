@@ -1,7 +1,11 @@
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class VictoryPanel : Panel
 {
+    [Header("Sound Effect and ambient")]
+    [SerializeField] private AudioClip openPanelSound; 
+    
     public override void OpenPanel()
     {
         canvasGroup.alpha = 1;
@@ -13,6 +17,8 @@ public class VictoryPanel : Panel
         GridManager.Instance.ChangeGridMode(GridMode.None);
         GridManager.Instance.UnhighlightBuildGridZone();
       
+        MMSoundManagerSoundPlayEvent.Trigger(openPanelSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position);
+        
         SpawnerManager.Instance.Pause();
         EntityManager.Instance.Pause();
     }

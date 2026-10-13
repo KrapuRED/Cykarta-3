@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MoreMountains.Tools;
 
 [System.Serializable]
 public class DialogueDataRunTime
@@ -30,6 +30,9 @@ public class DialogueManager : MonoBehaviour
     private bool _isOpeningTutorial;
     private Coroutine _dialogueCoroutine;
     [SerializeField] private DialogueType _currentType;
+    
+    [Header("Sound Effect and ambient")]
+    [SerializeField] private AudioClip ambientSound;
     
     public bool IsDialogueRunning { get; private set; }
     public bool IsSkipDialogue { get; private set; }
@@ -63,6 +66,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueStart)
             StartDialogue(currentLevel, _currentType);
+        
+        MMSoundManagerSoundPlayEvent.Trigger(ambientSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position);
     }
 
     private void Update()

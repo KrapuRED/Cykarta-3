@@ -1,10 +1,14 @@
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class EntityAnimation : MonoBehaviour
 {
     [SerializeField] private Transform pivotTransform;
     [SerializeField] private Animator animator;
 
+    [Header("Sound Effect and ambient")]
+    [SerializeField] private AudioClip throwSound;  
+    
     private Vector2Int _currentDir = Vector2Int.zero;
     private Quaternion _targetRotation = Quaternion.identity;
     
@@ -15,18 +19,20 @@ public class EntityAnimation : MonoBehaviour
 
     public void PlayIdleAnimation()
     {
+        animator.SetBool("IsWalking", false);
+        animator.SetBool("IsIdle", true);
         
     }
-
 
     public void PlayThrowAnimation()
     {
-        animator.SetTrigger("Throw");
-    }
-
-    public void StopWalkAnimation()
-    {
+        if (animator != null)
+        {
+            animator.SetBool("IsIdle", false);
+            animator.SetTrigger("Throw");
+        }
         
+        MMSoundManagerSoundPlayEvent.Trigger(throwSound, MMSoundManager.MMSoundManagerTracks.Sfx, transform.position);
     }
 
     public void RotateAnimation(Vector3 fromPosition, Vector3 nextPoint, float deltaTime)

@@ -242,6 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EntityAnimation
   pivotTransform: {fileID: 5202860985712388624}
   animator: {fileID: 7368082052186049943}
+  throwSound: {fileID: 8300000, guid: 151154642f22c534e9d0b459d95177ba, type: 3}
 --- !u!1 &4533883059496805327
 GameObject:
   m_ObjectHideFlags: 0

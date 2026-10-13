@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using MoreMountains.Tools;
 
 public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
 {
@@ -25,6 +25,12 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     [SerializeField] private float rotateSpeed = 720f;  // deg/sec
     [SerializeField] private float lockRotationSpeed = 720f;
     [SerializeField] private float spriteAngleOffset = -90f;
+    
+    [Header("Sound Effect and ambient")]
+    [SerializeField] private AudioClip hookHitSound;  
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] private float volumeSoundEffect;
+    
     
     public int MaxCapacity { get; set; }
     public int CurrentCapacity { get; set; }
@@ -148,7 +154,13 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
         var trashes = new List<Trash>(AccumulatedTrashes);
         AccumulatedTrashes.Clear();
         
-        yield return new WaitForSeconds(durationRecycle);
+        float duration = durationRecycle;
+        while (duration >= 0)
+        {
+            duration -= Time.deltaTime;
+            RecycleProcessingUI.UpdateProgress(duration);
+            yield return null;
+        }
 
         foreach (var trash in trashes)
         {
@@ -157,6 +169,8 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
 
         Debug.Log($"[{name}] Done Recycle Trash");
         CurrentCapacity = 0;
+        
+        RecycleProcessingUI.HideProcessingUI();
         
         yield return null;
         IsRecycleTrash = false;
@@ -234,7 +248,8 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
         _state = GrapplerState.Shooting;
         Vector3 hookPos = grappleOrigin.position;
         grappleLine.enabled = true;
-
+        MMSoundManagerSoundPlayEvent.Trigger(shootSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position, volume:volumeSoundEffect);
+        
         while (true)
         {
             if (!IsTargetValid(pickUpTrashState)) { ResetGrappler(); yield break; }
@@ -251,6 +266,7 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
         
         // ---------- 3. DRAG ----------
         yield return null;
+        MMSoundManagerSoundPlayEvent.Trigger(hookHitSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position, volume:volumeSoundEffect);
         
         _state = GrapplerState.Dragging;
         TrashState newTrashState = _targetTrash.TrashData.trashState = TrashState.Grabbed;

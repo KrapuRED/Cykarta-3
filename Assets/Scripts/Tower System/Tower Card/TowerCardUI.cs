@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.UI;
+using MoreMountains.Tools;
+
 
 public class TowerCardUI : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class TowerCardUI : MonoBehaviour
     [Header("Input Action Settings")]
     [SerializeField] private string actionMapName;
     [SerializeField] private InputActionReference holdCardAction;
+    
+    [Header("Sound Effect and ambient")]
+    [SerializeField] private AudioClip clickSound; 
     
     private bool _isSelected;
     private TowerDataSO TowerData { get;  set; }
@@ -38,6 +43,8 @@ public class TowerCardUI : MonoBehaviour
     {
         if (!_isSelected || !CurrencyManager.Instance.IsCurrentCurrencyEnough(TowerData.towerCost)) 
             return;
+        
+        MMSoundManagerSoundPlayEvent.Trigger(clickSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position);
         
         _isSelected = false;
         GridManager.Instance.HighlightBuildGridZone();

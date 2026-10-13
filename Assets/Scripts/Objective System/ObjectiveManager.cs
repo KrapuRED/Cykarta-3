@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class ObjectiveManager : MonoBehaviour
 {
@@ -16,12 +17,19 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private ObjectiveUI proctectionLevel;
     [SerializeField] private ObjectiveUI waveCounter;
     
+    [Header("Sound Effect and ambient")]
+    [SerializeField] private AudioClip ambientSound;
+    [SerializeField] private AudioClip bgmSound;
+    [SerializeField] private AudioClip objectiveHurtSound;
+    [SerializeField] private float volumeAmbientSound;
+    
     public int CurrentObjectiveHealthPoints { get; private set; }
     public int LevelIndex => levelIndex;
     private int _waveIndex = -1;
     private int _maxEnemyCounter;
     private int _currentEnemyCounter;
-
+    private int _soundID;
+    
     [SerializeField] private bool startLevel;
     
     private void Awake()
@@ -31,7 +39,9 @@ public class ObjectiveManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        
+        _soundID = GetInstanceID();
+        
         Instance = this;
     }
 
@@ -45,6 +55,8 @@ public class ObjectiveManager : MonoBehaviour
     private void OnDisable()
     {
         GameEvents.OnGameStart.RemoveListener(StartLevel);
+        
+        StopAmbient();
     }
 
     #endregion
@@ -66,6 +78,7 @@ public class ObjectiveManager : MonoBehaviour
             currentProtectionLevel = objectiveHealthPoints
         });
         
+        StartAmbient();
         NextWave();
     }
 
@@ -152,6 +165,7 @@ public class ObjectiveManager : MonoBehaviour
     public void UpdateObjectiveProctectionLevel(int weight)
     {
         CurrentObjectiveHealthPoints -= weight;
+        MMSoundManagerSoundPlayEvent.Trigger(objectiveHurtSound, MMSoundManager.MMSoundManagerTracks.Sfx, transform.position);
         
         proctectionLevel.UpdateObjectiveUI(new ProtectionObjectiveDataUI
         {
@@ -178,6 +192,28 @@ public class ObjectiveManager : MonoBehaviour
         
         return LevelStatus.NotPlayed;
     }
+    
+    #region Sound
+
+    private void StartAmbient()
+    {
+        MMSoundManagerSoundPlayEvent.Trigger(
+            ambientSound,
+            MMSoundManager.MMSoundManagerTracks.Sfx,
+            transform.position,
+            loop: true,
+            volume: volumeAmbientSound,
+            ID: _soundID);
+    }
+
+    private void StopAmbient()
+    {
+        MMSoundManagerSoundControlEvent.Trigger(
+            MMSoundManagerSoundControlEventTypes.Stop,
+            _soundID);
+    }
+
+    #endregion
     
     public void SaveData() => LevelProgress.Set(levelIndex, GetLevelStatus());
     

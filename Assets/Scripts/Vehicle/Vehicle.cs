@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MoreMountains.Tools;
 
 public class Vehicle : Entity, IIrresponsibleThinkable
 {
@@ -13,9 +14,15 @@ public class Vehicle : Entity, IIrresponsibleThinkable
     
     [SerializeField] private EntityAnimation entityAnimation;
     
+    [Header("Sound Effect and ambient")]
+    [SerializeField] private AudioClip engineSound;  
+    [SerializeField] private float volumeEngineSound;  
+    
     public IrresponsibleThinkingData IrresponsibleThinkingData { get;  set; }
     public float ThinkingCheckTimer { get; set; }
 
+    private int _soundID;
+    
     public override void OnMoveEntity(float deltaTime)
     {
         base.OnMoveEntity(deltaTime);
@@ -27,8 +34,9 @@ public class Vehicle : Entity, IIrresponsibleThinkable
         
         if (waypoints.Count <= 0)
         {
-            ObjectiveManager.Instance.UpdateObjectiveEnemyCounter();
             Debug.LogWarning($"[{name}] is success UpdateObjectiveEnemyCounter");
+            ObjectiveManager.Instance.UpdateObjectiveEnemyCounter();
+            StopEngine();
             DestroyEntity();
             return;
         }
@@ -39,6 +47,7 @@ public class Vehicle : Entity, IIrresponsibleThinkable
             if (indexWaypoint >= waypoints.Count)
             {
                 ObjectiveManager.Instance.UpdateObjectiveEnemyCounter();
+                StopEngine();
                 DestroyEntity();
                 return;
             }
@@ -87,6 +96,8 @@ public class Vehicle : Entity, IIrresponsibleThinkable
         GetWaypoints(endPoint);
         moveSpeed = speedMovement;
         
+        _soundID = GetInstanceID();
+        StartEngine();
         InitializeEntity(runTimeData);
     }
 
@@ -187,6 +198,28 @@ public class Vehicle : Entity, IIrresponsibleThinkable
 
     #endregion
 
+    #region Sound
+
+    private void StartEngine()
+    {
+        MMSoundManagerSoundPlayEvent.Trigger(
+            engineSound,
+            MMSoundManager.MMSoundManagerTracks.Sfx,
+            transform.position,
+            loop: true,
+            volume: volumeEngineSound,
+            ID: _soundID);
+    }
+
+    private void StopEngine()
+    {
+        MMSoundManagerSoundControlEvent.Trigger(
+            MMSoundManagerSoundControlEventTypes.Stop,
+            _soundID);
+    }
+
+    #endregion
+    
     private void OnDrawGizmos()
     {
         if (waypoints == null || waypoints.Count < 2) return;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using MoreMountains.Tools;
 
 public abstract class Transition : MonoBehaviour
 {

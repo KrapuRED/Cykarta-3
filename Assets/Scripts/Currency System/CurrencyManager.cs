@@ -1,11 +1,17 @@
 using System;
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager Instance { get; private set; }
 
     [SerializeField] private int startCurrency;
+    
+    [Header("Sound Effect and ambient")]
+    [SerializeField] private AudioClip gainCurrencySound;  
+    [SerializeField] private AudioClip lossCurrencySound;
+    [SerializeField] private float volumeCurrencySound;
     
     public int CurrentCurrency { get; private set; }
     
@@ -28,12 +34,16 @@ public class CurrencyManager : MonoBehaviour
     public void ReceiveCurrency(int currency)
     {
         CurrentCurrency += currency;
+        MMSoundManagerSoundPlayEvent.Trigger(gainCurrencySound, MMSoundManager.MMSoundManagerTracks.Music, transform.position, volume:volumeCurrencySound);
+        
         GameEvents.OnUpdateVisualCurrency.Invoke(CurrentCurrency);
     }
 
     public void UseCurrency(int costObject)
     {
         CurrentCurrency -= costObject;
+        MMSoundManagerSoundPlayEvent.Trigger(lossCurrencySound, MMSoundManager.MMSoundManagerTracks.Music, transform.position, volume:volumeCurrencySound);
+        
         GameEvents.OnUpdateVisualCurrency.Invoke(CurrentCurrency);
     }
 
