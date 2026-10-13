@@ -2225,19 +2225,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   levelIndex: 2
-  objectiveHealthPoints: 1000
+  objectiveHealthPoints: 200
   waveDataList:
   - waveDataName: Wave 1
-    waveDelay: 5
-    waveReward: 0
+    waveDelay: 15
+    waveReward: 100
     waveSpawnerData:
-    - spawnerName: Test
+    - spawnerName: Pedestrian 1
       spawnerIrresponsible: {fileID: 1376950317}
-      maxSpawnRate: 5
-      minSpawnRate: 2
+      maxSpawnRate: 3
+      minSpawnRate: 1
       spawnerData:
       - spawnerDataName: 'Common Pederstrian '
-        maxSpawnCount: 1
+        maxSpawnCount: 10
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
@@ -2246,40 +2246,232 @@ MonoBehaviour:
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
-    - spawnerName: Test - Vehicle
-      spawnerIrresponsible: {fileID: 1398889233}
-      maxSpawnRate: 5
-      minSpawnRate: 2
-      spawnerData:
-      - spawnerDataName: Motor
-        maxSpawnCount: 1
-        currentSpawnCount: 0
-        isReachMaxSpawnCount: 0
-        spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
-  - waveDataName: Wave 2
-    waveDelay: 10
-    waveReward: 0
-    waveSpawnerData:
-    - spawnerName: Test
+    - spawnerName: Pedestrian 2
       spawnerIrresponsible: {fileID: 630482355}
-      maxSpawnRate: 5
-      minSpawnRate: 0
+      maxSpawnRate: 2
+      minSpawnRate: 1
       spawnerData:
-      - spawnerDataName: 'Pederstrian '
+      - spawnerDataName: 'Common Pederstrian '
         maxSpawnCount: 5
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
-    - spawnerName: Test 1
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 5
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Vehicle
       spawnerIrresponsible: {fileID: 1398889233}
       maxSpawnRate: 5
-      minSpawnRate: 0
+      minSpawnRate: 3
       spawnerData:
-      - spawnerDataName: Vehicle
-        maxSpawnCount: 10
+      - spawnerDataName: Motor
+        maxSpawnCount: 4
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
+      - spawnerDataName: Pick Up Truck
+        maxSpawnCount: 1
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 2d2c7d6bb80ade44690177038cc1c03b, type: 2}
+  - waveDataName: Wave 2
+    waveDelay: 15
+    waveReward: 200
+    waveSpawnerData:
+    - spawnerName: Pedestrian 1
+      spawnerIrresponsible: {fileID: 1376950317}
+      maxSpawnRate: 3
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 15
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 2
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Pedestrian 2
+      spawnerIrresponsible: {fileID: 630482355}
+      maxSpawnRate: 2
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 25
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 5
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Vehicle
+      spawnerIrresponsible: {fileID: 1398889233}
+      maxSpawnRate: 5
+      minSpawnRate: 3
+      spawnerData:
+      - spawnerDataName: Motor
+        maxSpawnCount: 6
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
+      - spawnerDataName: Pick Up Truck
+        maxSpawnCount: 3
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 2d2c7d6bb80ade44690177038cc1c03b, type: 2}
+  - waveDataName: Wave 3
+    waveDelay: 15
+    waveReward: 300
+    waveSpawnerData:
+    - spawnerName: Pedestrian 1
+      spawnerIrresponsible: {fileID: 1376950317}
+      maxSpawnRate: 3
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 17
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 3
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Pedestrian 2
+      spawnerIrresponsible: {fileID: 630482355}
+      maxSpawnRate: 2
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 26
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 7
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Vehicle
+      spawnerIrresponsible: {fileID: 1398889233}
+      maxSpawnRate: 5
+      minSpawnRate: 3
+      spawnerData:
+      - spawnerDataName: Motor
+        maxSpawnCount: 8
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
+      - spawnerDataName: Pick Up Truck
+        maxSpawnCount: 3
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 2d2c7d6bb80ade44690177038cc1c03b, type: 2}
+  - waveDataName: Wave 4
+    waveDelay: 15
+    waveReward: 400
+    waveSpawnerData:
+    - spawnerName: Pedestrian 1
+      spawnerIrresponsible: {fileID: 1376950317}
+      maxSpawnRate: 3
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 20
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 4
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Pedestrian 2
+      spawnerIrresponsible: {fileID: 630482355}
+      maxSpawnRate: 2
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 28
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 8
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Vehicle
+      spawnerIrresponsible: {fileID: 1398889233}
+      maxSpawnRate: 5
+      minSpawnRate: 3
+      spawnerData:
+      - spawnerDataName: Motor
+        maxSpawnCount: 3
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
+      - spawnerDataName: Pick Up Truck
+        maxSpawnCount: 8
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 2d2c7d6bb80ade44690177038cc1c03b, type: 2}
+  - waveDataName: Wave 5
+    waveDelay: 15
+    waveReward: 200
+    waveSpawnerData:
+    - spawnerName: Pedestrian 1
+      spawnerIrresponsible: {fileID: 1376950317}
+      maxSpawnRate: 3
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 20
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 5
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Pedestrian 2
+      spawnerIrresponsible: {fileID: 630482355}
+      maxSpawnRate: 2
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 15
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 15
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Vehicle
+      spawnerIrresponsible: {fileID: 1398889233}
+      maxSpawnRate: 5
+      minSpawnRate: 3
+      spawnerData:
+      - spawnerDataName: Motor
+        maxSpawnCount: 6
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
+      - spawnerDataName: Pick Up Truck
+        maxSpawnCount: 9
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 2d2c7d6bb80ade44690177038cc1c03b, type: 2}
   enemyCounter: {fileID: 729934633}
   proctectionLevel: {fileID: 2025850196}
   waveCounter: {fileID: 1536382199}
