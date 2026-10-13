@@ -26,6 +26,7 @@ public class DialogueBox : MonoBehaviour
     {
         GameEvents.OnDisplayDialogue.AddListener(UpdateDialogueUI);
         GameEvents.OnSkipDialogueLine.AddListener(SkipDialogueLine);
+        GameEvents.OnHideDialogue.AddListener(HideDialogeuBox);
         
         typewriter.onCharacterVisible.AddListener(PlayTypeSound);
     }
@@ -33,6 +34,8 @@ public class DialogueBox : MonoBehaviour
     private void OnDisable()
     {
         GameEvents.OnDisplayDialogue.RemoveListener(UpdateDialogueUI);
+        GameEvents.OnHideDialogue.AddListener(HideDialogeuBox);
+
         GameEvents.OnSkipDialogueLine.RemoveListener(SkipDialogueLine);
     }
 
@@ -65,5 +68,12 @@ public class DialogueBox : MonoBehaviour
     }
 
     private void SkipDialogueLine() => typewriter.SkipTypewriter();
+
+    private void HideDialogeuBox()
+    {
+        canvasGroup.alpha = 0;
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.interactable = false;
+    }
 }
 

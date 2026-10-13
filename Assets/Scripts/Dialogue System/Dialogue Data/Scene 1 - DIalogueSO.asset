@@ -17,7 +17,7 @@ MonoBehaviour:
   - characterName: Veronica
     dialogueLine: Mr. CEO. Thank you for meeting on short notice. Cykarta-3 has a
       problem your company might be the only one equipped to solve.
-  - characterName: Mr. CEO
+  - characterName: Mr.CEO
     dialogueLine: The drainage situation. I've seen the reports.
   - characterName: Veronica
     dialogueLine: Then you know it's worse than the reports suggest. We clean the
@@ -31,7 +31,7 @@ MonoBehaviour:
     dialogueLine: That's exactly what I'm proposing. A contract. ArcoSteel designs
       and deploys Smart Waste Infrastructure, starting with Riverside Residential.
       Prove it works there, and we expand.
-  - characterName: Mr. CEO
+  - characterName: Mr.CEO
     dialogueLine: Low density, manageable traffic. A reasonable place to start.
   - characterName: Veronica
     dialogueLine: I need results, Mr. CEO. Not promises.

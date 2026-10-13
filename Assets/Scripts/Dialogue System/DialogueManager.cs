@@ -210,6 +210,10 @@ public class DialogueManager : MonoBehaviour
     
     private void OnDialogueFinished()
     {
+        dialogueCharacterController.HideAllCharacters();
+        GameEvents.OnHideDialogue.Invoke();
+        
+        
         if (_currentType == DialogueType.Before)
             TransitionManager.Instance.TransitionToScene($"Main_Level_{currentLevel}", "FadeOut");
         else

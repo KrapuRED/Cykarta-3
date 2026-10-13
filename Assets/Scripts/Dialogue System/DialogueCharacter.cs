@@ -15,10 +15,13 @@ public class DialogueCharacter : MonoBehaviour
     [SerializeField] private Color hideColor;
     [SerializeField] private Color dimColor;
     [SerializeField] private Color showColor;
+    [SerializeField] private bool isFliped;
     
     [Header("Move Character")]
     [SerializeField] private float moveDuration = 0.5f;
     [SerializeField] private Ease moveEase = Ease.InOutQuad;
+    
+    [SerializeField] private Animator characterAnimator;
     
     private SpriteRenderer[] _spriteRenderers;
     private Sequence _transition;
@@ -37,7 +40,7 @@ public class DialogueCharacter : MonoBehaviour
     
     private void InitDialogueCharacter()
     {
-        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true);
         if (_spriteRenderers == null || _spriteRenderers.Length == 0)
         {
             Debug.LogWarning($"[{gameObject.name}] No SpriteRenderers found on Character or its children");
@@ -65,6 +68,40 @@ public class DialogueCharacter : MonoBehaviour
             _transition = null;
         });
     }
+
+    private void RotationCharacter(Transform newPosition)
+    {
+        if (!isFliped)
+        {
+            if (newPosition.localPosition.x > 0)
+            {
+                //Rotate character to left
+                Quaternion newRotation = Quaternion.Euler(0, 0, 0);
+                transform.rotation = newRotation;
+            }
+            else
+            {
+                //Rotate character to right
+                Quaternion newRotation = Quaternion.Euler(0, 180f, 0);
+                transform.rotation = newRotation;
+            }
+        }
+        else
+        {
+            if (newPosition.localPosition.x > 0)
+            {
+                //Rotate character to left
+                Quaternion newRotation = Quaternion.Euler(0, 180, 0);
+                transform.rotation = newRotation;
+            }
+            else
+            {
+                //Rotate character to right
+                Quaternion newRotation = Quaternion.Euler(0, 0, 0);
+                transform.rotation = newRotation;
+            }
+        }
+    }
     
     public void MovePointPosition(Transform newPosition)
     {
@@ -81,18 +118,9 @@ public class DialogueCharacter : MonoBehaviour
         }
         
         Debug.Log($"[{name}] MovePointPosition: {newPosition.position}");
-        if (newPosition.localPosition.x > 0)
-        {
-            //Rotate character to left
-            Quaternion newRotation = Quaternion.Euler(0, 0, 0);
-            transform.rotation = newRotation;
-        }
-        else
-        {
-            //Rotate character to right
-            Quaternion newRotation = Quaternion.Euler(0, 180f, 0);
-            transform.rotation = newRotation;
-        }
+
+
+        RotationCharacter(newPosition);
         
         _moveTween?.Kill();
         _moveTween = transform.DOMove(newPosition.position, moveDuration)
@@ -110,6 +138,7 @@ public class DialogueCharacter : MonoBehaviour
         
         CharacterDialogueState = CharacterDialogueState.Show;
         PlayAnimationFade(showColor);
+        characterAnimator.SetTrigger("InitTalk");
     }
 
     public void DimCharacter()

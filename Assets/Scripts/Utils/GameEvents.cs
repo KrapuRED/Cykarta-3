@@ -104,6 +104,7 @@ public static class GameEvents
     
     // # ================================ Dialogue UI ================================ #
     public static readonly CustomEvents<int, DialogueType> OnStartDialogue = new();
+    public static readonly CustomEvents OnHideDialogue = new();
     public static readonly CustomEvents OnStopDialogue = new();
     public static readonly CustomEvents OnSkipDialogueLine = new();
     public static readonly CustomEvents<string> OnChangeEnvironment = new();
