@@ -199,7 +199,7 @@ public class ObjectiveManager : MonoBehaviour
     {
         MMSoundManagerSoundPlayEvent.Trigger(
             ambientSound,
-            MMSoundManager.MMSoundManagerTracks.Sfx,
+            MMSoundManager.MMSoundManagerTracks.Music,
             transform.position,
             loop: true,
             volume: volumeAmbientSound,

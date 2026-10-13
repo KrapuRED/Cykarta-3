@@ -415,8 +415,10 @@ MonoBehaviour:
   maxDetected: 16
   detectionWithoutInterval: 0
   scanSound: {fileID: 8300000, guid: eaa6e50f0632bc34792976e6b92d5d65, type: 3}
-  scanPerSecondSound: 0.25
-  volumeScanSound: 0
+  scanSoundInterval: 4.5
+  volumeScanSound: 1
+  onlyPlayWhenTargetFound: 0
+  _scanSoundTimer: 0
   currentDetected: 0
 --- !u!1 &7914482911339897956
 GameObject:

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4013286449107291657}
   - component: {fileID: 9097960756916702527}
   - component: {fileID: 6851383388137984137}
+  - component: {fileID: 3244103182669434374}
   m_Layer: 5
   m_Name: Button - Resume
   m_TagString: Untagged
@@ -133,6 +134,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3244103182669434374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264787592199586446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c20e562ca8210242916f55160ac7dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomButton
+  onHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PauseInput, Assembly-CSharp
+        m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  hoverInSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 2add485b7ca828b46872dd718f551724, type: 3}
+  hoverOutSound: {fileID: 0}
 --- !u!1 &1601912118231982591
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +301,7 @@ GameObject:
   - component: {fileID: 4267817358442779702}
   - component: {fileID: 3935770602734846735}
   - component: {fileID: 6635597208660939985}
+  - component: {fileID: 6917169114916530614}
   m_Layer: 5
   m_Name: Button - Exit
   m_TagString: Untagged
@@ -372,6 +410,24 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3935770602734846735}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6917169114916530614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668911088518987194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c20e562ca8210242916f55160ac7dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomButton
+  onHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4799653411694017232}
         m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
@@ -385,6 +441,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  hoverInSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 2add485b7ca828b46872dd718f551724, type: 3}
+  hoverOutSound: {fileID: 0}
 --- !u!1 &3552432705518482983
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using MoreMountains.Tools;
 
 public class CircelScanArea : TowerScanArea
 {
@@ -31,15 +30,6 @@ public class CircelScanArea : TowerScanArea
         int count = Physics2D.OverlapCircle(transform.position, radius, Filter, Hits);
 
         currentDetected = count;
-        
-        ScanSoundInterval += Time.deltaTime;
-
-        if (ScanSoundInterval >= scanPerSecondSound)
-        {
-            ScanSoundInterval = 0;
-            MMSoundManagerSoundPlayEvent.Trigger(scanSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position, volume:volumeScanSound);
-        }   
-        
         CurrentTarget = count > 0 ? PickTarget(count) : null;
     }
 

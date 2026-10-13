@@ -1563,7 +1563,7 @@ MonoBehaviour:
   bgmSound: {fileID: 0}
   objectiveHurtSound: {fileID: 8300000, guid: a0e4edf9c843bfe4aa91424bbac5a56b, type: 3}
   volumeAmbientSound: 0.3
-  startLevel: 1
+  startLevel: 0
 --- !u!224 &966849483 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6173136420631801694, guid: c3a47cfb52b478440aade35951bd7ac4, type: 3}

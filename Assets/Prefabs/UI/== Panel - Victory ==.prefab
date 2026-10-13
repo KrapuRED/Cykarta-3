@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 7272944280930010704}
   - component: {fileID: 35786573957456818}
   - component: {fileID: 2093028781925438241}
+  - component: {fileID: 5220176434099716244}
   m_Layer: 5
   m_Name: Victory - Next Button
   m_TagString: Untagged
@@ -270,6 +271,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5220176434099716244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585480572759876173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c20e562ca8210242916f55160ac7dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomButton
+  onHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2288944011102811451}
+        m_TargetAssemblyTypeName: VictoryPanel, Assembly-CSharp
+        m_MethodName: ExitLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  hoverInSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 2add485b7ca828b46872dd718f551724, type: 3}
+  hoverOutSound: {fileID: 0}
 --- !u!1 &2164050228689876832
 GameObject:
   m_ObjectHideFlags: 0

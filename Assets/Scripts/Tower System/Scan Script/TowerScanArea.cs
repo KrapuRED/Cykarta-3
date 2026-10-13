@@ -1,4 +1,5 @@
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class TowerScanArea : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class TowerScanArea : MonoBehaviour
     
     [Header("Sound Effect and ambient")]
     [SerializeField] protected AudioClip scanSound;
-    [SerializeField] protected float scanPerSecondSound;
+    [SerializeField] protected float scanSoundInterval = 1f; // seconds between sounds
     [SerializeField] protected float volumeScanSound;
-    protected float ScanSoundInterval;
+    [SerializeField] private bool onlyPlayWhenTargetFound;
+
+    private bool _scanSound;
+    [SerializeField] private float _scanSoundTimer;
     
     protected Collider2D[] Hits;
     protected Transform CurrentTarget;
@@ -43,6 +47,7 @@ public class TowerScanArea : MonoBehaviour
                 ScanArea();
             }   
         }
+        HandleScanSound(deltaTime);
         
         targetToLock = CurrentTarget;
     }
@@ -57,5 +62,26 @@ public class TowerScanArea : MonoBehaviour
     protected virtual void ScanArea()
     {
         
+    }
+    
+    private void HandleScanSound(float deltaTime)
+    {
+        if (scanSound == null || scanSoundInterval <= 0f) return;
+        if (onlyPlayWhenTargetFound && CurrentTarget == null) return;
+        
+        _scanSoundTimer += deltaTime;
+        if (_scanSoundTimer < scanSoundInterval)
+        {
+            
+            return;
+        }
+
+        _scanSoundTimer -= scanSoundInterval;
+
+        MMSoundManagerSoundPlayEvent.Trigger(
+            scanSound,
+            MMSoundManager.MMSoundManagerTracks.Sfx,
+            transform.position,
+            volume: volumeScanSound);
     }
 }

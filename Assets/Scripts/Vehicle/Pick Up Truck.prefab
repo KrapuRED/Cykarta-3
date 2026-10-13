@@ -320,7 +320,7 @@ MonoBehaviour:
   indexWaypoint: 0
   entityAnimation: {fileID: 5512366438832432851}
   engineSound: {fileID: 8300000, guid: a4bab5fe3b44a6348823e5a08aa89434, type: 3}
-  volumeEngineSound: 0.1
+  volumeEngineSound: 0.01
 --- !u!61 &8456174101945280499
 BoxCollider2D:
   m_ObjectHideFlags: 0
