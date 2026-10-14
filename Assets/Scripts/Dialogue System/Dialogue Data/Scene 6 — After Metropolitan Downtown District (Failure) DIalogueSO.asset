@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d9b1d2725f744893b380e958420b5, type: 3}
+  m_Name: "Scene 6 \u2014 After Metropolitan Downtown District (Failure) DIalogueSO"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  locationDialogue: 
+  dialogueLines:
+  - characterName: Clovis
+    dialogueLine: "I keep running the numbers. Interception rate, response time,
+      coverage radius \u2014 every metric says we should have held."
+  - characterName: Mr. CEO
+    dialogueLine: But we didn't.
+  - characterName: Clovis
+    dialogueLine: (sharp, frustrated) I know that! I was there! I watched the hub
+      overflow on the live feed and I couldn't do anything but watch the counters
+      go up.
+  - characterName: Mr. CEO
+    dialogueLine: ...
+  - characterName: Clovis
+    dialogueLine: Three districts. Three upgrades. I redesigned the ICS-Eye's detection
+      window twice. Twice. And it still wasn't enough.
+  - characterName: Mr. CEO
+    dialogueLine: Clovis.
+  - characterName: Clovis
+    dialogueLine: (quieter, but no less raw) What was the point of building something
+      smarter every single time if people just... keep doing the same thing? I gave
+      that system everything I had.
+  - characterName: Mr. CEO
+    dialogueLine: You did. Nobody in this building worked harder than you these past
+      months.
+  - characterName: Clovis
+    dialogueLine: Then why does it feel like none of it mattered?
+  - characterName: Mr. CEO
+    dialogueLine: Because you're measuring tonight against a number you were never
+      going to hit. You built a system to catch trash. You didn't build a system
+      to change minds. That was never something a sensor could do.
+  - characterName: Clovis
+    dialogueLine: (bitter laugh) Feels like a convenient excuse.
+  - characterName: Mr. CEO
+    dialogueLine: "It's not an excuse. It's a limit. There's a difference, and I
+      think you already know it \u2014 you're just too tired to believe it right
+      now."
+  - characterName: Clovis
+    dialogueLine: (long pause) ...Maybe.
+  - characterName: Mr. CEO
+    dialogueLine: Get some rest. Tomorrow, we figure out what actually needs to change.
+      Tonight, you did enough. More than enough.
+  - characterName: Clovis
+    dialogueLine: (quiet) ...Thanks.

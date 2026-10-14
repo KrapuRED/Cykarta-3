@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d9b1d2725f744893b380e958420b5, type: 3}
+  m_Name: "Scene 3 \u2014 Before Central Commercial District (Escalation) DIalogueSO"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  locationDialogue: 
+  dialogueLines:
+  - characterName: Clovis
+    dialogueLine: Central Commercial's a different scale entirely. Triple the population
+      density, nonstop foot traffic, longer waterways with more entry points.
+  - characterName: Mr. CEO
+    dialogueLine: Our Riverside setup won't hold, then.
+  - characterName: Clovis
+    dialogueLine: "Not a chance. But I've got good news \u2014 two new systems, tested
+      and field-ready. One handles waste already in the water, covering ground our
+      current tech can't reach. The other's more ambitious \u2014 it watches and
+      intervenes before someone litters at all."
+  - characterName: Mr. CEO
+    dialogueLine: Prevention, not just cleanup.
+  - characterName: Clovis
+    dialogueLine: That's the idea. If it works, it's the first real step toward the
+      actual cause, not just the mess it leaves behind.
+  - characterName: Mr. CEO
+    dialogueLine: Then let's find out. Full deployment.
+  - characterName: Clovis
+    dialogueLine: (already moving) Let's see what this city's made of.

@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d9b1d2725f744893b380e958420b5, type: 3}
+  m_Name: "Scene 7 \u2014 Resolution (The Argument) DIalogueSO"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  locationDialogue: 
+  dialogueLines:
+  - characterName: Veronica
+    dialogueLine: Three districts. Three increasingly expensive systems. And downtown
+      still flooded on my watch.
+  - characterName: Mr. CEO
+    dialogueLine: We're aware. We take full responsibility for the technical failure.
+  - characterName: Veronica
+    dialogueLine: Do you? Because from where I'm standing, this contract promised
+      a solution, and what we got was a very well-funded delay.
+  - characterName: Mr. CEO
+    dialogueLine: "With respect, Mayor \u2014 every device we deployed outperformed
+      its predecessor. Detection speed, capacity, response time. We hit every technical
+      benchmark we set ourselves."
+  - characterName: Veronica
+    dialogueLine: Then explain the flood.
+  - characterName: Mr. CEO
+    dialogueLine: The flood happened because thousands of people decided, on their
+      own, to throw trash into the water anyway. That's not a hardware problem.
+  - characterName: Veronica
+    dialogueLine: It's still a problem your system was supposed to solve.
+  - characterName: Mr. CEO
+    dialogueLine: "No. It's a problem our system was supposed to manage. Those aren't
+      the same thing, and I think that's where this contract went wrong from the
+      start \u2014 not in the engineering, but in the expectation."
+  - characterName: Veronica
+    dialogueLine: (pointed) Careful, Mr. CEO. That sounds like you're blaming my
+      citizens.
+  - characterName: Mr. CEO
+    dialogueLine: 'I''m not blaming anyone. I''m naming what''s actually true: no
+      interceptor, no AI camera, no smart block can out-scale a habit that thousands
+      of people repeat every single day. We built the best prevention system we could.
+      It slowed the damage. It didn''t stop the cause.'
+  - characterName: Veronica
+    dialogueLine: (a beat, quieter) ...You're saying the city built the safety net,
+      and people walked past it anyway.
+  - characterName: Mr. CEO
+    dialogueLine: I'm saying the safety net was never meant to replace the choice
+      not to fall. We can catch what falls. We can't make people stop letting go.
+      Every piece of trash in a waterway is a choice someone made, upstream, days
+      before the water ever rose.
+  - characterName: Veronica
+    dialogueLine: (sitting down, some of the anger draining into something heavier)
+      So what am I supposed to tell the residents of Downtown? That their flooded
+      homes are a "behavioral issue"?
+  - characterName: Mr. CEO
+    dialogueLine: "No. Tell them the truth \u2014 that clogged drains and flooded
+      streets aren't just infrastructure failures. They're the result of waste that
+      never should have entered the water in the first place. And that no amount
+      of funding can automate away someone's choice not to care."
+  - characterName: Veronica
+    dialogueLine: (long silence) ...So what would you have me do instead? Cancel
+      the program?
+  - characterName: Mr. CEO
+    dialogueLine: "No. Keep it. It's still holding back real damage every single
+      day \u2014 ask Riverside. But pair it with something we never budgeted for:
+      the public has to become part of the system, not just something the system
+      defends against. Education. Visibility. Consequences people actually see and
+      understand, not just infrastructure they never think about until it fails."
+  - characterName: Veronica
+    dialogueLine: (a small, tired nod) ...That's not the kind of contract ArcoSteel
+      can fulfill alone.
+  - characterName: Mr. CEO
+    dialogueLine: "No. It never was. We can build the walls. We can't build the will
+      behind them. That part was always going to be the city's \u2014 every resident,
+      every district, every person who's ever stood over a drain with something in
+      their hand and a choice to make."
+  - characterName: Veronica
+    dialogueLine: (standing, looking out at the city) Then maybe that's the real
+      project. Not another device. A city that finally understands what its water
+      is worth.
+  - characterName: Mr. CEO
+    dialogueLine: That's the only project that was ever going to actually work.

@@ -63,6 +63,6 @@ public class LevelSelectUI : MonoBehaviour
     {
         if (_levelStatus == LevelStatus.Lock) return;
         
-        _transitionHelper.DoTransitionDirectToStory(1, DialogueType.Before);
+        _transitionHelper.DoTransitionDirectToStory(_level, DialogueType.Before);
     }
 }

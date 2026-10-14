@@ -89,15 +89,15 @@ namespace UtilTools
         }
 
         // Reads the raw mouse screen position, whichever input system is active
-        private static Vector3 GetMouseScreenPosition()
+        public static Vector3 GetMouseScreenPosition()
         {
-#if ENABLE_INPUT_SYSTEM
+        #if ENABLE_INPUT_SYSTEM
             if (Mouse.current == null) return Vector3.zero;
             Vector2 mousePos = Mouse.current.position.ReadValue();
             return new Vector3(mousePos.x, mousePos.y, 0f);
-#else
+        #else
             return Input.mousePosition;
-#endif
+        #endif
         }
     }
 }

@@ -89,7 +89,6 @@ public class DialogueManager : MonoBehaviour
             }
             
         }
-        
     }
 
     private void DisplayDialogue()
@@ -129,8 +128,10 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(int level, DialogueType type)
     {
         if (IsDialogueRunning) return;
+        
         _currentType = type;
-
+        currentLevel = level;
+        
         if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine);
         _dialogueCoroutine = StartCoroutine(WaitAndStarDialogue());
     }

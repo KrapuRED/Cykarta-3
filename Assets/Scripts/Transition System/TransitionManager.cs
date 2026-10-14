@@ -86,7 +86,7 @@ public class TransitionManager : MonoBehaviour
         
         string transition = $"Transition - {transitionName}";
         
-        StartCoroutine(LoadStorySceneAsync("Test_Story", level, dialogueType, transition));
+        StartCoroutine(LoadStorySceneAsync("Main_Story", level, dialogueType, transition));
     }
     
     private IEnumerator LoadStorySceneAsync(string sceneName, int level, DialogueType dialogueType, string transitionName)

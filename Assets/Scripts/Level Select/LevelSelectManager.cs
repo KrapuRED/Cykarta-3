@@ -15,6 +15,7 @@ public class LevelSelectManager : MonoBehaviour
 
     [Header("Sound Effect and ambient")]
     [SerializeField] private AudioClip ambientSound;    
+    [SerializeField] private float ambientSoundVolume;    
     
     private void Start()
     {
@@ -32,7 +33,7 @@ public class LevelSelectManager : MonoBehaviour
             levelObjects[i].GetComponent<LevelSelect>().InitializeLevelSelect();
         }
         
-        MMSoundManagerSoundPlayEvent.Trigger(ambientSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position);
+        MMSoundManagerSoundPlayEvent.Trigger(ambientSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position, volume:ambientSoundVolume);
     }
 
     private void OnEnable()

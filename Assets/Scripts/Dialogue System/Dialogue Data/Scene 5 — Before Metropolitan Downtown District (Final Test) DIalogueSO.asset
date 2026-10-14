@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d9b1d2725f744893b380e958420b5, type: 3}
+  m_Name: "Scene 5 \u2014 Before Metropolitan Downtown District (Final Test) DIalogueSO"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  locationDialogue: 
+  dialogueLines:
+  - characterName: Mr. CEO
+    dialogueLine: Talk to me, Clovis. Are we ready?
+  - characterName: Clovis
+    dialogueLine: Every device we have is fully upgraded, deployed at maximum coverage.
+      If this doesn't hold, it won't be because we didn't try.
+  - characterName: Veronica
+    dialogueLine: This district has the highest littering rate in Cykarta-3. If your
+      infrastructure fails here, it fails where it matters most.
+  - characterName: Mr. CEO
+    dialogueLine: Understood. We won't hold back.
+  - characterName: Clovis
+    dialogueLine: (quietly) I just hope the tech is enough.
+  - characterName: Veronica
+    dialogueLine: It has to be.

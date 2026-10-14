@@ -34,7 +34,7 @@ public class DialogueBox : MonoBehaviour
     private void OnDisable()
     {
         GameEvents.OnDisplayDialogue.RemoveListener(UpdateDialogueUI);
-        GameEvents.OnHideDialogue.AddListener(HideDialogeuBox);
+        GameEvents.OnHideDialogue.RemoveListener(HideDialogeuBox);
 
         GameEvents.OnSkipDialogueLine.RemoveListener(SkipDialogueLine);
     }
@@ -52,6 +52,8 @@ public class DialogueBox : MonoBehaviour
     
     private void UpdateDialogueUI(string charName, string line)
     {
+        if (canvasGroup == null) canvasGroup = GetComponent<CanvasGroup>();
+        
         if (canvasGroup.alpha == 0)
         {
             canvasGroup.alpha = 1;
@@ -71,6 +73,8 @@ public class DialogueBox : MonoBehaviour
 
     private void HideDialogeuBox()
     {
+        if (canvasGroup == null) canvasGroup = GetComponent<CanvasGroup>();
+        
         canvasGroup.alpha = 0;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;

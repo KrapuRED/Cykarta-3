@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d9b1d2725f744893b380e958420b5, type: 3}
+  m_Name: "Scene 4 \u2014 After Central Commercial District (Strain Begins) DIalogueSO"
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  locationDialogue: 
+  dialogueLines:
+  - characterName: Veronica
+    dialogueLine: You held the district. Congratulations.
+  - characterName: Mr. CEO
+    dialogueLine: But you don't sound satisfied.
+  - characterName: Clovis
+    dialogueLine: "(quieter) She's right. We upgraded everything \u2014 capacity,
+      response time, coverage \u2014 and the violation rate barely moved. It's like
+      the technology and the behavior are racing each other, and habit's not slowing
+      down."
+  - characterName: Mr. CEO
+    dialogueLine: We still held the line.
+  - characterName: Clovis
+    dialogueLine: This time. Downtown's going to be worse. Higher density, higher
+      traffic, and from what I've seen in the violation data... the highest disregard
+      for the rules we've encountered yet.
+  - characterName: Veronica
+    dialogueLine: Then it's your final test. Metropolitan Downtown. If ArcoSteel's
+      system can hold there, it can hold anywhere in this city.
