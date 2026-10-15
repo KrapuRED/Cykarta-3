@@ -9,7 +9,6 @@ public class VisualScaleButton : VisualEffect
     [SerializeField] private Ease ease = Ease.OutBack;
 
     private Vector3 _originalScale;
-    private Tween _tween;
 
     private void Awake()
     {
@@ -19,23 +18,23 @@ public class VisualScaleButton : VisualEffect
 
     public override void PlayAnimation()
     {
-        _tween?.Kill();
-        _tween = target.DOScale(targetScale, duration).SetEase(ease);
+        Tween?.Kill();
+        Tween = target.DOScale(targetScale, duration).SetEase(ease);
     }
 
     public override void RevertAnimation()
     {
-        _tween?.Kill();
-        _tween = target.DOScale(_originalScale, duration).SetEase(ease);
+        Tween?.Kill();
+        Tween = target.DOScale(_originalScale, duration).SetEase(ease);
     }
 
     public override void StopAnimation()
     {
-        _tween?.Kill();
+        Tween?.Kill();
     }
 
     private void OnDestroy()
     {
-        _tween?.Kill();
+        Tween?.Kill();
     }
 }

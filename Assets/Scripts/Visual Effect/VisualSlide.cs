@@ -20,7 +20,6 @@ public class VisualSlide : VisualEffect
     [SerializeField] private bool ignoreTimeScale = false;
 
     [SerializeField] private float _originalPosition;
-    private Tween _tween;
     
     private void Awake()
     {
@@ -30,11 +29,11 @@ public class VisualSlide : VisualEffect
     
     public override void PlayAnimation()
     {
-        _tween?.Kill();
+        Tween?.Kill();
      
         SetCanvasGroup(visible: true);
 
-        _tween = SlideTo(slideOffset)
+        Tween = SlideTo(slideOffset)
             .SetEase(ease)
             .SetUpdate(ignoreTimeScale)
             .SetLink(gameObject);
@@ -42,8 +41,8 @@ public class VisualSlide : VisualEffect
 
     public override void RevertAnimation()
     {
-        _tween?.Kill();
-        _tween = SlideTo(_originalPosition)
+        Tween?.Kill();
+        Tween = SlideTo(_originalPosition)
             .SetEase(ease)
             .SetUpdate(ignoreTimeScale)
             .SetLink(gameObject)
@@ -53,7 +52,7 @@ public class VisualSlide : VisualEffect
 
     public override void StopAnimation()
     {
-        _tween?.Kill();
+        Tween?.Kill();
     }
     
     private void SetCanvasGroup(bool visible)

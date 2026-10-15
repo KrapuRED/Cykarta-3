@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class DialogueDataRunTime
@@ -33,6 +34,9 @@ public class DialogueManager : MonoBehaviour
     
     [Header("Sound Effect and ambient")]
     [SerializeField] private AudioClip ambientSound;
+    
+    [SerializeField] private UnityEvent visualEffectIn = new();
+    [SerializeField] private UnityEvent visualEffectOut = new();
     
     public bool IsDialogueRunning { get; private set; }
     public bool IsSkipDialogue { get; private set; }
@@ -134,6 +138,8 @@ public class DialogueManager : MonoBehaviour
         
         if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine);
         _dialogueCoroutine = StartCoroutine(WaitAndStarDialogue());
+        
+        visualEffectIn?.Invoke();
     }
 
     private void ContinueDialogue()
@@ -212,9 +218,10 @@ public class DialogueManager : MonoBehaviour
     private void OnDialogueFinished()
     {
         dialogueCharacterController.HideAllCharacters();
+        
+        visualEffectOut?.Invoke();
         GameEvents.OnHideDialogue.Invoke();
-        
-        
+
         if (_currentType == DialogueType.Before)
             TransitionManager.Instance.TransitionToScene($"Main_Level_{currentLevel}", "FadeOut");
         else

@@ -1,17 +1,22 @@
 using UnityEngine;
 using MoreMountains.Tools;
+using DG.Tweening;
 
 public class DefeatPanel : Panel
 {
     [Header("Sound Effect and ambient")]
     [SerializeField] private AudioClip openPanelSound; 
     
+    [SerializeField] private VisualEffect slideEffect;
+    [SerializeField] private VisualEffect fadeEffect;
+    
+    private bool _isOpen;
+    private Tween _tween;
+    
     public override void OpenPanel()
     {
-        canvasGroup.alpha = 1;
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.interactable = true;
-      
+        PlayAnimation();
+        
         GameEvents.OnDeselectTowerCard.Invoke();
       
         GridManager.Instance.ChangeGridMode(GridMode.None);
@@ -25,9 +30,7 @@ public class DefeatPanel : Panel
 
     public override void ClosePanel()
     {
-        canvasGroup.alpha = 0;
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.interactable = false;
+        PlayAnimation();
       
         SpawnerManager.Instance.Resume();
         EntityManager.Instance.Resume();
@@ -37,8 +40,32 @@ public class DefeatPanel : Panel
     {
         if (TransitionHelper == null)
             TransitionHelper = GetComponent<TransitionHelper>();
+
+        PlayAnimation();
         
         ObjectiveManager.Instance.SaveData();
         TransitionHelper.DoTransition();
+    }
+    
+    private void PlayAnimation()
+    {
+        if (_isOpen)
+        {
+            Debug.Log("Close Panel");
+            _tween?.Kill();
+            // Play FadeEffect after that play slideEffect
+            fadeEffect.RevertAnimation();
+            fadeEffect.Tween.OnComplete(() => slideEffect.RevertAnimation());
+        }
+        else
+        {
+            Debug.Log("Open Panel");
+            
+            _tween?.Kill();
+            // Play slideEffect after that play FadeEffect
+            slideEffect.PlayAnimation();
+            slideEffect.Tween.OnComplete(() => fadeEffect.PlayAnimation());
+        }
+        _isOpen = !_isOpen;
     }
 }
