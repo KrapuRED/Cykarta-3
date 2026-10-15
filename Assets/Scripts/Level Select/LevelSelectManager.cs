@@ -8,6 +8,7 @@ using MoreMountains.Tools;
 public class LevelSelectManager : MonoBehaviour
 {
     [SerializeField] private InputActionReference clickLevel;
+    [SerializeField] private InputActionReference mousePosRef;
 
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private Transform containerPos;
@@ -16,6 +17,8 @@ public class LevelSelectManager : MonoBehaviour
     [Header("Sound Effect and ambient")]
     [SerializeField] private AudioClip ambientSound;    
     [SerializeField] private float ambientSoundVolume;    
+    
+    private LevelSelect _currentHovered;
     
     private void Start()
     {
@@ -39,53 +42,63 @@ public class LevelSelectManager : MonoBehaviour
     private void OnEnable()
     {
         clickLevel.action.Enable();
+        mousePosRef.action.Enable();
+        
         clickLevel.action.performed += _ => OnClickLevel();
-        clickLevel.action.performed += _ => OnHoverInLevel();
+        mousePosRef.action.performed += _ => OnMouseMove();
     }
 
     private void OnDisable()
     {
         clickLevel.action.performed -= _ => OnClickLevel();
-        clickLevel.action.performed -= _ => OnHoverInLevel();
-        
+        mousePosRef.action.performed -= _ => OnMouseMove();
     }
 
-    private void OnHoverInLevel()
+    private LevelSelect GetLevelUnderMouse()
     {
-        if (TransitionManager.Instance.isTrasitioning) return;
-        
-        Vector2 mousePos = UtilTools.UtilsClass.GetMouseWorldPosition();
+        Vector2 mousePos = UtilsClass.GetMouseWorldPosition();
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-        
-        if (hit.collider != null)
+
+        return hit.collider != null ? hit.collider.GetComponent<LevelSelect>() : null;
+    }
+    
+    private void OnMouseMove()
+    {
+        if (TransitionManager.Instance.isTrasitioning)
         {
-            GameObject clickedObject = hit.collider.gameObject;
-            LevelSelect levelSelect = clickedObject.GetComponent<LevelSelect>();
-            
-            Debug.Log("Clicked on 2D Object: " + clickedObject.name);
-            levelSelect.OnLevelHoverIn();
+            ClearHover();
+            return;
         }
+
+        LevelSelect hovered = GetLevelUnderMouse();
+
+        // Still on the same level (or still on nothing), do nothing
+        if (hovered == _currentHovered || hovered?.LevelStatus == LevelStatus.Lock) return;
+
+        // Left the previous one
+        if (_currentHovered != null)
+            _currentHovered.OnLevelHoverOut();
+
+        _currentHovered = hovered;
+
+        // Entered a new one
+        if (_currentHovered != null)
+            _currentHovered.OnLevelHoverIn();
     }
     
     private void OnClickLevel()
     {
         if (TransitionManager.Instance.isTrasitioning) return;
-        
-        Vector2 mousePos = UtilTools.UtilsClass.GetMouseWorldPosition();
-        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-        
-        if (hit.collider != null)
-        {
-            GameObject clickedObject = hit.collider.gameObject;
-            LevelSelect levelSelect = clickedObject.GetComponent<LevelSelect>();
-            
-            Debug.Log("Clicked on 2D Object: " + clickedObject.name);
-            levelSelect.OnLevelSelected();
-        }
+
+        LevelSelect level = GetLevelUnderMouse();
+        if (level != null)
+            level.OnLevelSelected();
     }
     
-    private void OnHoverOutLevel()
+    private void ClearHover()
     {
-        
+        if (_currentHovered == null) return;
+        _currentHovered.OnLevelHoverOut();
+        _currentHovered = null;
     }
 }

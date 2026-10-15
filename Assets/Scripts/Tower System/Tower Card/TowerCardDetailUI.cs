@@ -11,8 +11,9 @@ public class TowerCardDetailUI : MonoBehaviour
     [SerializeField] private TMP_Text towerStatusDescriptionText;
     [SerializeField] private Image towerIcon;
 
-    [SerializeField] private CanvasGroup canvasGroup;
-
+    [SerializeField] private VisualEffect slideEffect;
+    
+    
     private void OnEnable()
     {
         GameEvents.OnShowTowerCardDetail.AddListener(SetTowerDetailUI);
@@ -32,15 +33,16 @@ public class TowerCardDetailUI : MonoBehaviour
         towerDescriptionText.text = towerData.towerDescription;
         towerIcon.sprite = towerData.towerIcon;
         
-        canvasGroup.alpha = 1.0f;
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.interactable = true;
+        slideEffect.PlayAnimation();
     }
 
     private void HideTowerDetailUI()
     {
-        canvasGroup.alpha = 0f;
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.interactable = false;
+        slideEffect.RevertAnimation();
+        
+        towerNameText.text        = string.Empty;
+        towerCostText.text        = string.Empty;
+        towerDescriptionText.text = string.Empty;
+        towerIcon.sprite          = null;
     }
 }

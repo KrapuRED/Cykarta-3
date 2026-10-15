@@ -56,7 +56,6 @@ public class TransitionManager : MonoBehaviour
 
         FadeMusic(loweredMusicVolume);
         yield return transition.TransitionIn();
-        //Reduce MMSoundManager Music
         
         do
         {
@@ -71,12 +70,11 @@ public class TransitionManager : MonoBehaviour
         yield return new WaitUntil(() => scene.isDone);
         
         FadeMusic(1f);
+        GameEvents.OnGameStart?.Invoke();
+        
         yield return transition.TransitionOut();
         
         isTrasitioning = false;
-        
-        GameEvents.OnGameStart?.Invoke();
-        
     }
 
     public void TransitionToStoryScene(int level, DialogueType dialogueType, string transitionName)
@@ -114,11 +112,9 @@ public class TransitionManager : MonoBehaviour
         
         FadeMusic(1f);
         yield return transition.TransitionOut();
-        
         isTrasitioning = false;
         
         yield return new WaitUntil(() => DialogueManager.Instance != null);
-
         GameEvents.OnStartDialogue.Invoke(level, dialogueType);
         
     }

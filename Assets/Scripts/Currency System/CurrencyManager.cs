@@ -13,6 +13,9 @@ public class CurrencyManager : MonoBehaviour
     [SerializeField] private AudioClip lossCurrencySound;
     [SerializeField] private float volumeCurrencySound;
     
+    [SerializeField] private VisualEffect slideEffect;
+    
+    
     public int CurrentCurrency { get; private set; }
     
     private void Awake()
@@ -29,6 +32,7 @@ public class CurrencyManager : MonoBehaviour
     private void Start()
     {
         ReceiveCurrency(startCurrency);
+        slideEffect.PlayAnimation();
     }
 
     public void ReceiveCurrency(int currency)

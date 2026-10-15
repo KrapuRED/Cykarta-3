@@ -7,6 +7,8 @@ public class LevelSelectUI : MonoBehaviour
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private TMP_Text levelDescText;
     [SerializeField] private Image backgroundImage;
+
+    [SerializeField] private VisualEffect slideEffect;
     
     private LevelStatus _levelStatus;
     private TransitionHelper _transitionHelper;
@@ -44,6 +46,13 @@ public class LevelSelectUI : MonoBehaviour
         _canvasGroup.alpha = 1;
         _canvasGroup.blocksRaycasts = true;
         _canvasGroup.interactable = true;
+        
+        slideEffect.PlayAnimation();
+    }
+
+    private void HideLevelSelectUI()
+    {
+        slideEffect.RevertAnimation();
     }
     
     private void Start()
@@ -55,6 +64,8 @@ public class LevelSelectUI : MonoBehaviour
     public void EnterLevel()
     {
         if (_levelStatus == LevelStatus.Lock) return;
+
+        HideLevelSelectUI();
         
         _transitionHelper.DoTransitionDirect(_sceneName);
     }
@@ -62,6 +73,8 @@ public class LevelSelectUI : MonoBehaviour
     public void EnterStory()
     {
         if (_levelStatus == LevelStatus.Lock) return;
+        
+        HideLevelSelectUI();
         
         _transitionHelper.DoTransitionDirectToStory(_level, DialogueType.Before);
     }

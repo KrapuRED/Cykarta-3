@@ -7,6 +7,8 @@ public class TowerCardHandler : MonoBehaviour
     [SerializeField] private TowerCardUI prefTowerCardUI;
     [SerializeField] private Transform containerTowerCard;
     
+    [SerializeField] private VisualEffect slideEffect;
+    
     private void Start()
     {
         foreach (TowerDataSO towerData in towers)
@@ -15,5 +17,7 @@ public class TowerCardHandler : MonoBehaviour
             cardUI.name = $"Tower Card UI - {towerData.towerName}";
             cardUI.SetTowerCardUI(towerData);
         }
+        
+        slideEffect.PlayAnimation();
     }
 }

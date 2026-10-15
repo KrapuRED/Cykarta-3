@@ -216,6 +216,15 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MousePos"",
+                    ""type"": ""Value"",
+                    ""id"": ""c0b6bf7d-18c8-4f52-bea8-6006f9fea843"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -227,6 +236,17 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""levelSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf495bd3-2465-4578-a4c5-0eb3af317bb3"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePos"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -247,6 +267,7 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         // Level-Scene
         m_LevelScene = asset.FindActionMap("Level-Scene", throwIfNotFound: true);
         m_LevelScene_levelSelect = m_LevelScene.FindAction("levelSelect", throwIfNotFound: true);
+        m_LevelScene_MousePos = m_LevelScene.FindAction("MousePos", throwIfNotFound: true);
     }
 
     ~@GamePlay()
@@ -555,6 +576,7 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_LevelScene;
     private List<ILevelSceneActions> m_LevelSceneActionsCallbackInterfaces = new List<ILevelSceneActions>();
     private readonly InputAction m_LevelScene_levelSelect;
+    private readonly InputAction m_LevelScene_MousePos;
     /// <summary>
     /// Provides access to input actions defined in input action map "Level-Scene".
     /// </summary>
@@ -570,6 +592,10 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "LevelScene/levelSelect".
         /// </summary>
         public InputAction @levelSelect => m_Wrapper.m_LevelScene_levelSelect;
+        /// <summary>
+        /// Provides access to the underlying input action "LevelScene/MousePos".
+        /// </summary>
+        public InputAction @MousePos => m_Wrapper.m_LevelScene_MousePos;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -599,6 +625,9 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
             @levelSelect.started += instance.OnLevelSelect;
             @levelSelect.performed += instance.OnLevelSelect;
             @levelSelect.canceled += instance.OnLevelSelect;
+            @MousePos.started += instance.OnMousePos;
+            @MousePos.performed += instance.OnMousePos;
+            @MousePos.canceled += instance.OnMousePos;
         }
 
         /// <summary>
@@ -613,6 +642,9 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
             @levelSelect.started -= instance.OnLevelSelect;
             @levelSelect.performed -= instance.OnLevelSelect;
             @levelSelect.canceled -= instance.OnLevelSelect;
+            @MousePos.started -= instance.OnMousePos;
+            @MousePos.performed -= instance.OnMousePos;
+            @MousePos.canceled -= instance.OnMousePos;
         }
 
         /// <summary>
@@ -711,5 +743,12 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLevelSelect(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MousePos" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMousePos(InputAction.CallbackContext context);
     }
 }

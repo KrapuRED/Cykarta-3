@@ -1607,7 +1607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960136002494526021, guid: 19430fd27e5261f4e89121f55ea5f151, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -416.14
+      value: -670
       objectReference: {fileID: 0}
     - target: {fileID: 2960136002494526021, guid: 19430fd27e5261f4e89121f55ea5f151, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1640,6 +1640,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2960136002494526021, guid: 19430fd27e5261f4e89121f55ea5f151, type: 3}
   m_PrefabInstance: {fileID: 710059937}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &710059940 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6734364775793095369, guid: 19430fd27e5261f4e89121f55ea5f151, type: 3}
+  m_PrefabInstance: {fileID: 710059937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e18d5aef533cf498d54715d0a4dbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisualSlide
 --- !u!114 &729934633 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4831832216854861509, guid: 42bdc20741021ec4fbdd9028dfc1ecf7, type: 3}
@@ -2315,7 +2326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004405072111792194, guid: 7476783c4be1a0b46a5c63d41f5372f4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 797
+      value: 1120
       objectReference: {fileID: 0}
     - target: {fileID: 5004405072111792194, guid: 7476783c4be1a0b46a5c63d41f5372f4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2338,6 +2349,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7476783c4be1a0b46a5c63d41f5372f4, type: 3}
+--- !u!114 &963625414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4052205491885136287, guid: 7476783c4be1a0b46a5c63d41f5372f4, type: 3}
+  m_PrefabInstance: {fileID: 963625413}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e18d5aef533cf498d54715d0a4dbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisualSlide
 --- !u!1 &1047580159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2917,7 +2939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422481866116219771, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -930
+      value: -1240
       objectReference: {fileID: 0}
     - target: {fileID: 1422481866116219771, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2937,7 +2959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1487495980429083628, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6185441811121964680, guid: 76106be2dd5119549bd7bb07b9bddda4, type: 3}
       propertyPath: m_Name
@@ -3561,9 +3583,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
   startCurrency: 500
-  gainCurrencySound: {fileID: 0}
-  lossCurrencySound: {fileID: 0}
-  volumeCurrencySound: 0
+  gainCurrencySound: {fileID: 8300000, guid: 349f8c4ebd288a94a882eff0286cc62d, type: 3}
+  lossCurrencySound: {fileID: 8300000, guid: b76c6352147121f45b9b5294de2d6640, type: 3}
+  volumeCurrencySound: 1
+  slideEffect: {fileID: 963625414}
 --- !u!1 &1455789839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4629,6 +4652,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9e58e1c45d9af9478f1eb2ace228ce9, type: 2}
   prefTowerCardUI: {fileID: 1130886805710819005, guid: cc3cf274917a1c64fbcb42c0fcfe0239, type: 3}
   containerTowerCard: {fileID: 710059938}
+  slideEffect: {fileID: 710059940}
 --- !u!1 &1846782802
 GameObject:
   m_ObjectHideFlags: 0
