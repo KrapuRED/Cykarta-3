@@ -151,9 +151,9 @@ RectTransform:
   - {fileID: 1420341144}
   m_Father: {fileID: 671370231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 265, y: -107.5}
   m_SizeDelta: {x: 530, y: 215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &281232701
@@ -331,6 +331,54 @@ Transform:
   - {fileID: 2036294239}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &616558085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616558086}
+  - component: {fileID: 616558087}
+  m_Layer: 0
+  m_Name: Visual Effect - Scale
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &616558086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616558085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1923578764}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &616558087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616558085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e658de37d13b94c8ee6e12b0ff2142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisualScaleButton
+  target: {fileID: 1051814067}
+  targetScale: {x: 1.2, y: 1.2, z: 1.2}
+  duration: 0.3
+  ease: 27
 --- !u!1 &671370230
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,9 +477,9 @@ RectTransform:
   - {fileID: 794645609}
   m_Father: {fileID: 671370231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 131.07, y: -257.5}
   m_SizeDelta: {x: 262.14, y: 49.1513}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &779188316
@@ -1714,6 +1762,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 477028759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1923578763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1923578764}
+  m_Layer: 0
+  m_Name: === Visual Effect ===
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1923578764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923578763}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 616558086}
+  m_Father: {fileID: 1051814067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1936244337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,13 +1985,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1972515383913977705, guid: 34b73953a212914438260e164d12b7d5, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 616558087}
     - target: {fileID: 5117100089929662244, guid: 34b73953a212914438260e164d12b7d5, type: 3}
       propertyPath: m_Name
       value: Level - 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 159266465750360360, guid: 34b73953a212914438260e164d12b7d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1923578764}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3371840135124474389, guid: 34b73953a212914438260e164d12b7d5, type: 3}
       insertIndex: -1

@@ -10,7 +10,7 @@ public class LevelSelect : MonoBehaviour
     
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private SpriteRenderer spriteRenderer;
-
+    [SerializeField] private VisualEffect effect;
     [SerializeField] private LevelStatus _levelStatus;
 
     private bool IsUnlocked()
@@ -53,5 +53,15 @@ public class LevelSelect : MonoBehaviour
         
         //TransitionManager.Instance.TransitionToScene(scene, "FadeOut");
         GameEvents.OnSelectingLevel.Invoke(level, levelName,scene, _levelStatus);
+    }
+
+    public void OnLevelHoverIn()
+    {
+        effect.PlayAnimation();
+    }
+    
+    public void OnLevelHoverOut()
+    {
+        effect.GetComponent<Renderer>();
     }
 }

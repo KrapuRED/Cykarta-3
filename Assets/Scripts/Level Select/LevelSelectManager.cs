@@ -40,11 +40,31 @@ public class LevelSelectManager : MonoBehaviour
     {
         clickLevel.action.Enable();
         clickLevel.action.performed += _ => OnClickLevel();
+        clickLevel.action.performed += _ => OnHoverInLevel();
     }
 
     private void OnDisable()
     {
         clickLevel.action.performed -= _ => OnClickLevel();
+        clickLevel.action.performed -= _ => OnHoverInLevel();
+        
+    }
+
+    private void OnHoverInLevel()
+    {
+        if (TransitionManager.Instance.isTrasitioning) return;
+        
+        Vector2 mousePos = UtilTools.UtilsClass.GetMouseWorldPosition();
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+        
+        if (hit.collider != null)
+        {
+            GameObject clickedObject = hit.collider.gameObject;
+            LevelSelect levelSelect = clickedObject.GetComponent<LevelSelect>();
+            
+            Debug.Log("Clicked on 2D Object: " + clickedObject.name);
+            levelSelect.OnLevelHoverIn();
+        }
     }
     
     private void OnClickLevel()
@@ -62,5 +82,10 @@ public class LevelSelectManager : MonoBehaviour
             Debug.Log("Clicked on 2D Object: " + clickedObject.name);
             levelSelect.OnLevelSelected();
         }
+    }
+    
+    private void OnHoverOutLevel()
+    {
+        
     }
 }
