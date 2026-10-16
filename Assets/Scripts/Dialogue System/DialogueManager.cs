@@ -136,6 +136,8 @@ public class DialogueManager : MonoBehaviour
         _currentType = type;
         currentLevel = level;
         
+        Debug.Log($"[{name}] Current Level : {level} Current Type : {_currentType}");
+        
         if (_dialogueCoroutine != null) StopCoroutine(_dialogueCoroutine);
         _dialogueCoroutine = StartCoroutine(WaitAndStarDialogue());
         

@@ -42,7 +42,12 @@ public class LevelSelect : MonoBehaviour
     public void InitializeLevelSelect()
     {
         levelText.text = $"Level {level}";
-        _levelStatus = IsUnlocked() ? LevelProgress.Get(level) : LevelStatus.Lock;
+        
+        bool unlocked = IsUnlocked();
+        LevelStatus raw = LevelProgress.Get(level);
+        Debug.Log($"[{name}] level={level} prevLevel={prevLevel} starter={starterLevel} unlocked={unlocked} raw={raw}");
+
+        _levelStatus = unlocked ? raw : LevelStatus.Lock;
 
         if (_levelStatus == LevelStatus.Success)
             frameProgress.sprite = completedFrameProgress;

@@ -44,7 +44,7 @@ public class DefeatPanel : Panel
         PlayAnimation();
         
         ObjectiveManager.Instance.SaveData();
-        TransitionHelper.DoTransition();
+        TransitionHelper.DoTransitionDirectToStory(ObjectiveManager.Instance.LevelIndex, DialogueType.After);
     }
     
     private void PlayAnimation()

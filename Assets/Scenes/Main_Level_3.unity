@@ -1992,7 +1992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   levelIndex: 3
-  objectiveHealthPoints: 1000
+  objectiveHealthPoints: 1
   waveDataList:
   - waveDataName: Wave 1
     waveDelay: 15
@@ -2014,7 +2014,7 @@ MonoBehaviour:
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
     - spawnerName: Pedestrian 2
-      spawnerIrresponsible: {fileID: 1376950317}
+      spawnerIrresponsible: {fileID: 630482355}
       maxSpawnRate: 2
       minSpawnRate: 0.7
       spawnerData:
@@ -2078,7 +2078,7 @@ MonoBehaviour:
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
     - spawnerName: Pedestrian 2
-      spawnerIrresponsible: {fileID: 1376950317}
+      spawnerIrresponsible: {fileID: 630482355}
       maxSpawnRate: 2
       minSpawnRate: 0.7
       spawnerData:
@@ -2142,7 +2142,7 @@ MonoBehaviour:
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
     - spawnerName: Pedestrian 2
-      spawnerIrresponsible: {fileID: 1376950317}
+      spawnerIrresponsible: {fileID: 630482355}
       maxSpawnRate: 2
       minSpawnRate: 0.7
       spawnerData:
@@ -2206,7 +2206,7 @@ MonoBehaviour:
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
     - spawnerName: Pedestrian 2
-      spawnerIrresponsible: {fileID: 1376950317}
+      spawnerIrresponsible: {fileID: 630482355}
       maxSpawnRate: 2
       minSpawnRate: 0.7
       spawnerData:
@@ -2270,7 +2270,7 @@ MonoBehaviour:
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
     - spawnerName: Pedestrian 2
-      spawnerIrresponsible: {fileID: 1376950317}
+      spawnerIrresponsible: {fileID: 630482355}
       maxSpawnRate: 2
       minSpawnRate: 0.7
       spawnerData:
@@ -3630,10 +3630,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: == Panel - Defeat ==
       objectReference: {fileID: 0}
-    - target: {fileID: 2827150091445476693, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
-      propertyPath: sceneName
-      value: Main_Story
-      objectReference: {fileID: 0}
     - target: {fileID: 4083526518567273499, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3663,22 +3659,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4999309381749048216, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5847648223118764680, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5847648223118764680, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5847648223118764680, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5847648223118764680, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

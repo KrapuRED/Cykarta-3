@@ -25,7 +25,7 @@ public static class LevelProgress
 
     public static void ResetAll(int totalLevels)
     {
-        for (int i = 0; i < totalLevels; i++)
+        for (int i = 1; i <= totalLevels; i++)
             PlayerPrefs.DeleteKey(Key(i));
         PlayerPrefs.Save();
     }

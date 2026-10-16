@@ -2009,7 +2009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   levelIndex: 2
-  objectiveHealthPoints: 200
+  objectiveHealthPoints: 1000
   waveDataList:
   - waveDataName: Wave 1
     waveDelay: 15

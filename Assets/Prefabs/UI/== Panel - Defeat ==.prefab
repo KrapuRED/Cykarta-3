@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e95465142ad3504197866ba9f367ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionHelper
-  sceneName: Main_SelectLevel
+  sceneName: Main_Story
   transitionName: FadeOut
 --- !u!1 &2768305337598221206
 GameObject:
@@ -729,6 +729,18 @@ PrefabInstance:
     - target: {fileID: 8547748505660020303, guid: 76c2b799093d89944914e92dcb8976bf, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900558630453764931, guid: 76c2b799093d89944914e92dcb8976bf, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9152683036115520935}
+    - target: {fileID: 8900558630453764931, guid: 76c2b799093d89944914e92dcb8976bf, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900558630453764931, guid: 76c2b799093d89944914e92dcb8976bf, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DefeatPanel, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
