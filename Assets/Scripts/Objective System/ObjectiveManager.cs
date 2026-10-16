@@ -19,16 +19,18 @@ public class ObjectiveManager : MonoBehaviour
     
     [Header("Sound Effect and ambient")]
     [SerializeField] private AudioClip ambientSound;
-    [SerializeField] private AudioClip bgmSound;
-    [SerializeField] private AudioClip objectiveHurtSound;
     [SerializeField] private float volumeAmbientSound;
+    [SerializeField] private AudioClip bgmSound;
+    [SerializeField] private float volumeBGMSound;
+    [SerializeField] private AudioClip objectiveHurtSound;
     
     public int CurrentObjectiveHealthPoints { get; private set; }
     public int LevelIndex => levelIndex;
     private int _waveIndex = -1;
     private int _maxEnemyCounter;
     private int _currentEnemyCounter;
-    private int _soundID;
+    private int _soundBgmID;
+    private int _soundAmbientID;
     
     [SerializeField] private bool startLevel;
     
@@ -40,7 +42,8 @@ public class ObjectiveManager : MonoBehaviour
             return;
         }
         
-        _soundID = GetInstanceID();
+        _soundBgmID = GetInstanceID();
+        _soundAmbientID = _soundBgmID + 1;
         
         Instance = this;
     }
@@ -63,6 +66,8 @@ public class ObjectiveManager : MonoBehaviour
 
     private void Start()
     {
+        StartAmbient();
+        
         if (startLevel)
             StartLevel();
     }
@@ -78,7 +83,6 @@ public class ObjectiveManager : MonoBehaviour
             currentProtectionLevel = objectiveHealthPoints
         });
         
-        StartAmbient();
         NextWave();
     }
 
@@ -198,19 +202,31 @@ public class ObjectiveManager : MonoBehaviour
     private void StartAmbient()
     {
         MMSoundManagerSoundPlayEvent.Trigger(
+            bgmSound,
+            MMSoundManager.MMSoundManagerTracks.Music,
+            transform.position,
+            loop: true,
+            volume: volumeBGMSound,
+            ID: _soundBgmID);
+        
+        MMSoundManagerSoundPlayEvent.Trigger(
             ambientSound,
             MMSoundManager.MMSoundManagerTracks.Music,
             transform.position,
             loop: true,
             volume: volumeAmbientSound,
-            ID: _soundID);
+            ID: _soundAmbientID);
     }
 
     private void StopAmbient()
     {
         MMSoundManagerSoundControlEvent.Trigger(
             MMSoundManagerSoundControlEventTypes.Stop,
-            _soundID);
+            _soundBgmID);
+        
+        MMSoundManagerSoundControlEvent.Trigger(
+            MMSoundManagerSoundControlEventTypes.Stop,
+            _soundAmbientID);
     }
 
     #endregion

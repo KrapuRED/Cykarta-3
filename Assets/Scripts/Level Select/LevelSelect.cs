@@ -8,12 +8,22 @@ public class LevelSelect : MonoBehaviour
     [SerializeField] private int prevLevel;
     [SerializeField] private string sceneName;
     [SerializeField] private bool starterLevel = false;
+    [SerializeField] private string levelName;
     
+    [Header("Visual")]
     [SerializeField] private TMP_Text levelText;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer frameProgress;
+    [SerializeField] private SpriteRenderer iconProgress;
+    [SerializeField] private Sprite defaultFrameProgress;
+    [SerializeField] private Sprite completedFrameProgress;
+    [SerializeField] private Sprite defaultIconProgress;
+    [SerializeField] private Sprite lockIconProgress;
+    [SerializeField] private Sprite unlockIconProgress;
+    [SerializeField] private Sprite completedIconProgress;
     [SerializeField] private VisualEffect effect;
-    [SerializeField] private LevelStatus _levelStatus;
+    private LevelStatus _levelStatus;
 
+    [Header("Sounds")]
     [SerializeField] private AudioClip hoverInSound;
     [SerializeField] private AudioClip clickSound;
     [SerializeField] private AudioClip hoverOutSound;
@@ -32,23 +42,24 @@ public class LevelSelect : MonoBehaviour
     public void InitializeLevelSelect()
     {
         levelText.text = $"Level {level}";
-        
         _levelStatus = IsUnlocked() ? LevelProgress.Get(level) : LevelStatus.Lock;
 
-        Color c = _levelStatus switch
+        if (_levelStatus == LevelStatus.Success)
+            frameProgress.sprite = completedFrameProgress;
+        else
+            frameProgress.sprite = defaultFrameProgress;
+        
+        Sprite iconProgressSprite = _levelStatus switch
         {
-            LevelStatus.Success     => Color.green,
-            LevelStatus.Failed      => Color.red,
-            LevelStatus.NotPlayed   => Color.yellow,
-            LevelStatus.Lock        => Color.darkSlateGray,
-            _                       => Color.white
+            LevelStatus.Success     => completedIconProgress,
+            LevelStatus.Failed      => unlockIconProgress,
+            LevelStatus.NotPlayed   => unlockIconProgress,
+            LevelStatus.Lock        => lockIconProgress,
+            _                       => defaultIconProgress
         };
         
-        if (spriteRenderer == null)
-            spriteRenderer = GetComponent<SpriteRenderer>();
-        
         Debug.Log($"LevelSelect {name} Level Status {_levelStatus}");
-        spriteRenderer.color = c;
+        iconProgress.sprite = iconProgressSprite;
     }
     
     public void OnLevelSelected()
@@ -56,7 +67,6 @@ public class LevelSelect : MonoBehaviour
         if (_levelStatus == LevelStatus.Lock) return;
         
         Debug.Log($"Level Select {name}");
-        string levelName = $"Level {level}"; 
         string scene = $"{sceneName}_{level}";
         
         //TransitionManager.Instance.TransitionToScene(scene, "FadeOut");

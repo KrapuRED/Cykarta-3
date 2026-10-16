@@ -1581,10 +1581,11 @@ MonoBehaviour:
   enemyCounter: {fileID: 1036461780}
   proctectionLevel: {fileID: 84161055}
   waveCounter: {fileID: 1516502957}
-  ambientSound: {fileID: 8300000, guid: 9402a721be048f74592af9bc2c8e3899, type: 3}
-  bgmSound: {fileID: 0}
-  objectiveHurtSound: {fileID: 8300000, guid: a0e4edf9c843bfe4aa91424bbac5a56b, type: 3}
+  ambientSound: {fileID: 8300000, guid: a262e18649c006f4996cd5b1c71248dd, type: 3}
   volumeAmbientSound: 0.3
+  bgmSound: {fileID: 8300000, guid: 9402a721be048f74592af9bc2c8e3899, type: 3}
+  volumeBGMSound: 0.5
+  objectiveHurtSound: {fileID: 8300000, guid: a0e4edf9c843bfe4aa91424bbac5a56b, type: 3}
   startLevel: 0
 --- !u!224 &966849483 stripped
 RectTransform:
@@ -4881,19 +4882,19 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5847648223118764680, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+    - target: {fileID: 4999309381749048216, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5847648223118764680, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+    - target: {fileID: 4999309381749048216, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5847648223118764680, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+    - target: {fileID: 4999309381749048216, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5847648223118764680, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+    - target: {fileID: 4999309381749048216, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

@@ -31,7 +31,9 @@ public class LevelSelectUI : MonoBehaviour
     {
         _level =  level;
         _levelStatus = levelStatus;
-        levelText.text = levelName;
+        
+        levelText.text = $"Level {level}";
+        levelDescText.text = levelName;
         _sceneName = sceneName;
 
         if (_levelStatus != LevelStatus.Lock)
