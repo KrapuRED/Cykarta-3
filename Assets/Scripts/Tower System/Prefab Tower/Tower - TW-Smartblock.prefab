@@ -728,8 +728,13 @@ MonoBehaviour:
   detectionInterval: 0
   maxDetected: 16
   detectionWithoutInterval: 0
+  scanSound: {fileID: 0}
+  scanSoundInterval: 1
+  volumeScanSound: 0
+  onlyPlayWhenTargetFound: 0
+  _scanSoundTimer: 0
   widthScanArea: 0.5
-  heightScanArea: 1.2
+  heightScanArea: 3
   scannerPositon: {fileID: 6602691128675481914}
 --- !u!1001 &7941433835962853173
 PrefabInstance:

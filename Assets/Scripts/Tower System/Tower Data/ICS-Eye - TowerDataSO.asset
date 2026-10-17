@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: ICS-Eye - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
   towerName: ICS-Eye
-  towerCost: 100
-  towerDescription: 
+  towerCost: 620
+  towerDescription: Smart Surveillance Infrastructure Powered By Ai to Detect and
+    Identify law breaking act before it happen and warning system to prevent irresponsible
+    act
   prefabObjectTower: {fileID: -1200755834875297617, guid: ca057f47ba9a48147828556618cf3d04, type: 3}
   towerIcon: {fileID: -3307369665281122674, guid: 48f73a6e58e45f5429c5687dc741dbb2, type: 3}
   baseStatuses:
@@ -22,20 +24,4 @@ MonoBehaviour:
     status: 0
     valueStatus: 4
     isLowerValueBetter: 0
-  upgrades:
-  - upgradeName: Upgrade level 1 -> 2
-    upgradeRequirement: 1
-    upgradeCost: 150
-    upgradeStatuses:
-    - towerStatus: Upgrade Tower Range
-      status: 0
-      valueStatus: 2
-      isLowerValueBetter: 0
-  - upgradeName: Upgrade level 2 -> 3
-    upgradeRequirement: 2
-    upgradeCost: 500
-    upgradeStatuses:
-    - towerStatus: Upgrade Tower Range
-      status: 0
-      valueStatus: 2
-      isLowerValueBetter: 0
+  upgrades: []

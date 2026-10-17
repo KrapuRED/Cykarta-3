@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
   towerName: FT-Catcher
   towerCost: 100
-  towerDescription: 
+  towerDescription: Automatic Water body trash Collector Infrastructure. Design to
+    Effortlessly Handling Area of waste on Water
   prefabObjectTower: {fileID: 3821810546088435452, guid: f23033bc80d02254ebc6d8717292e5ab, type: 3}
   towerIcon: {fileID: -4536756093323555886, guid: fc53131da076557498b09cdf420df331, type: 3}
   baseStatuses:
@@ -36,8 +37,28 @@ MonoBehaviour:
     isLowerValueBetter: 0
   upgrades:
   - upgradeName: Upgrade level 1 -> 2
-    upgradeRequirement: 0
-    upgradeCost: 0
+    upgradeRequirement: 1
+    upgradeCost: 90
+    upgradeStatuses:
+    - towerStatus: Max Capacity
+      status: 1
+      valueStatus: 2
+      isLowerValueBetter: 0
+    - towerStatus: Processing Speed
+      status: 2
+      valueStatus: 0
+      isLowerValueBetter: 1
+    - towerStatus: Attack Speed
+      status: 3
+      valueStatus: -2
+      isLowerValueBetter: 1
+    - towerStatus: Range
+      status: 0
+      valueStatus: 0
+      isLowerValueBetter: 0
+  - upgradeName: Upgrade level 2 -> 3
+    upgradeRequirement: 2
+    upgradeCost: 210
     upgradeStatuses:
     - towerStatus: Max Capacity
       status: 1
@@ -49,7 +70,7 @@ MonoBehaviour:
       isLowerValueBetter: 1
     - towerStatus: Attack Speed
       status: 3
-      valueStatus: -2
+      valueStatus: -1
       isLowerValueBetter: 1
     - towerStatus: Range
       status: 0

@@ -50,6 +50,7 @@ public class SpawnerTrash : Spawner
    [SerializeField] private Transform endWaterPath;
    [SerializeField] private float arcHeight = 1.5f;
    [SerializeField] private List<TrashSpawnData> trashDatas = new();
+   [SerializeField] private float waterCurrent;
    
    private void Awake()
    {
@@ -85,6 +86,6 @@ public class SpawnerTrash : Spawner
       var entityData = EntityManager.Instance.GetEntityRunTimeData(trashData.spawnData.displayName, spawnerID, null,entityComponent);
       
       if (newTrash.TryGetComponent<Trash>(out var trash))
-         trash.ThrowTrash(entityData, endWaterPath, arcHeight , trashData.throwDuration, spawnPosition, landingPosition);
+         trash.ThrowTrash(entityData, waterCurrent, endWaterPath, arcHeight , trashData.throwDuration, spawnPosition, landingPosition);
    }
 }

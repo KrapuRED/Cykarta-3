@@ -72,7 +72,6 @@ public class TowerScanArea : MonoBehaviour
         _scanSoundTimer += deltaTime;
         if (_scanSoundTimer < scanSoundInterval)
         {
-            
             return;
         }
 

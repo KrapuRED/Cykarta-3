@@ -26,11 +26,24 @@ public class TowerCardDetailUI : MonoBehaviour
         GameEvents.OnHideTowerCardDetail.RemoveListener(HideTowerDetailUI);
     }
 
+    private string BuildCurrentStatusText(TowerDataSO towerData)
+    {
+        string bs = string.Empty;
+        
+        foreach (var s in  towerData.baseStatuses)
+        {
+            bs += $"{s.status} : {s.valueStatus}\n";
+        }
+        
+        return bs;
+    }
+    
     private void SetTowerDetailUI(TowerDataSO towerData)
     {
         towerNameText.text        = towerData.towerName;
         towerCostText.text        = $"$ {towerData.towerCost}";
         towerDescriptionText.text = towerData.towerDescription;
+        towerStatusDescriptionText.text = BuildCurrentStatusText(towerData);
         towerIcon.sprite = towerData.towerIcon;
         
         slideEffect.PlayAnimation();

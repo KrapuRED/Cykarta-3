@@ -10,6 +10,7 @@ public class TowerCardUpgradeUI : MonoBehaviour
     [SerializeField] private TMP_Text towerCost;
     [SerializeField] private Image towerIcon;
     [SerializeField] private TowerPreviewUpgradeUI towerPreviewUpgradeUI;
+    [SerializeField] private GameObject buttonUpgrade;
     
     [SerializeField] private CanvasGroup canvasGroup;
     
@@ -52,7 +53,14 @@ public class TowerCardUpgradeUI : MonoBehaviour
         towerIcon.sprite = towerData.TowerData.towerIcon;
         
         if (_upgradeTowerData != null)
-                    HandleCostText(_upgradeTowerData.upgradeCost);
+        {
+            buttonUpgrade.SetActive(true);
+            HandleCostText(_upgradeTowerData.upgradeCost);
+        }
+        else
+        {
+            buttonUpgrade.SetActive(false);
+        }
         
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;

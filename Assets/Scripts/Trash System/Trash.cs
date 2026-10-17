@@ -108,7 +108,7 @@ public class Trash : Entity
         }
     }
     
-    private IEnumerator ThrowRoutine(EntityRunTimeData entityRunTimeData, Transform endWaterPath, float arcHeight ,float duration, Vector3 from, Vector3 to)
+    private IEnumerator ThrowRoutine(EntityRunTimeData entityRunTimeData, float currentSpeed, Transform endWaterPath, float arcHeight ,float duration, Vector3 from, Vector3 to)
     {
         TrashData.trashState = TrashState.Airborne;
       
@@ -127,12 +127,12 @@ public class Trash : Entity
       
         transform.position = to;
         MMSoundManagerSoundPlayEvent.Trigger(waterSplash, MMSoundManager.MMSoundManagerTracks.Music, transform.position, volume:volumeWaterSplash);
-        InitializeTrash(endWaterPath, 2f,entityRunTimeData );
+        InitializeTrash(endWaterPath, currentSpeed,entityRunTimeData );
     }
 
-    public void ThrowTrash(EntityRunTimeData entityRunTimeData, Transform endWaterPath, float arcHeight ,float duration, Vector3 from, Vector3 to)
+    public void ThrowTrash(EntityRunTimeData entityRunTimeData, float currentSpeed, Transform endWaterPath, float arcHeight ,float duration, Vector3 from, Vector3 to)
     {
-        ThrowCoroutine = StartCoroutine(ThrowRoutine(entityRunTimeData, endWaterPath, arcHeight, duration, from, to));
+        ThrowCoroutine = StartCoroutine(ThrowRoutine(entityRunTimeData,currentSpeed ,endWaterPath, arcHeight, duration, from, to));
     }
     
     public void StopThrow()

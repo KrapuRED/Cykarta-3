@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   levelIndex: 1
-  objectiveHealthPoints: 1
+  objectiveHealthPoints: 500
   waveDataList:
   - waveDataName: Wave 1
     waveDelay: 5
@@ -1451,17 +1451,141 @@ MonoBehaviour:
       minSpawnRate: 1
       spawnerData:
       - spawnerDataName: 'Common Pederstrian '
-        maxSpawnCount: 1
+        maxSpawnCount: 5
         currentSpawnCount: 0
         isReachMaxSpawnCount: 0
         spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 2
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Pedestrian 2
+      spawnerIrresponsible: {fileID: 630482355}
+      maxSpawnRate: 5
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 6
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 1
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Vehicle
+      spawnerIrresponsible: {fileID: 1398889233}
+      maxSpawnRate: 5
+      minSpawnRate: 2
+      spawnerData:
+      - spawnerDataName: Motor rider
+        maxSpawnCount: 1
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
+  - waveDataName: Wave 2
+    waveDelay: 10
+    waveReward: 150
+    waveSpawnerData:
+    - spawnerName: Pedestrian 1
+      spawnerIrresponsible: {fileID: 1376950317}
+      maxSpawnRate: 5
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 7
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 2
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Pedestrian 2
+      spawnerIrresponsible: {fileID: 630482355}
+      maxSpawnRate: 5
+      minSpawnRate: 2
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 9
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 1
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Vehicle
+      spawnerIrresponsible: {fileID: 1398889233}
+      maxSpawnRate: 7
+      minSpawnRate: 3
+      spawnerData:
+      - spawnerDataName: Motor rider
+        maxSpawnCount: 2
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
+  - waveDataName: Wave 3
+    waveDelay: 10
+    waveReward: 150
+    waveSpawnerData:
+    - spawnerName: Pedestrian 1
+      spawnerIrresponsible: {fileID: 1376950317}
+      maxSpawnRate: 5
+      minSpawnRate: 1
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 7
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 2
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Pedestrian 2
+      spawnerIrresponsible: {fileID: 630482355}
+      maxSpawnRate: 5
+      minSpawnRate: 2
+      spawnerData:
+      - spawnerDataName: 'Common Pederstrian '
+        maxSpawnCount: 9
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 9efcdd9c00fe98d49b8edbdb6bc46dc4, type: 2}
+      - spawnerDataName: 'Delinqunet Pederstrian '
+        maxSpawnCount: 1
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 4a3260fc7803c5142902b8138ecfa681, type: 2}
+    - spawnerName: Vehicle
+      spawnerIrresponsible: {fileID: 1398889233}
+      maxSpawnRate: 7
+      minSpawnRate: 3
+      spawnerData:
+      - spawnerDataName: Motor rider
+        maxSpawnCount: 2
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: dbdfde368c14c964196225ce1864fe66, type: 2}
+      - spawnerDataName: Pick Up
+        maxSpawnCount: 1
+        currentSpawnCount: 0
+        isReachMaxSpawnCount: 0
+        spawnData: {fileID: 11400000, guid: 2d2c7d6bb80ade44690177038cc1c03b, type: 2}
   enemyCounter: {fileID: 1036461780}
   proctectionLevel: {fileID: 84161055}
   waveCounter: {fileID: 1516502957}
   ambientSound: {fileID: 8300000, guid: 9402a721be048f74592af9bc2c8e3899, type: 3}
-  bgmSound: {fileID: 0}
-  objectiveHurtSound: {fileID: 8300000, guid: a0e4edf9c843bfe4aa91424bbac5a56b, type: 3}
   volumeAmbientSound: 0.3
+  bgmSound: {fileID: 0}
+  volumeBGMSound: 0
+  objectiveHurtSound: {fileID: 8300000, guid: a0e4edf9c843bfe4aa91424bbac5a56b, type: 3}
   startLevel: 1
 --- !u!224 &966849483 stripped
 RectTransform:
@@ -2471,7 +2595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe97aecead3adf4f879adcdd80ddd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
-  startCurrency: 500
+  startCurrency: 2500
+  passiveEarningCurrency: 10
+  earningInterval: 10
   gainCurrencySound: {fileID: 8300000, guid: 349f8c4ebd288a94a882eff0286cc62d, type: 3}
   lossCurrencySound: {fileID: 8300000, guid: b76c6352147121f45b9b5294de2d6640, type: 3}
   volumeCurrencySound: 0.2
@@ -3280,6 +3406,7 @@ MonoBehaviour:
     trashType: 2
     throwDuration: 1
     spawnData: {fileID: 11400000, guid: 07f81244a0645b749872fd98ec6b086d, type: 2}
+  waterCurrent: 0.4
 --- !u!1 &1807491741
 GameObject:
   m_ObjectHideFlags: 0
@@ -4263,89 +4390,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 792635269}
     m_Modifications:
-    - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 884962457466737006, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1495696381198243997, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2958869710109817549, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_Name
       value: == Tower Card Upgrade ==
-      objectReference: {fileID: 0}
-    - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4569004979233013355, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441725829857645053, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7260754506467513933, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7977879711324300520, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_Pivot.x
@@ -4425,22 +4472,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7977879711324300520, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8911677379545471925, guid: c29130cfc3234bf429947eeeb7cbc5a7, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4725,6 +4756,38 @@ PrefabInstance:
     - target: {fileID: 1463368222560208537, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
       propertyPath: m_Name
       value: == Panel - Defeat ==
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083526518567273499, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083526518567273499, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083526518567273499, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083526518567273499, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999309381749048216, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999309381749048216, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999309381749048216, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999309381749048216, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7336895293296265461, guid: 5f402ae5fc8d9f844910f8b5316750f4, type: 3}
       propertyPath: m_Pivot.x

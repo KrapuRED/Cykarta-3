@@ -7,6 +7,9 @@ public class CurrencyManager : MonoBehaviour
     public static CurrencyManager Instance { get; private set; }
 
     [SerializeField] private int startCurrency;
+    [SerializeField] private int passiveEarningCurrency;
+    [SerializeField] protected float earningInterval = 1f;
+    private  float _earningIntervalTimer;
     
     [Header("Sound Effect and ambient")]
     [SerializeField] private AudioClip gainCurrencySound;  
@@ -28,11 +31,30 @@ public class CurrencyManager : MonoBehaviour
 
         Instance = this;
     }
-
+    
     private void Start()
     {
         ReceiveCurrency(startCurrency);
         slideEffect.PlayAnimation();
+    }
+
+    private void Update()
+    {
+        PassiveEarning(Time.deltaTime);
+    }
+
+    private void PassiveEarning(float deltaTime)
+    {
+        if (earningInterval <= 0f) return;
+  
+        _earningIntervalTimer += deltaTime;
+        if (_earningIntervalTimer < earningInterval)
+        {
+            return;
+        }
+
+        _earningIntervalTimer -= earningInterval;
+        ReceiveCurrency(passiveEarningCurrency);
     }
 
     public void ReceiveCurrency(int currency)

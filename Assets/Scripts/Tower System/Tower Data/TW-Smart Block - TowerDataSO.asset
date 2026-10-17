@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: TW-Smart Block - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
   towerName: 'TW-Smart Block '
-  towerCost: 125
-  towerDescription: 
+  towerCost: 70
+  towerDescription: 'Smart Trash Blocker Infrastructure. Design to long lasting and
+    block flowing trash without getting broke by over capacity '
   prefabObjectTower: {fileID: 1951802521689120775, guid: ac31c73bc75380448844d898e2b2f10f, type: 3}
   towerIcon: {fileID: 4958043508142665749, guid: a3c0a137ac7359048804361141cb9c61, type: 3}
   baseStatuses:
@@ -29,7 +30,7 @@ MonoBehaviour:
   upgrades:
   - upgradeName: Upgrade level 1 -> 2
     upgradeRequirement: 1
-    upgradeCost: 100
+    upgradeCost: 160
     upgradeStatuses:
     - towerStatus: Range
       status: 0
@@ -37,5 +38,17 @@ MonoBehaviour:
       isLowerValueBetter: 0
     - towerStatus: Max Capacity
       status: 1
-      valueStatus: 6
+      valueStatus: 3
+      isLowerValueBetter: 0
+  - upgradeName: Upgrade level 2 -> 3
+    upgradeRequirement: 1
+    upgradeCost: 450
+    upgradeStatuses:
+    - towerStatus: Range
+      status: 0
+      valueStatus: 0
+      isLowerValueBetter: 0
+    - towerStatus: Max Capacity
+      status: 1
+      valueStatus: 14
       isLowerValueBetter: 0

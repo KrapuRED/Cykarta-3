@@ -2009,7 +2009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   levelIndex: 2
-  objectiveHealthPoints: 1000
+  objectiveHealthPoints: 5
   waveDataList:
   - waveDataName: Wave 1
     waveDelay: 15
@@ -3595,7 +3595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe97aecead3adf4f879adcdd80ddd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
-  startCurrency: 500
+  startCurrency: 410
+  passiveEarningCurrency: 3
+  earningInterval: 1
   gainCurrencySound: {fileID: 8300000, guid: 349f8c4ebd288a94a882eff0286cc62d, type: 3}
   lossCurrencySound: {fileID: 8300000, guid: b76c6352147121f45b9b5294de2d6640, type: 3}
   volumeCurrencySound: 1
@@ -4597,6 +4599,7 @@ MonoBehaviour:
     trashType: 2
     throwDuration: 1
     spawnData: {fileID: 11400000, guid: 07f81244a0645b749872fd98ec6b086d, type: 2}
+  waterCurrent: 1
 --- !u!1 &1807491741
 GameObject:
   m_ObjectHideFlags: 0
