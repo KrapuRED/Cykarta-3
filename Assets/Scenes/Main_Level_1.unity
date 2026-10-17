@@ -3485,8 +3485,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerCardHandler
   towers:
-  - {fileID: 11400000, guid: 0c47a43d57352dd4ba40f45e98d93f7b, type: 2}
-  - {fileID: 11400000, guid: f4a56f8b33917e647a2c8bb0872883f5, type: 2}
   - {fileID: 11400000, guid: 22d6a5ff17874654e8dad81b79541bc4, type: 2}
   - {fileID: 11400000, guid: c9e58e1c45d9af9478f1eb2ace228ce9, type: 2}
   prefTowerCardUI: {fileID: 1130886805710819005, guid: cc3cf274917a1c64fbcb42c0fcfe0239, type: 3}
