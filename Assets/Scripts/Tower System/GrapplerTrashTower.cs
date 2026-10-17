@@ -14,6 +14,7 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     [SerializeField] private float durationRecycle;
 
     [Header("Grappler")] 
+    [SerializeField] private bool enableOvercapacity;
     [SerializeField] private TrashState pickUpTrashState;
     [SerializeField] private Transform headTransform;   // the part that rotates
     [SerializeField] private Transform grappleOrigin;   // where the line starts (muzzle)
@@ -308,6 +309,8 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     
     public bool IsEnoughSpace(int weight)
     {
+        if (enableOvercapacity) return true;
+        
         return CurrentCapacity + weight <= MaxCapacity;
     }
 }

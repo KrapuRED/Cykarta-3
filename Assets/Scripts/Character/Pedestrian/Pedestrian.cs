@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class Pedestrian : Entity, IIrresponsibleThinkable
 {
-    [SerializeField] private Slider irresponsibleThinkingSlider;
+    [SerializeField] private GameObject irresponsibleThinkingIndicator; 
+    [SerializeField] private Image irresponsibleThinkingFill; 
     [SerializeField] private List<TrashChangeData> trashData = new();
     
     [SerializeField] private float moveSpeed = 5f;
@@ -105,7 +106,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
             EntityRunTimeData.entityState = EntityState.IrresponsibleThinking;
             entityAnimation.PlayIdleAnimation();
             
-            irresponsibleThinkingSlider.gameObject.SetActive(true);
+            irresponsibleThinkingIndicator.gameObject.SetActive(true);
         }
     }
 
@@ -154,7 +155,8 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         float increase = IrresponsibleThinkingData.irresponsibleThinkingIncreaseRate * deltaTime;
         IrresponsibleThinkingData.currentIrresponsibleThinkingMeter += increase;
         
-        irresponsibleThinkingSlider.value = IrresponsibleThinkingData.currentIrresponsibleThinkingMeter;
+        var d = IrresponsibleThinkingData;
+        irresponsibleThinkingFill.fillAmount = Mathf.Clamp01(d.currentIrresponsibleThinkingMeter / d.maxIrresponsibleThinkingMeter);
         
         if (IrresponsibleThinkingData.currentIrresponsibleThinkingMeter >=
             IrresponsibleThinkingData.maxIrresponsibleThinkingMeter)
@@ -166,7 +168,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
             entityAnimation.PlayThrowAnimation();
             SpawnerTrash.Instance.SpawnTrash(transform.position, GetTrashType());
             
-            irresponsibleThinkingSlider.gameObject.SetActive(false);
+            irresponsibleThinkingIndicator.gameObject.SetActive(false);
         }
     }
 
@@ -179,7 +181,8 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
         float decrease = IrresponsibleThinkingData.irresponsibleThinkingIncreaseRate * deltaTime;
         
         IrresponsibleThinkingData.currentIrresponsibleThinkingMeter -= decrease;
-        irresponsibleThinkingSlider.value = IrresponsibleThinkingData.currentIrresponsibleThinkingMeter;
+        var d = IrresponsibleThinkingData;
+        irresponsibleThinkingFill.fillAmount = Mathf.Clamp01(d.currentIrresponsibleThinkingMeter / d.maxIrresponsibleThinkingMeter);
         
         if (IrresponsibleThinkingData.currentIrresponsibleThinkingMeter <= 0)
         {
@@ -187,7 +190,7 @@ public class Pedestrian : Entity, IIrresponsibleThinkable
             ThinkingCheckTimer = 0;
             EntityRunTimeData.entityState = EntityState.Moving;
             
-            irresponsibleThinkingSlider.gameObject.SetActive(false);
+            irresponsibleThinkingIndicator.gameObject.SetActive(false);
             Debug.LogWarning($"[{name} (DecreaseIrresponsibleThinking)] Is not do the Irresponsible Think!");
         }
     }

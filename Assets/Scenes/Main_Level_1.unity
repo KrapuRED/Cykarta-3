@@ -2014,6 +2014,18 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1331833396}
+    - target: {fileID: 7960749669868960807, guid: 05a00de751f470b4d8a56e7f25605019, type: 3}
+      propertyPath: edgeSize
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960749669868960807, guid: 05a00de751f470b4d8a56e7f25605019, type: 3}
+      propertyPath: maxOffsetX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960749669868960807, guid: 05a00de751f470b4d8a56e7f25605019, type: 3}
+      propertyPath: maxOffsetY
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3072,7 +3084,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 20, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1662028943}

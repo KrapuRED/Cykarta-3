@@ -4,26 +4,24 @@ using UnityEngine.UI;
 public class TowerRecycleProcessingUI : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private Slider progressBar;
-    
-    private float _currentProgress;
+    [SerializeField] private Image progressFillBar;
     
     public void ShowProcessingUI(float progress)
     {
-        progressBar.maxValue = progress;
-        progressBar.value = progress;
-        _currentProgress = progress;
+        //Full
+        progressFillBar.fillAmount = 1f;
         
         canvasGroup.alpha = 1;
     }
 
     public void UpdateProgress(float progress)
     {
-        progressBar.value = progress;
+        //Decreased
+        progressFillBar.fillAmount = 1f - Mathf.Clamp01(progress);
     }
     
     public void HideProcessingUI()
     {
-        
+        canvasGroup.alpha = 0;
     }
 }
