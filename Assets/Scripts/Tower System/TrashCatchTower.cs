@@ -39,6 +39,8 @@ public class TrashCatchTower : Tower, IRecycleTrash
     {
         if (!IsBeenPlace || IsRecycleTrash) return;
 
+        Debug.Log("TrashCatchTower OnDetectingArea");
+        
         TowerScanArea.OnDetecting(deltaTime, out Transform target);
         
         if (target != null && target.TryGetComponent<Trash>(out Trash trash)
@@ -131,36 +133,37 @@ public class TrashCatchTower : Tower, IRecycleTrash
     
     public IEnumerator RecycleTrash()
     {
-        Debug.Log($"[{name}] Start Recycle Trash");
         RecycleProcessingUI.ShowProcessingUI();
 
         var trashes = new List<Trash>(AccumulatedTrashes);
         AccumulatedTrashes.Clear();
-        int moneyGain = 0;
 
-        float elapsed = 0f;
-        while (elapsed < durationRecycle)
+        try
         {
-            elapsed += Time.deltaTime;
-            float progress = durationRecycle > 0f ? elapsed / durationRecycle : 1f;
-            RecycleProcessingUI.UpdateProgress(progress);   // 0 -> 1, bar goes full -> empty
-            yield return null;
-        }
+            float elapsed = 0f;
+            while (elapsed < durationRecycle)
+            {
+                elapsed += Time.deltaTime;
+                RecycleProcessingUI.UpdateProgress(durationRecycle > 0f ? elapsed / durationRecycle : 1f);
+                yield return null;
+            }
 
-        foreach (var trash in trashes)
+            int moneyGain = 0;
+            foreach (var trash in trashes)
+            {
+                if (trash == null) continue;   // destroyed while waiting
+                moneyGain += trash.TrashData.trashWeight;
+                trash.DestroyEntity();
+            }
+
+            CurrencyManager.Instance.ReceiveCurrency(moneyGain);
+        }
+        finally
         {
-            moneyGain += trash.TrashData.trashWeight;
-            trash.DestroyEntity();
+            CurrentCapacity = 0;
+            RecycleProcessingUI.HideProcessingUI();
+            IsRecycleTrash = false;
         }
-
-        CurrencyManager.Instance.ReceiveCurrency(moneyGain);
-        CurrentCapacity = 0;
-
-        RecycleProcessingUI.HideProcessingUI();
-
-        yield return null;
-        IsRecycleTrash = false;
-    
     }
 
     public bool IsAlreadyColleted(Trash trash)

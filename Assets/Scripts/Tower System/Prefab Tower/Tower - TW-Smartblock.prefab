@@ -734,7 +734,7 @@ MonoBehaviour:
   onlyPlayWhenTargetFound: 0
   _scanSoundTimer: 0
   widthScanArea: 0.5
-  heightScanArea: 3
+  heightScanArea: 4
   scannerPositon: {fileID: 6602691128675481914}
 --- !u!1001 &7941433835962853173
 PrefabInstance:

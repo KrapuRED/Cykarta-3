@@ -5,8 +5,6 @@ public class CircelScanArea : TowerScanArea
 {
     [SerializeField] private int currentDetected;
     
-    public System.Func<Transform, bool> TargetFilter;
-    
     protected override Transform PickTarget(int count)
     {
         Transform best = null;

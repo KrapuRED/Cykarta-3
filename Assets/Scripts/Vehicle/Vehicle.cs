@@ -159,6 +159,7 @@ public class Vehicle : Entity, IIrresponsibleThinkable
     public void IncreaseIrresponsibleThinking(float deltaTime)
     {
         if (EntityRunTimeData.entityState == EntityState.Moving) return;
+        if (IrresponsibleThinkingData.isBeingDecreased) return;   // <-- add this
         
         float increase = IrresponsibleThinkingData.irresponsibleThinkingIncreaseRate * deltaTime;
         IrresponsibleThinkingData.currentIrresponsibleThinkingMeter += increase;
@@ -181,7 +182,6 @@ public class Vehicle : Entity, IIrresponsibleThinkable
     private void DecreaseIrresponsibleThinking(float deltaTime)
     {
         float decrease = IrresponsibleThinkingData.irresponsibleThinkingIncreaseRate * deltaTime;
-        Debug.Log($"[{name} (DecreaseIrresponsibleThinking)] Decrease Irresponsible Thinking {decrease} / {IrresponsibleThinkingData.currentIrresponsibleThinkingMeter} / {IrresponsibleThinkingData.maxIrresponsibleThinkingMeter}");
         
         IrresponsibleThinkingData.currentIrresponsibleThinkingMeter -= decrease;
         var d = IrresponsibleThinkingData;
@@ -190,10 +190,10 @@ public class Vehicle : Entity, IIrresponsibleThinkable
         if (IrresponsibleThinkingData.currentIrresponsibleThinkingMeter <= 0)
         {
             IrresponsibleThinkingData.currentIrresponsibleThinkingMeter = 0;
+            ThinkingCheckTimer = 0;
             EntityRunTimeData.entityState = EntityState.Moving;
             
             irresponsibleThinkingIndicator.gameObject.SetActive(false);
-            
             Debug.LogWarning($"[{name} (DecreaseIrresponsibleThinking)] Is not do the Irresponsible Think!");
         }
     }
