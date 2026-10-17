@@ -1009,6 +1009,7 @@ MonoBehaviour:
     m_Bits: 128
   towerPlaceSound: {fileID: 8300000, guid: 70f8ab345b7874d4a89cf8e0eb73f76b, type: 3}
   volumeTowerPlaceSound: 1
+  enableOvercapacity: 1
   catchTrashState: 0
   durationRecycle: 0
   netSpriteRenderer: {fileID: 1343575791323324293}

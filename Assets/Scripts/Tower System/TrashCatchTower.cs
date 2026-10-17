@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TrashCatchTower : Tower, IRecycleTrash
 {
+    [SerializeField] private bool enableOvercapacity;
     [SerializeField] private TrashState catchTrashState;
     [SerializeField] private float durationRecycle;
     
@@ -169,6 +170,7 @@ public class TrashCatchTower : Tower, IRecycleTrash
     
     public bool IsEnoughSpace(int weight)
     {
-        return CurrentCapacity + weight <= MaxCapacity;
+        if (CurrentCapacity + weight <= MaxCapacity) return true;
+        return enableOvercapacity && CurrentCapacity < MaxCapacity;
     }
 }
