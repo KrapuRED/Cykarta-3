@@ -67,7 +67,7 @@ MonoBehaviour:
   maxDurationTrackingTarget: 0.5
   cooldownAfterCatch: 0.25
   durationRecycle: 0
-  enableOvercapacity: 0
+  enableOvercapacity: 1
   pickUpTrashState: 1
   headTransform: {fileID: 8611270675540148132}
   grappleOrigin: {fileID: 4813807930577578866}
@@ -777,8 +777,8 @@ RectTransform:
   m_GameObject: {fileID: 6694685666390814185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3044497060989634211}
   m_Father: {fileID: 7617305621666420143}

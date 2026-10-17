@@ -16,8 +16,8 @@ MonoBehaviour:
   maxEntitySpeed: 0.7
   minEntitySpeed: 2
   irresponsibleThinkingBaseData:
-    chanceIrresponsibleThinking: 0
-    chanceTimeIrresponsibleThinking: 0
-    maxIrresponsibleThinkingMeter: 0
-    irresponsibleThinkingIncreaseRate: 0
+    chanceIrresponsibleThinking: 30
+    chanceTimeIrresponsibleThinking: 3
+    maxIrresponsibleThinkingMeter: 100
+    irresponsibleThinkingIncreaseRate: 30
   entityPrefab: {fileID: 4533883059496805327, guid: a6ab1768aa94c57409c800c903d703ea, type: 3}

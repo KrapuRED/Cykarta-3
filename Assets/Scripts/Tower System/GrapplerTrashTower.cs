@@ -79,7 +79,6 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
 
         if (IsRecycleTrash)
         {
-            RecycleProcessingUI.UpdateProgress(deltaTime);
             return;
         }
         
@@ -150,17 +149,18 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     public IEnumerator RecycleTrash()
     {
         Debug.Log($"[{name}] Start Recycle Trash");
-        RecycleProcessingUI.ShowProcessingUI(GetTowerStatusData(TowerStatus.ProcessingSpeed));
-        
+        RecycleProcessingUI.ShowProcessingUI();
+
         var trashes = new List<Trash>(AccumulatedTrashes);
         AccumulatedTrashes.Clear();
         int moneyGain = 0;
-        
-        float duration = durationRecycle;
-        while (duration >= 0)
+
+        float elapsed = 0f;
+        while (elapsed < durationRecycle)
         {
-            duration -= Time.deltaTime;
-            RecycleProcessingUI.UpdateProgress(duration);
+            elapsed += Time.deltaTime;
+            float progress = durationRecycle > 0f ? elapsed / durationRecycle : 1f;
+            RecycleProcessingUI.UpdateProgress(progress);   // 0 -> 1, bar goes full -> empty
             yield return null;
         }
 
@@ -170,14 +170,14 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
             trash.DestroyEntity();
         }
 
-        Debug.Log($"[{name}] Done Recycle Trash");
         CurrencyManager.Instance.ReceiveCurrency(moneyGain);
         CurrentCapacity = 0;
-        
+
         RecycleProcessingUI.HideProcessingUI();
-        
+
         yield return null;
         IsRecycleTrash = false;
+    
     }
     
     #endregion
@@ -309,8 +309,7 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     
     public bool IsEnoughSpace(int weight)
     {
-        if (enableOvercapacity) return true;
-        
-        return CurrentCapacity + weight <= MaxCapacity;
+        if (CurrentCapacity + weight <= MaxCapacity) return true;
+        return enableOvercapacity && CurrentCapacity < MaxCapacity;
     }
 }

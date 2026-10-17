@@ -5,7 +5,8 @@ using MoreMountains.Tools;
 
 public class Vehicle : Entity, IIrresponsibleThinkable
 {
-    [SerializeField] private Slider irresponsibleThinkingSlider;
+    [SerializeField] private GameObject irresponsibleThinkingIndicator; 
+    [SerializeField] private Image irresponsibleThinkingFill;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private List<Vector3> waypoints = new ();
     [SerializeField] private List<TrashChangeData> trashData = new();
@@ -150,7 +151,7 @@ public class Vehicle : Entity, IIrresponsibleThinkable
         if (roll <= IrresponsibleThinkingData.chanceIrresponsibleThinking)
         {
             EntityRunTimeData.entityState = EntityState.IrresponsibleThinking;
-            irresponsibleThinkingSlider.gameObject.SetActive(true);
+            irresponsibleThinkingIndicator.gameObject.SetActive(true);
         }
     }
 
@@ -162,7 +163,8 @@ public class Vehicle : Entity, IIrresponsibleThinkable
         float increase = IrresponsibleThinkingData.irresponsibleThinkingIncreaseRate * deltaTime;
         IrresponsibleThinkingData.currentIrresponsibleThinkingMeter += increase;
         
-        irresponsibleThinkingSlider.value = IrresponsibleThinkingData.currentIrresponsibleThinkingMeter;
+        var d = IrresponsibleThinkingData;
+        irresponsibleThinkingFill.fillAmount = Mathf.Clamp01(d.currentIrresponsibleThinkingMeter / d.maxIrresponsibleThinkingMeter);
         
         if (IrresponsibleThinkingData.currentIrresponsibleThinkingMeter >=
             IrresponsibleThinkingData.maxIrresponsibleThinkingMeter)
@@ -172,7 +174,7 @@ public class Vehicle : Entity, IIrresponsibleThinkable
             EntityRunTimeData.entityState = EntityState.Moving;
             SpawnerTrash.Instance.SpawnTrash(transform.position, GetTrashType());
             
-            irresponsibleThinkingSlider.gameObject.SetActive(false);
+            irresponsibleThinkingIndicator.gameObject.SetActive(false);
         }
     }
     
@@ -182,14 +184,15 @@ public class Vehicle : Entity, IIrresponsibleThinkable
         Debug.Log($"[{name} (DecreaseIrresponsibleThinking)] Decrease Irresponsible Thinking {decrease} / {IrresponsibleThinkingData.currentIrresponsibleThinkingMeter} / {IrresponsibleThinkingData.maxIrresponsibleThinkingMeter}");
         
         IrresponsibleThinkingData.currentIrresponsibleThinkingMeter -= decrease;
-        irresponsibleThinkingSlider.value = IrresponsibleThinkingData.currentIrresponsibleThinkingMeter;
+        var d = IrresponsibleThinkingData;
+        irresponsibleThinkingFill.fillAmount = Mathf.Clamp01(d.currentIrresponsibleThinkingMeter / d.maxIrresponsibleThinkingMeter);
         
         if (IrresponsibleThinkingData.currentIrresponsibleThinkingMeter <= 0)
         {
             IrresponsibleThinkingData.currentIrresponsibleThinkingMeter = 0;
             EntityRunTimeData.entityState = EntityState.Moving;
             
-            irresponsibleThinkingSlider.gameObject.SetActive(false);
+            irresponsibleThinkingIndicator.gameObject.SetActive(false);
             
             Debug.LogWarning($"[{name} (DecreaseIrresponsibleThinking)] Is not do the Irresponsible Think!");
         }

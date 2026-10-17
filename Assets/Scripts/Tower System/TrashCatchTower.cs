@@ -131,29 +131,35 @@ public class TrashCatchTower : Tower, IRecycleTrash
     public IEnumerator RecycleTrash()
     {
         Debug.Log($"[{name}] Start Recycle Trash");
+        RecycleProcessingUI.ShowProcessingUI();
+
         var trashes = new List<Trash>(AccumulatedTrashes);
         AccumulatedTrashes.Clear();
         int moneyGain = 0;
-        
-        yield return new WaitForSeconds(durationRecycle);
+
+        float elapsed = 0f;
+        while (elapsed < durationRecycle)
+        {
+            elapsed += Time.deltaTime;
+            float progress = durationRecycle > 0f ? elapsed / durationRecycle : 1f;
+            RecycleProcessingUI.UpdateProgress(progress);   // 0 -> 1, bar goes full -> empty
+            yield return null;
+        }
 
         foreach (var trash in trashes)
         {
-            if (trash == null)
-            {
-                continue;
-            }
-            
             moneyGain += trash.TrashData.trashWeight;
             trash.DestroyEntity();
         }
 
-        Debug.Log($"[{name}] Done Recycle Trash");
-        CurrentCapacity = 0;
         CurrencyManager.Instance.ReceiveCurrency(moneyGain);
-        
+        CurrentCapacity = 0;
+
+        RecycleProcessingUI.HideProcessingUI();
+
         yield return null;
         IsRecycleTrash = false;
+    
     }
 
     public bool IsAlreadyColleted(Trash trash)

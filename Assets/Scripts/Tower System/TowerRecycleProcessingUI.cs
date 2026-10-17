@@ -6,7 +6,7 @@ public class TowerRecycleProcessingUI : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private Image progressFillBar;
     
-    public void ShowProcessingUI(float progress)
+    public void ShowProcessingUI()
     {
         //Full
         progressFillBar.fillAmount = 1f;

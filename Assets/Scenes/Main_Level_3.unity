@@ -343,9 +343,6 @@ MonoBehaviour:
   spawnZone: 2
   spawnerDatas: []
   wayPointDatas:
-  - wayPointDataName: WayPoint Vehicle 2 - Left -> Right
-    startPoint: {fileID: 1183974991}
-    endPoint: {fileID: 1802563165}
   - wayPointDataName: 'WayPoint Vehicle 2 - Right -> Left '
     startPoint: {fileID: 1164650685}
     endPoint: {fileID: 1704532695}
@@ -3440,9 +3437,6 @@ MonoBehaviour:
   - wayPointDataName: WayPoint Vehicle - Left -> Right
     startPoint: {fileID: 555839017}
     endPoint: {fileID: 1185092354}
-  - wayPointDataName: 'WayPoint Vehicle - Right -> Left '
-    startPoint: {fileID: 1321411403}
-    endPoint: {fileID: 1881336062}
   containerSpawner: {fileID: 1061382380}
   currentSpawnRate: 0
   prevSpawnRate: 0

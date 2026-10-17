@@ -120,7 +120,7 @@ public class EntityManager : MonoBehaviour
     public void RegisterEntity(Entity e)
     {
         if (e == null || _entities.Contains(e)) return;
-        Debug.LogWarning($"[{name} (RegisterEntity)] Success registering entity {e.name}");
+        //Debug.LogWarning($"[{name} (RegisterEntity)] Success registering entity {e.name}");
         _entities.Add(e);
     }
 
