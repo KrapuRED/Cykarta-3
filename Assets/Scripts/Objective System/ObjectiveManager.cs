@@ -189,8 +189,11 @@ public class ObjectiveManager : MonoBehaviour
     {
         if (CurrentObjectiveHealthPoints <= 0)
             return LevelStatus.Failed;
-        else
+
+        if (_currentEnemyCounter >= _maxEnemyCounter)
             return LevelStatus.Success;
+
+        return LevelStatus.NotPlayed;
     }
     
     #region Sound
