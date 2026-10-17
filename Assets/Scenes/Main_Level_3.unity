@@ -891,6 +891,14 @@ PrefabInstance:
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3652138592517454918, guid: c3a47cfb52b478440aade35951bd7ac4, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1761520443}
+    - target: {fileID: 3652138592517454918, guid: c3a47cfb52b478440aade35951bd7ac4, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 4911397949208722294, guid: c3a47cfb52b478440aade35951bd7ac4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4947,7 +4955,7 @@ MonoBehaviour:
     trashType: 2
     throwDuration: 1
     spawnData: {fileID: 11400000, guid: 07f81244a0645b749872fd98ec6b086d, type: 2}
-  waterCurrent: 0
+  waterCurrent: 0.8
 --- !u!1 &1802563164
 GameObject:
   m_ObjectHideFlags: 0

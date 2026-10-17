@@ -80,17 +80,7 @@ public class DialogueManager : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!IsSkipDialogueLine)
-            {
-                // Show All Dialogue Line
-                IsSkipDialogueLine = true;
-                GameEvents.OnSkipDialogueLine.Invoke();
-            }
-            else
-            {
-                IsSkipDialogueLine = false;
-                ContinueDialogue();
-            }
+            
             
         }
     }
@@ -144,7 +134,22 @@ public class DialogueManager : MonoBehaviour
         visualEffectIn?.Invoke();
     }
 
-    private void ContinueDialogue()
+    public void ContinueDialogue()
+    {
+        if (!IsSkipDialogueLine)
+        {
+            // Show All Dialogue Line
+            IsSkipDialogueLine = true;
+            GameEvents.OnSkipDialogueLine.Invoke();
+        }
+        else
+        {
+            IsSkipDialogueLine = false;
+            NextDialogueData();
+        }
+    }
+    
+    private void NextDialogueData()
     {
         //if (!IsDialogueRunning || TransitionManager.Instance.isTrasitioning) return;
         

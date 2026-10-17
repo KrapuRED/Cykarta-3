@@ -179,6 +179,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3652138592517454918, guid: c3a47cfb52b478440aade35951bd7ac4, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1761520443}
+    - target: {fileID: 3652138592517454918, guid: c3a47cfb52b478440aade35951bd7ac4, type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
     - target: {fileID: 4911397949208722294, guid: c3a47cfb52b478440aade35951bd7ac4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
