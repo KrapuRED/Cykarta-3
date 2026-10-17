@@ -1133,8 +1133,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Release to Cancel ot Place
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1d638a0396a13dc4692f875509136b78, type: 2}
+  m_sharedMaterial: {fileID: 846378884336323827, guid: 1d638a0396a13dc4692f875509136b78, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1158,7 +1158,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38
+  m_fontSize: 34.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3606,6 +3606,7 @@ MonoBehaviour:
   lossCurrencySound: {fileID: 8300000, guid: b76c6352147121f45b9b5294de2d6640, type: 3}
   volumeCurrencySound: 1
   slideEffect: {fileID: 963625414}
+  _paused: 0
 --- !u!1 &1455789839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,7 +4091,6 @@ MonoBehaviour:
   onMousePosition: {fileID: 2506383532359204881, guid: 79413c0660163a14fb11848f0719556e, type: 3}
   clickGrid: {fileID: -5409502153300325574, guid: 79413c0660163a14fb11848f0719556e, type: 3}
   clickSellGrid: {fileID: 8616566587293604167, guid: 79413c0660163a14fb11848f0719556e, type: 3}
-  holdCardAction: {fileID: 5927448845564051248, guid: 79413c0660163a14fb11848f0719556e, type: 3}
   gridPlacement: {fileID: 202370640}
 --- !u!1 &1673251675
 GameObject:
@@ -5109,8 +5109,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Valid / Invalid Tile
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1d638a0396a13dc4692f875509136b78, type: 2}
+  m_sharedMaterial: {fileID: 846378884336323827, guid: 1d638a0396a13dc4692f875509136b78, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

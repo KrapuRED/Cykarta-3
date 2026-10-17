@@ -98,7 +98,7 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
                     ""id"": ""f9d85a39-eded-4abc-913d-c7a64a72714c"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap"",
                     ""initialStateCheck"": false
                 },
                 {

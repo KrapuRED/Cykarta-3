@@ -67,13 +67,13 @@ public class SpawnerManager : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.OnGamePause.AddListener(Pause);
-        GameEvents.OnGamePause.AddListener(Resume);
+        GameEvents.OnGameResume.AddListener(Resume);
     }
 
     private void OnDisable()
     {
         GameEvents.OnGamePause.RemoveListener(Pause);
-        GameEvents.OnGamePause.RemoveListener(Resume);
+        GameEvents.OnGameResume.RemoveListener(Resume);
     }
     
     private void Update()

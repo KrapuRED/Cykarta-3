@@ -18,7 +18,7 @@ public class CurrencyManager : MonoBehaviour
     
     [SerializeField] private VisualEffect slideEffect;
     
-    private bool _paused;
+    [SerializeField] private bool _paused;
     
     public int CurrentCurrency { get; private set; }
     
@@ -36,13 +36,13 @@ public class CurrencyManager : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.OnGamePause.AddListener(Pause);
-        GameEvents.OnGamePause.AddListener(Resume);
+        GameEvents.OnGameResume.AddListener(Resume);
     }
 
     private void OnDisable()
     {
         GameEvents.OnGamePause.RemoveListener(Pause);
-        GameEvents.OnGamePause.RemoveListener(Resume);
+        GameEvents.OnGameResume.RemoveListener(Resume);
     }
 
     private void Start()
@@ -69,7 +69,9 @@ public class CurrencyManager : MonoBehaviour
         }
 
         _earningIntervalTimer -= earningInterval;
+        
         CurrentCurrency += passiveEarningCurrency;
+        GameEvents.OnUpdateVisualCurrency.Invoke(CurrentCurrency);
     }
 
     public void ReceiveCurrency(int currency)
