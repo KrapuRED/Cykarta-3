@@ -153,6 +153,7 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
         
         var trashes = new List<Trash>(AccumulatedTrashes);
         AccumulatedTrashes.Clear();
+        int moneyGain = 0;
         
         float duration = durationRecycle;
         while (duration >= 0)
@@ -164,10 +165,12 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
 
         foreach (var trash in trashes)
         {
+            moneyGain += trash.TrashData.trashWeight;
             trash.DestroyEntity();
         }
 
         Debug.Log($"[{name}] Done Recycle Trash");
+        CurrencyManager.Instance.ReceiveCurrency(moneyGain);
         CurrentCapacity = 0;
         
         RecycleProcessingUI.HideProcessingUI();

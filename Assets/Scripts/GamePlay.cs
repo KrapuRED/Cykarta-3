@@ -102,12 +102,12 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""HoldTowerCard"",
+                    ""name"": ""ClickTowerCard"",
                     ""type"": ""Button"",
                     ""id"": ""d46349d9-05f6-4075-b041-4ef8fd47885a"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
@@ -148,7 +148,7 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HoldTowerCard"",
+                    ""action"": ""ClickTowerCard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -258,7 +258,7 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         // Building
         m_Building = asset.FindActionMap("Building", throwIfNotFound: true);
         m_Building_ClickGrid = m_Building.FindAction("ClickGrid", throwIfNotFound: true);
-        m_Building_HoldTowerCard = m_Building.FindAction("HoldTowerCard", throwIfNotFound: true);
+        m_Building_ClickTowerCard = m_Building.FindAction("ClickTowerCard", throwIfNotFound: true);
         m_Building_GetValue = m_Building.FindAction("GetValue", throwIfNotFound: true);
         m_Building_CursorPositon = m_Building.FindAction("CursorPositon", throwIfNotFound: true);
         // Pause
@@ -351,7 +351,7 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Building;
     private List<IBuildingActions> m_BuildingActionsCallbackInterfaces = new List<IBuildingActions>();
     private readonly InputAction m_Building_ClickGrid;
-    private readonly InputAction m_Building_HoldTowerCard;
+    private readonly InputAction m_Building_ClickTowerCard;
     private readonly InputAction m_Building_GetValue;
     private readonly InputAction m_Building_CursorPositon;
     /// <summary>
@@ -370,9 +370,9 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @ClickGrid => m_Wrapper.m_Building_ClickGrid;
         /// <summary>
-        /// Provides access to the underlying input action "Building/HoldTowerCard".
+        /// Provides access to the underlying input action "Building/ClickTowerCard".
         /// </summary>
-        public InputAction @HoldTowerCard => m_Wrapper.m_Building_HoldTowerCard;
+        public InputAction @ClickTowerCard => m_Wrapper.m_Building_ClickTowerCard;
         /// <summary>
         /// Provides access to the underlying input action "Building/GetValue".
         /// </summary>
@@ -410,9 +410,9 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
             @ClickGrid.started += instance.OnClickGrid;
             @ClickGrid.performed += instance.OnClickGrid;
             @ClickGrid.canceled += instance.OnClickGrid;
-            @HoldTowerCard.started += instance.OnHoldTowerCard;
-            @HoldTowerCard.performed += instance.OnHoldTowerCard;
-            @HoldTowerCard.canceled += instance.OnHoldTowerCard;
+            @ClickTowerCard.started += instance.OnClickTowerCard;
+            @ClickTowerCard.performed += instance.OnClickTowerCard;
+            @ClickTowerCard.canceled += instance.OnClickTowerCard;
             @GetValue.started += instance.OnGetValue;
             @GetValue.performed += instance.OnGetValue;
             @GetValue.canceled += instance.OnGetValue;
@@ -433,9 +433,9 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
             @ClickGrid.started -= instance.OnClickGrid;
             @ClickGrid.performed -= instance.OnClickGrid;
             @ClickGrid.canceled -= instance.OnClickGrid;
-            @HoldTowerCard.started -= instance.OnHoldTowerCard;
-            @HoldTowerCard.performed -= instance.OnHoldTowerCard;
-            @HoldTowerCard.canceled -= instance.OnHoldTowerCard;
+            @ClickTowerCard.started -= instance.OnClickTowerCard;
+            @ClickTowerCard.performed -= instance.OnClickTowerCard;
+            @ClickTowerCard.canceled -= instance.OnClickTowerCard;
             @GetValue.started -= instance.OnGetValue;
             @GetValue.performed -= instance.OnGetValue;
             @GetValue.canceled -= instance.OnGetValue;
@@ -693,12 +693,12 @@ public partial class @GamePlay: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnClickGrid(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "HoldTowerCard" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "ClickTowerCard" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnHoldTowerCard(InputAction.CallbackContext context);
+        void OnClickTowerCard(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "GetValue" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

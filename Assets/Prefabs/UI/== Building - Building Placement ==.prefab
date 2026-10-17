@@ -694,7 +694,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 119000695549413553}
         m_TargetAssemblyTypeName: TowerConfirmationUI, Assembly-CSharp
         m_MethodName: RemoveTower
         m_Mode: 1

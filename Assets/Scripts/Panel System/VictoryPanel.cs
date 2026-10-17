@@ -24,16 +24,16 @@ public class VictoryPanel : Panel
       
         MMSoundManagerSoundPlayEvent.Trigger(openPanelSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position);
         
-        SpawnerManager.Instance.Pause();
+        GameEvents.OnGamePause.Invoke();
         EntityManager.Instance.Pause();
+        
     }
 
     public override void ClosePanel()
     {
         PlayAnimation();
         
-        SpawnerManager.Instance.Resume();
-        EntityManager.Instance.Resume();
+        GameEvents.OnGameResume.Invoke();
     }
     
     public void ExitLevel()

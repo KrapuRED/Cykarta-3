@@ -74,6 +74,8 @@ public static class GameEvents
 
     // # ================================ Main Game SYSTEM ================================ #
     public static readonly CustomEvents OnGameStart = new ();
+    public static readonly CustomEvents OnGamePause = new ();
+    public static readonly CustomEvents OnGameResume = new ();
     
     // # ================================ GRID SYSTEM ================================ #
     public static readonly CustomEvents<OnGridObjectChangeEventArgs> OnGridObjectChange = new ();

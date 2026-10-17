@@ -4,6 +4,8 @@ using DG.Tweening;
 
 public class DefeatPanel : Panel
 {
+    [SerializeField] private bool isDefeatStory; 
+    
     [Header("Sound Effect and ambient")]
     [SerializeField] private AudioClip openPanelSound; 
     
@@ -22,8 +24,8 @@ public class DefeatPanel : Panel
         GridManager.Instance.ChangeGridMode(GridMode.None);
         GridManager.Instance.UnhighlightBuildGridZone();
       
-        SpawnerManager.Instance.Pause();
         EntityManager.Instance.Pause();
+        GameEvents.OnGamePause.Invoke();
         
         MMSoundManagerSoundPlayEvent.Trigger(openPanelSound, MMSoundManager.MMSoundManagerTracks.Music, transform.position);
     }
@@ -31,9 +33,7 @@ public class DefeatPanel : Panel
     public override void ClosePanel()
     {
         PlayAnimation();
-      
-        SpawnerManager.Instance.Resume();
-        EntityManager.Instance.Resume();
+        GameEvents.OnGameResume.Invoke();
     }
     
     public void ExitLevel()
@@ -44,7 +44,13 @@ public class DefeatPanel : Panel
         PlayAnimation();
         
         ObjectiveManager.Instance.SaveData();
-        TransitionHelper.DoTransitionDirectToStory(ObjectiveManager.Instance.LevelIndex, DialogueType.After);
+        
+        if (isDefeatStory)
+            TransitionHelper.DoTransitionDirectToStory(ObjectiveManager.Instance.LevelIndex, DialogueType.After);
+        else
+        {
+            TransitionHelper.DoTransition();
+        }
     }
     
     private void PlayAnimation()

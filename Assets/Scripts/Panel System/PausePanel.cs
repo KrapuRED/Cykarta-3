@@ -18,8 +18,8 @@ public class PausePanel : Panel
 
       FadeMusic(0);
       
-      SpawnerManager.Instance.Pause();
       EntityManager.Instance.Pause();
+      GameEvents.OnGamePause.Invoke();
    }
 
    public override void ClosePanel()
@@ -27,12 +27,12 @@ public class PausePanel : Panel
       canvasGroup.alpha = 0;
       canvasGroup.blocksRaycasts = false;
       canvasGroup.interactable = false;
+      EntityManager.Instance.Resume();
       
       FadeMusic(1);
       
-      
-      SpawnerManager.Instance.Resume();
-      EntityManager.Instance.Resume();
+      GameEvents.OnGameResume.Invoke();
+
    }
 
    public void ExitLevel()

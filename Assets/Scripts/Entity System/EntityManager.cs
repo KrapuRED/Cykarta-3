@@ -63,7 +63,7 @@ public class EntityManager : MonoBehaviour
 
         Instance = this;
     }
-
+    
     private void Update()
     {
         if (paused) return;
@@ -135,5 +135,11 @@ public class EntityManager : MonoBehaviour
     }
 
     public void Pause() => paused = true;
-    public void Resume() => paused = false;
+
+    public void Resume()
+    {
+     if (TransitionManager.Instance.isTrasitioning) return;
+     
+     paused = false;
+    }
 }

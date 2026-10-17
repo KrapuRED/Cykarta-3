@@ -16,12 +16,12 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "HoldTowerCard",
+                    "name": "ClickTowerCard",
                     "type": "Button",
                     "id": "d46349d9-05f6-4075-b041-4ef8fd47885a",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -62,7 +62,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HoldTowerCard",
+                    "action": "ClickTowerCard",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

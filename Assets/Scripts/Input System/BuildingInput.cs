@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UtilTools;
-
+using UnityEngine.EventSystems;
 
 public class BuildingInput : MonoBehaviour
 {
@@ -9,7 +9,6 @@ public class BuildingInput : MonoBehaviour
     [SerializeField] private InputActionReference onMousePosition;
     [SerializeField] private InputActionReference clickGrid;
     [SerializeField] private InputActionReference clickSellGrid;
-    [SerializeField] private InputActionReference holdCardAction;
     
     [SerializeField] private GridPlacement gridPlacement;
     
@@ -20,12 +19,10 @@ public class BuildingInput : MonoBehaviour
         clickGrid.action.Enable();
         clickSellGrid.action.Enable();
         onMousePosition.action.Enable();
-        holdCardAction.action.Enable();
         
         clickGrid.action.performed += OnClickGrid;
         clickSellGrid.action.performed += OnClickSellTower;
         onMousePosition.action.performed += OnPositionMouse;
-        holdCardAction.action.canceled += OnReleaseHoldButton;
     }
 
     private void OnDisable()
@@ -33,9 +30,10 @@ public class BuildingInput : MonoBehaviour
         clickGrid.action.performed -= OnClickGrid;
         clickSellGrid.action.performed -= OnClickSellTower;
         onMousePosition.action.performed -= OnPositionMouse;
-        holdCardAction.action.canceled -= OnReleaseHoldButton;
         
     }
+    
+    private bool IsPointerOverUI() => EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
     
     private void OnPositionMouse(InputAction.CallbackContext ctx)
     {
@@ -50,52 +48,31 @@ public class BuildingInput : MonoBehaviour
         
         GameEvents.OnShowGridZone.Invoke(gridZoneData);
     }
-
-    private void OnReleaseHoldButton(InputAction.CallbackContext _)
-    {
-        if (_gridManager == null) _gridManager = GridManager.Instance;
-
-        if (_gridManager.CurrentGridMode == GridMode.Confirmation)
-        {
-            return;
-        }
-        
-        Vector3 mouseWorldPosition = UtilTools.UtilsClass.GetMouseWorldPositionWithZ();
-
-        GridZone gridZone = GridZone.None;
-        _gridManager.GetGridMapZoneCell(mouseWorldPosition, out gridZone);
-
-        if (gridZone == GridZone.Build)
-        {
-            Vector3 gridPosition = _gridManager.GridToWorldPosition(mouseWorldPosition);
-            gridPlacement.PlaceTower(gridPosition);
-            
-            GridManager.Instance.UnhighlightBuildGridZone();
-            GameEvents.OnShowConfirmationUI.Invoke();
-            
-            _gridManager.ChangeGridMode(GridMode.Confirmation);
-        }
-        else
-        {
-            GridManager.Instance.ChangeGridMode(GridMode.None);
-        }
-        
-        GameEvents.OnHideTowerCardDetail.Invoke();
-    }
     
     private void OnClickGrid(InputAction.CallbackContext _)
     {
-        if (_gridManager == null) _gridManager = GridManager.Instance;
+        if (IsPointerOverUI()) return;
         
-        Vector3 mouseWorldPosition = UtilTools.UtilsClass.GetMouseWorldPositionWithZ();
+        Vector3 mouseWorldPosition = UtilsClass.GetMouseWorldPositionWithZ();
+        GridManager.Instance.GetGridMapZoneCell(mouseWorldPosition, out GridZone gridZone);
 
-        GridZone gridZone = GridZone.None;
-        _gridManager.GetGridMapZoneCell(mouseWorldPosition, out gridZone);
-
-        if (gridZone == GridZone.Occupied)
+        switch (GridManager.Instance.CurrentGridMode)
         {
-            Vector3 gridPosition = _gridManager.GridToWorldPosition(mouseWorldPosition);
-            gridPlacement.GetActiveTower(gridPosition);
+            case GridMode.Building:
+                if (gridZone != GridZone.Build) break; // invalid tile, let them retry
+
+                Vector3 gridPosition = GridManager.Instance.GridToWorldPosition(mouseWorldPosition);
+                gridPlacement.PlaceTower(gridPosition);   // needs prefabTower + Building mode
+                GridManager.Instance.UnhighlightBuildGridZone();          // destroys preview, clears prefab
+                GridManager.Instance.ChangeGridMode(GridMode.Confirmation);
+                GameEvents.OnHideTowerCardDetail.Invoke();
+                GameEvents.OnShowConfirmationUI.Invoke();
+                break;
+
+            case GridMode.None:
+                if (gridZone == GridZone.Occupied)
+                    gridPlacement.GetActiveTower(GridManager.Instance.GridToWorldPosition(mouseWorldPosition));
+                break;
         }
     }
 

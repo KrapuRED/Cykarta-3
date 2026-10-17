@@ -187,14 +187,10 @@ public class ObjectiveManager : MonoBehaviour
 
     private LevelStatus GetLevelStatus()
     {
-        if (objectiveHealthPoints <= 0)
-            return LevelStatus.Failed;
-        else if (objectiveHealthPoints <= 0 && _waveIndex <= waveDataList.Count)
+        if (CurrentObjectiveHealthPoints <= 0)
             return LevelStatus.Failed;
         else
             return LevelStatus.Success;
-        
-        return LevelStatus.NotPlayed;
     }
     
     #region Sound
@@ -230,7 +226,10 @@ public class ObjectiveManager : MonoBehaviour
     }
 
     #endregion
-    
-    public void SaveData() => LevelProgress.Set(levelIndex, GetLevelStatus());
-    
+
+    public void SaveData()
+    {
+        Debug.Log($"{name} Level {levelIndex} Save Status {GetLevelStatus()}");
+        LevelProgress.Set(levelIndex, GetLevelStatus());
+    }
 }

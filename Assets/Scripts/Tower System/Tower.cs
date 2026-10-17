@@ -236,6 +236,9 @@ public class Tower : Entity
    {
       GridManager.Instance.ChangeGridMode(GridMode.None);
       GridManager.Instance.BuildingGridMap.ClearTower(GridPosition, resetZone);
+      
+      CurrencyManager.Instance.ReceiveCurrency(TowerData.towerCost);
+      
       ReleaseObject();
          
       DestroyEntity();

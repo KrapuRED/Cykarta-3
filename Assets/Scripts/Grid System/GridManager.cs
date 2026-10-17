@@ -62,26 +62,22 @@ public class GridManager : MonoBehaviour
 
     public void HighlightBuildGridZone()
     {
-        if (gridPlacement.PrefabTower == null)
-            return;
-        
+        if (gridPlacement.PrefabTower == null) return;
+        if (currentGridMode == GridMode.Confirmation) return;
+
         if (currentGridMode != GridMode.Building)
         {
             currentGridMode = GridMode.Building;
             buildingGridMap.HighlightZone(GridZone.Build, true);
             GameEvents.OnRequestOpenPanel.Invoke(PanelType.Building);
-
-            if (InstancePreviewTower != null) 
-            {
-                Destroy(InstancePreviewTower.gameObject);
-            }
-
-            Vector3 mousePosition = UtilTools.UtilsClass.GetMouseWorldPositionWithZ();
-            
-            InstancePreviewTower = Instantiate(gridPlacement.PrefabTower, mousePosition, Quaternion.identity);
-            
             dimBackground.SetActive(true);
         }
+
+        if (InstancePreviewTower != null)
+            Destroy(InstancePreviewTower.gameObject);
+
+        InstancePreviewTower = Instantiate(gridPlacement.PrefabTower,
+            UtilTools.UtilsClass.GetMouseWorldPositionWithZ(), Quaternion.identity);
     }
 
     public void UnhighlightBuildGridZone()

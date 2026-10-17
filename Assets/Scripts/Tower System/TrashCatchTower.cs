@@ -133,6 +133,7 @@ public class TrashCatchTower : Tower, IRecycleTrash
         Debug.Log($"[{name}] Start Recycle Trash");
         var trashes = new List<Trash>(AccumulatedTrashes);
         AccumulatedTrashes.Clear();
+        int moneyGain = 0;
         
         yield return new WaitForSeconds(durationRecycle);
 
@@ -143,11 +144,13 @@ public class TrashCatchTower : Tower, IRecycleTrash
                 continue;
             }
             
+            moneyGain += trash.TrashData.trashWeight;
             trash.DestroyEntity();
         }
 
         Debug.Log($"[{name}] Done Recycle Trash");
         CurrentCapacity = 0;
+        CurrencyManager.Instance.ReceiveCurrency(moneyGain);
         
         yield return null;
         IsRecycleTrash = false;
