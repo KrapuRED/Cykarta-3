@@ -21,6 +21,8 @@ public class TowerScanArea : MonoBehaviour
     protected Transform CurrentTarget;
     protected ContactFilter2D Filter;
     
+    public System.Func<Transform, bool> TargetFilter;
+    
     private float _detectionTimer;
     
     private void Awake()

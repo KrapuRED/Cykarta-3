@@ -2595,13 +2595,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe97aecead3adf4f879adcdd80ddd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
-  startCurrency: 2500
+  startCurrency: 25000
   passiveEarningCurrency: 10
   earningInterval: 1
   gainCurrencySound: {fileID: 8300000, guid: 349f8c4ebd288a94a882eff0286cc62d, type: 3}
   lossCurrencySound: {fileID: 8300000, guid: b76c6352147121f45b9b5294de2d6640, type: 3}
   volumeCurrencySound: 0.2
   slideEffect: {fileID: 17589141}
+  _paused: 0
 --- !u!1 &1489094738
 GameObject:
   m_ObjectHideFlags: 0

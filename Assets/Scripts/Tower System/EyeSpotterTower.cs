@@ -12,11 +12,20 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
     private bool _isDecreasing;
     private const float DecreaseStartPercent = 0.25f;
     
+    private void Start()
+    {
+        TowerScanArea.TargetFilter = CanLock;
+    }
+    
     private bool CanLock(Transform t)
     {
-        return t.TryGetComponent<Entity>(out var entity) &&
-               t.TryGetComponent<IIrresponsibleThinkable>(out var thinkable) &&
-               entity.EntityRunTimeData.entityState == EntityState.IrresponsibleThinking;
+        if (!t.TryGetComponent<Entity>(out var entity) ||
+            !t.TryGetComponent<IIrresponsibleThinkable>(out var thinkable)) return false;
+
+        if (entity.EntityRunTimeData.entityState != EntityState.IrresponsibleThinking) return false;
+
+        var owner = thinkable.IrresponsibleThinkingData.lockedBy;
+        return owner == null || owner == this;
     }
     
     public override void OnDetectingArea(float deltaTime)
@@ -32,6 +41,8 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
             LockRotationToTarget(CurrentTarget);
             return;
         }
+     
+        Debug.Log($"{name} OnDetectingArea");
         
         TowerScanArea.OnDetecting(deltaTime, out Transform targetToLock);
         if (targetToLock != null && CanLock(targetToLock))
@@ -44,6 +55,9 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
 
     public override void LockToTarget(Transform targetToLock)
     {
+        if (targetToLock.TryGetComponent<IIrresponsibleThinkable>(out var thinkable))
+            thinkable.IrresponsibleThinkingData.lockedBy = this;
+
         IsLocked = true;
         LockRotationToTarget(targetToLock);
     }
@@ -88,7 +102,9 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
         if (CurrentTarget != null &&
             CurrentTarget.TryGetComponent<IIrresponsibleThinkable>(out var t))
         {
-            t.IrresponsibleThinkingData.entityState = EntityState.Moving;
+            if (t.IrresponsibleThinkingData.lockedBy == this)
+                t.IrresponsibleThinkingData.lockedBy = null;
+
             t.IrresponsibleThinkingData.isBeingDecreased = false;
         }
 
@@ -121,7 +137,7 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
         //Show visual by currentRange 
         visualRange.localScale = new Vector3(diameter/ parentScale.x, diameter/parentScale.y, 1f);
     }
-
+    
     #region ==== Interface Implement ====
     
     public void RotateHead()
