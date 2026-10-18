@@ -2046,7 +2046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   levelIndex: 2
   purposeDefeat: 0
-  objectiveHealthPoints: 5
+  objectiveHealthPoints: 10
   waveDataList:
   - waveDataName: Wave 1
     waveDelay: 15
@@ -3630,7 +3630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
   startCurrency: 410
-  passiveEarningCurrency: 3
+  passiveEarningCurrency: 6
   earningInterval: 1
   gainCurrencySound: {fileID: 8300000, guid: 349f8c4ebd288a94a882eff0286cc62d, type: 3}
   lossCurrencySound: {fileID: 8300000, guid: b76c6352147121f45b9b5294de2d6640, type: 3}
