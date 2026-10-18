@@ -78,11 +78,9 @@ public class BuildingInput : MonoBehaviour
 
     private void OnClickSellTower(InputAction.CallbackContext _)
     {
-        Vector3 mouseWorldPosition = UtilTools.UtilsClass.GetMouseWorldPosition();
-        GridManager.Instance.GetGridMapZoneCell(mouseWorldPosition, out var gridZoneData);
+        GameEvents.OnDeselectTowerCard.Invoke();
         
-        Debug.Log($"[{name} GetGridMapZoneCell] Position {mouseWorldPosition} GridZone {gridZoneData}");
-        
-        //gridPlacement.RemoveTower(mouseWorldPosition);
+        GridManager.Instance.CancelBuild();
     }
+    
 }

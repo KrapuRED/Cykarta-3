@@ -64,8 +64,7 @@ public class Tower : Entity
    
    protected bool IsBeenPlace { get; private set; }
    private Vector3 GridPosition { get;  set; }
-
-
+   
    private void Awake()
    {
       InitializerTowerData();
@@ -237,7 +236,8 @@ public class Tower : Entity
       GridManager.Instance.ChangeGridMode(GridMode.None);
       GridManager.Instance.BuildingGridMap.ClearTower(GridPosition, resetZone);
       
-      CurrencyManager.Instance.ReceiveCurrency(TowerData.towerCost);
+      if (IsBeenPlace)
+         CurrencyManager.Instance.ReceiveCurrency(TowerData.towerCost);
       
       ReleaseObject();
          

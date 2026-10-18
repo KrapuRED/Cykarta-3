@@ -33,7 +33,6 @@ public class GridManager : MonoBehaviour
     
     public GridMode CurrentGridMode => currentGridMode;
     public GridMap BuildingGridMap => buildingGridMap;
-
     public Tower InstancePreviewTower { get; private set; }
 
     private void Awake()
@@ -85,6 +84,17 @@ public class GridManager : MonoBehaviour
         if (InstancePreviewTower != null)
         {
             Destroy(InstancePreviewTower.gameObject);
+            InstancePreviewTower = null;
+        }
+        
+        gridPlacement.ClearTowerPlacement();
+    }
+
+    public void CancelBuild()
+    {
+        if (InstancePreviewTower != null)
+        {
+            InstancePreviewTower.RemoveTower();
             InstancePreviewTower = null;
         }
         
