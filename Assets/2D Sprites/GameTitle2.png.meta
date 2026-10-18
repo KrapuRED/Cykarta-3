@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 1212057ae3dab634abfc6eea2681707b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1342761186494835497
+    second: GameTitle2_0
+  - first:
+      213: -1506140578862317182
+    second: GameTitle2_1
+  - first:
+      213: -5886190108846400588
+    second: GameTitle2_2
+  - first:
+      213: -5771244909019113994
+    second: GameTitle2_3
+  - first:
+      213: 3880140915999802101
+    second: GameTitle2_4
+  - first:
+      213: 8342767398030038869
+    second: GameTitle2_5
+  - first:
+      213: 1458022181647961835
+    second: GameTitle2_6
+  - first:
+      213: 4598080091713024139
+    second: GameTitle2_7
+  - first:
+      213: 8700084183676560688
+    second: GameTitle2_8
+  - first:
+      213: 3757261059508301827
+    second: GameTitle2_9
+  - first:
+      213: -1965156977690259490
+    second: GameTitle2_10
+  - first:
+      213: -7076487783489499157
+    second: GameTitle2_11
+  - first:
+      213: -7841700976551801684
+    second: GameTitle2_12
+  - first:
+      213: -3292881947775326763
+    second: GameTitle2_13
+  - first:
+      213: -3607929208446740348
+    second: GameTitle2_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GameTitle2_0
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 956
+        width: 208
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92be4335f2272a210800000000000000
+      internalID: 1342761186494835497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_1
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 1325
+        width: 155
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2814c179f1d191be0800000000000000
+      internalID: -1506140578862317182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 891
+        width: 350
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bbdac9484d005ea0800000000000000
+      internalID: -5886190108846400588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_3
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1213
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f55226255b68efa0800000000000000
+      internalID: -5771244909019113994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_4
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 1216
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f280a0fa9709d530800000000000000
+      internalID: 3880140915999802101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_5
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 957
+        width: 207
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5575a432fb677c370800000000000000
+      internalID: 8342767398030038869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_6
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 962
+        width: 119
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee44c3037feb3410800000000000000
+      internalID: 1458022181647961835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_7
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 960
+        width: 109
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80b9535b79afcf30800000000000000
+      internalID: 4598080091713024139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_8
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 962
+        width: 94
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03529045878ecb870800000000000000
+      internalID: 8700084183676560688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_9
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 961
+        width: 65
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300766cd609742430800000000000000
+      internalID: 3757261059508301827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_10
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 960
+        width: 109
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edf44e0042c5ab4e0800000000000000
+      internalID: -1965156977690259490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_11
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 899
+        width: 271
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef87bf8ad34bcd90800000000000000
+      internalID: -7076487783489499157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_12
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 899
+        width: 774
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caccbc9428eac2390800000000000000
+      internalID: -7841700976551801684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_13
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 899
+        width: 215
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d52e8f90555d42d0800000000000000
+      internalID: -3292881947775326763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTitle2_14
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 898
+        width: 46
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48896c3208f0eedc0800000000000000
+      internalID: -3607929208446740348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GameTitle2_0: 1342761186494835497
+      GameTitle2_1: -1506140578862317182
+      GameTitle2_10: -1965156977690259490
+      GameTitle2_11: -7076487783489499157
+      GameTitle2_12: -7841700976551801684
+      GameTitle2_13: -3292881947775326763
+      GameTitle2_14: -3607929208446740348
+      GameTitle2_2: -5886190108846400588
+      GameTitle2_3: -5771244909019113994
+      GameTitle2_4: 3880140915999802101
+      GameTitle2_5: 8342767398030038869
+      GameTitle2_6: 1458022181647961835
+      GameTitle2_7: 4598080091713024139
+      GameTitle2_8: 8700084183676560688
+      GameTitle2_9: 3757261059508301827
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
