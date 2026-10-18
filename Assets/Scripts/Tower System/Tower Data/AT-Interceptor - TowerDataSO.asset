@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AT-Interceptor - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
   towerName: AT-Interceptor
-  towerCost: 100
+  towerCost: 50
   towerDescription: Single Target Smart Waste Handling Infrastructure With Cutting
     Edge AI Radar and Tracking of trash Design Intercept trash While its in the air
   prefabObjectTower: {fileID: 5857374941782670224, guid: 48b3b01b20463b546a753b6deb874cda, type: 3}
@@ -38,7 +38,7 @@ MonoBehaviour:
   upgrades:
   - upgradeName: Upgrade level 1 -> 2
     upgradeRequirement: 1
-    upgradeCost: 90
+    upgradeCost: 45
     upgradeStatuses:
     - towerStatus: Max Capacity
       status: 1
@@ -58,7 +58,7 @@ MonoBehaviour:
       isLowerValueBetter: 0
   - upgradeName: Upgrade level 2 -> 3
     upgradeRequirement: 1
-    upgradeCost: 210
+    upgradeCost: 105
     upgradeStatuses:
     - towerStatus: Max Capacity
       status: 1

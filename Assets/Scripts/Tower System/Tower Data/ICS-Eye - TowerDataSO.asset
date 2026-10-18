@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ICS-Eye - TowerDataSO
   m_EditorClassIdentifier: Assembly-CSharp::TowerDataSO
   towerName: ICS-Eye
-  towerCost: 620
+  towerCost: 310
   towerDescription: Smart Surveillance Infrastructure Powered By Ai to Detect and
     Identify law breaking act before it happen and warning system to prevent irresponsible
     act
