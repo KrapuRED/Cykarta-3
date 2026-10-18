@@ -15,6 +15,12 @@ MonoBehaviour:
   displayName: Medium Trash
   maxEntitySpeed: 0
   minEntitySpeed: 0
+  irresponsibleThinkingBaseData:
+    chanceIrresponsibleThinking: 0
+    chanceTimeIrresponsibleThinking: 0
+    maxIrresponsibleThinkingMeter: 0
+    irresponsibleThinkingIncreaseRate: 0
   entityPrefab: {fileID: 5248585466635676192, guid: e3d2867ae01018a4baaac154774167c4, type: 3}
   trashType: 2
   trashWeight: 3
+  reward: 15

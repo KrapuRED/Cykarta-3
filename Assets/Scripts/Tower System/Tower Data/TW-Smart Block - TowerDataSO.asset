@@ -25,7 +25,7 @@ MonoBehaviour:
     isLowerValueBetter: 0
   - towerStatus: Max Capacity
     status: 1
-    valueStatus: 3
+    valueStatus: 9
     isLowerValueBetter: 0
   upgrades:
   - upgradeName: Upgrade level 1 -> 2
@@ -38,10 +38,10 @@ MonoBehaviour:
       isLowerValueBetter: 0
     - towerStatus: Max Capacity
       status: 1
-      valueStatus: 3
+      valueStatus: 18
       isLowerValueBetter: 0
   - upgradeName: Upgrade level 2 -> 3
-    upgradeRequirement: 1
+    upgradeRequirement: 2
     upgradeCost: 225
     upgradeStatuses:
     - towerStatus: Range
@@ -50,5 +50,5 @@ MonoBehaviour:
       isLowerValueBetter: 0
     - towerStatus: Max Capacity
       status: 1
-      valueStatus: 14
+      valueStatus: 27
       isLowerValueBetter: 0
