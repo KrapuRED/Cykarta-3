@@ -38,7 +38,7 @@ MonoBehaviour:
       isLowerValueBetter: 0
     - towerStatus: Max Capacity
       status: 1
-      valueStatus: 18
+      valueStatus: 9
       isLowerValueBetter: 0
   - upgradeName: Upgrade level 2 -> 3
     upgradeRequirement: 2
@@ -50,5 +50,5 @@ MonoBehaviour:
       isLowerValueBetter: 0
     - towerStatus: Max Capacity
       status: 1
-      valueStatus: 27
+      valueStatus: 9
       isLowerValueBetter: 0
