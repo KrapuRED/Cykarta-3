@@ -82,6 +82,7 @@ public class TowerCardUpgradeUI : MonoBehaviour
     {
         if (_upgradeTowerData  == null || !CurrencyManager.Instance.IsCurrentCurrencyEnough(_upgradeTowerData.upgradeCost)) return;
         
+        CurrencyManager.Instance.UseCurrency(_upgradeTowerData.upgradeCost);
         _towerData.UpgradeTower(_upgradeTowerData);
         
        towerPreviewUpgradeUI.HidePreview();
