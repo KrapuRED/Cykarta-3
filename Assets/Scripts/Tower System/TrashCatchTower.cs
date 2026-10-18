@@ -157,7 +157,7 @@ public class TrashCatchTower : Tower, IRecycleTrash
             foreach (var trash in trashes)
             {
                 if (trash == null) continue;   // destroyed while waiting
-                moneyGain += trash.TrashData.trashWeight;
+                moneyGain += trash.TrashData.trashReward;
                 trash.DestroyEntity();
             }
 

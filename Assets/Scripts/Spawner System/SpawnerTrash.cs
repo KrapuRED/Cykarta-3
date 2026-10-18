@@ -33,6 +33,7 @@ public class TrashData
    public TrashState trashState;
    public TrashType trashType;
    public int trashWeight;
+   public int trashReward;
 }
 
 [System.Serializable]

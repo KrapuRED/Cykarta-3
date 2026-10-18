@@ -5,4 +5,5 @@ public class TrashDataSO : SpawnableDataSO
 {
     public TrashType trashType;
     public int trashWeight;
+    public int reward;
 }

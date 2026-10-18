@@ -1703,30 +1703,35 @@ MonoBehaviour:
     dialogueData:
     - {fileID: 11400000, guid: eac6d48f8807fea4b9e032b34a7969d5, type: 2}
     isComplete: 0
+    isEnding: 0
   - dialogueName: After Riverside Residential District (Success / Expansion)
     level: 1
     dialogueType: 1
     dialogueData:
     - {fileID: 11400000, guid: 960492650d10e49418113d89e647b734, type: 2}
     isComplete: 0
+    isEnding: 0
   - dialogueName: ' Before Central Commercial District (Escalation)'
     level: 2
     dialogueType: 0
     dialogueData:
     - {fileID: 11400000, guid: 5be07fb9f3421bd46a73c7cbb627a31a, type: 2}
     isComplete: 0
+    isEnding: 0
   - dialogueName: After Central Commercial District (Strain Begins)
     level: 2
     dialogueType: 1
     dialogueData:
     - {fileID: 11400000, guid: def1c6f05fa492e4cacbbe2ff985a734, type: 2}
     isComplete: 0
+    isEnding: 0
   - dialogueName: Before Metropolitan Downtown District (Final Test)
     level: 3
     dialogueType: 0
     dialogueData:
     - {fileID: 11400000, guid: 2f9b0482e40a9354cbce325232d32bd0, type: 2}
     isComplete: 0
+    isEnding: 0
   - dialogueName: Ending
     level: 3
     dialogueType: 1
@@ -1734,6 +1739,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 8d327111af006934093a587b47f4eb90, type: 2}
     - {fileID: 11400000, guid: b34cbe6cae703cd428e9758747d209a2, type: 2}
     isComplete: 0
+    isEnding: 1
   currentLevel: 1
   _dialogueDataIndex: 0
   _dialogueIndex: 0

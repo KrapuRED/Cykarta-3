@@ -27,7 +27,8 @@ public class Trash : Entity
             trashName = trashData.displayName,
             trashType = trashData.trashType,
             trashWeight = trashData.trashWeight,
-            trashState = TrashState.Grounded
+            trashState = TrashState.Grounded,
+            trashReward = trashData.reward
         };
     }
     

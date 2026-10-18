@@ -12,6 +12,7 @@ public class DialogueDataRunTime
     public DialogueType dialogueType; 
     public List<DialogueSO> dialogueData = new();
     public bool isComplete;
+    public bool isEnding;
 }
 
 public class DialogueManager : MonoBehaviour
@@ -229,6 +230,12 @@ public class DialogueManager : MonoBehaviour
         visualEffectOut?.Invoke();
         GameEvents.OnHideDialogue.Invoke();
 
+        if (_selectedDialogueDataRunTime.isEnding)
+        {
+            TransitionManager.Instance.TransitionToScene("Main_MainMenu", "FadeOut");
+            return;
+        }
+        
         if (_currentType == DialogueType.Before)
             TransitionManager.Instance.TransitionToScene($"Main_Level_{currentLevel}", "FadeOut");
         else
