@@ -30,12 +30,16 @@ public class BlockerTower : Tower
         if (_currentCapacity <= maxCapacity &&  targetGetBlock != null)
         {
             targetGetBlock.TryGetComponent<Trash>(out var trash);
-            if (trash != null && !accumulatedTrashes.Contains(trash) && trash.TrashData.trashState == catchTrashState)
+            if (trash.HoldBy != null) return;
+            
+            if (trash != null 
+                && !accumulatedTrashes.Contains(trash) 
+                && trash.TrashData.trashState == catchTrashState)
             {
                 if (_currentCapacity + trash.TrashData.trashWeight <= maxCapacity)
                 {
                     accumulatedTrashes.Add(trash);
-                    trash.HoldMovement();
+                    trash.HoldMovement(this);
                     _currentCapacity += trash.TrashData.trashWeight;
                 }
             }

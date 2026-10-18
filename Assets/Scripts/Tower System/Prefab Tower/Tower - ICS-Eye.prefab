@@ -66,6 +66,9 @@ MonoBehaviour:
   spriteAngleOffset: -90
   lockRotationSpeed: 720
   speedRotation: 45
+  scanSound: {fileID: 8300000, guid: eaa6e50f0632bc34792976e6b92d5d65, type: 3}
+  scanSoundInterval: 3
+  volumeScanSound: 0.2
 --- !u!1 &1641121686656096914
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,10 +418,9 @@ MonoBehaviour:
   maxDetected: 16
   detectionWithoutInterval: 0
   scanSound: {fileID: 8300000, guid: eaa6e50f0632bc34792976e6b92d5d65, type: 3}
-  scanSoundInterval: 4.5
+  scanSoundInterval: 0
   volumeScanSound: 1
   onlyPlayWhenTargetFound: 0
-  _scanSoundTimer: 0
   currentDetected: 0
 --- !u!1 &7914482911339897956
 GameObject:

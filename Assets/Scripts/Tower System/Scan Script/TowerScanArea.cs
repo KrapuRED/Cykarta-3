@@ -15,7 +15,7 @@ public class TowerScanArea : MonoBehaviour
     [SerializeField] private bool onlyPlayWhenTargetFound;
 
     private bool _scanSound;
-    [SerializeField] private float _scanSoundTimer;
+    private float _scanSoundTimer;
     
     protected Collider2D[] Hits;
     protected Transform CurrentTarget;

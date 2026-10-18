@@ -25,7 +25,7 @@ public class TrashCatchTower : Tower, IRecycleTrash
     public List<Trash> AccumulatedTrashes { get; set; }
     public bool IsRecycleTrash { get; set; }
 
-
+    private bool _isCatching;
     private Coroutine _netRoutine;
     
     private void Start()
@@ -39,22 +39,27 @@ public class TrashCatchTower : Tower, IRecycleTrash
     {
         if (!IsBeenPlace || IsRecycleTrash) return;
 
-        Debug.Log("TrashCatchTower OnDetectingArea");
-        
-        TowerScanArea.OnDetecting(deltaTime, out Transform target);
-        
-        if (target != null && target.TryGetComponent<Trash>(out Trash trash)
-            && !AccumulatedTrashes.Contains(trash)
-            && trash.TrashData.trashState == catchTrashState
-            && IsEnoughSpace(trash.TrashData.trashWeight))
-        {
-            _netRoutine = StartCoroutine(ShootNetRoutine(trash));
-        }
-        
-        if (CurrentCapacity >= MaxCapacity)
+        // Recycle only when full AND no net is in flight
+        if (CurrentCapacity >= MaxCapacity && !_isCatching)
         {
             IsRecycleTrash = true;
             StartCoroutine(RecycleTrash());
+            return;
+        }
+
+        if (_isCatching) return;   // one catch at a time
+
+        TowerScanArea.OnDetecting(deltaTime, out Transform target);
+
+        if (target != null && target.TryGetComponent<Trash>(out Trash trash)
+                           && !AccumulatedTrashes.Contains(trash)
+                           && trash.TrashData.trashState == catchTrashState
+                           && IsEnoughSpace(trash.TrashData.trashWeight))
+        {
+            if (trash.HoldBy != null) return;
+            
+            _isCatching = true;
+            _netRoutine = StartCoroutine(ShootNetRoutine(trash));
         }
     }
 
@@ -84,51 +89,51 @@ public class TrashCatchTower : Tower, IRecycleTrash
     
     private IEnumerator ShootNetRoutine(Trash trash)
     {
-        // Wait for second (Delay Shooting)
-        netSpriteRenderer.enabled = false;
-        grappleLine.enabled = false;
-        
-        yield return new WaitForSeconds(delayShooting);
-        
-        // ---------- 1. Shoot net ----------
-        Vector3 hookPos = grappleOrigin.position;
-        grappleLine.enabled = true;
-        //UpdateLine(hookPos);
-
-        while (Vector3.Distance(hookPos, endTransform.position) > catchDistance)
+        try
         {
-            hookPos = Vector3.MoveTowards(hookPos, endTransform.position, shootSpeed * Time.deltaTime);
-            UpdateLine(hookPos);
-            yield return null;
-        }
+            netSpriteRenderer.enabled = false;
+            grappleLine.enabled = false;
 
-        netSpriteRenderer.enabled = true;
-        
-        trash.HoldMovement();
-        yield return new WaitForSeconds(netShowDelay);
-        
-        // ---------- 3. DRAG ----------
-        Transform trashTf = trash.transform;
-        while (trash != null &&
-               Vector3.Distance(trashTf.position, grappleOrigin.position) > catchDistance)
-        {
-            trashTf.position = Vector3.MoveTowards(
-                trashTf.position, grappleOrigin.position, dragSpeed * Time.deltaTime);
-            hookPos = Vector3.MoveTowards(trashTf.position, grappleOrigin.position, dragSpeed * Time.deltaTime);
+            yield return new WaitForSeconds(delayShooting);
+            if (trash == null) yield break;
 
-            UpdateLine(hookPos);
-            yield return null;
+            Vector3 hookPos = grappleOrigin.position;
+            grappleLine.enabled = true;
+
+            while (Vector3.Distance(hookPos, endTransform.position) > catchDistance)
+            {
+                hookPos = Vector3.MoveTowards(hookPos, endTransform.position, shootSpeed * Time.deltaTime);
+                UpdateLine(hookPos);
+                yield return null;
+            }
+
+            if (trash == null) yield break;
+            netSpriteRenderer.enabled = true;
+            trash.HoldMovement(this);
+            yield return new WaitForSeconds(netShowDelay);
+
+            while (trash != null &&
+                   Vector3.Distance(trash.transform.position, grappleOrigin.position) > catchDistance)
+            {
+                trash.transform.position = Vector3.MoveTowards(
+                    trash.transform.position, grappleOrigin.position, dragSpeed * Time.deltaTime);
+                UpdateLine(trash.transform.position);
+                yield return null;
+            }
+
+            if (trash == null) yield break;   // destroyed while dragging
+
+            if (!AccumulatedTrashes.Contains(trash))
+            {
+                AccumulatedTrashes.Add(trash);
+                CurrentCapacity += trash.TrashData.trashWeight;
+            }
         }
-        
-        // ---------- 4. ARRIVED ----------
-        if (!AccumulatedTrashes.Contains(trash))
+        finally
         {
-            AccumulatedTrashes.Add(trash);
-            CurrentCapacity += trash.TrashData.trashWeight;
+            ResetGrappler();       // always runs, even on yield break or an exception
+            _isCatching = false;
         }
-        
-        ResetGrappler();
-        
     }
     
     public IEnumerator RecycleTrash()

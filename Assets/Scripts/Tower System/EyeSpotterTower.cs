@@ -1,4 +1,5 @@
 using UnityEngine;
+using MoreMountains.Tools;
 
 public class EyeSpotterTower : Tower, IRotateHeadTowerable
 {
@@ -8,6 +9,13 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
     [SerializeField] private float lockRotationSpeed = 720f;
     [SerializeField] private float speedRotation;
    
+    [Header("Sound Effect and ambient")]
+    [SerializeField] protected AudioClip scanSound;
+    [SerializeField] protected float scanSoundInterval = 1f; // seconds between sounds
+    [SerializeField] protected float volumeScanSound;
+    private bool _scanSound;
+    private float _scanSoundTimer;
+    
     private float _currentTargetAngle;
     private bool _isDecreasing;
     private const float DecreaseStartPercent = 0.25f;
@@ -68,6 +76,8 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
     {
         if (!IsLocked) return;
         
+        HandleScanSound(deltaTime);
+        
         if (CurrentTarget == null ||
             !CurrentTarget.TryGetComponent<Entity>(out var entity) ||
             !CurrentTarget.TryGetComponent<IIrresponsibleThinkable>(out var thinkable))
@@ -93,7 +103,7 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
             _isDecreasing = true;
             data.isBeingDecreased = true;
         }
-        
+
         entity.OnDecreaseIrresponsibleThinking(deltaTime);
     }
 
@@ -161,4 +171,22 @@ public class EyeSpotterTower : Tower, IRotateHeadTowerable
     
     #endregion
     
+    private void HandleScanSound(float deltaTime)
+    {
+        if (scanSound == null || scanSoundInterval <= 0f) return;
+        
+        _scanSoundTimer += deltaTime;
+        if (_scanSoundTimer < scanSoundInterval)
+        {
+            return;
+        }
+
+        _scanSoundTimer -= scanSoundInterval;
+
+        MMSoundManagerSoundPlayEvent.Trigger(
+            scanSound,
+            MMSoundManager.MMSoundManagerTracks.Sfx,
+            transform.position,
+            volume: volumeScanSound);
+    }
 }

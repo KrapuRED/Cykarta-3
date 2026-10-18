@@ -41,19 +41,22 @@ public class TrashCatchScan : TowerScanArea
 
     protected override void ScanArea()
     {
-        float angle = transform.eulerAngles.z;
-        int count = Physics2D.OverlapBox(scannerPositon.position, _sizeBox, angle, Filter, Hits);
+        Vector2 center = scannerPositon.position;
+        float angle = scannerPositon.eulerAngles.z;
 
+        int count = Physics2D.OverlapBox(center, _sizeBox, angle, Filter, Hits);
         CurrentTarget = count > 0 ? PickTarget(count) : null;
     }
     
     private void OnDrawGizmos()
     {
+        if (scannerPositon == null) return;
+
         Gizmos.color = Color.red;
-        _rotation = Quaternion.Euler(0, 0, towerOwner.CurrentRotation);
-        
-        Matrix4x4 rotationMatrix = Matrix4x4.TRS(scannerPositon.position, _rotation, Vector3.one);
-        Gizmos.matrix = rotationMatrix;
+        Gizmos.matrix = Matrix4x4.TRS(
+            scannerPositon.position,
+            Quaternion.Euler(0, 0, scannerPositon.eulerAngles.z),
+            Vector3.one);
         Gizmos.DrawWireCube(Vector3.zero, new Vector3(widthScanArea, heightScanArea, 0f));
     }
 }

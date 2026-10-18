@@ -12,13 +12,13 @@ public class Trash : Entity
     [SerializeField] private int indexWaypoint;
     private bool _hasWaypoints;
     
-    
     [Header("Sound Effect and ambient")]
     [SerializeField] private AudioClip waterSplash;  
     [SerializeField] private float volumeWaterSplash;  
     
     public TrashData TrashData { get; private set; }
     public Coroutine ThrowCoroutine { get; private set; }
+    public Tower HoldBy { get; private set; }
 
     private void Awake()
     {
@@ -146,10 +146,19 @@ public class Trash : Entity
     public void Grab()
     {
         StopThrow();
-        HoldMovement();
+        HoldMovement(null);
         TrashData.trashState = TrashState.Grabbed;
     }
-    
-    public void HoldMovement() => IsCanMove = false;
-    public void UnholdMovement() => IsCanMove = true;
+
+    public void HoldMovement(Tower tower)
+    {
+        HoldBy = tower;
+        IsCanMove = false;
+    }
+
+    public void UnholdMovement()
+    {
+        HoldBy = null;
+        IsCanMove = true;
+    }
 }

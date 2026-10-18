@@ -1997,6 +1997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   levelIndex: 3
+  purposeDefeat: 1
   objectiveHealthPoints: 5
   waveDataList:
   - waveDataName: Wave 1
@@ -2327,7 +2328,7 @@ MonoBehaviour:
   bgmSound: {fileID: 8300000, guid: 9402a721be048f74592af9bc2c8e3899, type: 3}
   volumeBGMSound: 0.5
   objectiveHurtSound: {fileID: 8300000, guid: a0e4edf9c843bfe4aa91424bbac5a56b, type: 3}
-  startLevel: 0
+  startLevel: 1
 --- !u!1001 &981133141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2832,7 +2833,7 @@ Transform:
   m_GameObject: {fileID: 1164650684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.12, y: 8.2, z: 0}
+  m_LocalPosition: {x: 2.88, y: 7.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4438,7 +4439,7 @@ Transform:
   m_GameObject: {fileID: 1651013201}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.47, y: -8.5, z: 0}
+  m_LocalPosition: {x: 14.47, y: -4.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4805,7 +4806,7 @@ Transform:
   m_GameObject: {fileID: 1704532694}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.93, y: -6.82, z: 0}
+  m_LocalPosition: {x: -2.9, y: -4.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5435,7 +5436,7 @@ Transform:
   m_GameObject: {fileID: 1996845587}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.57, y: -8.48, z: 0}
+  m_LocalPosition: {x: 14.57, y: -4.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

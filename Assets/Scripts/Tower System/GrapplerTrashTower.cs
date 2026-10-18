@@ -219,7 +219,7 @@ public class GrapplerTrashTower : Tower, IRotateHeadTowerable, IRecycleTrash
     private void DisableTrashPhysics(Trash trash)
     {
         trash.Grab();
-        trash.HoldMovement();
+        trash.HoldMovement(this);
     }
 
     private void ResetGrappler()

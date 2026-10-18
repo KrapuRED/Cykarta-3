@@ -8,7 +8,7 @@ public class ObjectiveManager : MonoBehaviour
     public static ObjectiveManager Instance { get; private set;}
 
     [SerializeField] private int levelIndex;
-    
+    [SerializeField] private bool purposeDefeat;
     [SerializeField] private int objectiveHealthPoints;
     [SerializeField] private List<WaveData> waveDataList = new();
     
@@ -187,6 +187,9 @@ public class ObjectiveManager : MonoBehaviour
 
     private LevelStatus GetLevelStatus()
     {
+        if (purposeDefeat)
+            return LevelStatus.Success;
+        
         if (CurrentObjectiveHealthPoints <= 0)
             return LevelStatus.Failed;
 
