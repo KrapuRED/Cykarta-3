@@ -1439,6 +1439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
   levelIndex: 1
+  purposeDefeat: 0
   objectiveHealthPoints: 500
   waveDataList:
   - waveDataName: Wave 1

@@ -2328,7 +2328,7 @@ MonoBehaviour:
   bgmSound: {fileID: 8300000, guid: 9402a721be048f74592af9bc2c8e3899, type: 3}
   volumeBGMSound: 0.5
   objectiveHurtSound: {fileID: 8300000, guid: a0e4edf9c843bfe4aa91424bbac5a56b, type: 3}
-  startLevel: 1
+  startLevel: 0
 --- !u!1001 &981133141
 PrefabInstance:
   m_ObjectHideFlags: 0

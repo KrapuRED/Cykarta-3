@@ -50,5 +50,8 @@ TagManager:
   - name: Enemy
     uniqueID: 1477363715
     locked: 0
+  - name: Sewer
+    uniqueID: 2980834151
+    locked: 0
   m_RenderingLayers:
   - Default
