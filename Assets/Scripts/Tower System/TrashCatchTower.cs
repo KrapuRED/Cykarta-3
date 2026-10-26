@@ -28,6 +28,7 @@ public class TrashCatchTower : Tower, IRecycleTrash
     private bool _isCatching;
     private Coroutine _netRoutine;
     
+    
     private void Start()
     {
         MaxCapacity = (int)TowerRunTimeData.GetCurrentStatusValue(TowerStatus.MaxCapacity);
@@ -59,20 +60,20 @@ public class TrashCatchTower : Tower, IRecycleTrash
             if (trash.HoldBy != null) return;
             
             _isCatching = true;
+            
+            if (_netRoutine != null) return;
+            
             _netRoutine = StartCoroutine(ShootNetRoutine(trash));
         }
-    }
-
-    protected override void SetVisualDetectRange()
-    {
-        
     }
     
     private void UpdateLine(Vector3 endPos)
     {
+        grappleLine.useWorldSpace = true;
         grappleLine.positionCount = 2;
         grappleLine.SetPosition(0, grappleOrigin.position);
         grappleLine.SetPosition(1, endPos);
+        
     }
 
     private void ResetGrappler()
@@ -108,16 +109,25 @@ public class TrashCatchTower : Tower, IRecycleTrash
             }
 
             if (trash == null) yield break;
+            
+            //netSpriteRenderer.transform.position = endTransform.position;
             netSpriteRenderer.enabled = true;
+            
             trash.HoldMovement(this);
             yield return new WaitForSeconds(netShowDelay);
 
+            Vector3 retractPos = endTransform.position;
+            
             while (trash != null &&
                    Vector3.Distance(trash.transform.position, grappleOrigin.position) > catchDistance)
             {
-                trash.transform.position = Vector3.MoveTowards(
-                    trash.transform.position, grappleOrigin.position, dragSpeed * Time.deltaTime);
-                UpdateLine(trash.transform.position);
+                retractPos = Vector3.MoveTowards(
+                    retractPos, grappleOrigin.position, dragSpeed * Time.deltaTime);
+                
+                trash.transform.position = retractPos;   // trash rides the hook
+                
+                //netSpriteRenderer.transform.position = retractPos;
+                UpdateLine(retractPos);
                 yield return null;
             }
 

@@ -135,8 +135,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 12
+  m_SortingLayerID: 1014021433
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &6757278135348031742
 MonoBehaviour:
@@ -370,7 +370,7 @@ Transform:
   m_GameObject: {fileID: 2434193495982063504}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -987,9 +987,9 @@ MonoBehaviour:
   shootSpeed: 25
   dragSpeed: 8
   catchDistance: 0.3
-  delayShooting: 0.5
-  netShowDelay: 0.5
-  netLingerTime: 0.3
+  delayShooting: 0.25
+  netShowDelay: 0.3
+  netLingerTime: 0.15
 --- !u!1 &8348890756886544425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1106,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0d9af3227900cb419c718baff4d368f, type: 2}
+  - {fileID: 2895064947943234598, guid: e7170b34430d5ef44bb8add062be7881, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1140,7 +1140,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.29411697
         inSlope: 0
         outSlope: 0
         tangentMode: 0
