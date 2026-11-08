@@ -1217,7 +1217,7 @@ MonoBehaviour:
   target: {fileID: 1952918786}
   canvasGroup: {fileID: 0}
   slideType: 1
-  slideOffset: 1000
+  slideOffset: 1350
   duration: 1
   ease: 27
   useLocalSpace: 0
@@ -2655,6 +2655,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 7510497192285408470, guid: e335b9a9dc977444282280ee837b6092, type: 3}
+    - target: {fileID: 3637390352463084672, guid: 76c2b799093d89944914e92dcb8976bf, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4626285318331762902, guid: 76c2b799093d89944914e92dcb8976bf, type: 3}
       propertyPath: m_Name
       value: Dialogue - Skip Button
