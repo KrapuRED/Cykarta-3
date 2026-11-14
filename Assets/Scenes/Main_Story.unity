@@ -1182,7 +1182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &966442801
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1749,18 +1749,6 @@ MonoBehaviour:
   visualEffectIn:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 966442802}
-        m_TargetAssemblyTypeName: VisualSlide, Assembly-CSharp
-        m_MethodName: PlayAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1375398478}
         m_TargetAssemblyTypeName: VisualSlide, Assembly-CSharp
         m_MethodName: PlayAnimation
@@ -1777,18 +1765,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1375398478}
-        m_TargetAssemblyTypeName: VisualSlide, Assembly-CSharp
-        m_MethodName: RevertAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 966442802}
         m_TargetAssemblyTypeName: VisualSlide, Assembly-CSharp
         m_MethodName: RevertAnimation
         m_Mode: 1
@@ -2633,7 +2609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 937566966291260531, guid: 76c2b799093d89944914e92dcb8976bf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1308
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 937566966291260531, guid: 76c2b799093d89944914e92dcb8976bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
